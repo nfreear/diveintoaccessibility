@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- Mirrored from diveintoaccessibility.info/day_10_presenting_your_main_content_first.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:29 GMT -->
+<head>
+<title>Day 10: Presenting your main content first - Dive Into Accessibility</title>
+<link rel="start" title="Home page" href="index.html" />
+<link rel="contents" title="Table of contents" href="table_of_contents.html" />
+<link rel="search" title="Search this site" href="mt/mt-search.html" />
+<link rel="help" title="Access features of this site" href="accessibility_statement.html" />
+<link rel="author" title="Send feedback to the author" href="mailto:feedback@diveintoaccessibility.org" />
+<link rel="copyright" title="Terms of use" href="terms_of_use.html" />
+<link rel="up" title="Table of contents" href="table_of_contents.html" />
+<link rel="first" title="Day 1: Jackie" href="day_1_jackie.html" />
+<link rel="last" title="Accessibility statement" href="accessibility_statement.html" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="projection" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/aural.css" type="text/css" media="aural" />
+
+
+<link rel="prev" href="day_9_providing_additional_navigation_aids.html" title="Day 9: Providing additional navigation aids" />
+<link rel="next" href="day_11_skipping_over_navigation_links.html" title="Day 11: Skipping over navigation links" />
+<script>_gaq=[['_setAccount','UA-7434570-7'],['_trackPageview']];(function(){var g=document.createElement('script');g.src='../www.google-analytics.com/ga.js';g.setAttribute('async','true');document.documentElement.firstChild.appendChild(g);})();</script>
+</head>
+<body>
+
+<div id="logo"><div class="inner">
+<h1 class="title">
+<a href="index.html" accesskey="1">Dive Into Accessibility</a>
+</h1>
+<p>30 days to a more accessible web site</p>
+<a class="skip" href="day_10_presenting_your_main_content_first.html#startnavigation">Skip to navigation</a>
+<span class="divider">&nbsp;</span>
+</div></div>
+
+
+<p></p>
+
+
+<div id="main"><div class="inner">
+
+<div class="entry">
+<h2 class="entrysubject">Day 10: Presenting your main content first</h2>
+<p class="firstparagraph">One of the main advantages of using a purely <acronym title="cascading style sheets">CSS</acronym>-based layout is that it is easy to rearrange elements within your <acronym title="hypertext markup language">HTML</acronym> source without affecting the visual layout, so that your main content displays while the rest of the page is still loading.  However, I am aware that most web sites still use table-based layouts, so this tip is for you.</p>
+
+<p>If you have a table-based layout with a navigation bar along the left, your navigation bar is being presented to blind users like <a href="day_5_marcus.html">Marcus</a> and <a href="day_1_jackie.html">Jackie</a> before your main content.  There is no way to describe how much of a problem this is; you have to see it for yourself:</p>
+
+<ol>
+<li><a href="examples/notabletrick.html">Sample table-based layout</a>.</li>
+<li><a href="examples/tabletrick.html">Modified layout, with content first</a>.  These two layouts should look essentially the same in visual browsers, but in Lynx, the difference is obvious.</li>
+<li><a href="examples/notabletrick-2.html">The original layout, rendered by Lynx</a>.</li>
+<li><a href="examples/tabletrick-2.html">The modified layout, rendered by Lynx</a>.  The main content is displayed first, then the navigation bar.</li>
+</ol>
+
+<p>You do not need to redesign your entire template from scratch to avoid this problem.  There is a (relatively) simple technique, affectionately called the "table trick", that can present your main content first, while still keeping your navigation bar on the left side.</p>
+
+<h3>Who benefits?</h3>
+
+<ol>
+<li><a href="day_5_marcus.html">Marcus</a> benefits.  As demonstrated by the examples above, Lynx displays content in the order in which it appears in the <acronym title="hypertext markup language">HTML</acronym> source.  This means Marcus must scroll through your entire navigation bar <em>every time he visits your page</em>.  Scrolling sucks.</li>
+<li><a href="day_1_jackie.html">Jackie</a> benefits.  <a href="http://www.freedomscientific.com/fs_products/software_jaws.asp">JAWS</a>, like Lynx, presents content in the order in it appears in the <acronym title="hypertext markup language">HTML</acronym> source code, not the order they appear on screen.  With JAWS, the problem is even worse, because Jackie must sit through JAWS <em>reading your entire navigation bar</em> before hearing any real content, and there is no sure-fire way to jump straight to the main content.  (We'll talk more about this problem on Monday.)</li>
+<li><a href="http://www.google.com/">Google</a> benefits.  Google gives more weight to content closer to the top of the page.  That's the top of your <acronym title="hypertext markup language">HTML</acronym> source, not the visual top of the page.  In fact, most people who know about this technique are in the search engine optimization industry; to them, the accessibility benefits are secondary.</li>
+</ol>
+
+<h3>How to do it</h3>
+
+<p>View your own site in the <a href="http://www.delorie.com/web/lynxview.html">Lynx Viewer</a> and see if your daily posts are displayed first, before your navigation bar.  The Movable Type default template gets it right; if you use the default template or something based on it, you probably do not need to do anything.  But view your site in the Lynx Viewer anyway, because it will give you a deeper understanding of the issues involved.</p>
+
+<p>If you are using one of the default Radio templates, you may need to adjust your tables to put your main content first.  There is no specific copy-and-paste way to do this; you will have to dig into your own template and look at the table structure.  The <a href="examples/notabletrick.html">sample layout</a> and <a href="examples/tabletrick.html">modified sample layout</a> show the basic technique.</p>
+
+<p>Instead of the obvious table layout:</p>
+
+<blockquote><pre><code>&lt;table&gt;
+&lt;tr&gt;
+  &lt;td valign="top" align="left" width="25%"&gt;
+    ... navigation bar ...
+  &lt;/td&gt;
+  &lt;td valign="top" align="left"&gt;
+    ... main content ...
+  &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</code></pre></blockquote>
+
+<p>We do this instead:</p>
+
+<blockquote><pre><code>&lt;table&gt;
+&lt;tr&gt;
+  &lt;!-- <a href="images/1.html">spacer GIF</a> in upper-left cell --&gt;
+  &lt;td&gt;&lt;img src="/images/1.gif" width="1" height="1" alt=""&gt;&lt;/td&gt;
+  &lt;!-- main content cell first, with rowspan=2 --&gt;
+  &lt;td valign="top" align="left" rowspan="2"&gt;
+    ... main content ...
+  &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td valign="top" align="left" width="25%"&gt;
+    ... navigation bar ...
+  &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</code></pre></blockquote>
+
+<h3>Further reading</h3>
+
+<ul>
+<li><a href="http://www.delorie.com/web/lynxview.html">Lynx Viewer</a>.</li>
+<li><cite>A Promotion Guide</cite>: <a href="http://www.apromotionguide.com/tabletrick.html">The Table Trick</a>.</li>
+</ul>
+
+<p></p>
+<span class="divider">&nbsp;</span>
+</div> <!--entry-->
+
+<div class="pageturn"><div class="inner">
+<a href="day_9_providing_additional_navigation_aids.html">&lt;&lt; Day 9: Providing additional navigation aids</a> |
+<a href="table_of_contents.html">Contents</a>
+| <a href="day_11_skipping_over_navigation_links.html">Day 11: Skipping over navigation links &gt;&gt;</a>
+<span class="divider">&nbsp;</span>
+</div></div> <!--pageturn-->
+
+</div></div> <!--main-->
+
+<div id="menu">
+<a class="skip" name="startnavigation" id="startnavigation"></a>
+
+<form action="http://www.google.com/cse"><p>Search this site:</p><p><input type="hidden" name="cx" value="014021643941856155761:j2rsjqy6z6g"><input type="hidden" name="ie" value="UTF-8"><input type="search" name="q" size="20" placeholder="powered by Google&trade;"></p><p><input type="submit" name="sa" value="Search"></p></form>
+</form>
+
+
+
+<div class="menusection"><div class="inner">
+
+<h2 class="invisibletitle">Site links</h2>
+
+<a class="skip" href="day_10_presenting_your_main_content_first.html#endinternal">Skip over site links</a>
+
+<ul>
+<li><a title="accessibility features of this site" href="accessibility_statement.html" accesskey="0">Accessibility statement</a></li>
+<li><a href="mt/mt-search.html" accesskey="4">Advanced search</a></li>
+<li><a href="table_of_contents.html" accesskey="3">Table of contents</a></li>
+<li><a href="by_person.html">Tips by person</a></li>
+<li><a href="by_disability.html">Tips by disability</a></li>
+<li><a href="by_design_principle.html">Tips by design principle</a></li>
+<li><a href="by_web_browser.html">Tips by web browser</a></li>
+<li><a href="by_publishing_tool.html">Tips by publishing tool</a></li>
+<li><a title="send email to the author" href="mailto:feedback@diveintoaccessibility.org" accesskey="9">Feedback</a></li>
+<li><a title="Copyright and licensing information" href="terms_of_use.html" accesskey="8">Terms of use</a></li>
+</ul>
+
+<a class="skip" id="endinternal"></a>
+
+</div></div> <!--.menusection-->
+
+
+
+<div id="footer"><div class="inner">
+
+<address>Copyright &copy; 2002 Mark Pilgrim</address> 
+
+</div></div> <!--footer-->
+
+
+</div> <!--menu-->
+
+<div id="navigation">
+<p class="breadcrumb">You are here:
+<a href="index.html">Home</a> > 
+<a href="table_of_contents.html">Table of contents</a> > 
+<span class="currentpage">Day 10: Presenting your main content first</span>
+</p>
+</div><!--navigation-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36045340-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+<!-- Mirrored from diveintoaccessibility.info/day_10_presenting_your_main_content_first.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:30 GMT -->
+</html>

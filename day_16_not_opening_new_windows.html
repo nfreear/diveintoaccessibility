@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- Mirrored from diveintoaccessibility.info/day_16_not_opening_new_windows.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:31 GMT -->
+<head>
+<title>Day 16: Not opening new windows - Dive Into Accessibility</title>
+<link rel="start" title="Home page" href="index.html" />
+<link rel="contents" title="Table of contents" href="table_of_contents.html" />
+<link rel="search" title="Search this site" href="mt/mt-search.html" />
+<link rel="help" title="Access features of this site" href="accessibility_statement.html" />
+<link rel="author" title="Send feedback to the author" href="mailto:feedback@diveintoaccessibility.org" />
+<link rel="copyright" title="Terms of use" href="terms_of_use.html" />
+<link rel="up" title="Table of contents" href="table_of_contents.html" />
+<link rel="first" title="Day 1: Jackie" href="day_1_jackie.html" />
+<link rel="last" title="Accessibility statement" href="accessibility_statement.html" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="projection" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/aural.css" type="text/css" media="aural" />
+
+
+<link rel="prev" href="day_15_defining_keyboard_shortcuts.html" title="Day 15: Defining keyboard shortcuts" />
+<link rel="next" href="day_17_defining_acronyms.html" title="Day 17: Defining acronyms" />
+<script>_gaq=[['_setAccount','UA-7434570-7'],['_trackPageview']];(function(){var g=document.createElement('script');g.src='../www.google-analytics.com/ga.js';g.setAttribute('async','true');document.documentElement.firstChild.appendChild(g);})();</script>
+</head>
+<body>
+
+<div id="logo"><div class="inner">
+<h1 class="title">
+<a href="index.html" accesskey="1">Dive Into Accessibility</a>
+</h1>
+<p>30 days to a more accessible web site</p>
+<a class="skip" href="day_16_not_opening_new_windows.html#startnavigation">Skip to navigation</a>
+<span class="divider">&nbsp;</span>
+</div></div>
+
+
+<p></p>
+
+
+<div id="main"><div class="inner">
+
+<div class="entry">
+<h2 class="entrysubject">Day 16: Not opening new windows</h2>
+<p class="firstparagraph">The one thing every web user understands is the "Back" button.  It's an integral part of browsing the web.  Follow a link, go back.  Explore a search engine result, go back.  Even my father can do this, and he's still excited when he can double-click the "Internet" icon successfully on the first try.</p>
+
+<p>In all dominant browsers, using the <code class="sgmltag">&lt;a target="_blank"&gt;</code> tag to force a link to open in a new window <em>breaks the Back button</em>.  The new window does not retain the browser history of the previous window, so the "Back" button is disabled.  This is incredibly confusing, even for me, and I've been using the web for 10 years.  In 2002, it's amazing that people still do this.  Don't do this.  Don't force links to open in new windows.</p>
+
+<p>Please note that this tip is about you as a web designer, not you as a web user.  If <em>you</em> want to open new windows while <em>you</em> browse, go right ahead.  In Internet Explorer for Windows, hold down the <kbd>Shift</kbd> key while you click a link to open the link in a new window.  In Netscape 6 and Mozilla, hold down <kbd>Control</kbd>.  In Internet Explorer for Mac, hold down <kbd>Command</kbd>.  (Some browsers such as Opera support advanced combinations like <kbd>Control</kbd> + <kbd>Shift</kbd> + click to open a link in a new window in the background.)  The point is that the choice of whether a link will open in a new window should be the end user's choice, not the web designer's choice.</p>
+
+<h3>Who benefits?</h3>
+
+<ol>
+<li><p><a href="day_1_jackie.html">Jackie</a> benefits.  Although <a href="http://www.freedomscientific.com/fs_products/software_jaws.asp">JAWS</a> does announce "New browser window" when a link opens a new window, this is easy to miss, as it is spoken wedged between the reading of the link text and reading of the new page.  <a href="http://www-3.ibm.com/able/hpr.html">Home Page Reader</a> has a better solution; it plays a distinctive sound every time a new window opens.  And <a href="http://www.gwmicro.com/windoweyes/windoweyes.htm">Window Eyes</a>, another popular screen reader, gives no indication of new windows at all.</p>
+<p>And regardless, the "Back" button is still broken.  If Jackie misses the "new browser window" announcement, she can not simply glance at her taskbar and see that two browser windows are open.  She will need to read through her entire list of open windows, either using the JAWS-specific shortcut <kbd>INSERT+F10</kbd> to get a window list, or the standard <kbd>ALT+TAB</kbd>.</p></li>
+<li><p><a href="day_4_lillian.html">Lillian</a> benefits.  Her Internet Explorer window is always maximized (so she can see it), and new windows also open maximized by default.  Furthermore, Windows XP groups multiple windows of the same application in the taskbar, so there is virtually no visible indication that a new window has even been opened.  Suddenly, the "Back" button is disabled for no apparent reason, and Lillian has no idea why.  If you were expecting her to read the rest of your web site after following that link, you can forget it.</p></li>
+<li><a href="day_3_bill.html">Bill</a> benefits.  His sister has set Mozilla to use tabbed browsing, so that Bill can look at the tabs and quickly remind himself which windows he has open, and also so he can quickly switch between them (using <kbd><acronym title="control">CTRL</acronym>+<acronym title="page up">PAGEUP</acronym></kbd> and <kbd><acronym title="control">CTRL</acronym>+<acronym title="page down">PAGEDOWN</acronym></kbd> on his handy dandy keyboard extension).  Links that are forced to open in a new window will open an entirely new Mozilla window.  Not only will this bypass his tabbed browsing preferences, but it will make it appear that all his open windows have disappeared, since the new browser window will not show the tabs that were open in the previous window.</li>
+</ol>
+
+<h3>How to do it</h3>
+
+<ol>
+<li>Don't use <code class="sgmltag">&lt;a target="_blank"&gt;</code> to force links to open in a new window.</li>
+<li>If you absolutely must open a link in a new window, explicitly warn the reader.  This is a non-optimal, compromise solution, usually brought about by business requirements of "not being associated" with external content.  For example, <a href="http://www.cnn.com/US/sites.html">CNN's "related sites" page</a> does this.</li>
+<li>If you have a "Links open new windows" checkbox, make sure it is <em>off</em> by default.</li>
+</ol>
+
+<h3>Further reading</h3>
+
+<ul>
+<li><cite title="Useit.com">Jakob Nielsen</cite>: <a href="http://www.useit.com/alertbox/990530.html">The Top Ten <em>New</em> Mistakes of Web Design</a>.  "#1: Breaking or Slowing Down the Back Button.  #2: Opening New Browser Windows."</li>
+<li><cite>W3C Web Accessibility Initiative</cite>: <a href="http://www.w3.org/WAI/wcag-curric/sam77-0.htm">Example for Checkpoint 10.1</a> gives an example of how to warn users if you have a single link that you absolutely must open in a new window.</li>
+<li><cite>W3C Validator mailing list</cite>: <a href="http://lists.w3.org/Archives/Public/www-validator/2002Apr/0100.html">Re: opening a link in a new window</a>.  For those who care about this sort of thing, you should know that the <code>target</code> attribute of the <code>&lt;a&gt;</code> tag is deprecated, and will prevent your pages from validating in <acronym title="hypertext markup language">HTML</acronym> 4.01 Strict, <acronym title="extensible hypertext markup language">XHTML</acronym> 1.0 Strict, or any future version.</li>
+<li><cite><acronym title="Web Accessibility In Mind">WebAIM</acronym> mailing list</cite>: <a href="http://www.webaim.org/discussion/mail_thread.php?thread=432"><code>mailto:</code> links open new windows</a>.  The consensus is that <code>mailto:</code> links are not an accessibility problem, even though they generally open your email client in a new window, because this behavior is completed determined on the client side.  A web-based mail form (like Radio uses) may be a better overall solution, provided the form is accessible.  A web-based form will work for visitors without integrated email clients (by misconfiguration or by circumstance, such as being in a public lab), and it protects your email address from spam harvesters without resorting to inaccessible Javascript tricks.  On the other hand, some people <em>really like</em> their email clients due to familiarity, functionality (such as built-in spell checking), and the ability to archive outgoing messages.  I am not recommending one method over another.</li>
+</ul>
+
+<p></p>
+<span class="divider">&nbsp;</span>
+</div> <!--entry-->
+
+<div class="pageturn"><div class="inner">
+<a href="day_15_defining_keyboard_shortcuts.html">&lt;&lt; Day 15: Defining keyboard shortcuts</a> |
+<a href="table_of_contents.html">Contents</a>
+| <a href="day_17_defining_acronyms.html">Day 17: Defining acronyms &gt;&gt;</a>
+<span class="divider">&nbsp;</span>
+</div></div> <!--pageturn-->
+
+</div></div> <!--main-->
+
+<div id="menu">
+<a class="skip" name="startnavigation" id="startnavigation"></a>
+
+<form action="http://www.google.com/cse"><p>Search this site:</p><p><input type="hidden" name="cx" value="014021643941856155761:j2rsjqy6z6g"><input type="hidden" name="ie" value="UTF-8"><input type="search" name="q" size="20" placeholder="powered by Google&trade;"></p><p><input type="submit" name="sa" value="Search"></p></form>
+</form>
+
+
+
+<div class="menusection"><div class="inner">
+
+<h2 class="invisibletitle">Site links</h2>
+
+<a class="skip" href="day_16_not_opening_new_windows.html#endinternal">Skip over site links</a>
+
+<ul>
+<li><a title="accessibility features of this site" href="accessibility_statement.html" accesskey="0">Accessibility statement</a></li>
+<li><a href="mt/mt-search.html" accesskey="4">Advanced search</a></li>
+<li><a href="table_of_contents.html" accesskey="3">Table of contents</a></li>
+<li><a href="by_person.html">Tips by person</a></li>
+<li><a href="by_disability.html">Tips by disability</a></li>
+<li><a href="by_design_principle.html">Tips by design principle</a></li>
+<li><a href="by_web_browser.html">Tips by web browser</a></li>
+<li><a href="by_publishing_tool.html">Tips by publishing tool</a></li>
+<li><a title="send email to the author" href="mailto:feedback@diveintoaccessibility.org" accesskey="9">Feedback</a></li>
+<li><a title="Copyright and licensing information" href="terms_of_use.html" accesskey="8">Terms of use</a></li>
+</ul>
+
+<a class="skip" id="endinternal"></a>
+
+</div></div> <!--.menusection-->
+
+
+
+<div id="footer"><div class="inner">
+
+<address>Copyright &copy; 2002 Mark Pilgrim</address> 
+
+</div></div> <!--footer-->
+
+
+</div> <!--menu-->
+
+<div id="navigation">
+<p class="breadcrumb">You are here:
+<a href="index.html">Home</a> > 
+<a href="table_of_contents.html">Table of contents</a> > 
+<span class="currentpage">Day 16: Not opening new windows</span>
+</p>
+</div><!--navigation-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36045340-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+<!-- Mirrored from diveintoaccessibility.info/day_16_not_opening_new_windows.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:31 GMT -->
+</html>

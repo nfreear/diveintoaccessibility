@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- Mirrored from diveintoaccessibility.info/day_14_adding_titles_to_links.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:31 GMT -->
+<head>
+<title>Day 14: Adding titles to links - Dive Into Accessibility</title>
+<link rel="start" title="Home page" href="index.html" />
+<link rel="contents" title="Table of contents" href="table_of_contents.html" />
+<link rel="search" title="Search this site" href="mt/mt-search.html" />
+<link rel="help" title="Access features of this site" href="accessibility_statement.html" />
+<link rel="author" title="Send feedback to the author" href="mailto:feedback@diveintoaccessibility.org" />
+<link rel="copyright" title="Terms of use" href="terms_of_use.html" />
+<link rel="up" title="Table of contents" href="table_of_contents.html" />
+<link rel="first" title="Day 1: Jackie" href="day_1_jackie.html" />
+<link rel="last" title="Accessibility statement" href="accessibility_statement.html" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="projection" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/aural.css" type="text/css" media="aural" />
+
+
+<link rel="prev" href="day_13_using_real_links.html" title="Day 13: Using real links" />
+<link rel="next" href="day_15_defining_keyboard_shortcuts.html" title="Day 15: Defining keyboard shortcuts" />
+<script>_gaq=[['_setAccount','UA-7434570-7'],['_trackPageview']];(function(){var g=document.createElement('script');g.src='../www.google-analytics.com/ga.js';g.setAttribute('async','true');document.documentElement.firstChild.appendChild(g);})();</script>
+</head>
+<body>
+
+<div id="logo"><div class="inner">
+<h1 class="title">
+<a href="index.html" accesskey="1">Dive Into Accessibility</a>
+</h1>
+<p>30 days to a more accessible web site</p>
+<a class="skip" href="day_14_adding_titles_to_links.html#startnavigation">Skip to navigation</a>
+<span class="divider">&nbsp;</span>
+</div></div>
+
+
+<p></p>
+
+
+<div id="main"><div class="inner">
+
+<div class="entry">
+<h2 class="entrysubject">Day 14: Adding titles to links</h2>
+<p class="firstparagraph">What with the web being all about links, you would think more people would know about the <code>title</code> attribute, but I rarely see it.  For those who don't know, all links can have a title, specified by the <code>title</code> attribute of the <code>&lt;a&gt;</code> tag.  This is in addition to whatever link text you specify.  The title of a link generally shows up as a tooltip in visual browsers, but it can be presented in non-visual browsers as well.</p>
+
+<p>Not all links should have titles.  If the link text is the name of an article, don't add a title; the link text itself is descriptive enough.  But if you read the link text by itself, out of context, and can't figure out what it points to, add a title.</p>
+
+<h3>Who benefits?</h3>
+
+<ol>
+<li><a href="day_1_jackie.html">Jackie</a> benefits.  <a href="http://www.freedomscientific.com/fs_products/software_jaws.asp">JAWS</a> has an option to read the title of a link along with the link text.  (This option is not on by default.  To activate it, Jackie pressed <kbd>INSERT+V</kbd> to bring up the JAWS verbosity options window, then changed "Text links verbosity" to "Alt tag or title".)</li>
+<li><a href="day_2_michael.html">Michael</a> benefits.  When he moves his cursor over a link in <a href="http://www.opera.com/">Opera</a>, it displays the title of the link in the status bar and as a tooltip.  This lets him decide whether he wants to spend precious bandwidth following the link.</li>
+<li><a href="day_4_lillian.html">Lillian</a> benefits.  When she moves her cursor over the link in Internet Explorer, it displays the title of the link as a tooltip.</li>
+<li><a href="day_5_marcus.html">Marcus</a> benefits.  When Marcus presses "<kbd>l</kbd>", <a href="http://www.fdisk.com/doslynx/lynxport.htm">Lynx</a> displays a list of links on the current page.  The list includes the title of each link, if present.</li>
+</ol>
+
+<h3>How to do it</h3>
+
+<p>On each link where the link text itself might not be sufficient for the reader to decide whether to click the link, add a <code>title</code> attribute.  Examples:</p>
+
+<ol>
+<li><p>On my navigation bar, I have a link to my statistics page.  The link text is simply <a title="referrers and other visitor statistics" href="http://diveintomark.org/stats/">Statistics</a>, but the <code>title</code> attribute gives some further information:</p>
+<blockquote>
+<p><code class="sgmltag">&lt;a title="referrers and other visitor statistics" href="/stats/">Statistics&lt;/a&gt;</code></p>
+</blockquote>
+</li>
+<li><p>On my navigation bar, I have a link to my book, <a title="Free Python book for experienced programmers" href="http://diveintopython.org/">Dive Into Python</a>, which looks like this:</p>
+<blockquote>
+<p><code class="sgmltag">&lt;a title="Free Python book for experienced programmers" href="http://diveintopython.org/"&gt;Dive Into Python&lt;/a&gt;</code></p>
+</blockquote>
+</li>
+<li><p>When I link to an article using a phrase within a sentence, I try to use a <code>title</code> attribute to give identifying information about the link, such as the article title or a citation.  For instance, <a title="Day 13: Using real links" href="day_13_using_real_links.html">yesterday's tip</a> included this sentence:</p>
+<blockquote>
+<p><code class="sgmltag">Why is this a problem?  Because &lt;a title="TheCounter.com statistics on Javascript usage in browsers, April 2002" href="http://www.thecounter.com/stats/2002/April/javas.php"&gt;11% of Internet users don't use Javascript&lt;/a&gt; for one reason or another, including many disabled users whose browsers simply don't support it.</code></p>
+</blockquote>
+<p>Which renders like this:</p>
+<blockquote>
+<p>Why is this a problem?  Because <a title="TheCounter.com statistics on Javascript usage in browsers, April 2002" href="http://www.thecounter.com/stats/2002/April/javas.php">11% of Internet users don't use Javascript</a> for one reason or another, including many disabled users whose browsers simply don't support it.</p>
+</blockquote>
+</li>
+</ol>
+
+<p><a title="dive into mark February 20, 2002: Britney, Britney, Britney" href="http://diveintomark.org/archives/2002/02/20.html#britney_britney_britney">Do not go overboard</a> with the <code>title</code> attribute.  All things in moderation.</p>
+
+<h3>Further reading</h3>
+
+<ul>
+<li><cite>Jakob Nielsen</cite>: <a href="http://www.useit.com/alertbox/980111.html">Using Link Titles to Help Users Predict Where They Are Going</a>.</li>
+</ul>
+
+<p></p>
+<span class="divider">&nbsp;</span>
+</div> <!--entry-->
+
+<div class="pageturn"><div class="inner">
+<a href="day_13_using_real_links.html">&lt;&lt; Day 13: Using real links</a> |
+<a href="table_of_contents.html">Contents</a>
+| <a href="day_15_defining_keyboard_shortcuts.html">Day 15: Defining keyboard shortcuts &gt;&gt;</a>
+<span class="divider">&nbsp;</span>
+</div></div> <!--pageturn-->
+
+</div></div> <!--main-->
+
+<div id="menu">
+<a class="skip" name="startnavigation" id="startnavigation"></a>
+
+<form action="http://www.google.com/cse"><p>Search this site:</p><p><input type="hidden" name="cx" value="014021643941856155761:j2rsjqy6z6g"><input type="hidden" name="ie" value="UTF-8"><input type="search" name="q" size="20" placeholder="powered by Google&trade;"></p><p><input type="submit" name="sa" value="Search"></p></form>
+</form>
+
+
+
+<div class="menusection"><div class="inner">
+
+<h2 class="invisibletitle">Site links</h2>
+
+<a class="skip" href="day_14_adding_titles_to_links.html#endinternal">Skip over site links</a>
+
+<ul>
+<li><a title="accessibility features of this site" href="accessibility_statement.html" accesskey="0">Accessibility statement</a></li>
+<li><a href="mt/mt-search.html" accesskey="4">Advanced search</a></li>
+<li><a href="table_of_contents.html" accesskey="3">Table of contents</a></li>
+<li><a href="by_person.html">Tips by person</a></li>
+<li><a href="by_disability.html">Tips by disability</a></li>
+<li><a href="by_design_principle.html">Tips by design principle</a></li>
+<li><a href="by_web_browser.html">Tips by web browser</a></li>
+<li><a href="by_publishing_tool.html">Tips by publishing tool</a></li>
+<li><a title="send email to the author" href="mailto:feedback@diveintoaccessibility.org" accesskey="9">Feedback</a></li>
+<li><a title="Copyright and licensing information" href="terms_of_use.html" accesskey="8">Terms of use</a></li>
+</ul>
+
+<a class="skip" id="endinternal"></a>
+
+</div></div> <!--.menusection-->
+
+
+
+<div id="footer"><div class="inner">
+
+<address>Copyright &copy; 2002 Mark Pilgrim</address> 
+
+</div></div> <!--footer-->
+
+
+</div> <!--menu-->
+
+<div id="navigation">
+<p class="breadcrumb">You are here:
+<a href="index.html">Home</a> > 
+<a href="table_of_contents.html">Table of contents</a> > 
+<span class="currentpage">Day 14: Adding titles to links</span>
+</p>
+</div><!--navigation-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36045340-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+<!-- Mirrored from diveintoaccessibility.info/day_14_adding_titles_to_links.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:31 GMT -->
+</html>

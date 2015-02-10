@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- Mirrored from diveintoaccessibility.info/day_27_using_real_headers.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:32 GMT -->
+<head>
+<title>Day 27: Using real headers - Dive Into Accessibility</title>
+<link rel="start" title="Home page" href="index.html" />
+<link rel="contents" title="Table of contents" href="table_of_contents.html" />
+<link rel="search" title="Search this site" href="mt/mt-search.html" />
+<link rel="help" title="Access features of this site" href="accessibility_statement.html" />
+<link rel="author" title="Send feedback to the author" href="mailto:feedback@diveintoaccessibility.org" />
+<link rel="copyright" title="Terms of use" href="terms_of_use.html" />
+<link rel="up" title="Table of contents" href="table_of_contents.html" />
+<link rel="first" title="Day 1: Jackie" href="day_1_jackie.html" />
+<link rel="last" title="Accessibility statement" href="accessibility_statement.html" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="projection" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/aural.css" type="text/css" media="aural" />
+
+
+<link rel="prev" href="day_26_using_relative_font_sizes.html" title="Day 26: Using relative font sizes" />
+<link rel="next" href="day_28_labeling_form_elements.html" title="Day 28: Labeling form elements" />
+<script>_gaq=[['_setAccount','UA-7434570-7'],['_trackPageview']];(function(){var g=document.createElement('script');g.src='../www.google-analytics.com/ga.js';g.setAttribute('async','true');document.documentElement.firstChild.appendChild(g);})();</script>
+</head>
+<body>
+
+<div id="logo"><div class="inner">
+<h1 class="title">
+<a href="index.html" accesskey="1">Dive Into Accessibility</a>
+</h1>
+<p>30 days to a more accessible web site</p>
+<a class="skip" href="day_27_using_real_headers.html#startnavigation">Skip to navigation</a>
+<span class="divider">&nbsp;</span>
+</div></div>
+
+
+<p></p>
+
+
+<div id="main"><div class="inner">
+
+<div class="entry">
+<h2 class="entrysubject">Day 27: Using real headers</h2>
+<p class="firstparagraph">Think of your web site as an outline.  The top level is labeled by your site name.  On your home page, you list entries from several days.  So the second level is labeled by your date descriptions: "Tuesday, July 16, 2002", or something similar.  On each day, you make multiple posts, which may each have their own title.  If so, then you have a third level, labeled by your individual post titles.</p>
+
+<p>Now mark up your web site as an outline, using real <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code> tags.  Screen readers rely on these tags to interpret the structure of your pages.  Your pages <em>do have</em> a structure, but without proper header tags, screen readers can't find it.  In a minute, I'll show you how to use CSS to make your headers look the same in visual browsers as whatever <code>&lt;font&gt;</code>-based monstrosity you're currently using.</p>
+
+<h3>Who benefits?</h3>
+
+<ol>
+<li><a href="day_1_jackie.html">Jackie</a> benefits.  As soon as Jackie hits your page, <a href="http://www.freedomscientific.com/fs_products/software_jaws.asp">JAWS</a> announces that the page has a certain number of links and a certain number of headers.  Jackie can type <kbd>INSERT+F6</kbd> to hear all the headers on your page, or <kbd>CTRL+INSERT+ENTER</kbd> to quickly navigate through your page by skipping to the next header.</li>
+<li><a href="day_2_michael.html">Michael</a> benefits.  In <a href="http://www.opera.com/">Opera</a>, he can type <kbd>S</kbd> to skip to the next header, or <kbd>W</kbd> to skip to the previous one.</li>
+<li><a href="http://www.google.com/">Google</a> benefits.  Google appreciates a well-structured page, and ranks keywords higher when they appear in real header tags.  (Yet another reason to write well-crafted post titles.)</li>
+</ol>
+
+<h3>How to do it: Movable Type</h3>
+
+<ol>
+<li><p>Define the styles for your site logo.  In your Stylesheet template (<code>styles-sites.css</code>), add the following lines:</p>
+
+<blockquote>
+<pre><code>h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+/*/*/a{}
+h1 {font-size: 100%}
+/* */</code></pre>
+</blockquote>
+</li>
+
+<li><p>Define your site logo using an <code>&lt;h1&gt;</code> tag.  In your 4 major templates (Main Index, Category Archive, Date-Based Archive, Individual Entry Archive), search for this:</p>
+
+<blockquote>
+<pre><code>&lt;div id="banner"&gt;
+&lt;$MTBlogName$&gt;&lt;br /&gt;</code></pre>
+</blockquote>
+
+<p>And replace it with this:</p>
+
+<blockquote>
+<pre><code>&lt;div id="banner"&gt;
+<strong>&lt;h1&gt;</strong>&lt;$MTBlogName$&gt;<strong>&lt;/h1&gt;</strong></code></pre>
+</blockquote>
+</li>
+
+<li><p>Define your date headers using <code>&lt;h2&gt;</code> tags.  We already have a class defined for these, so we shouldn't need to make any stylesheet changes; we're just changing the tag.  In your 4 major templates, search for this:</p>
+
+<blockquote>
+<pre><code>&lt;div class="date"&gt;	
+&lt;$MTEntryDate format="%B %d, %Y"$&gt;
+&lt;/div&gt;</code></pre>
+</blockquote>
+
+<p>And replace it with this:</p>
+
+<blockquote>
+<pre><code>&lt;<strong>h2</strong> class="date"&gt;	
+&lt;$MTEntryDate format="%B %d, %Y"$&gt;
+&lt;/<strong>h2</strong>&gt;</code></pre>
+</blockquote>
+</li>
+
+<li><p>Define your post titles using <code>&lt;h3&gt;</code> tags.  Again, this only involves changing the tag, not the stylesheet.  In your 4 major templates, search for this:</p>
+
+<blockquote>
+<p><code>&lt;span class="title"&gt;&lt;$MTEntryTitle$&gt;&lt;/span&gt;</code></p>
+</blockquote>
+
+<p>And replace it with this:</p>
+
+<blockquote>
+<p><code>&lt;<strong>h3</strong> class="title"&gt;&lt;$MTEntryTitle$&gt;&lt;/<strong>h3</strong>&gt;</code></p>
+</blockquote>
+</li>
+</ol>
+
+<h3>How to do it: Radio</h3>
+
+<ol>
+<li><p>Define your header styles.  The default Radio themes don't use any real header tags, so we'll need to define these styles ourselves.  (Tailor to suit, but these examples should make your page look the same as it used to in visual browsers.)</p>
+<p>Actually, before we start, search your Home Page Template for "<code>h2 {</code>".  If you find a rule like this, remove it; it's not actually used anywhere, and it'll get in our way:</p>
+
+<blockquote>
+<p><code>h2 {<br />
+font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 24px; font-weight: bold<br />
+}</code></p>
+</blockquote>
+</li>
+
+<li><p>OK, now add these styles, anywhere in the <code>&lt;style&gt;</code> section of your Home Page Template:</p>
+
+<blockquote>
+<pre><code>h1, h2 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {font-size: 24px}
+h2 {font-size: 13px}
+
+/*/*/a{}
+h1 {
+  font-size: large;
+  voice-family: "\"}\"";
+  voice-family: inherit;
+  font-size: x-large;
+}
+html>body h1 {
+  font-size: x-large;
+}
+h2 {
+  font-size: x-small;
+  voice-family: "\"}\"";
+  voice-family: inherit;
+  font-size: small;
+}
+html>body h2 {
+  font-size: small;
+}
+/* */</code></pre>
+</blockquote>
+
+<p>Note that we're using relative font sizes for our headers in browsers that can support relative font sizes, and absolute font sizes in Netscape 4.  This technique should look familiar; <a href="day_26_using_relative_font_sizes.html" title="Day 26: Using relative font sizes">we did the same thing yesterday</a>.</p>
+</li>
+
+<li><p>Define the header for your site name.  In your Home Page Template, search for "<code>&lt;%siteName%&gt;</code>" and find a line that looks like this:</p>
+
+<blockquote>
+<p><code>&lt;font size="+2"&gt;&lt;b&gt;&lt;a href="&lt;%radio.macros.weblogUrl ()%&gt;" style="color:Black; text-decoration:none"&gt;&lt;%siteName%&gt;&lt;/a&gt;&lt;/b&gt;&lt;/font&gt;</code></p>
+</blockquote>
+
+<p>And change it to this:</p>
+
+<blockquote>
+<p><code><strong>&lt;h1&gt;</strong>&lt;a href="&lt;%radio.macros.weblogUrl ()%&gt;" style="color:Black; text-decoration:none"&gt;&lt;%siteName%&gt;&lt;/a&gt;<strong>&lt;/h1&gt;</strong></code></p>
+</blockquote>
+</li>
+
+<li><p>Define the header for your date headers.  In your Day Template, search for "<code>&lt;%longDate%&gt;</code>" and find a line like this:</p>
+
+<blockquote>
+<p><code>&lt;b&gt;&lt;%longDate%&gt;&lt;/b&gt;</code></p>
+</blockquote>
+
+<p>And change it to this:</p>
+
+<blockquote>
+<p><code><strong>&lt;h2&gt;</strong>&lt;%longDate%&gt;<strong>&lt;/h2&gt;</strong></code></p>
+</blockquote>
+</li>
+</ol>
+
+<h3>Further reading</h3>
+
+<ul>
+<li><cite>Shirley Kaiser</cite>: <a href="http://www.brainstormsandraves.com/2002_05_12_archive.shtml#76539537">Don't Fake Your Markup</a>: Accessibility Issues for CSS.</li>
+</ul>
+
+<p></p>
+<span class="divider">&nbsp;</span>
+</div> <!--entry-->
+
+<div class="pageturn"><div class="inner">
+<a href="day_26_using_relative_font_sizes.html">&lt;&lt; Day 26: Using relative font sizes</a> |
+<a href="table_of_contents.html">Contents</a>
+| <a href="day_28_labeling_form_elements.html">Day 28: Labeling form elements &gt;&gt;</a>
+<span class="divider">&nbsp;</span>
+</div></div> <!--pageturn-->
+
+</div></div> <!--main-->
+
+<div id="menu">
+<a class="skip" name="startnavigation" id="startnavigation"></a>
+
+<form action="http://www.google.com/cse"><p>Search this site:</p><p><input type="hidden" name="cx" value="014021643941856155761:j2rsjqy6z6g"><input type="hidden" name="ie" value="UTF-8"><input type="search" name="q" size="20" placeholder="powered by Google&trade;"></p><p><input type="submit" name="sa" value="Search"></p></form>
+</form>
+
+
+
+<div class="menusection"><div class="inner">
+
+<h2 class="invisibletitle">Site links</h2>
+
+<a class="skip" href="day_27_using_real_headers.html#endinternal">Skip over site links</a>
+
+<ul>
+<li><a title="accessibility features of this site" href="accessibility_statement.html" accesskey="0">Accessibility statement</a></li>
+<li><a href="mt/mt-search.html" accesskey="4">Advanced search</a></li>
+<li><a href="table_of_contents.html" accesskey="3">Table of contents</a></li>
+<li><a href="by_person.html">Tips by person</a></li>
+<li><a href="by_disability.html">Tips by disability</a></li>
+<li><a href="by_design_principle.html">Tips by design principle</a></li>
+<li><a href="by_web_browser.html">Tips by web browser</a></li>
+<li><a href="by_publishing_tool.html">Tips by publishing tool</a></li>
+<li><a title="send email to the author" href="mailto:feedback@diveintoaccessibility.org" accesskey="9">Feedback</a></li>
+<li><a title="Copyright and licensing information" href="terms_of_use.html" accesskey="8">Terms of use</a></li>
+</ul>
+
+<a class="skip" id="endinternal"></a>
+
+</div></div> <!--.menusection-->
+
+
+
+<div id="footer"><div class="inner">
+
+<address>Copyright &copy; 2002 Mark Pilgrim</address> 
+
+</div></div> <!--footer-->
+
+
+</div> <!--menu-->
+
+<div id="navigation">
+<p class="breadcrumb">You are here:
+<a href="index.html">Home</a> > 
+<a href="table_of_contents.html">Table of contents</a> > 
+<span class="currentpage">Day 27: Using real headers</span>
+</p>
+</div><!--navigation-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36045340-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+<!-- Mirrored from diveintoaccessibility.info/day_27_using_real_headers.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:32 GMT -->
+</html>

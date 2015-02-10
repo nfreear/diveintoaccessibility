@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- Mirrored from diveintoaccessibility.info/day_23_providing_text_equivalents_for_images.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:31 GMT -->
+<head>
+<title>Day 23: Providing text equivalents for images - Dive Into Accessibility</title>
+<link rel="start" title="Home page" href="index.html" />
+<link rel="contents" title="Table of contents" href="table_of_contents.html" />
+<link rel="search" title="Search this site" href="mt/mt-search.html" />
+<link rel="help" title="Access features of this site" href="accessibility_statement.html" />
+<link rel="author" title="Send feedback to the author" href="mailto:feedback@diveintoaccessibility.org" />
+<link rel="copyright" title="Terms of use" href="terms_of_use.html" />
+<link rel="up" title="Table of contents" href="table_of_contents.html" />
+<link rel="first" title="Day 1: Jackie" href="day_1_jackie.html" />
+<link rel="last" title="Accessibility statement" href="accessibility_statement.html" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="projection" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/aural.css" type="text/css" media="aural" />
+
+
+<link rel="prev" href="day_22_using_real_lists_or_faking_them_properly.html" title="Day 22: Using real lists (or faking them properly)" />
+<link rel="next" href="day_24_providing_text_equivalents_for_image_maps.html" title="Day 24: Providing text equivalents for image maps" />
+<script>_gaq=[['_setAccount','UA-7434570-7'],['_trackPageview']];(function(){var g=document.createElement('script');g.src='../www.google-analytics.com/ga.js';g.setAttribute('async','true');document.documentElement.firstChild.appendChild(g);})();</script>
+</head>
+<body>
+
+<div id="logo"><div class="inner">
+<h1 class="title">
+<a href="index.html" accesskey="1">Dive Into Accessibility</a>
+</h1>
+<p>30 days to a more accessible web site</p>
+<a class="skip" href="day_23_providing_text_equivalents_for_images.html#startnavigation">Skip to navigation</a>
+<span class="divider">&nbsp;</span>
+</div></div>
+
+
+<p></p>
+
+
+<div id="main"><div class="inner">
+
+<div class="entry">
+<h2 class="entrysubject">Day 23: Providing text equivalents for images</h2>
+<p class="firstparagraph">This is the most important day of the series, so pay attention:</p>
+
+<blockquote>
+<p>Every single image on every single page of your site should have a text equivalent, so-called "<code>alt</code> text", specified in the <code>alt</code> attribute of the <code class="sgmltag">&lt;img&gt;</code> tag.</p>
+</blockquote>
+
+<p>Screen readers read it, text-only browsers display it, Google indexes it, and visual browsers can display it as a tooltip or on the status line (although you as the designer can override this).  We've already seen how to specify <a href="day_21_ignoring_spacer_images.html" title="Day 21: Ignoring spacer images">empty <code>alt</code> text for spacer images</a>, and several ways to <a href="day_22_using_real_lists_or_faking_them_properly.html" title="Day 22: Using real lists (or faking them properly)">create accessible lists with image bullets</a>.  What's left?</p>
+
+<ul>
+<li>Permalink icons</li>
+<li>"Powered by" icons</li>
+<li>Mail-to icons</li>
+<li>XML icons</li>
+<li>Small graphics floated within your item posts</li>
+<li>Any other images you've added to your template</li>
+</ul>
+
+<p>They all need appropriate <code>alt</code> text.</p>
+
+<h3>Who benefits?</h3>
+
+<ol>
+<li><a href="day_1_jackie.html">Jackie</a> benefits.  <a href="http://www.freedomscientific.com/fs_products/software_jaws.asp">JAWS</a> reads the <code>alt</code> text.  Without valid <code>alt</code> text, Jackie hears the filename instead, <a href="day_21_ignoring_spacer_images.html" title="Day 21: Ignoring spacer images">which sounds horrible</a>.</li>
+<li><a href="day_5_marcus.html">Marcus</a> benefits.  <a href="http://www.fdisk.com/doslynx/lynxport.htm">Lynx</a>, as a text-only browser, doesn't display any images, only <code>alt</code> text.  Without <code>alt</code> text, Lynx displays the filename, which looks as bad as JAWS sounds.</li>
+<li><a href="day_2_michael.html">Michael</a> benefits.  <a href="http://links.sourceforge.net/">Links</a>, as a text-only browser, doesn't display any images, only <code>alt</code> text.  Without <code>alt</code> text, Links does not display anything for an image (unless the image is a link, in which case Links simply displays "<samp>[IMG]</samp>").  When browsing with <a href="http://www.opera.com/">Opera</a> with images turned off, Michael sees the <code>alt</code> text in place of the image.</li>
+<li><a href="day_4_lillian.html">Lillian</a> benefits.  Internet Explorer displays the <code>alt</code> text as a tooltip (although you as a designer can suppress this).</li>
+<li><a href="http://www.google.com/">Google</a> benefits.  The Googlebot indexes <code>alt</code> text, which is used not only in matching keywords in normal searches, but also in <a href="http://images.google.com/">image searches</a>.  (How did you think that worked?)</li>
+</ol>
+
+<h3>How to do it</h3>
+
+<p>The default Movable Type template doesn't include any <code class="sgmltag">&lt;img&gt;</code> tags.  If you are using a graphical "Powered by Movable Type" image, you should make sure the <code class="sgmltag">&lt;img&gt;</code> tag includes the attribute <code>alt="Powered by Movable Type"</code>.</p>
+
+<p>The default Greymatter template includes only one image, generated by the <code>{{gmicon}}</code> template variable.  This generates an <code>&lt;img&gt;</code> tag which includes appropriate <code>alt</code> text, "Powered by Greymatter".</p>
+
+<p>Radio auto-generates appropriate <code>alt</code> text for the following standard icons:</p>
+<ul>
+<li>XML coffee mug: <code>alt="Subscribe to &lt;site name&gt; in Radio UserLand."</code></li>
+<li>XML icon: <code>alt="Click to see the XML version of this web page."</code></li>
+<li>Mailto icon: <code>alt="Click here to send an email to the editor of this weblog."</code></li>
+</ul>
+
+<p>However, Radio users will need to manually specify <code>alt</code> text for customized images.  Go to <tt>Prefs</tt>, then <tt>Customized Images</tt> (under <tt>Templates</tt>), and add these <code>alt</code> attributes:</p>
+
+<ul>
+<li>Day-level permalink: <code>alt="Permanent link: &lt;%longDate%&gt;"</code>.</li>
+<li>Item-level permalink: <code>alt="Permanent link"</code>.</li>
+<li>Source link icon: <code>alt="source"</code>.</li>
+<li>Enclosure link icon: <code>alt="enclosure"</code>.</li>
+</ul>
+
+<p>You could also add <code>title=""</code> to suppress tooltips in visual browsers.</p>
+
+<p>Of course, regardless of your publishing tool, if you've added your own images to your template, or if you have small graphics floated in your item posts, they each need appropriate <code>alt</code> text.  Since I learn best by example, here are some examples.  More general principles and examples are listed in the "further reading" section.</p>
+
+<h3>Examples of bad <code>alt</code> text</h3>
+
+<ul>
+<li>Any HTML markup.  <code>alt</code> text can only contain plain text and entities, no tags.</li>
+<li><code>alt="filename.jpg"</code>.  This doesn't get us anywhere.  What is the graphic's function?  We don't care what it's called.</li>
+<li><code>alt="alt text"</code>.  Inserted by some HTML editors as a reminder, and left there by clueless designers.</li>
+<li><code>alt="Click here!"</code>  Serves no useful purpose (unless of course it's on a graphic that says "Click here!").</li>
+<li><code>alt="Turn images on!"</code>  This is like being asked by a blind person what time the clock says, and responding, "Just open your eyes!"  Images may be off for a reason (Michael's low bandwidth), they may be unavailable (Marcus's text-only browser), or they may not even be off at all (Jackie's screen reader, which displays images but reads <code>alt</code> text aloud).</li>
+<li><a href="http://ppewww.ph.gla.ac.uk/~flavell/alt/alt-text.html#howlers">More examples of bad <code>alt</code> text</a>.</li>
+</ul>
+
+<h3>Examples of good <code>alt</code> text</h3>
+
+<ul>
+<li><a href="http://weblog.delacour.net/">Jonathon Delacour</a> has a graphic in his page banner of a Chinese symbol.  <code>alt="Site logo: xin, the Chinese character for heart"</code>.</li>
+<li><a href="http://leslie.harpold.com/">Leslie Harpold</a> has a graphical page banner that includes the site name, "The Historical Present", and a tagline, "Hypermodernism has a posse".  <code>alt="the historical present: hypermodernism has a posse"</code>.</li>
+<li><a href="http://www.bath.ac.uk/~cs1spw/blog/">Simon Willison</a> has a "W3C XHTML 1.0" sticker.  <code>alt="Valid XHTML 1.0!"</code></li>
+<li><a href="http://www.zeldman.com/">Jeffrey Zeldman</a> has a navigation bar of text-as-graphics; on rollover, each graphic puts a little tagline in the status bar with Javascript.  Of course, blind users will miss this, so Zeldman also puts the same text in the <code>alt</code> text of each graphic.  Slick.</li>
+<li><a href="http://www.textism.com/">Dean Allen</a> has a graphic in his page banner that includes the name of the site and a tagline.  His <code>alt</code> text is on the long side and includes a different tagline (a bit confusing), but Dean is cool enough to get away with it.  <code>alt="Textism is an ephemeris focused on the composition, design, and reading of text.  In addition, there will be pie"</code>.  Note: you are probably not cool enough to get away with this.  Keep it simple.</li>
+</ul>
+
+<h3>Further reading</h3>
+
+<ul>
+<li><cite>A. J. Flavell</cite>: <a href="http://ppewww.ph.gla.ac.uk/~flavell/alt/alt-text.html">ALT texts in IMG</a>.</li>
+<li><cite>Jukka Korpela</cite>: <a href="http://www.cs.tut.fi/~jkorpela/html/alt.html">Simple guidelines on using ALT texts in IMG elements</a>.</li>
+<li><cite>Ian Hickson</cite>: <a href="http://www.hixie.ch/advocacy/alttext">Mini-FAQ about the alternate text of images</a>.</li>
+<li><cite>Watchfire.com</cite>: <a href="http://bobby.watchfire.com/bobby/html/en/gls/g9.html">Provide alternative text for all images</a>.</li>
+<li><cite>All My FAQs Wiki</cite>: <a href="http://www.allmyfaqs.com/cgi-bin/wiki.pl?ALT_attribute">ALT attribute</a>.</li>
+<li><cite><acronym title="Web Accessibility in Mind">WebAIM</acronym></cite>: <a href="http://www.webaim.org/howto/accessiblegraphics3">How to Create Accessible Graphics</a>.</li>
+<li><cite>Martin Schrode</cite>: <a href="http://www.schrode.net/design/alttext.html">On accessible advertising</a>.</li>
+<li><cite>Section 508 Federal Accessibility Guidelines</cite>: <a href="http://www.access-board.gov/sec508/guide/1194.22.htm#(a)">What is meant by a text equivalent?</a></li>
+</ul>
+
+<p></p>
+<span class="divider">&nbsp;</span>
+</div> <!--entry-->
+
+<div class="pageturn"><div class="inner">
+<a href="day_22_using_real_lists_or_faking_them_properly.html">&lt;&lt; Day 22: Using real lists (or faking them properly)</a> |
+<a href="table_of_contents.html">Contents</a>
+| <a href="day_24_providing_text_equivalents_for_image_maps.html">Day 24: Providing text equivalents for image maps &gt;&gt;</a>
+<span class="divider">&nbsp;</span>
+</div></div> <!--pageturn-->
+
+</div></div> <!--main-->
+
+<div id="menu">
+<a class="skip" name="startnavigation" id="startnavigation"></a>
+
+<form action="http://www.google.com/cse"><p>Search this site:</p><p><input type="hidden" name="cx" value="014021643941856155761:j2rsjqy6z6g"><input type="hidden" name="ie" value="UTF-8"><input type="search" name="q" size="20" placeholder="powered by Google&trade;"></p><p><input type="submit" name="sa" value="Search"></p></form>
+</form>
+
+
+
+<div class="menusection"><div class="inner">
+
+<h2 class="invisibletitle">Site links</h2>
+
+<a class="skip" href="day_23_providing_text_equivalents_for_images.html#endinternal">Skip over site links</a>
+
+<ul>
+<li><a title="accessibility features of this site" href="accessibility_statement.html" accesskey="0">Accessibility statement</a></li>
+<li><a href="mt/mt-search.html" accesskey="4">Advanced search</a></li>
+<li><a href="table_of_contents.html" accesskey="3">Table of contents</a></li>
+<li><a href="by_person.html">Tips by person</a></li>
+<li><a href="by_disability.html">Tips by disability</a></li>
+<li><a href="by_design_principle.html">Tips by design principle</a></li>
+<li><a href="by_web_browser.html">Tips by web browser</a></li>
+<li><a href="by_publishing_tool.html">Tips by publishing tool</a></li>
+<li><a title="send email to the author" href="mailto:feedback@diveintoaccessibility.org" accesskey="9">Feedback</a></li>
+<li><a title="Copyright and licensing information" href="terms_of_use.html" accesskey="8">Terms of use</a></li>
+</ul>
+
+<a class="skip" id="endinternal"></a>
+
+</div></div> <!--.menusection-->
+
+
+
+<div id="footer"><div class="inner">
+
+<address>Copyright &copy; 2002 Mark Pilgrim</address> 
+
+</div></div> <!--footer-->
+
+
+</div> <!--menu-->
+
+<div id="navigation">
+<p class="breadcrumb">You are here:
+<a href="index.html">Home</a> > 
+<a href="table_of_contents.html">Table of contents</a> > 
+<span class="currentpage">Day 23: Providing text equivalents for images</span>
+</p>
+</div><!--navigation-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36045340-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+<!-- Mirrored from diveintoaccessibility.info/day_23_providing_text_equivalents_for_images.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:31 GMT -->
+</html>

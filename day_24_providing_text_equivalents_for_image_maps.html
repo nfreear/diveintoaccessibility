@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- Mirrored from diveintoaccessibility.info/day_24_providing_text_equivalents_for_image_maps.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:31 GMT -->
+<head>
+<title>Day 24: Providing text equivalents for image maps - Dive Into Accessibility</title>
+<link rel="start" title="Home page" href="index.html" />
+<link rel="contents" title="Table of contents" href="table_of_contents.html" />
+<link rel="search" title="Search this site" href="mt/mt-search.html" />
+<link rel="help" title="Access features of this site" href="accessibility_statement.html" />
+<link rel="author" title="Send feedback to the author" href="mailto:feedback@diveintoaccessibility.org" />
+<link rel="copyright" title="Terms of use" href="terms_of_use.html" />
+<link rel="up" title="Table of contents" href="table_of_contents.html" />
+<link rel="first" title="Day 1: Jackie" href="day_1_jackie.html" />
+<link rel="last" title="Accessibility statement" href="accessibility_statement.html" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="projection" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/aural.css" type="text/css" media="aural" />
+
+
+<link rel="prev" href="day_23_providing_text_equivalents_for_images.html" title="Day 23: Providing text equivalents for images" />
+<link rel="next" href="day_25_using_real_horizontal_rules_or_faking_them_properly.html" title="Day 25: Using real horizontal rules (or faking them properly)" />
+<script>_gaq=[['_setAccount','UA-7434570-7'],['_trackPageview']];(function(){var g=document.createElement('script');g.src='../www.google-analytics.com/ga.js';g.setAttribute('async','true');document.documentElement.firstChild.appendChild(g);})();</script>
+</head>
+<body>
+
+<div id="logo"><div class="inner">
+<h1 class="title">
+<a href="index.html" accesskey="1">Dive Into Accessibility</a>
+</h1>
+<p>30 days to a more accessible web site</p>
+<a class="skip" href="day_24_providing_text_equivalents_for_image_maps.html#startnavigation">Skip to navigation</a>
+<span class="divider">&nbsp;</span>
+</div></div>
+
+
+<p></p>
+
+
+<div id="main"><div class="inner">
+
+<div class="entry">
+<h2 class="entrysubject">Day 24: Providing text equivalents for image maps</h2>
+<p class="firstparagraph">I was surprised to find how many high-profile web sites use client-side image maps.  I don't use them myself, and I don't think they're included in any default weblog templates, but apparently lots of people have figured them out.  If you don't know what an image map is, <a href="http://leslie.harpold.com/">Leslie Harpold</a> uses one for the navigation links at the bottom of her home page.  That's all one image, but clicking on the word "archives" takes you to one page, "by category" to another, and so forth.</p>
+
+<p>Image maps sound like an accessibility nightmare, but they're not.  In the same way that <a href="day_23_providing_text_equivalents_for_images.html" title="Day 23: Providing text equivalents for images">every image needs a text equivalent</a>, every image map and every clickable area of the image map needs a text equivalent.  You can provide <code>alt</code> text for the image itself (in the <code>&lt;img&gt;</code> tag), and for each clickable area in the image map (in the <code>&lt;area&gt;</code> tags of the associated <code>&lt;map&gt;</code>, that defines where the clickable areas are and what they link to).</p>
+
+<h3>Who benefits?</h3>
+
+<ol>
+<li><p><a href="day_5_marcus.html">Marcus</a> benefits. <a href="http://www.fdisk.com/doslynx/lynxport.htm">Lynx</a> displays the <code>alt</code> text of the image as a link.  When Marcus hits <kbd>ENTER</kbd>, Lynx displays a separate page listing the links in the image map.  Each link is labeled by <code>alt</code> text of the <code>area</code> in the image map.  Without <code>alt</code> text, Lynx displays the link address of each <code>area</code>, which may be incomprehensible.</p>
+<p>If <a href="http://leslie.harpold.com/">Leslie</a> didn't have <code>alt</code> text on her image map, this is the link Marcus would see at the bottom of her home page:</p>
+<blockquote>
+<p><samp>[USEMAP:hpfooter.gif]</samp></p>
+</blockquote>
+<p>Following this link would take Marcus to a page that lists all the links in the image map.  Without <code>alt</code> texts, Lynx could only display each URL, which would look like this:</p>
+<blockquote>
+<pre><samp>[USEMAP:hpfooter.gif]
+
+MAP: http://leslie.harpold.com/#Map
+
+    1. http://leslie.harpold.com/archives.html
+    2. http://leslie.harpold.com/category/
+    3. http://leslie.harpold.com/links.html
+    4. http://leslie.harpold.com/leslie.html
+    5. http://www.moveabletype.org</samp></pre>
+</blockquote>
+<p>However, in reality, Leslie <em>does</em> have proper <code>alt</code> text for her image and every area of her image map.  So this is the link Marcus <em>really</em> sees at the bottom of her home page:</p>
+<blockquote>
+<p><samp>Site navigation links</samp></p>
+</blockquote>
+<p>Following this link takes Marcus to a page that looks like this:</p>
+<blockquote>
+<pre><samp>Site navigation links
+
+MAP: http://leslie.harpold.com/#Map
+
+    1. previously...
+    2. by category
+    3. about the site
+    4. about leslie
+    5. Powered by Movable Type</samp></pre>
+</blockquote>
+</li>
+<li><a href="day_2_michael.html">Michael</a> benefits.  <a href="http://links.sourceforge.net/">Links</a> displays the <code>alt</code> text of image as a link.  When Michael hits <kbd>ENTER</kbd>, Links pops up a menu of all the links defined in the map.  Each link is labeled by the <code>alt</code> text of the <code>area</code>.  Without the <code>alt</code> text, Links displays the link address of each <code>area</code>, which may be incomprehensible.</li>
+<li><a href="day_1_jackie.html">Jackie</a> benefits.  <a href="http://www.freedomscientific.com/fs_products/software_jaws.asp">JAWS</a> will read the <code>alt</code> text of each <code>area</code> of the image map, in the order in which they are defined in your <acronym title="hypertext markup language">HTML</acronym> source.  Jackie can hit <kbd>ENTER</kbd> to follow the link.  Without the <code>alt</code> text, JAWS reads the link address of each <code>area</code>, which is almost certainly incomprehensible.  (Have you ever tried reading a long web address to someone over the phone?)</li>
+<li><a href="day_4_lillian.html">Lillian</a> benefits.  Internet Explorer displays a tooltip when hovering over each linked <code>area</code> in the image map.</li>
+<li><a href="http://www.google.com/">Google</a> benefits.  The Googlebot indexes the <code>alt</code> text of the main image and each <code>area</code> within the image map.  The <code>alt</code> text is a factor in determining both your page's relevance to keywords, and also each link's relevance to keywords contained in the <code>alt</code> text of that <code>area</code>.</li>
+</ol>
+
+<h3>How to do it</h3>
+
+<p>If you have an image map like this:</p>
+
+<blockquote>
+<p><code class="sgmltag">&lt;img src="footer.gif" width="500" height="212" usemap="#Map"&gt;<br />
+<br />
+&lt;map name="Map"&gt;<br />
+&lt;area shape="rect" coords="203,114,258,129" href="/archives.html"&gt;<br />
+&lt;area shape="rect" coords="277,113,348,129" href="/category/"&gt;<br />
+&lt;area shape="rect" coords="364,113,401,128" href="links.html"&gt;<br />
+&lt;area shape="rect" coords="418,114,488,130" href="leslie.html"&gt;<br />
+&lt;area shape="rect" coords="-4,190,131,210" href="http://www.moveabletype.org"&gt;<br />
+&lt;/map&gt;</code></p>
+</blockquote>
+
+<p>Add <code>alt</code> text to both the main image, and to each linked <code>area</code> within the image map, like this:</p>
+
+<blockquote>
+<p><code class="sgmltag">&lt;img <strong>alt="Site navigation links"</strong> src="footer.gif" width="500" height="212" usemap="#Map"&gt;<br />
+<br />
+&lt;map name="Map"&gt;<br />
+&lt;area <strong>alt="previously..."</strong> shape="rect" coords="203,114,258,129" href="/archives.html"&gt;<br />
+&lt;area <strong>alt="by category"</strong> shape="rect" coords="277,113,348,129" href="/category/"&gt;<br />
+&lt;area <strong>alt="about the site"</strong> shape="rect" coords="364,113,401,128" href="links.html"&gt;<br />
+&lt;area <strong>alt="about leslie"</strong> shape="rect" coords="418,114,488,130" href="leslie.html"&gt;<br />
+&lt;area <strong>alt="Powered by Movable Type"</strong> shape="rect" coords="-4,190,131,210" href="http://www.moveabletype.org"&gt;<br />
+&lt;/map&gt;</code></p>
+</blockquote>
+
+<p>All the rules about <a href="day_23_providing_text_equivalents_for_images.html" title="Day 23: Providing text equivalents for images">writing good <code>alt</code> text for images</a> also apply to image maps.  You could also add <code>title=""</code> to the main <code>&lt;img&gt;</code> and each <code>&lt;area&gt;</code> to suppress the tooltip in visual browsers.</p>
+
+<h3>Things not to do</h3>
+
+<p>Don't create server-side image maps, images that pass your exact click coordinates back to the server for further processing.  These are <em>completely inaccessible</em> to JAWS users like Jackie, users of text-only browsers like Michael and Marcus, keyboard-only users like Bill, and search engines like Google.  If you must use server-side image maps, add a text-only navigation bar below it that includes <a href="day_13_using_real_links.html" title="Day 13: Using real links">real text links</a> to every page you could get to by clicking on the image map.</p>
+
+<h3>Further reading</h3>
+
+<ul>
+<li><cite>Leslie Harpold</cite>: <a href="http://leslie.harpold.com/">The Historical Present</a>.  Leslie kindly allowed me to use her weblog as the basis of today's example.</li>
+</ul>
+
+<p></p>
+<span class="divider">&nbsp;</span>
+</div> <!--entry-->
+
+<div class="pageturn"><div class="inner">
+<a href="day_23_providing_text_equivalents_for_images.html">&lt;&lt; Day 23: Providing text equivalents for images</a> |
+<a href="table_of_contents.html">Contents</a>
+| <a href="day_25_using_real_horizontal_rules_or_faking_them_properly.html">Day 25: Using real horizontal rules (or faking them properly) &gt;&gt;</a>
+<span class="divider">&nbsp;</span>
+</div></div> <!--pageturn-->
+
+</div></div> <!--main-->
+
+<div id="menu">
+<a class="skip" name="startnavigation" id="startnavigation"></a>
+
+<form action="http://www.google.com/cse"><p>Search this site:</p><p><input type="hidden" name="cx" value="014021643941856155761:j2rsjqy6z6g"><input type="hidden" name="ie" value="UTF-8"><input type="search" name="q" size="20" placeholder="powered by Google&trade;"></p><p><input type="submit" name="sa" value="Search"></p></form>
+</form>
+
+
+
+<div class="menusection"><div class="inner">
+
+<h2 class="invisibletitle">Site links</h2>
+
+<a class="skip" href="day_24_providing_text_equivalents_for_image_maps.html#endinternal">Skip over site links</a>
+
+<ul>
+<li><a title="accessibility features of this site" href="accessibility_statement.html" accesskey="0">Accessibility statement</a></li>
+<li><a href="mt/mt-search.html" accesskey="4">Advanced search</a></li>
+<li><a href="table_of_contents.html" accesskey="3">Table of contents</a></li>
+<li><a href="by_person.html">Tips by person</a></li>
+<li><a href="by_disability.html">Tips by disability</a></li>
+<li><a href="by_design_principle.html">Tips by design principle</a></li>
+<li><a href="by_web_browser.html">Tips by web browser</a></li>
+<li><a href="by_publishing_tool.html">Tips by publishing tool</a></li>
+<li><a title="send email to the author" href="mailto:feedback@diveintoaccessibility.org" accesskey="9">Feedback</a></li>
+<li><a title="Copyright and licensing information" href="terms_of_use.html" accesskey="8">Terms of use</a></li>
+</ul>
+
+<a class="skip" id="endinternal"></a>
+
+</div></div> <!--.menusection-->
+
+
+
+<div id="footer"><div class="inner">
+
+<address>Copyright &copy; 2002 Mark Pilgrim</address> 
+
+</div></div> <!--footer-->
+
+
+</div> <!--menu-->
+
+<div id="navigation">
+<p class="breadcrumb">You are here:
+<a href="index.html">Home</a> > 
+<a href="table_of_contents.html">Table of contents</a> > 
+<span class="currentpage">Day 24: Providing text equivalents for image maps</span>
+</p>
+</div><!--navigation-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36045340-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+<!-- Mirrored from diveintoaccessibility.info/day_24_providing_text_equivalents_for_image_maps.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:31 GMT -->
+</html>

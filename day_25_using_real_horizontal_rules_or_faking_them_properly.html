@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- Mirrored from diveintoaccessibility.info/day_25_using_real_horizontal_rules_or_faking_them_properly.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:31 GMT -->
+<head>
+<title>Day 25: Using real horizontal rules (or faking them properly) - Dive Into Accessibility</title>
+<link rel="start" title="Home page" href="index.html" />
+<link rel="contents" title="Table of contents" href="table_of_contents.html" />
+<link rel="search" title="Search this site" href="mt/mt-search.html" />
+<link rel="help" title="Access features of this site" href="accessibility_statement.html" />
+<link rel="author" title="Send feedback to the author" href="mailto:feedback@diveintoaccessibility.org" />
+<link rel="copyright" title="Terms of use" href="terms_of_use.html" />
+<link rel="up" title="Table of contents" href="table_of_contents.html" />
+<link rel="first" title="Day 1: Jackie" href="day_1_jackie.html" />
+<link rel="last" title="Accessibility statement" href="accessibility_statement.html" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="projection" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/aural.css" type="text/css" media="aural" />
+
+
+<link rel="prev" href="day_24_providing_text_equivalents_for_image_maps.html" title="Day 24: Providing text equivalents for image maps" />
+<link rel="next" href="day_26_using_relative_font_sizes.html" title="Day 26: Using relative font sizes" />
+<script>_gaq=[['_setAccount','UA-7434570-7'],['_trackPageview']];(function(){var g=document.createElement('script');g.src='../www.google-analytics.com/ga.js';g.setAttribute('async','true');document.documentElement.firstChild.appendChild(g);})();</script>
+</head>
+<body>
+
+<div id="logo"><div class="inner">
+<h1 class="title">
+<a href="index.html" accesskey="1">Dive Into Accessibility</a>
+</h1>
+<p>30 days to a more accessible web site</p>
+<a class="skip" href="day_25_using_real_horizontal_rules_or_faking_them_properly.html#startnavigation">Skip to navigation</a>
+<span class="divider">&nbsp;</span>
+</div></div>
+
+
+<p></p>
+
+
+<div id="main"><div class="inner">
+
+<div class="entry">
+<h2 class="entrysubject">Day 25: Using real horizontal rules (or faking them properly)</h2>
+<p class="firstparagraph">Suppose you want a divider between your posts.  Regular horizontal rules (<code class="sgmltag">&lt;hr&gt;</code> tags) are boring, so you use an image instead.  This works, and can easily be made more accessible with the addition of proper <code>alt</code> text.</p>
+
+<p>However, you can also go further and use a real horizontal rule, then use a little <acronym title="cascading style sheets">CSS</acronym> trick to display it as an image in modern browsers.  Older browsers and text-only browsers will ignore the CSS and just render a horizontal rule in their native style.  (Text-only browsers generally use a row of underscores or dashes, expanded to fit the current screen width.)</p>
+
+<p>I'll give examples of both techniques in a minute.</p>
+
+<h3>Who benefits?</h3>
+
+<ol>
+<li><a href="day_1_jackie.html">Jackie</a> benefits.  <a href="day_21_ignoring_spacer_images.html" title="Day 21: Ignoring spacer images">As we've already seen</a>, <a href="http://www.freedomscientific.com/fs_products/software_jaws.asp">JAWS</a> reads the filename of any image without an <code>alt</code> attribute.</li>
+<li><a href="day_5_marcus.html">Marcus</a> benefits.  <a href="http://www.fdisk.com/doslynx/lynxport.htm">Lynx</a> displays the filename of any image without an <code>alt</code> attribute.  If you use a real horizontal rule, Lynx will render it as a series of underscores as wide as the current screen.</li>
+<li><a href="day_2_michael.html">Michael</a> benefits.  <a href="http://links.sourceforge.net/">Links</a> does <em>not</em> display anything for images without <code>alt</code> text, so Michael does not have any indication that there is a divider.  We need that <code>alt</code> text, or better yet, a real <code>&lt;hr&gt;</code> tag, which Links will render as a series of dashes as wide as the current screen.</li>
+</ol>
+
+<h3>How to do it</h3>
+
+<p>If you use images as horizontal rules, the easiest way to make them accessible is add an <code>alt</code> attribute to your <code class="sgmltag">&lt;img&gt;</code> tag.  You should add an empty <code>title</code> attribute too, to suppress the tooltip in visual browsers.  So if you have this:</p>
+
+<blockquote>
+<p><code class="sgmltag">&lt;img src="/images/fancyrule.gif" width="442" height="25"&gt;</code></p>
+</blockquote>
+
+<p>Change it to this:</p>
+
+<blockquote>
+<p><code class="sgmltag">&lt;img <strong>alt="--" title=""</strong> src="/images/fancyrule.gif" width="442" height="25"&gt;</code></p>
+</blockquote>
+
+<p>Do not go crazy and specify 80 dashes for the <code>alt</code> text.  Two or three will suffice.</p>
+
+<h3>How to do it: advanced</h3>
+
+<p>The advanced (and preferred) technique uses an actual <code class="sgmltag">&lt;hr&gt;</code> tag.  However, since browser support for styling <code class="sgmltag">&lt;hr&gt;</code> tags directly is flaky at best, we'll use a dummy <code class="sgmltag">&lt;div&gt;</code> tag to display the image.  Put the following CSS in your <code>&lt;style&gt;</code> section at the top of your template.  (If you're using an external stylesheet like <code>style-sites.css</code>, put it anywhere in there.  If you're using multiple stylesheets, put it in the Netscape 4-friendly one.)</p>
+
+<blockquote>
+<pre><code>div.hr {display: none}
+/*/*/a{}
+div.hr {
+  display: block;
+  height: 25px;
+  background-image: url(/images/fancyrule.gif);
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 1em 0 1em 0;
+}
+hr {display:none}
+/* */</code></pre>
+</blockquote>
+
+<p>(For the <code>height</code>, substitute the height of your image.  For the <code>background-image</code>, substitute the address of your image.)</p>
+
+<p>Then in your template, where you want your decorative rule, do this:</p>
+
+<blockquote>
+<pre><code class="sgmltag">&lt;div class="hr"&gt;&lt;/div&gt;&lt;hr /&gt;</code></pre>
+</blockquote>
+
+<p>Results:</p>
+
+<ul>
+<li>All modern browsers will display the image instead of the normal plain horizontal rule.</li>
+<li>Netscape 4 will display a plain horizontal rule.</li>
+<li>Text-only browsers always ignore CSS, so they will display a plain horizontal rule (usually rendered as a series of underscores or dashes).</li>
+</ul>
+
+<h3>Further reading</h3>
+
+<ul>
+<li><a href="http://www.v2studio.com/k/css/n4hide/">Hiding CSS From Netscape 4</a> without using additional stylesheets.  This is the technique we used above, in the advanced example.</li>
+<li><a href="http://ppewww.ph.gla.ac.uk/~flavell/www/hrstyle.html">CSS1 and the Decorative HR</a>, if you're feeling particularly brave and want to style decorative horizontal rules with CSS in Netscape 4.  Lots of luck with that.</li>
+</ul>
+
+<p></p>
+<span class="divider">&nbsp;</span>
+</div> <!--entry-->
+
+<div class="pageturn"><div class="inner">
+<a href="day_24_providing_text_equivalents_for_image_maps.html">&lt;&lt; Day 24: Providing text equivalents for image maps</a> |
+<a href="table_of_contents.html">Contents</a>
+| <a href="day_26_using_relative_font_sizes.html">Day 26: Using relative font sizes &gt;&gt;</a>
+<span class="divider">&nbsp;</span>
+</div></div> <!--pageturn-->
+
+</div></div> <!--main-->
+
+<div id="menu">
+<a class="skip" name="startnavigation" id="startnavigation"></a>
+
+<form action="http://www.google.com/cse"><p>Search this site:</p><p><input type="hidden" name="cx" value="014021643941856155761:j2rsjqy6z6g"><input type="hidden" name="ie" value="UTF-8"><input type="search" name="q" size="20" placeholder="powered by Google&trade;"></p><p><input type="submit" name="sa" value="Search"></p></form>
+</form>
+
+
+
+<div class="menusection"><div class="inner">
+
+<h2 class="invisibletitle">Site links</h2>
+
+<a class="skip" href="day_25_using_real_horizontal_rules_or_faking_them_properly.html#endinternal">Skip over site links</a>
+
+<ul>
+<li><a title="accessibility features of this site" href="accessibility_statement.html" accesskey="0">Accessibility statement</a></li>
+<li><a href="mt/mt-search.html" accesskey="4">Advanced search</a></li>
+<li><a href="table_of_contents.html" accesskey="3">Table of contents</a></li>
+<li><a href="by_person.html">Tips by person</a></li>
+<li><a href="by_disability.html">Tips by disability</a></li>
+<li><a href="by_design_principle.html">Tips by design principle</a></li>
+<li><a href="by_web_browser.html">Tips by web browser</a></li>
+<li><a href="by_publishing_tool.html">Tips by publishing tool</a></li>
+<li><a title="send email to the author" href="mailto:feedback@diveintoaccessibility.org" accesskey="9">Feedback</a></li>
+<li><a title="Copyright and licensing information" href="terms_of_use.html" accesskey="8">Terms of use</a></li>
+</ul>
+
+<a class="skip" id="endinternal"></a>
+
+</div></div> <!--.menusection-->
+
+
+
+<div id="footer"><div class="inner">
+
+<address>Copyright &copy; 2002 Mark Pilgrim</address> 
+
+</div></div> <!--footer-->
+
+
+</div> <!--menu-->
+
+<div id="navigation">
+<p class="breadcrumb">You are here:
+<a href="index.html">Home</a> > 
+<a href="table_of_contents.html">Table of contents</a> > 
+<span class="currentpage">Day 25: Using real horizontal rules (or faking them properly)</span>
+</p>
+</div><!--navigation-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36045340-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+<!-- Mirrored from diveintoaccessibility.info/day_25_using_real_horizontal_rules_or_faking_them_properly.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:31 GMT -->
+</html>

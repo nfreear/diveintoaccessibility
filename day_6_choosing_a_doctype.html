@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- Mirrored from diveintoaccessibility.info/day_6_choosing_a_doctype.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:29 GMT -->
+<head>
+<title>Day 6: Choosing a DOCTYPE - Dive Into Accessibility</title>
+<link rel="start" title="Home page" href="index.html" />
+<link rel="contents" title="Table of contents" href="table_of_contents.html" />
+<link rel="search" title="Search this site" href="mt/mt-search.html" />
+<link rel="help" title="Access features of this site" href="accessibility_statement.html" />
+<link rel="author" title="Send feedback to the author" href="mailto:feedback@diveintoaccessibility.org" />
+<link rel="copyright" title="Terms of use" href="terms_of_use.html" />
+<link rel="up" title="Table of contents" href="table_of_contents.html" />
+<link rel="first" title="Day 1: Jackie" href="day_1_jackie.html" />
+<link rel="last" title="Accessibility statement" href="accessibility_statement.html" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="projection" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/aural.css" type="text/css" media="aural" />
+
+
+<link rel="prev" href="day_5_marcus.html" title="Day 5: Marcus" />
+<link rel="next" href="day_7_identifying_your_language.html" title="Day 7: Identifying your language" />
+<script>_gaq=[['_setAccount','UA-7434570-7'],['_trackPageview']];(function(){var g=document.createElement('script');g.src='../www.google-analytics.com/ga.js';g.setAttribute('async','true');document.documentElement.firstChild.appendChild(g);})();</script>
+</head>
+<body>
+
+<div id="logo"><div class="inner">
+<h1 class="title">
+<a href="index.html" accesskey="1">Dive Into Accessibility</a>
+</h1>
+<p>30 days to a more accessible web site</p>
+<a class="skip" href="day_6_choosing_a_doctype.html#startnavigation">Skip to navigation</a>
+<span class="divider">&nbsp;</span>
+</div></div>
+
+
+<p></p>
+
+
+<div id="main"><div class="inner">
+
+<div class="entry">
+<h2 class="entrysubject">Day 6: Choosing a DOCTYPE</h2>
+<p class="firstparagraph">You start your sentences with a capital letter; start your HTML with a <code class="sgmltag">DOCTYPE</code>.  It's just basic grammar.</p>
+
+<h3>Who benefits?</h3>
+
+<p>You benefit.  Many of the tips in the rest of this series will require you to know what version of HTML you're using, because the instructions will be slightly different.  So figure it out now, or add one if you don't have one.</p>
+
+<h3>How to do it</h3>
+
+<p>You may already have a <code class="sgmltag">DOCTYPE</code>.  View source on your home page; your <code class="sgmltag">DOCTYPE</code> (if you have one) will be at the very top, even before the <code class="sgmltag">&lt;html&gt;</code> tag.</p>
+
+<ul>
+<li>If you're using the default template of Movable Type, your <code class="sgmltag">DOCTYPE</code> will probably include the phrase "<code class="sgmltag">XHTML 1.0 Transitional</code>".  This is fine.</li>
+<li>If you're using one of the default templates of Radio Userland, Manila, or Blogger, your <code class="sgmltag">DOCTYPE</code> will probably include "<code class="sgmltag">HTML 4.01 Transitional</code>".  This is also fine.</li>
+<li>Other valid <code class="sgmltag">DOCTYPE</code>s include phrases like "<code class="sgmltag">HTML 4.01 Strict</code>", "<code class="sgmltag">XHTML 1.0 Strict</code>", "<code class="sgmltag">XHTML 1.1</code>", and a few others.  These are all fine.</li>
+</ul>
+
+<p>If you have a <code class="sgmltag">DOCTYPE</code>, don't change it.  However, if your source shows no <code class="sgmltag">DOCTYPE</code> before your <code class="sgmltag">&lt;html&gt;</code> tag, add this one:</p>
+
+<blockquote>
+<p><code class="sgmltag">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</code></p>
+</blockquote>
+
+<p>For technical reasons that I would rather not go into at the moment (see the "Further Reading" section below if you're interested), it is possible that you will see slight changes in your page layout after adding this <code class="sgmltag">DOCTYPE</code>.  If (and only if) this happens to you, you can compromise and use half a <code class="sgmltag">DOCTYPE</code> instead, like this:</p>
+
+<blockquote>
+<p><code class="sgmltag">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;</code></p>
+</blockquote>
+
+<p>Note that <em>every</em> page of your web site should include a <code class="sgmltag">DOCTYPE</code>, so you should check all your templates.</p>
+
+<ul>
+<li>Movable Type users should check the "Main Index", "Master Archive Index", "Category Archive", "Date-Based Archive", and "Individual Entry Archive" templates, plus any other archive templates you have created manually.</li>
+<li>Radio Userland and Manila users should check both the "Main template" and the "Home page template".</li>
+<li>Greymatter users should check "Main Index-Related Templates", "Archive-Related Templates", and "Entry-Related Templates".</li>
+<li>Blogger users should put a <code class="sgmltag">DOCTYPE</code> in your main template.  If your "Archive template" is a separate page (that is, if it has an <code class="sgmltag">&lt;html&gt;</code> tag at the top), it should also have a <code class="sgmltag">DOCTYPE</code>.</li>
+</ul>
+
+<p>The important thing to know for the rest of the series is whether you're using <code class="sgmltag">HTML 4</code> (any variant), <code class="sgmltag">XHTML 1.0</code> (any variant), or <code class="sgmltag">XHTML 1.1</code>.  You'll see why tomorrow.</p>
+
+<h3>Further reading</h3>
+
+<ul>
+<li><cite>A List Apart</cite>: <a href="http://www.alistapart.com/stories/doctype/">Fixing Your Site With The Right DOCTYPE</a></li>
+<li><cite><acronym title="Microsoft Developer Network">MSDN</acronym></cite>: <a href="http://msdn.microsoft.com/workshop/author/css/overview/cssenhancements.asp">Quirks mode in <acronym title="Internet Explorer">IE</acronym> 6</a>.  (Note: this site does not work in some versions of Netscape and Mozilla.  This is Microsoft's fault, not mine.)</li>
+<li><a href="http://www.mozilla.org/docs/web-developer/quirks/">Quirks mode in Mozilla</a>.</li>
+</ul>
+
+<p></p>
+<span class="divider">&nbsp;</span>
+</div> <!--entry-->
+
+<div class="pageturn"><div class="inner">
+<a href="day_5_marcus.html">&lt;&lt; Day 5: Marcus</a> |
+<a href="table_of_contents.html">Contents</a>
+| <a href="day_7_identifying_your_language.html">Day 7: Identifying your language &gt;&gt;</a>
+<span class="divider">&nbsp;</span>
+</div></div> <!--pageturn-->
+
+</div></div> <!--main-->
+
+<div id="menu">
+<a class="skip" name="startnavigation" id="startnavigation"></a>
+
+<form action="http://www.google.com/cse"><p>Search this site:</p><p><input type="hidden" name="cx" value="014021643941856155761:j2rsjqy6z6g"><input type="hidden" name="ie" value="UTF-8"><input type="search" name="q" size="20" placeholder="powered by Google&trade;"></p><p><input type="submit" name="sa" value="Search"></p></form>
+</form>
+
+
+
+<div class="menusection"><div class="inner">
+
+<h2 class="invisibletitle">Site links</h2>
+
+<a class="skip" href="day_6_choosing_a_doctype.html#endinternal">Skip over site links</a>
+
+<ul>
+<li><a title="accessibility features of this site" href="accessibility_statement.html" accesskey="0">Accessibility statement</a></li>
+<li><a href="mt/mt-search.html" accesskey="4">Advanced search</a></li>
+<li><a href="table_of_contents.html" accesskey="3">Table of contents</a></li>
+<li><a href="by_person.html">Tips by person</a></li>
+<li><a href="by_disability.html">Tips by disability</a></li>
+<li><a href="by_design_principle.html">Tips by design principle</a></li>
+<li><a href="by_web_browser.html">Tips by web browser</a></li>
+<li><a href="by_publishing_tool.html">Tips by publishing tool</a></li>
+<li><a title="send email to the author" href="mailto:feedback@diveintoaccessibility.org" accesskey="9">Feedback</a></li>
+<li><a title="Copyright and licensing information" href="terms_of_use.html" accesskey="8">Terms of use</a></li>
+</ul>
+
+<a class="skip" id="endinternal"></a>
+
+</div></div> <!--.menusection-->
+
+
+
+<div id="footer"><div class="inner">
+
+<address>Copyright &copy; 2002 Mark Pilgrim</address> 
+
+</div></div> <!--footer-->
+
+
+</div> <!--menu-->
+
+<div id="navigation">
+<p class="breadcrumb">You are here:
+<a href="index.html">Home</a> > 
+<a href="table_of_contents.html">Table of contents</a> > 
+<span class="currentpage">Day 6: Choosing a DOCTYPE</span>
+</p>
+</div><!--navigation-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36045340-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+<!-- Mirrored from diveintoaccessibility.info/day_6_choosing_a_doctype.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:29 GMT -->
+</html>

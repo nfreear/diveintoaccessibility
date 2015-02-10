@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- Mirrored from diveintoaccessibility.info/day_13_using_real_links.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:31 GMT -->
+<head>
+<title>Day 13: Using real links - Dive Into Accessibility</title>
+<link rel="start" title="Home page" href="index.html" />
+<link rel="contents" title="Table of contents" href="table_of_contents.html" />
+<link rel="search" title="Search this site" href="mt/mt-search.html" />
+<link rel="help" title="Access features of this site" href="accessibility_statement.html" />
+<link rel="author" title="Send feedback to the author" href="mailto:feedback@diveintoaccessibility.org" />
+<link rel="copyright" title="Terms of use" href="terms_of_use.html" />
+<link rel="up" title="Table of contents" href="table_of_contents.html" />
+<link rel="first" title="Day 1: Jackie" href="day_1_jackie.html" />
+<link rel="last" title="Accessibility statement" href="accessibility_statement.html" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="projection" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/aural.css" type="text/css" media="aural" />
+
+
+<link rel="prev" href="day_12_using_color_safely.html" title="Day 12: Using color safely" />
+<link rel="next" href="day_14_adding_titles_to_links.html" title="Day 14: Adding titles to links" />
+<script>_gaq=[['_setAccount','UA-7434570-7'],['_trackPageview']];(function(){var g=document.createElement('script');g.src='../www.google-analytics.com/ga.js';g.setAttribute('async','true');document.documentElement.firstChild.appendChild(g);})();</script>
+</head>
+<body>
+
+<div id="logo"><div class="inner">
+<h1 class="title">
+<a href="index.html" accesskey="1">Dive Into Accessibility</a>
+</h1>
+<p>30 days to a more accessible web site</p>
+<a class="skip" href="day_13_using_real_links.html#startnavigation">Skip to navigation</a>
+<span class="divider">&nbsp;</span>
+</div></div>
+
+
+<p></p>
+
+
+<div id="main"><div class="inner">
+
+<div class="entry">
+<h2 class="entrysubject">Day 13: Using real links</h2>
+<p class="firstparagraph">The scourge of web design is the "<code>javascript:</code>" link, a pseudo-link that executes a piece of Javascript code when you click on it.  The most common place this problem occurs in weblogs is in the link to display comments in a separate window.  Why is it a problem?  Because <a title="TheCounter.com statistics on Javascript usage in browsers, April 2002" href="http://www.thecounter.com/stats/2002/April/javas.php">11% of Internet users don't use Javascript</a> for one reason or another, including many disabled users whose browsers simply don't support it.  These pseudo-links won't work for them; use real links instead.</p>
+
+<p>Although it's easy to describe and simple to fix, I can't stress enough how important this tip is.  Some problems, like <a href="day_11_skipping_over_navigation_links.html">not having a "skip link" past your navigation bar</a>, reduce usability to varying degrees, but at least your page can be read eventually.  On the other hand, this problem actually makes entire chunks of important content completely inaccessible.  If your comments are hidden behind a "<code>javascript:</code>" link, <em>they may as well not exist</em>.</p>
+
+<h3>Who benefits?</h3>
+
+<ol>
+<li><a href="day_5_marcus.html">Marcus</a> benefits.  <a href="http://www.fdisk.com/doslynx/lynxport.htm">Lynx</a> does not support Javascript.</li>
+<li><a href="day_2_michael.html">Michael</a> benefits.  <a href="http://links.sourceforge.net/">Links</a> does not support Javascript.</li>
+<li><a href="day_4_lillian.html">Lillian</a> benefits.  Although she uses Internet Explorer, her IT department has implemented a corporate-wide policy to disable Javascript on all but a small list of approved sites.  Your web site is not on the list.</li>
+<li><a href="http://www.google.com/">Google</a> benefits.  Google wants to follow links to find and index more content, but it can't follow "<code>javascript:</code>" links, because it doesn't execute Javascript code as it indexes the web.</li>
+</ol>
+
+<h3>How to do it</h3>
+
+<p><strong>The default templates in Movable Type and Radio now get this right</strong>, so you may not need to do anything.  View source on your home page and search for "<code>javascript:</code>".  If you don't find it, this tip does not apply to you.</p>
+
+<p>However, if your Movable Type template contains a link like this:</p>
+
+<blockquote>
+<p><code>&lt;a href="javascript:OpenComments(&lt;$MTEntryID$&gt;)">Comments (&lt;$MTEntryCommentCount$&gt;)&lt;/a&gt;</code></p>
+</blockquote>
+
+<p>Then change it to this:</p>
+
+<blockquote>
+<p><code>&lt;a href="&lt;$MTCGIPath$&gt;mt-comments.cgi?entry_id=&lt;$MTEntryID$&gt;" onclick="OpenComments(&lt;$MTEntryID$&gt;); return false"&gt;Comments (&lt;$MTEntryCommentCount$&gt;)&lt;/a&gt;</code></p>
+</blockquote>
+
+<p>In Javascript-enabled browsers, it will still work the same way, because the <code>onclick</code> attribute takes precedence over the <code>href</code> attribute.  So the new version still calls the <code>OpenComments</code> function, which pops up a new window.  However, non-Javascript-enabled browsers (and Google) will ignore the <code>onclick</code> attribute entirely and follow the link specified in the <code>href</code>, which will display the comments in the same window.</p>
+
+<p>If you're using <code>javascript:</code> pseudo-links for any other reason, stop.  Just stop.  Do not pass go, do not collect $200, etc.  Apply the above technique to your own code so that non-Javascript-enabled browsers always have a chance to follow a real link.</p>
+
+<h3>Further reading</h3>
+
+<ul>
+<li><cite title="Evolt.org">Jeff Howden</cite>: <a href="http://www.evolt.org/article/Links_and_JavaScript_Living_Together_in_Harmony/17/20938/">Links &amp; JavaScript Living Together in Harmony</a>.</li>
+</ul>
+
+<h3>Postscript</h3>
+
+<p>Don't even get me started on those <a href="http://www.dynamicdrive.com/dynamicindex1/index.html">dynamic Javascript-based menu systems</a>.  They make you look cool like smoking makes you look cool.  Use real links.</p>
+<span class="divider">&nbsp;</span>
+</div> <!--entry-->
+
+<div class="pageturn"><div class="inner">
+<a href="day_12_using_color_safely.html">&lt;&lt; Day 12: Using color safely</a> |
+<a href="table_of_contents.html">Contents</a>
+| <a href="day_14_adding_titles_to_links.html">Day 14: Adding titles to links &gt;&gt;</a>
+<span class="divider">&nbsp;</span>
+</div></div> <!--pageturn-->
+
+</div></div> <!--main-->
+
+<div id="menu">
+<a class="skip" name="startnavigation" id="startnavigation"></a>
+
+<form action="http://www.google.com/cse"><p>Search this site:</p><p><input type="hidden" name="cx" value="014021643941856155761:j2rsjqy6z6g"><input type="hidden" name="ie" value="UTF-8"><input type="search" name="q" size="20" placeholder="powered by Google&trade;"></p><p><input type="submit" name="sa" value="Search"></p></form>
+</form>
+
+
+
+<div class="menusection"><div class="inner">
+
+<h2 class="invisibletitle">Site links</h2>
+
+<a class="skip" href="day_13_using_real_links.html#endinternal">Skip over site links</a>
+
+<ul>
+<li><a title="accessibility features of this site" href="accessibility_statement.html" accesskey="0">Accessibility statement</a></li>
+<li><a href="mt/mt-search.html" accesskey="4">Advanced search</a></li>
+<li><a href="table_of_contents.html" accesskey="3">Table of contents</a></li>
+<li><a href="by_person.html">Tips by person</a></li>
+<li><a href="by_disability.html">Tips by disability</a></li>
+<li><a href="by_design_principle.html">Tips by design principle</a></li>
+<li><a href="by_web_browser.html">Tips by web browser</a></li>
+<li><a href="by_publishing_tool.html">Tips by publishing tool</a></li>
+<li><a title="send email to the author" href="mailto:feedback@diveintoaccessibility.org" accesskey="9">Feedback</a></li>
+<li><a title="Copyright and licensing information" href="terms_of_use.html" accesskey="8">Terms of use</a></li>
+</ul>
+
+<a class="skip" id="endinternal"></a>
+
+</div></div> <!--.menusection-->
+
+
+
+<div id="footer"><div class="inner">
+
+<address>Copyright &copy; 2002 Mark Pilgrim</address> 
+
+</div></div> <!--footer-->
+
+
+</div> <!--menu-->
+
+<div id="navigation">
+<p class="breadcrumb">You are here:
+<a href="index.html">Home</a> > 
+<a href="table_of_contents.html">Table of contents</a> > 
+<span class="currentpage">Day 13: Using real links</span>
+</p>
+</div><!--navigation-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36045340-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+<!-- Mirrored from diveintoaccessibility.info/day_13_using_real_links.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:31 GMT -->
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- Mirrored from diveintoaccessibility.info/day_21_ignoring_spacer_images.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:31 GMT -->
+<head>
+<title>Day 21: Ignoring spacer images - Dive Into Accessibility</title>
+<link rel="start" title="Home page" href="index.html" />
+<link rel="contents" title="Table of contents" href="table_of_contents.html" />
+<link rel="search" title="Search this site" href="mt/mt-search.html" />
+<link rel="help" title="Access features of this site" href="accessibility_statement.html" />
+<link rel="author" title="Send feedback to the author" href="mailto:feedback@diveintoaccessibility.org" />
+<link rel="copyright" title="Terms of use" href="terms_of_use.html" />
+<link rel="up" title="Table of contents" href="table_of_contents.html" />
+<link rel="first" title="Day 1: Jackie" href="day_1_jackie.html" />
+<link rel="last" title="Accessibility statement" href="accessibility_statement.html" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="projection" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/aural.css" type="text/css" media="aural" />
+
+
+<link rel="prev" href="day_20_providing_a_summary_for_tables.html" title="Day 20: Providing a summary for tables" />
+<link rel="next" href="day_22_using_real_lists_or_faking_them_properly.html" title="Day 22: Using real lists (or faking them properly)" />
+<script>_gaq=[['_setAccount','UA-7434570-7'],['_trackPageview']];(function(){var g=document.createElement('script');g.src='../www.google-analytics.com/ga.js';g.setAttribute('async','true');document.documentElement.firstChild.appendChild(g);})();</script>
+</head>
+<body>
+
+<div id="logo"><div class="inner">
+<h1 class="title">
+<a href="index.html" accesskey="1">Dive Into Accessibility</a>
+</h1>
+<p>30 days to a more accessible web site</p>
+<a class="skip" href="day_21_ignoring_spacer_images.html#startnavigation">Skip to navigation</a>
+<span class="divider">&nbsp;</span>
+</div></div>
+
+
+<p></p>
+
+
+<div id="main"><div class="inner">
+
+<div class="entry">
+<h2 class="entrysubject">Day 21: Ignoring spacer images</h2>
+<p class="firstparagraph">Many designers use transparent spacer images to control the layout of their web site in visual browsers.  You may use as many as you like, but you need to explicitly specify an empty <code>alt</code> attribute on each spacer image so that non-visual browsers know to ignore them.</p>
+
+<h3>Who benefits?</h3>
+
+<ol>
+<li><p><a href="day_5_marcus.html">Marcus</a> benefits.  By default, <a href="http://www.fdisk.com/doslynx/lynxport.htm">Lynx</a> displays the filename of any image that does not contain an <code>alt</code> attribute.  Many popular weblog templates include several spacer images even before the site name.  You don't notice them in your visual browser, of course, but this is what Marcus sees:</p>
+<blockquote>
+<pre>[shim.gif] [shim.gif]
+[shim.gif]
+[shim.gif]
+Welcome To My Web Site
+[ciblueHeader2.gif]
+
+[ciblueCurve2.gif]</pre>
+</blockquote>
+</li>
+<li><p><a href="day_1_jackie.html">Jackie</a> benefits.  By default, <a href="http://www.freedomscientific.com/fs_products/software_jaws.asp">JAWS</a> <em>reads</em> the filename of any image that does not contain an <code>alt</code> attribute.  If you thought Marcus was annoyed, imagine how frustrating it is for Jackie to hear this:</p>
+<blockquote>
+<p>graphic shim dot gif graphic shim dot gif graphic shim dot gif graphic shim dot gif welcome to my web site graphic ciblue header two dot gif graphic ciblue curve two dot gif</p>
+</blockquote>
+<p>If you introduced yourself like that in real life, nobody would talk to you.</p>
+</li>
+</ol>
+
+<h3>How to do it</h3>
+
+<p>Radio users can take the day off.  As of last Monday, Radio automatically generates empty <code>alt</code> attributes for all spacer images.  (Thanks, <a href="http://radio.weblogs.com/0001000/" title="Jake's Radio Blog">Jake</a>.)  If you view source on your home page and you're not seeing <code>alt=""</code> on any of your spacer images, update Radio.root and republish your site.</p>
+
+<p>Users of other publishing tools should look through your template for <code>&lt;img&gt;</code> tags with filenames like "<code class="filename">spacer.gif</code>", "<code class="filename">shim.gif</code>", "<code class="filename">1.gif</code>", or any image that appears to be repeated several times within your template, possibly with different <code>width</code> and <code>height</code> attributes each time.</p>
+
+<p>For example, for each spacer image that looks like this:</p>
+
+<blockquote>
+<p><code class="sgmltag">&lt;img src="spacer.gif" width="1" height="10"&gt;</code></p>
+</blockquote>
+
+<p>Change it to this:</p>
+
+<blockquote>
+<p><code class="sgmltag">&lt;img src="spacer.gif" <strong>alt=""</strong> width="1" height="10"&gt;</code></p>
+</blockquote>
+
+<p>If you re-use the same spacer image multiple times, it's probably easiest to do this with global search-and-replace.</p>
+
+<h3>Things not to do</h3>
+
+<ol>
+<li><p>Don't define <code>alt=" "</code>.  The <code>alt</code> attribute should be an empty string, not a space.</p></li>
+<li><p>Don't specify an <code>alt</code> attribute on your <code>&lt;body&gt;</code> tag, even if it defines a background image.  This background image is always ignored by non-visual browsers.  It looks like this:</p>
+<blockquote>
+<p><code class="sgmltag">&lt;body background="http://url/to/image.gif"&gt;</code></p>
+</blockquote>
+</li>
+<li><p>Don't specify an <code>alt</code> attribute on <code>&lt;td&gt;</code> tags, even if they define background images.  These background images are always ignored by non-visual browsers.  They look like this:</p>
+<blockquote>
+<p><code class="sgmltag">&lt;td background="http://url/to/image.gif"&gt;</code></p>
+</blockquote>
+</li>
+</ol>
+
+<h3>Further reading</h3>
+
+<ul>
+<li><cite><acronym title="Web Accessibility in Mind">WebAIM</acronym></cite>: <a href="http://www.webaim.org/howto/accessiblegraphics3">How to Create Accessible Graphics</a>.</li>
+</ul>
+
+<p></p>
+<span class="divider">&nbsp;</span>
+</div> <!--entry-->
+
+<div class="pageturn"><div class="inner">
+<a href="day_20_providing_a_summary_for_tables.html">&lt;&lt; Day 20: Providing a summary for tables</a> |
+<a href="table_of_contents.html">Contents</a>
+| <a href="day_22_using_real_lists_or_faking_them_properly.html">Day 22: Using real lists (or faking them properly) &gt;&gt;</a>
+<span class="divider">&nbsp;</span>
+</div></div> <!--pageturn-->
+
+</div></div> <!--main-->
+
+<div id="menu">
+<a class="skip" name="startnavigation" id="startnavigation"></a>
+
+<form action="http://www.google.com/cse"><p>Search this site:</p><p><input type="hidden" name="cx" value="014021643941856155761:j2rsjqy6z6g"><input type="hidden" name="ie" value="UTF-8"><input type="search" name="q" size="20" placeholder="powered by Google&trade;"></p><p><input type="submit" name="sa" value="Search"></p></form>
+</form>
+
+
+
+<div class="menusection"><div class="inner">
+
+<h2 class="invisibletitle">Site links</h2>
+
+<a class="skip" href="day_21_ignoring_spacer_images.html#endinternal">Skip over site links</a>
+
+<ul>
+<li><a title="accessibility features of this site" href="accessibility_statement.html" accesskey="0">Accessibility statement</a></li>
+<li><a href="mt/mt-search.html" accesskey="4">Advanced search</a></li>
+<li><a href="table_of_contents.html" accesskey="3">Table of contents</a></li>
+<li><a href="by_person.html">Tips by person</a></li>
+<li><a href="by_disability.html">Tips by disability</a></li>
+<li><a href="by_design_principle.html">Tips by design principle</a></li>
+<li><a href="by_web_browser.html">Tips by web browser</a></li>
+<li><a href="by_publishing_tool.html">Tips by publishing tool</a></li>
+<li><a title="send email to the author" href="mailto:feedback@diveintoaccessibility.org" accesskey="9">Feedback</a></li>
+<li><a title="Copyright and licensing information" href="terms_of_use.html" accesskey="8">Terms of use</a></li>
+</ul>
+
+<a class="skip" id="endinternal"></a>
+
+</div></div> <!--.menusection-->
+
+
+
+<div id="footer"><div class="inner">
+
+<address>Copyright &copy; 2002 Mark Pilgrim</address> 
+
+</div></div> <!--footer-->
+
+
+</div> <!--menu-->
+
+<div id="navigation">
+<p class="breadcrumb">You are here:
+<a href="index.html">Home</a> > 
+<a href="table_of_contents.html">Table of contents</a> > 
+<span class="currentpage">Day 21: Ignoring spacer images</span>
+</p>
+</div><!--navigation-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36045340-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+<!-- Mirrored from diveintoaccessibility.info/day_21_ignoring_spacer_images.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:31 GMT -->
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- Mirrored from diveintoaccessibility.info/day_9_providing_additional_navigation_aids.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:29 GMT -->
+<head>
+<title>Day 9: Providing additional navigation aids - Dive Into Accessibility</title>
+<link rel="start" title="Home page" href="index.html" />
+<link rel="contents" title="Table of contents" href="table_of_contents.html" />
+<link rel="search" title="Search this site" href="mt/mt-search.html" />
+<link rel="help" title="Access features of this site" href="accessibility_statement.html" />
+<link rel="author" title="Send feedback to the author" href="mailto:feedback@diveintoaccessibility.org" />
+<link rel="copyright" title="Terms of use" href="terms_of_use.html" />
+<link rel="up" title="Table of contents" href="table_of_contents.html" />
+<link rel="first" title="Day 1: Jackie" href="day_1_jackie.html" />
+<link rel="last" title="Accessibility statement" href="accessibility_statement.html" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="projection" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/aural.css" type="text/css" media="aural" />
+
+
+<link rel="prev" href="day_8_constructing_meaningful_page_titles.html" title="Day 8: Constructing meaningful page titles" />
+<link rel="next" href="day_10_presenting_your_main_content_first.html" title="Day 10: Presenting your main content first" />
+<script>_gaq=[['_setAccount','UA-7434570-7'],['_trackPageview']];(function(){var g=document.createElement('script');g.src='../www.google-analytics.com/ga.js';g.setAttribute('async','true');document.documentElement.firstChild.appendChild(g);})();</script>
+</head>
+<body>
+
+<div id="logo"><div class="inner">
+<h1 class="title">
+<a href="index.html" accesskey="1">Dive Into Accessibility</a>
+</h1>
+<p>30 days to a more accessible web site</p>
+<a class="skip" href="day_9_providing_additional_navigation_aids.html#startnavigation">Skip to navigation</a>
+<span class="divider">&nbsp;</span>
+</div></div>
+
+
+<p></p>
+
+
+<div id="main"><div class="inner">
+
+<div class="entry">
+<h2 class="entrysubject">Day 9: Providing additional navigation aids</h2>
+<p class="firstparagraph">You may be familiar with the <code class="sgmltag">&lt;link&gt;</code> tag in relation to external stylesheets.  But did you know you can also use a similar syntax to point to your home page, and to previous and next pages in a series?  For instance, on daily archive pages, you could point to the previous day's posts, and the next day's (if any).  If you have individual pages for each entry, you could point to the previous and next entry.</p>
+
+<blockquote>
+<p><code>&lt;link rel="home" title="Home" href="http://url/of/home/page" /&gt;<br />
+&lt;link rel="prev" title="Title of previous page" href="http://url/of/previous/page" /&gt;<br />
+&lt;link rel="next" title="Title of next page" href="http://url/of/next/page" /&gt;<br /></code></p>
+</blockquote>
+
+<p>These links, normally invisible to visual browsers like Internet Explorer, can be displayed in alternate browsers and help users navigate through your web site.  You probably already provide several ways to navigate: weekly or monthly archives, links to recent posts, a monthly calendar of daily posts.  You may even already have visible links on your archive pages pointing to previous and next days or entries.  Those are all great; keep them, and add these too.</p>
+
+<h3>Who benefits?</h3>
+
+<ol>
+<li><p><a href="day_5_marcus.html">Marcus</a> benefits.  His text-only browser <a href="http://www.fdisk.com/doslynx/lynxport.htm">Lynx</a> displays the additional navigation aids at the top of the page, using the title that we specified in the <code>title</code> attribute.  Reading the daily archive page of June 18, this is what Marcus sees:</p>
+<blockquote>
+<pre><code>#<a href="day_9_providing_additional_navigation_aids.html#" title="link to home page that we defined">Home</a>&nbsp;<a href="day_9_providing_additional_navigation_aids.html#" title="link to previous page, with title that we defined">June 17, 2002</a>&nbsp;<a href="day_9_providing_additional_navigation_aids.html#" title="link to next page, with title that we defined">June 19, 2002</a></code></pre>
+</blockquote>
+<p>(The # character lets Marcus know that this is metadata, not page content.  Lynx does the same thing on the line with your <a href="day_8_constructing_meaningful_page_titles.html" title="Day 8: Constructing meaningful page titles">meaningful page title</a>.)</p>
+</li>
+<li><p><a href="day_2_michael.html">Michael</a> benefits.  Opera displays these navigation aids in a toolbar (select View/Navigation Bar to see it.)  And his text-only browser <a href="http://links.sourceforge.net/">Links</a> (not to be confused with Marcus's browser, <a href="http://www.fdisk.com/doslynx/lynxport.htm">Lynx</a>) also displays these additional navigation aids at the top of the page, like this:</p>
+<blockquote>
+<pre><code>Link: <a href="day_9_providing_additional_navigation_aids.html#" title="link to home page that we defined">home</a>
+Link: <a href="day_9_providing_additional_navigation_aids.html#" title="link to previous page that we defined">prev</a>
+Link: <a href="day_9_providing_additional_navigation_aids.html#" title="link to next page that we defined">next</a></code></pre>
+</blockquote>
+</li>
+<li><p><a href="day_3_bill.html">Bill</a> benefits.  Mozilla displays the additional navigation links in the Site Navigation toolbar.  The type of the link ("home", "prev", "next") is displayed on the toolbar button, and the title of the link is displayed as a tooltip.  Select the View menu, Show/Hide, Site Navigation Bar, Show Always.</p></li>
+<li><p><a href="http://www.icab.de/">iCab</a> users benefit.  iCab displays the navigation links in a drop-down menu in the toolbar, using the title defined in each link.</p></li>
+<li><p><a href="http://www.mozilla.org/products/firebird/">Firebird</a> users can benefit, if they <a href="http://cdn.mozdev.org/linkToolbar/">install a link toolbar</a> that displays these additional navigation aids.</p></li>
+</ol>
+
+<h3>How to do it</h3>
+
+<p>In Movable Type, add these lines to your Date-Based Archive template, immediately after the <code class="sgmltag">&lt;head&gt;</code> tag:</p>
+
+<blockquote>
+<p><code>&lt;link rel="home" href="&lt;$MTBlogURL$&gt;" title="Home" /&gt;<br />
+&lt;MTArchivePrevious&gt;<br />
+&lt;link rel="prev" href="&lt;$MTArchiveLink$&gt;" title="&lt;$MTArchiveTitle$&gt;" /&gt;<br />
+&lt;/MTArchivePrevious&gt;<br />
+&lt;MTArchiveNext&gt;<br />
+&lt;link rel="next" href="&lt;$MTArchiveLink$&gt;" title="&lt;$MTArchiveTitle$&gt;" /&gt;<br />
+&lt;/MTArchiveNext&gt;</code></p>
+</blockquote>
+
+<p>And add this to your Individual Entry Archive template, again immediately after the <code class="sgmltag">&lt;head&gt;</code> tag:</p>
+
+<blockquote>
+<p><code>&lt;link rel="home" href="&lt;$MTBlogURL$&gt;" title="Home" /&gt;<br />
+&lt;MTEntryPrevious&gt;<br />
+&lt;link rel="prev" href="&lt;$MTEntryLink$&gt;" title="&lt;$MTEntryTitle$&gt;" /&gt;<br />
+&lt;/MTEntryPrevious&gt;<br />
+&lt;MTEntryNext&gt;<br />
+&lt;link rel="next" href="&lt;$MTEntryLink$&gt;" title="&lt;$MTEntryTitle$&gt;" /&gt;<br />
+&lt;/MTEntryNext&gt;</code></p>
+</blockquote>
+
+<p>In Greymatter, add this immediately after the <code class="sgmltag">&lt;head&gt;</code> tag in your 4 Entry Page Templates:</p>
+
+<blockquote>
+<p><code>&lt;link rel="home" title="Home" href="{{pageindexlink}}"&gt;<br />
+&lt;link rel="prev" title="{{previousentrysubject}}" href="{{entrieswebpath}}/{{previousentrynumberpadded}}.html"&gt;<br />
+&lt;link rel="next" title="{{nextentrysubject}}" href="{{entrieswebpath}}/{{nextentrynumberpadded}}.html"&gt;</code></p>
+</blockquote>
+
+<p>In Radio, the entire matter is simplified by <a href="http://w3future.com/weblog/">Sjoerd Visscher</a>'s Navigation Links For Radio, a set of macros to do exactly this.</p>
+
+<ol>
+<li><p><a href="http://w3future.com/weblog/gems/navigationLinks.zip">Download Navigation Links macros</a>.</p></li>
+<li><p>Unzip the download and copy the 4 files (<code class="filename">navigationLinks.txt</code>, <code class="filename">nextDayLink.txt</code>, <code class="filename">prevDayLink.txt</code>, <code class="filename">permalinkUrl.txt</code>) into your <code class="filename">Macros</code> folder.  In the standard installation on Windows, this would be <code class="filename">C:\Program Files\Radio UserLand\Macros</code>.</p></li>
+<li><p>Insert this code in your Main Template, immediately after your <code class="sgmltag">&lt;head&gt;</code> tag:</p>
+<blockquote>
+<p><code>&lt;%navigationLinks()%&gt;</code></p>
+</blockquote>
+</li>
+</ol>
+
+<p>Unfortunately, I do not know how to satisfactorily implement previous and next links in Manila or Blogger, but you can at least add the link to your home page, immediately after your <code class="sgmltag">&lt;head&gt;</code> tag:</p>
+
+<blockquote>
+<p><code>&lt;link rel="home" title="Home" href="http://url/of/your/home/page"&gt;</code></p>
+</blockquote>
+
+<h3>Further reading</h3>
+
+<ul>
+<li><cite>Sjoerd Visscher</cite>: <a href="http://w3future.com/weblog/2002/06/20.html#a110">Navigation links in your Radio Userland weblog</a>.</li>
+</ul>
+
+<p></p>
+<span class="divider">&nbsp;</span>
+</div> <!--entry-->
+
+<div class="pageturn"><div class="inner">
+<a href="day_8_constructing_meaningful_page_titles.html">&lt;&lt; Day 8: Constructing meaningful page titles</a> |
+<a href="table_of_contents.html">Contents</a>
+| <a href="day_10_presenting_your_main_content_first.html">Day 10: Presenting your main content first &gt;&gt;</a>
+<span class="divider">&nbsp;</span>
+</div></div> <!--pageturn-->
+
+</div></div> <!--main-->
+
+<div id="menu">
+<a class="skip" name="startnavigation" id="startnavigation"></a>
+
+<form action="http://www.google.com/cse"><p>Search this site:</p><p><input type="hidden" name="cx" value="014021643941856155761:j2rsjqy6z6g"><input type="hidden" name="ie" value="UTF-8"><input type="search" name="q" size="20" placeholder="powered by Google&trade;"></p><p><input type="submit" name="sa" value="Search"></p></form>
+</form>
+
+
+
+<div class="menusection"><div class="inner">
+
+<h2 class="invisibletitle">Site links</h2>
+
+<a class="skip" href="day_9_providing_additional_navigation_aids.html#endinternal">Skip over site links</a>
+
+<ul>
+<li><a title="accessibility features of this site" href="accessibility_statement.html" accesskey="0">Accessibility statement</a></li>
+<li><a href="mt/mt-search.html" accesskey="4">Advanced search</a></li>
+<li><a href="table_of_contents.html" accesskey="3">Table of contents</a></li>
+<li><a href="by_person.html">Tips by person</a></li>
+<li><a href="by_disability.html">Tips by disability</a></li>
+<li><a href="by_design_principle.html">Tips by design principle</a></li>
+<li><a href="by_web_browser.html">Tips by web browser</a></li>
+<li><a href="by_publishing_tool.html">Tips by publishing tool</a></li>
+<li><a title="send email to the author" href="mailto:feedback@diveintoaccessibility.org" accesskey="9">Feedback</a></li>
+<li><a title="Copyright and licensing information" href="terms_of_use.html" accesskey="8">Terms of use</a></li>
+</ul>
+
+<a class="skip" id="endinternal"></a>
+
+</div></div> <!--.menusection-->
+
+
+
+<div id="footer"><div class="inner">
+
+<address>Copyright &copy; 2002 Mark Pilgrim</address> 
+
+</div></div> <!--footer-->
+
+
+</div> <!--menu-->
+
+<div id="navigation">
+<p class="breadcrumb">You are here:
+<a href="index.html">Home</a> > 
+<a href="table_of_contents.html">Table of contents</a> > 
+<span class="currentpage">Day 9: Providing additional navigation aids</span>
+</p>
+</div><!--navigation-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36045340-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+<!-- Mirrored from diveintoaccessibility.info/day_9_providing_additional_navigation_aids.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:29 GMT -->
+</html>

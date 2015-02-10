@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- Mirrored from diveintoaccessibility.info/day_29_making_everything_searchable.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:32 GMT -->
+<head>
+<title>Day 29: Making everything searchable - Dive Into Accessibility</title>
+<link rel="start" title="Home page" href="index.html" />
+<link rel="contents" title="Table of contents" href="table_of_contents.html" />
+<link rel="search" title="Search this site" href="mt/mt-search.html" />
+<link rel="help" title="Access features of this site" href="accessibility_statement.html" />
+<link rel="author" title="Send feedback to the author" href="mailto:feedback@diveintoaccessibility.org" />
+<link rel="copyright" title="Terms of use" href="terms_of_use.html" />
+<link rel="up" title="Table of contents" href="table_of_contents.html" />
+<link rel="first" title="Day 1: Jackie" href="day_1_jackie.html" />
+<link rel="last" title="Accessibility statement" href="accessibility_statement.html" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="projection" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/aural.css" type="text/css" media="aural" />
+
+
+<link rel="prev" href="day_28_labeling_form_elements.html" title="Day 28: Labeling form elements" />
+<link rel="next" href="day_30_creating_an_accessibility_statement.html" title="Day 30: Creating an accessibility statement" />
+<script>_gaq=[['_setAccount','UA-7434570-7'],['_trackPageview']];(function(){var g=document.createElement('script');g.src='../www.google-analytics.com/ga.js';g.setAttribute('async','true');document.documentElement.firstChild.appendChild(g);})();</script>
+</head>
+<body>
+
+<div id="logo"><div class="inner">
+<h1 class="title">
+<a href="index.html" accesskey="1">Dive Into Accessibility</a>
+</h1>
+<p>30 days to a more accessible web site</p>
+<a class="skip" href="day_29_making_everything_searchable.html#startnavigation">Skip to navigation</a>
+<span class="divider">&nbsp;</span>
+</div></div>
+
+
+<p></p>
+
+
+<div id="main"><div class="inner">
+
+<div class="entry">
+<h2 class="entrysubject">Day 29: Making everything searchable</h2>
+<p class="firstparagraph">Every web site needs a site search.  Period.</p>
+
+<p>Rules for a good site search:</p>
+
+<ol>
+<li>Put the search box on every page, preferably "above the fold" (visible without scrolling).</li>
+<li>Search everything by default.  If you have an option to search entries, comments, or both, make "both" the default.</li>
+<li>Don't clutter your search box with advanced options, like boolean logic, case sensitivity, or regular expressions.  Choose defaults that mimic Google's behavior (match all words, don't match partial words, don't match case, don't use regular expressions) and make all the options visible on a separate "advanced search" page.</li>
+<li>Give your search box <a href="day_28_labeling_form_elements.html" title="Day 28: Labeling form elements">a proper label</a> and <a href="day_15_defining_keyboard_shortcuts.html" title="Day 15: Defining keyboard shortcuts">an access key</a>.  I recommend <code>accesskey="4"</code>.  (Note: <a href="day_15_defining_keyboard_shortcuts.html" title="Day 15: Defining keyboard shortcuts">On day 15</a>, I gave an example of how to assign an <code>accesskey</code> to your search form, and I got it wrong.  For maximum cross-browser compatibility, you need to define the <code>accesskey</code> on the <code>&lt;label&gt;</code>, not on the <code>&lt;input&gt;</code>.  See the examples below for the correct syntax.)</li>
+</ol>
+
+<h3>Who benefits?</h3>
+
+<p><a href="day_1_jackie.html">Jackie</a>, <a href="day_2_michael.html">Michael</a>, <a href="day_3_bill.html">Bill</a>, <a href="day_4_lillian.html">Lillian</a>, <a href="day_5_marcus.html">Marcus</a>, and pretty much everyone else in the world benefit from a well-implemented site search.  Especially on a weblog or news-oriented site, where content is primarily organized chronologically, it's very frustrating to try to find a specific post that's scrolled off the main page.  Very few people know about the "site:domainname.com" syntax on Google (to restrict search results to a particular domain), and Google only reindexes once a month anyway.  Provide your own site search.</p>
+
+<h3>How to do it</h3>
+
+<p>Greymatter has built-in search functionality, but you will need to customize the template slightly to provide an <code>accesskey</code> for the search box.  Go to "Edit Templates", "Miscellaneous Templates", "Search Form Template", and find a form like this:</p>
+
+<blockquote>
+<p><code>&lt;FORM ACTION="{{cgiwebpath}}/gm-comments.cgi" METHOD=POST&gt;<br />
+&lt;INPUT TYPE=TEXT NAME="gmsearch" SIZE=20&gt;<br />
+&lt;INPUT TYPE=SUBMIT VALUE="Search"&gt;<br />
+&lt;/FORM&gt;</code></p>
+</blockquote>
+
+<p>And change it to this:</p>
+
+<blockquote>
+<p><code>&lt;FORM ACTION="{{cgiwebpath}}/gm-comments.cgi" METHOD=POST&gt;<br />
+<strong>&lt;label for="gmsearch" accesskey="4"&gt;Search for:&lt;/label&gt;</strong><br />
+&lt;INPUT TYPE=TEXT <strong>id="gmsearch"</strong> NAME="gmsearch" SIZE=20&gt;<br />
+&lt;INPUT TYPE=SUBMIT VALUE="Search"&gt;<br />
+&lt;/FORM&gt;</code></p>
+</blockquote>
+
+<p>Movable Type users can try the <a href="http://www.jayallen.org/mt-search/">MT-Search</a> plug-in.  I am using this on an upcoming <acronym title="Movable Type">MT</acronym>-powered site.  I tried it on my main weblog (900+ entries) and it was fairly slow, but it seems to work well with smaller sites.  It is no longer being actively developed, but it works well, even with the latest version of Movable Type.  (Note: if you're using the MySQL version of Movable Type 2.2, <a href="http://philringnalda.com/archives/002257.php">you need to tweak mt-search.cgi slightly</a>.)</p>
+
+<p>If you have your weblog on your own domain name, you can use a third-party search service that indexes your content and provides search results on demand.  Popular alternatives on this front include <a href="http://www.atomz.com/search/trial_account.htm">Atomz Express Search</a>, which Blogger.com recommends, and <a href="http://www.google.com/services/free.html">Google Free Web Search</a>, which I use on my own weblog.  Both are customizable to some degree, and quite fast, although their indexes of your content are not up-to-the-minute fresh.  Both allow you to customize the look of your search box; my Google-powered search form looks like this (note the use of <code>&lt;label&gt;</code> and <code>accesskey</code>):</p>
+
+<blockquote>
+<p><code>&lt;form id="searchform" method="get" action="http://www.google.com/custom"&gt;<br />
+&lt;p id="searchlabel"&gt;<strong>&lt;label for="q" accesskey="4"&gt;Search this site:&lt;/label&gt;</strong>&lt;/p&gt;<br />
+&lt;p id="searchinput"&gt;&lt;input type="text" <strong>id="q"</strong> name="q" size="18" maxlength="255" value=" " /&gt;&lt;/p&gt;<br />
+&lt;p id="searchsubmit"&gt;&lt;input type="submit" value="Search" /&gt;<br />
+&lt;input type="hidden" name="cof" value="LW:116;L:http://diveintomark.org/images/eyes.jpg;LH:68;AH:left;GL:0;S:http://diveintomark.org/;AWFID:0d8ffcebe359c844;" /&gt;<br />
+&lt;input type="hidden" name="domains" value="diveintomark.org" /&gt;<br />
+&lt;input type="hidden" name="sitesearch" value="diveintomark.org" /&gt;<br />
+&lt;/p&gt;<br />
+&lt;/form&gt;</code></p>
+</blockquote>
+
+<p>Note: you can't cut and paste this onto your own weblog.  If you want to use Google Free Web Search, you'll need to sign up and get your own code that goes into that hidden <code>cof</code> field.</p>
+
+<h3>Further reading</h3>
+
+<ul>
+<li><cite>Jay Allen</cite>: <a href="http://www.jayallen.org/mt-search/">MT-Search</a>, a search plug-in for Movable Type.</li>
+<li><cite>Phil Ringnalda</cite>: <a href="http://philringnalda.com/archives/002257.php">mt-search.cgi and MySQL</a>.  Important information getting MT-Search to work with Movable Type 2.2 and MySQL.</li>
+<li><a href="http://www.atomz.com/search/trial_account.htm">Atomz Express Search</a>.</li>
+<li><a href="http://www.google.com/services/free.html">Google Free Web Search</a>.</li>
+<li><cite>Blogger.com</cite>: <a href="http://publicmind.blogger.com/enduser/group.jsp?node=185">How do I add a search engine to my blog?</a>  Recommends Atomz, but links to others not listed here.</li>
+<li><cite>Jukka Korpela</cite>: <a href="http://www.cs.tut.fi/~jkorpela/forms/accesskey.html">Improving accessibility with <code>accesskey</code> in HTML forms and links</a>.  Near the end, it explains why to use "4" as the <code>accesskey</code> for your site search.</li>
+<li><cite>Jakob Nielsen</cite>: <a href="http://www.useit.com/alertbox/20000109.html">Is Navigation Useful?</a>  <q>Users often rely on search as their main hunting strategy.</q></li>
+<li><cite>Jakob Nielsen</cite>: <a href="http://www.useit.com/alertbox/9707b.html">Search Usability</a>.  Five years old and still incredibly relevant.</li>
+<li><cite>PHP.net</cite>: <a href="http://www.php.net/urlhowto.php">URL HOWTO</a>.  PHP.net has the most amazing site search I've ever seen.  Beyond the standard search box, they use custom 404 ErrorDocuments (which would usually just throw a "page not found" error) to intelligently search the site based on the URL.  So you can type an address like <a href="http://php.net/phpinfo">php.net/phpinfo</a> into your browser's location bar, and php.net will redirect you to <a href="http://www.php.net/manual/en/function.phpinfo.php">the reference page on the phpinfo function</a>.</li>
+</ul>
+
+<p></p>
+<span class="divider">&nbsp;</span>
+</div> <!--entry-->
+
+<div class="pageturn"><div class="inner">
+<a href="day_28_labeling_form_elements.html">&lt;&lt; Day 28: Labeling form elements</a> |
+<a href="table_of_contents.html">Contents</a>
+| <a href="day_30_creating_an_accessibility_statement.html">Day 30: Creating an accessibility statement &gt;&gt;</a>
+<span class="divider">&nbsp;</span>
+</div></div> <!--pageturn-->
+
+</div></div> <!--main-->
+
+<div id="menu">
+<a class="skip" name="startnavigation" id="startnavigation"></a>
+
+<form action="http://www.google.com/cse"><p>Search this site:</p><p><input type="hidden" name="cx" value="014021643941856155761:j2rsjqy6z6g"><input type="hidden" name="ie" value="UTF-8"><input type="search" name="q" size="20" placeholder="powered by Google&trade;"></p><p><input type="submit" name="sa" value="Search"></p></form>
+</form>
+
+
+
+<div class="menusection"><div class="inner">
+
+<h2 class="invisibletitle">Site links</h2>
+
+<a class="skip" href="day_29_making_everything_searchable.html#endinternal">Skip over site links</a>
+
+<ul>
+<li><a title="accessibility features of this site" href="accessibility_statement.html" accesskey="0">Accessibility statement</a></li>
+<li><a href="mt/mt-search.html" accesskey="4">Advanced search</a></li>
+<li><a href="table_of_contents.html" accesskey="3">Table of contents</a></li>
+<li><a href="by_person.html">Tips by person</a></li>
+<li><a href="by_disability.html">Tips by disability</a></li>
+<li><a href="by_design_principle.html">Tips by design principle</a></li>
+<li><a href="by_web_browser.html">Tips by web browser</a></li>
+<li><a href="by_publishing_tool.html">Tips by publishing tool</a></li>
+<li><a title="send email to the author" href="mailto:feedback@diveintoaccessibility.org" accesskey="9">Feedback</a></li>
+<li><a title="Copyright and licensing information" href="terms_of_use.html" accesskey="8">Terms of use</a></li>
+</ul>
+
+<a class="skip" id="endinternal"></a>
+
+</div></div> <!--.menusection-->
+
+
+
+<div id="footer"><div class="inner">
+
+<address>Copyright &copy; 2002 Mark Pilgrim</address> 
+
+</div></div> <!--footer-->
+
+
+</div> <!--menu-->
+
+<div id="navigation">
+<p class="breadcrumb">You are here:
+<a href="index.html">Home</a> > 
+<a href="table_of_contents.html">Table of contents</a> > 
+<span class="currentpage">Day 29: Making everything searchable</span>
+</p>
+</div><!--navigation-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36045340-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+<!-- Mirrored from diveintoaccessibility.info/day_29_making_everything_searchable.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:32 GMT -->
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- Mirrored from diveintoaccessibility.info/day_26_using_relative_font_sizes.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:31 GMT -->
+<head>
+<title>Day 26: Using relative font sizes - Dive Into Accessibility</title>
+<link rel="start" title="Home page" href="index.html" />
+<link rel="contents" title="Table of contents" href="table_of_contents.html" />
+<link rel="search" title="Search this site" href="mt/mt-search.html" />
+<link rel="help" title="Access features of this site" href="accessibility_statement.html" />
+<link rel="author" title="Send feedback to the author" href="mailto:feedback@diveintoaccessibility.org" />
+<link rel="copyright" title="Terms of use" href="terms_of_use.html" />
+<link rel="up" title="Table of contents" href="table_of_contents.html" />
+<link rel="first" title="Day 1: Jackie" href="day_1_jackie.html" />
+<link rel="last" title="Accessibility statement" href="accessibility_statement.html" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="projection" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/aural.css" type="text/css" media="aural" />
+
+
+<link rel="prev" href="day_25_using_real_horizontal_rules_or_faking_them_properly.html" title="Day 25: Using real horizontal rules (or faking them properly)" />
+<link rel="next" href="day_27_using_real_headers.html" title="Day 27: Using real headers" />
+<script>_gaq=[['_setAccount','UA-7434570-7'],['_trackPageview']];(function(){var g=document.createElement('script');g.src='../www.google-analytics.com/ga.js';g.setAttribute('async','true');document.documentElement.firstChild.appendChild(g);})();</script>
+</head>
+<body>
+
+<div id="logo"><div class="inner">
+<h1 class="title">
+<a href="index.html" accesskey="1">Dive Into Accessibility</a>
+</h1>
+<p>30 days to a more accessible web site</p>
+<a class="skip" href="day_26_using_relative_font_sizes.html#startnavigation">Skip to navigation</a>
+<span class="divider">&nbsp;</span>
+</div></div>
+
+
+<p></p>
+
+
+<div id="main"><div class="inner">
+
+<div class="entry">
+<h2 class="entrysubject">Day 26: Using relative font sizes</h2>
+<p class="firstparagraph">Web sites, with few exceptions, center around words.  News, opinions, thoughts, ideas, stories, original writing, e-commerce: all words.  Visual design and images are important, to be sure, but if people can't read your words, what's the point?</p>
+
+<p>In the fall of 2000, Jeffrey Zeldman famously said that <a href="http://www.alistapart.com/stories/fear4/">relative font sizing was impossible</a> ("pixels, baby... or nothing") because of an overwhelming variety of browser bugs, starting with Netscape 4 and ending in the most modern browsers.  Since then, Netscape 4 still hasn't gotten any better, and it still hasn't gone away, but at least we've all learned a thing or two about taming the browsers and making relative font sizing a reality.  (Zeldman too; his recently reincarnated <a href="http://www.webstandards.org/">Web Standards Project</a> uses the technique described below.)</p>
+
+<p>Use relative font sizes in browsers that can handle them, and absolute font sizes in Netscape 4, which does not reliably support relative font sizes.  You can do this even if you don't use multiple stylesheets.  In a minute, I'll give copy-and-paste solutions for the default Movable Type template and <em>all</em> default Radio themes.  And a lengthy explanation of the technique itself to help you implement it in other templates.</p>
+
+<h3>Who benefits?</h3>
+
+<ol>
+<li><p><a href="day_4_lillian.html">Lillian</a> benefits.  Lillian has difficulty seeing web pages clearly, due to nothing more than old age.  Like 80% of the Internet population, she uses Internet Explorer for Windows, which does not support resizing text unless the web designer exclusively specifies relative font sizes.  Lillian has changed the default text size in her browser (under the "View" menu, "Text Size"), but it doesn't do any good on sites that use absolute font sizes.  This includes virtually every weblog template in existence.  For example, this is what the default Movable Type template looks like to Lillian:</p>
+
+<p><a href="images/abs_sizing.html" title="Click for full-screen version (35K)"><img alt="Screenshot of Movable Type default template as seen through Lillian's eyes; text is completely blurred and impossible to read" title="" src="images/abs_sizing_thumb.gif" width="300" height="300" /></a></p>
+
+<p>If the template used relative font sizes, it would look <strong><em>exactly the same</em></strong> to the majority of readers who don't need (or care) to change their text size.  But this is what it would look like to Lillian:</p>
+
+<p><a href="images/rel_sizing.html" title="Click for full-screen version (79K)"><img alt="Screenshot of same template using relative font sizing; text is still blurred but large enough to be readable" title="" src="images/rel_sizing_thumb.gif" width="300" height="300" /></a></p>
+
+<p>Again: if people can't read your words, <em>what's the point?</em></p>
+</li>
+</ol>
+
+<h3>How to do it: Radio</h3>
+
+<p>In your Home Page Template, look in your <code>&lt;style&gt;</code> section near the top for a CSS rule that looks like this:</p>
+
+<blockquote>
+<pre><code>body, td, th, p {
+  font-family: verdana, sans-serif;
+  font-size: 12px;
+}</code></pre>
+</blockquote>
+
+<p><em>Keep that just the way it is</em>, but add this immediately after it:</p>
+
+<blockquote>
+<pre><code>/*/*/a{}
+body,
+body td,
+body th,
+body p {
+  font-size: x-small;
+  voice-family: "\"}\"";
+  voice-family: inherit;
+  font-size: small;
+}
+html>body,
+html>body td,
+html>body th
+html>body p {
+  font-size: small;
+}  
+/* */</code></pre>
+</blockquote>
+
+<p>Make sure to include the comments at the beginning and the end.  They're the key to the whole thing, as explained below.</p>
+
+<h3>How to do it: Movable Type</h3>
+
+<p>The default Movable Type template is more complex than the Radio templates, but we're going to do the same thing, just more of it.  In your Stylesheet template (<code>styles-site.css</code>), add this at the end:</p>
+
+<blockquote>
+<pre><code>/*/*/a{}
+body,
+body a,
+body .calendar,
+body .calendarhead,
+body .title,
+body .sidetitle,
+body .syndicate,
+body .powered,
+body .comments-post,
+body .posted {
+  font-size: xx-small;
+  voice-family: "\"}\"";
+  voice-family: inherit;
+  font-size: x-small;
+}
+html>body,
+html>body a,
+html>body .calendar,
+html>body .calendarhead,
+html>body .title,
+html>body .sidetitle,
+html>body .syndicate,
+html>body .powered,
+html>body .comments-post,
+html>body .posted {
+  font-size: x-small;
+}
+
+body .date {
+  font-size: x-small;
+  voice-family: "\"}\"";
+  voice-family: inherit;
+  font-size: small;
+}
+html>body .date {
+  font-size: small;
+}
+
+body #banner {
+  font-size: 200%;
+}
+
+body .description {
+  font-size: 60%;
+}
+
+body .blogbody {
+  font-size: 110%;
+}
+
+body .blogbody,
+body .calendar,
+body .calendarhead,
+body .side,
+body .title,
+body .sidetitle,
+body .syndicate,
+body .powered,
+body .comments-body {
+  line-height: 128%;
+}
+/* */</code></pre>
+</blockquote>
+
+<p>Again, make sure to include the comments at the beginning and the end.</p>
+
+<h3>How to do it: detailed explanation</h3>
+
+<p>The general idea is that we're going to use font-size keywords.  These are little-used (due to bugs in older browsers), but they have three interesting properties:</p>
+
+<ol>
+<li>They don't compound.  If you have a "main" section sized at <code>90%</code>, and within that you have a "post" section sized as <code>90%</code>, some browsers will display the post at 81% (90% x 90%), but some will display it at 90%.  With more than one level of nesting (common in templates that use tables for layout), text quickly becomes unreadably small as the percentages compound.  However, if your "main" section is sized as <code>small</code>, and the "post" section within it is sized as <code>small</code>, all browsers will display the "post" section as <code>small</code>.</li>
+<li>They resize properly in Internet Explorer for Windows.  This is odd, since <code>small</code> sounds like an absolute size (especially in light of the fact that <code>small</code> nested within <code>small</code> is still <code>small</code>, see above), but it works.  What can I tell you?  IE/Win resizes text sized with font size keywords.  I swear.</li>
+<li>They never get <em>too</em> small.  That "Text Size" setting that Lillian uses in Internet Explorer can be used to make text smaller as well as larger.  Many people with good eyesight prefer everything one, even two, sizes smaller than normal.  Text sized with percentages tends to become microscopic and fuzzy when combined with the smallest default text size setting.  However, text sized with font size keywords always stays at least 9px, which is readable in any font (assuming good eyesight).</li>
+</ol>
+
+<p>So we're going to use font size keywords to specify our basic sizes.  And if we need finer control than that, we're going to use percentages, but only on leaf classes that contain text (so on "post", but not "main") to avoid compounding percentages, and not too small, to avoid becoming microscopic when combined with users' smaller default text sizes.</p>
+
+<p>Here's the general idea of font size keywords:</p>
+
+<blockquote>
+<pre><code>p {
+  font-size: 12px;
+}
+
+/*/*/a{}
+body p {
+  font-size: x-small;
+  voice-family: "\"}\"";
+  voice-family: inherit;
+  font-size: small;
+}
+html>body p {
+  font-size: small;
+}
+/* */</code></pre>
+</blockquote>
+
+<p>There's a lot going on here, and it's all important, so pay attention.</p>
+
+<ol>
+<li>First, we're defining an absolute size (12px) for every &lt;p&gt;.  All browsers apply this style, including Netscape 4.</li>
+<li>Then we include the odd-looking comment "/*/*/".  Due to bugs in Netscape 4, everything between this comment and the following one will be ignored.  That's right, all the following styles will only be applied in non-Netscape-4 browsers.</li>
+<li>Immediately after the odd-looking comment, we include an empty rule "a {}".  Opera 5 for Mac is buggy and ignores this rule (and only this rule).  It applies everything else.</li>
+<li>We have now carved out a realm where we can define rules that are applied in all browsers except Netscape 4.  Now we can start defining relative font sizes (which Netscape 4 can't handle).  The first thing we do is use a "body p" selector to redefine the behavior of the p tag.  Due to the way CSS works, this will override our previous p selector.  (In technical terms, "body p" is a <em>more specific selector</em> than "p".)</li>
+<li>We redefine the font size of all &lt;p&gt; tags to be <code>x-small</code>.  This is a font size keyword which, at default settings, Internet Explorer 5 for Windows will translate into 12px.  However, if the user changes their "Text Size" (under the View menu), this text will scale larger or smaller, depending on the user's setting.  This is what we want.  (Note: we've now defined font-size <em>twice</em> for IE5/Win, but that's okay, because the more specific selector always wins, and the previous selector is simply ignored.)</li>
+<li>Unfortunately, IE5/Win an off-by-1 bug with its font size keywords; every other browser in the world (IE5/Mac, Netscape 6, Mozilla, IE6/Win) will translate <code>x-small</code> to 10px, not 12px.  Luckily for us, IE5/Win has its own parsing bug that we can exploit: it looks at that odd-looking voice-family and mistakenly thinks that this entire "body p" selector is over, so it ignores all the lines until the "}".</li>
+<li><em>Now</em> we have carved out a smaller realm where we can define rules that are applied in all browsers except IE5/Win (and Netscape 4, which is still blissfully ignoring all of this).  So we redefine font-size to <code>small</code>, which modern non-IE5/Win browsers (the only ones still listening) correctly interpret as 12px (at default settings).  Again, if the user sets their "text size" to larger, this text will scale larger, which is what we want.</li>
+<li>But wait!  Opera 5 has the same parsing bug that IE5/Win has, so it was also confused by the voice-family hack, but it correctly interprets font size keywords, so now our text will look too small in Opera 5.  Luckily, Opera 5 supports a <em>third</em> type of selector, "html>body p".  (Again, this is "more specific" than "body p", so it takes precedence over the previous selector.)  IE5/Win does not support this type of selector, so it will just ignore it, which is what we want (since we've already compensated for it's off-by-1 bug and don't want to go mucking that up now).  IE6/Win also does not support it, but that's OK, because we caught it with the "font-size: small" after the "voice-family: inherit" hack in the "body p" selector.  All other browsers support "html>body" selectors, so for them we end up defining font-size <em>four</em> times.  Again, that's not a problem, because the most specific selector always wins, and the rest are simply ignored.</li>
+<li>Finally, we have a set of empty comments: <code>/* */</code>.  This triggers Netscape 4's parser to start listening again.  If we defined any further rules after these empty comments, all browsers (including Netscape 4) would apply them.</li>
+</ol>
+
+<p>To recap:</p>
+
+<ol>
+<li>Netscape 4 displays <code>&lt;p&gt;</code> text at 12px, regardless of user setting.</li>
+<li>Internet Explorer 5 for Windows displays <code>&lt;p&gt;</code> text at <code>x-small</code>, which works out to be 12px at the default setting, but would scale larger if the user set their "Text Size" setting larger in the View menu.</li>
+<li>Internet Explorer 6 for Windows displays <code>&lt;p&gt;</code> text at <code>small</code>, because of the "font-size: small" rule in the "body p" selector.  This works out to 12px at the default setting, but would scale larger if the user set their "Text Size" setting larger.</li>
+<li>Internet Explorer 5 for Mac, Opera, Netscape 6, Mozilla, and (hopefully) all future browsers will display <code>&lt;p&gt;</code> text at <code>small</code>, because of the "font-size: small" rule in the "html>body p" selector.  This works out to 12px at the default setting, but would scale larger if the user used the "Text Zoom" feature.</li>
+</ol>
+
+<h3>Further reading</h3>
+
+<ul>
+<li><cite>Mark Pilgrim</cite>: <a href="examples/fontsize.html">Relative Font Sizing HOWTO</a>.  Gives essentially this same explanation, but the page itself is an example of the technique, so you can see it in action.</li>
+<li><cite title="A List Apart">Todd Fahrner</cite>: <a href="http://www.alistapart.com/stories/sizematters/">Size Matters: Making Font Size Keywords Work</a>.</li>
+<li><cite>Caio Chassot</cite>: <a href="http://www.v2studio.com/k/css/n4hide/">Hiding CSS from Netscape 4</a> without using multiple stylesheets.</li>
+<li><cite>Tantek &Ccedil;elik</cite>: <a href="http://tantek.com/CSS/Examples/boxmodelhack.html">Box Model Hack</a>.  How to hide CSS from Internet Explorer 5 for Windows.</li>
+<li><a href="http://www.webstandards.org/">The Web Standards Project</a> also uses font size keywords with the IE5/Win hack, although they use a Javascript-based solution (instead of the inline comment hack) to deal with Netscape 4.</li>
+<li><cite>Owen Briggs</cite>: <a href="http://www.thenoodleincident.com/tutorials/box_lesson/font/index.html">Text Sizing</a>.  Screenshots of various relative font sizing techniques across browsers, platforms, and default text size settings.</li>
+</ul>
+
+<p></p>
+<span class="divider">&nbsp;</span>
+</div> <!--entry-->
+
+<div class="pageturn"><div class="inner">
+<a href="day_25_using_real_horizontal_rules_or_faking_them_properly.html">&lt;&lt; Day 25: Using real horizontal rules (or faking them properly)</a> |
+<a href="table_of_contents.html">Contents</a>
+| <a href="day_27_using_real_headers.html">Day 27: Using real headers &gt;&gt;</a>
+<span class="divider">&nbsp;</span>
+</div></div> <!--pageturn-->
+
+</div></div> <!--main-->
+
+<div id="menu">
+<a class="skip" name="startnavigation" id="startnavigation"></a>
+
+<form action="http://www.google.com/cse"><p>Search this site:</p><p><input type="hidden" name="cx" value="014021643941856155761:j2rsjqy6z6g"><input type="hidden" name="ie" value="UTF-8"><input type="search" name="q" size="20" placeholder="powered by Google&trade;"></p><p><input type="submit" name="sa" value="Search"></p></form>
+</form>
+
+
+
+<div class="menusection"><div class="inner">
+
+<h2 class="invisibletitle">Site links</h2>
+
+<a class="skip" href="day_26_using_relative_font_sizes.html#endinternal">Skip over site links</a>
+
+<ul>
+<li><a title="accessibility features of this site" href="accessibility_statement.html" accesskey="0">Accessibility statement</a></li>
+<li><a href="mt/mt-search.html" accesskey="4">Advanced search</a></li>
+<li><a href="table_of_contents.html" accesskey="3">Table of contents</a></li>
+<li><a href="by_person.html">Tips by person</a></li>
+<li><a href="by_disability.html">Tips by disability</a></li>
+<li><a href="by_design_principle.html">Tips by design principle</a></li>
+<li><a href="by_web_browser.html">Tips by web browser</a></li>
+<li><a href="by_publishing_tool.html">Tips by publishing tool</a></li>
+<li><a title="send email to the author" href="mailto:feedback@diveintoaccessibility.org" accesskey="9">Feedback</a></li>
+<li><a title="Copyright and licensing information" href="terms_of_use.html" accesskey="8">Terms of use</a></li>
+</ul>
+
+<a class="skip" id="endinternal"></a>
+
+</div></div> <!--.menusection-->
+
+
+
+<div id="footer"><div class="inner">
+
+<address>Copyright &copy; 2002 Mark Pilgrim</address> 
+
+</div></div> <!--footer-->
+
+
+</div> <!--menu-->
+
+<div id="navigation">
+<p class="breadcrumb">You are here:
+<a href="index.html">Home</a> > 
+<a href="table_of_contents.html">Table of contents</a> > 
+<span class="currentpage">Day 26: Using relative font sizes</span>
+</p>
+</div><!--navigation-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36045340-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+<!-- Mirrored from diveintoaccessibility.info/day_26_using_relative_font_sizes.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:32 GMT -->
+</html>

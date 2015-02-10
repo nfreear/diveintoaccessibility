@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- Mirrored from diveintoaccessibility.info/day_30_creating_an_accessibility_statement.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:32 GMT -->
+<head>
+<title>Day 30: Creating an accessibility statement - Dive Into Accessibility</title>
+<link rel="start" title="Home page" href="index.html" />
+<link rel="contents" title="Table of contents" href="table_of_contents.html" />
+<link rel="search" title="Search this site" href="mt/mt-search.html" />
+<link rel="help" title="Access features of this site" href="accessibility_statement.html" />
+<link rel="author" title="Send feedback to the author" href="mailto:feedback@diveintoaccessibility.org" />
+<link rel="copyright" title="Terms of use" href="terms_of_use.html" />
+<link rel="up" title="Table of contents" href="table_of_contents.html" />
+<link rel="first" title="Day 1: Jackie" href="day_1_jackie.html" />
+<link rel="last" title="Accessibility statement" href="accessibility_statement.html" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="projection" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/aural.css" type="text/css" media="aural" />
+
+
+<link rel="prev" href="day_29_making_everything_searchable.html" title="Day 29: Making everything searchable" />
+<link rel="next" href="conclusion.html" title="Conclusion" />
+<script>_gaq=[['_setAccount','UA-7434570-7'],['_trackPageview']];(function(){var g=document.createElement('script');g.src='../www.google-analytics.com/ga.js';g.setAttribute('async','true');document.documentElement.firstChild.appendChild(g);})();</script>
+</head>
+<body>
+
+<div id="logo"><div class="inner">
+<h1 class="title">
+<a href="index.html" accesskey="1">Dive Into Accessibility</a>
+</h1>
+<p>30 days to a more accessible web site</p>
+<a class="skip" href="day_30_creating_an_accessibility_statement.html#startnavigation">Skip to navigation</a>
+<span class="divider">&nbsp;</span>
+</div></div>
+
+
+<p></p>
+
+
+<div id="main"><div class="inner">
+
+<div class="entry">
+<h2 class="entrysubject">Day 30: Creating an accessibility statement</h2>
+<p class="firstparagraph">If you've implemented any of the tips in this series, create an accessibility statement that lists the accessibility features of your site.</p>
+
+<h3>Who benefits?</h3>
+
+<ol>
+<li><a href="day_3_bill.html">Bill</a> benefits.  He makes extensive use of the keyboard for navigation, and he would use your <a href="day_15_defining_keyboard_shortcuts.html" title="Day 15: Defining keyboard shortcuts"><code>accesskey</code> keyboard shortcuts</a> if he knew what they were.  Unfortunately, Mozilla does not announce them or make them visible in any way, so you'll need to list them yourself.</li>
+<li>Many other users benefit, by learning how to use their own software better.  For instance, <a href="day_4_lillian.html">Lillian</a> did not know that she could set her default text size in her browser until someone told her how to do it; now she can more easily read your site (that is, if you <a href="day_26_using_relative_font_sizes.html" title="Day 26: Using relative font sizes">use relative font sizes</a>).  Netscape and Mozilla users may not know that they can turn on the Site Navigation Bar to take advantage of your <a href="day_9_providing_additional_navigation_aids.html" title="Day 9: Providing additional navigation aids">LINK-based navigation aids</a>.  ("View" menu, "Show/hide", "Site Navigation Bar", "Show Only AS Needed".  Unfortunately, this feature was pulled from Mozilla 1.0 final at the last minute, but it's back in 1.1.)</li>
+<li>Fellow web designers benefit, by learning more about accessibility and seeing that you've taken the time to implement these tips.</li>
+</ol>
+
+<h3>How to do it</h3>
+
+<p>In Radio or Manila, you can create your accessibility statement as a story ("Stories" in the Radio or Manila toolbar) so it has its own URL.  Otherwise, just create a new post.  Make a note of the URL after saving; you'll need it later.</p>
+
+<p>The first thing you should do is list the <a href="day_15_defining_keyboard_shortcuts.html" title="Day 15: Defining keyboard shortcuts"><code>accesskey</code> keyboard shortcuts</a> you've defined, since most browsers do not announce them or make them visible in any way.  Also list the <code>accesskey</code> for your accessibility statement itself (which will be <code>accesskey="0"</code>, as we'll see in a minute).</p>
+
+<p>After that, you should list all of the accessibility features that you've implemented throughout this series.  If you implemented some tips but not others, just mention the ones you actually implemented.  This will likely be an enlightening experience, like updating your r&eacute;sum&eacute; for the first time since taking a new job and realizing just how much stuff you've actually done.  You've done a lot.</p>
+
+<p>If you like, you can also mention briefly why you implemented each feature ("easier to use with screen readers", "for users of text-only browsers", "for users who can not distinguish colors", and so forth).  Remember, an accessibility statement will be read by more than disabled users; it should be both informative (for users who directly benefit) and educative (for fellow web designers who choose to follow your example).  Or, instead of explaining them yourself, you can link to individual days in this book, or just <a href="index.html" title="Dive Into Accessibility: 30 days to a more accessible web site">link to the book's home page</a>.</p>
+
+<p>Finally, link to your accessibility statement from every page of your site, either in your site-wide navigation bar or in your page footer.  Give the link a title and an <code>accesskey="0"</code>, like this:</p>
+
+<blockquote>
+<p><code>&lt;a href="/accessibility_statement.html" title="accessibility features of this site" accesskey="0"&gt;Accessibility statement&lt;/a&gt;</code></p>
+</blockquote>
+
+<h3>Further reading</h3>
+
+<ul>
+<li><a href="http://diveintomark.org/accessibility_statement.html">Accessibility statement for diveintomark.org</a>.</li>
+<li><a href="accessibility_statement.html">Accessibility statement for diveintoaccessibility.org</a>.  Feel free to use either of these as a template, including structure, wording, and links to further reading.</li>
+</ul>
+
+<p></p>
+<span class="divider">&nbsp;</span>
+</div> <!--entry-->
+
+<div class="pageturn"><div class="inner">
+<a href="day_29_making_everything_searchable.html">&lt;&lt; Day 29: Making everything searchable</a> |
+<a href="table_of_contents.html">Contents</a>
+| <a href="conclusion.html">Conclusion &gt;&gt;</a>
+<span class="divider">&nbsp;</span>
+</div></div> <!--pageturn-->
+
+</div></div> <!--main-->
+
+<div id="menu">
+<a class="skip" name="startnavigation" id="startnavigation"></a>
+
+<form action="http://www.google.com/cse"><p>Search this site:</p><p><input type="hidden" name="cx" value="014021643941856155761:j2rsjqy6z6g"><input type="hidden" name="ie" value="UTF-8"><input type="search" name="q" size="20" placeholder="powered by Google&trade;"></p><p><input type="submit" name="sa" value="Search"></p></form>
+</form>
+
+
+
+<div class="menusection"><div class="inner">
+
+<h2 class="invisibletitle">Site links</h2>
+
+<a class="skip" href="day_30_creating_an_accessibility_statement.html#endinternal">Skip over site links</a>
+
+<ul>
+<li><a title="accessibility features of this site" href="accessibility_statement.html" accesskey="0">Accessibility statement</a></li>
+<li><a href="mt/mt-search.html" accesskey="4">Advanced search</a></li>
+<li><a href="table_of_contents.html" accesskey="3">Table of contents</a></li>
+<li><a href="by_person.html">Tips by person</a></li>
+<li><a href="by_disability.html">Tips by disability</a></li>
+<li><a href="by_design_principle.html">Tips by design principle</a></li>
+<li><a href="by_web_browser.html">Tips by web browser</a></li>
+<li><a href="by_publishing_tool.html">Tips by publishing tool</a></li>
+<li><a title="send email to the author" href="mailto:feedback@diveintoaccessibility.org" accesskey="9">Feedback</a></li>
+<li><a title="Copyright and licensing information" href="terms_of_use.html" accesskey="8">Terms of use</a></li>
+</ul>
+
+<a class="skip" id="endinternal"></a>
+
+</div></div> <!--.menusection-->
+
+
+
+<div id="footer"><div class="inner">
+
+<address>Copyright &copy; 2002 Mark Pilgrim</address> 
+
+</div></div> <!--footer-->
+
+
+</div> <!--menu-->
+
+<div id="navigation">
+<p class="breadcrumb">You are here:
+<a href="index.html">Home</a> > 
+<a href="table_of_contents.html">Table of contents</a> > 
+<span class="currentpage">Day 30: Creating an accessibility statement</span>
+</p>
+</div><!--navigation-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36045340-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+<!-- Mirrored from diveintoaccessibility.info/day_30_creating_an_accessibility_statement.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:32 GMT -->
+</html>

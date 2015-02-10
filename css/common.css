@@ -1,0 +1,39 @@
+
+
+
+
+
+/*
+     FILE ARCHIVED ON 0:05:11 Jul 26, 2011 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:05:36 Oct 6, 2011.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+Dive Into Accessibility common stylesheet (shared by all media types)
+copyright (c) 2002, Mark Pilgrim (f8dy@diveintomark.org)
+GPL-licensed
+*/
+
+.divider, .invisibletitle, a.skip {
+  display: none;
+}
+
+cite {
+  font-style: normal;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+address {
+  font-style: normal;
+}
+
+code {
+  font-family: monospace;
+}
+

@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- Mirrored from diveintoaccessibility.info/day_8_constructing_meaningful_page_titles.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:29 GMT -->
+<head>
+<title>Day 8: Constructing meaningful page titles - Dive Into Accessibility</title>
+<link rel="start" title="Home page" href="index.html" />
+<link rel="contents" title="Table of contents" href="table_of_contents.html" />
+<link rel="search" title="Search this site" href="mt/mt-search.html" />
+<link rel="help" title="Access features of this site" href="accessibility_statement.html" />
+<link rel="author" title="Send feedback to the author" href="mailto:feedback@diveintoaccessibility.org" />
+<link rel="copyright" title="Terms of use" href="terms_of_use.html" />
+<link rel="up" title="Table of contents" href="table_of_contents.html" />
+<link rel="first" title="Day 1: Jackie" href="day_1_jackie.html" />
+<link rel="last" title="Accessibility statement" href="accessibility_statement.html" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="projection" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/aural.css" type="text/css" media="aural" />
+
+
+<link rel="prev" href="day_7_identifying_your_language.html" title="Day 7: Identifying your language" />
+<link rel="next" href="day_9_providing_additional_navigation_aids.html" title="Day 9: Providing additional navigation aids" />
+<script>_gaq=[['_setAccount','UA-7434570-7'],['_trackPageview']];(function(){var g=document.createElement('script');g.src='../www.google-analytics.com/ga.js';g.setAttribute('async','true');document.documentElement.firstChild.appendChild(g);})();</script>
+</head>
+<body>
+
+<div id="logo"><div class="inner">
+<h1 class="title">
+<a href="index.html" accesskey="1">Dive Into Accessibility</a>
+</h1>
+<p>30 days to a more accessible web site</p>
+<a class="skip" href="day_8_constructing_meaningful_page_titles.html#startnavigation">Skip to navigation</a>
+<span class="divider">&nbsp;</span>
+</div></div>
+
+
+<p></p>
+
+
+<div id="main"><div class="inner">
+
+<div class="entry">
+<h2 class="entrysubject">Day 8: Constructing meaningful page titles</h2>
+<p class="firstparagraph">Every page of your web site should have a unique and meaningful page title.</p>
+
+<ul>
+<li>The home page title can simply be the name of your web site.</li>
+<li>Date-based archive pages should include the name of your web site, followed by the date (or date range) for the page.  For example, on my weblog I have daily archives whose titles look like "<a href="http://diveintomark.org/archives/2002/06/19.html">dive into mark/June 19, 2002</a>", and monthly archives like "<a href="http://diveintomark.org/archives/2002/06/">dive into mark/June 2002</a>".</li>
+<li>Category pages should include the name of your web site, followed by the name of the category.  For example, all of my <acronym title="cascading style sheets">CSS</acronym>-related posts are archived on a page entitled "<a href="http://diveintomark.org/archives/rooms/css/">dive into mark/CSS</a>".</li>
+<li>Individual entry archive pages should include the name of your web site, followed by the entry title.  I don't have separate pages for individual entries, but <a href="http://weblog.delacour.net/">Jonathon Delacour</a> does, and he gets this right.  For example, his post of June 17, 2002, <a href="http://weblog.delacour.net/archives/000535.html">Accessibility matters</a>, is archived on its own page with the title "Jonathon Delacour: Accessibility matters".</li>
+</ul>
+
+<p>The exact punctuation is not relevant, although some screen readers will read every punctuation character out loud by default.  As a general rule, excessive punctuation sounds as dumb as it looks.</p>
+
+<h3>Who benefits?</h3>
+
+<ol>
+<li><a href="day_1_jackie.html">Jackie</a> benefits.  <a href="http://www.freedomscientific.com/fs_products/software_jaws.asp">JAWS</a> has a special keyboard shortcut (INSERT + F10) which displays (and reads) a list of the currently open windows, by window title.  In the case of web pages, this would be your page title.  It also reads the window title while ALT-TABbing through open windows.  Other screen readers, like <a href="http://www-3.ibm.com/able/hpr.html">Home Page Reader</a>, read the page title out load as soon as you visit the page.</li>
+<li><a href="day_5_marcus.html">Marcus</a> benefits.  <a href="http://www.fdisk.com/doslynx/lynxport.htm">Lynx</a> displays the page title in the first line of output, so it's always the first thing that Marcus reads in Braille.</li>
+<li><a href="day_3_bill.html">Bill</a> benefits.  Because of his stroke, he sometimes gets confused and momentarily loses track of what he's reading.  The page title in the window titlebar acts as a visual anchor; it stays in the same place, even as he scrolls the page.  He can always glance back to it to jog his memory.</li>
+<li><a href="http://www.google.com/">Google</a> benefits.  Google displays the page title in its search results, and <a href="http://www.searchengineworld.com/design/title.htm" title="Search Engine World: Webpage Title for High Search Engine Rankings">it ranks keywords higher when they appear in the page title</a>.  This is a Good Thing for you, especially for those individual entry pages.  (Choosing good entry titles doesn't hurt either.)</li>
+</ol>
+
+<h3>How to do it</h3>
+
+<p>Movable Type has separate templates for the various types of index and archive pages.  The default templates are quite accessible already; if you are using the default template, you don't need to make any changes.</p>
+
+<ol>
+<li>Main Index: <code class="sgmltag">&lt;title&gt;&lt;$MTBlogName$&gt;&lt;/title&gt;</code></li>
+<li>Archive Index: <code class="sgmltag">&lt;title&gt;&lt;$MTBlogName$&gt; Archives&lt;/title&gt;</code></li>
+<li>Category Archive: <code class="sgmltag">&lt;title&gt;&lt;$MTBlogName$&gt;: &lt;$MTArchiveTitle$&gt;&lt;/title&gt;</code></li>
+<li>Date-Based Archive: <code class="sgmltag">&lt;title&gt;&lt;$MTBlogName$&gt;: &lt;$MTArchiveTitle$&gt;&lt;/title&gt;</code></li>
+<li>Individual Entry Archive: <code class="sgmltag">&lt;title&gt;&lt;$MTBlogName$&gt;: &lt;$MTEntryTitle$&gt;&lt;/title&gt;</code></li>
+</ol>
+
+<p>Greymatter has a similar set of templates, but a different templating language.  Greymatter does not have a separate template variable for the name of the weblog, so insert your own weblog title in each case.</p>
+
+<ol>
+<li>Main Index Template: <code class="sgmltag">&lt;title&gt;My Weblog&lt;/title&gt;</code></li>
+<li>Archive Master Index Template: <code class="sgmltag">&lt;title&gt;My Weblog Archives&lt;/title&gt;</code></li>
+<li>Archive Log Index Template: <code class="sgmltag">&lt;title&gt;My Weblog: {{month}} {{year}}&lt;/title&gt;</code></li>
+<li>Entry Page Template: <code class="sgmltag">&lt;title&gt;My Weblog: {{entrysubject}}&lt;/title&gt;</code></li>
+</ol>
+
+<p>Manila (at least in the default configuration) lets you specify a title for each day, so you should use that in the page title instead of the date, since it is more likely to be relevant to the content.</p>
+
+<ol>
+<li>Home Page Template: <code class="sgmltag">&lt;title&gt;{siteName}&lt;/title&gt;</code></li>
+<li>Template: <code class="sgmltag">&lt;title&gt;{siteName}: {title}&lt;/title&gt;</code></li>
+</ol>
+
+<p>Radio is a little trickier, you can still add the date to your date-based archives by using Radio's macro language.  Be careful copying and pasting this macro; there should be no line breaks anywhere, and Radio cares.  (Thanks to Jake Savin for these instructions.)</p>
+
+<ol>
+<li>Home Page Template: <code class="sgmltag">&lt;title&gt;&lt;%title%&gt;&lt;/title&gt;</code></li>
+<li>Main Template: <code class="sgmltag">&lt;title&gt;&lt;%title%&gt;&lt;%local (d); if radio.weblog.file.getArchiveFileDate (radioResponder.fileBeingRendered, @d) {": " + string.dateString (d)} else {""}%&gt;&lt;/title&gt;</code></li>
+</ol>
+
+<p>Unfortunately, I do not know how to customize page titles satisfactorily in Blogger.  <a href="mailto:f8dy@diveintoaccessibility.org">Suggestions welcome</a>.</p>
+
+<p>Keep in mind these are only suggestions.  You can include the word "Archives" in the daily and monthly archive pages, or not.  The exact punctuation really doesn't matter, as long as it's not excessive.  You can put the site name at the end rather than at the beginning.  It's a good idea to include your site name somewhere in your page titles, though; it's an important contextual clue, especially when people are switching between multiple open windows.</p>
+
+<h3>Further reading</h3>
+
+<ul>
+<li><cite>Jake Savin</cite>: <a href="http://radio.weblogs.com/0001000/2002/06/19.html#a630">Adding a date to your Radio archive pages</a></li>
+</ul>
+
+<p></p>
+<span class="divider">&nbsp;</span>
+</div> <!--entry-->
+
+<div class="pageturn"><div class="inner">
+<a href="day_7_identifying_your_language.html">&lt;&lt; Day 7: Identifying your language</a> |
+<a href="table_of_contents.html">Contents</a>
+| <a href="day_9_providing_additional_navigation_aids.html">Day 9: Providing additional navigation aids &gt;&gt;</a>
+<span class="divider">&nbsp;</span>
+</div></div> <!--pageturn-->
+
+</div></div> <!--main-->
+
+<div id="menu">
+<a class="skip" name="startnavigation" id="startnavigation"></a>
+
+<form action="http://www.google.com/cse"><p>Search this site:</p><p><input type="hidden" name="cx" value="014021643941856155761:j2rsjqy6z6g"><input type="hidden" name="ie" value="UTF-8"><input type="search" name="q" size="20" placeholder="powered by Google&trade;"></p><p><input type="submit" name="sa" value="Search"></p></form>
+</form>
+
+
+
+<div class="menusection"><div class="inner">
+
+<h2 class="invisibletitle">Site links</h2>
+
+<a class="skip" href="day_8_constructing_meaningful_page_titles.html#endinternal">Skip over site links</a>
+
+<ul>
+<li><a title="accessibility features of this site" href="accessibility_statement.html" accesskey="0">Accessibility statement</a></li>
+<li><a href="mt/mt-search.html" accesskey="4">Advanced search</a></li>
+<li><a href="table_of_contents.html" accesskey="3">Table of contents</a></li>
+<li><a href="by_person.html">Tips by person</a></li>
+<li><a href="by_disability.html">Tips by disability</a></li>
+<li><a href="by_design_principle.html">Tips by design principle</a></li>
+<li><a href="by_web_browser.html">Tips by web browser</a></li>
+<li><a href="by_publishing_tool.html">Tips by publishing tool</a></li>
+<li><a title="send email to the author" href="mailto:feedback@diveintoaccessibility.org" accesskey="9">Feedback</a></li>
+<li><a title="Copyright and licensing information" href="terms_of_use.html" accesskey="8">Terms of use</a></li>
+</ul>
+
+<a class="skip" id="endinternal"></a>
+
+</div></div> <!--.menusection-->
+
+
+
+<div id="footer"><div class="inner">
+
+<address>Copyright &copy; 2002 Mark Pilgrim</address> 
+
+</div></div> <!--footer-->
+
+
+</div> <!--menu-->
+
+<div id="navigation">
+<p class="breadcrumb">You are here:
+<a href="index.html">Home</a> > 
+<a href="table_of_contents.html">Table of contents</a> > 
+<span class="currentpage">Day 8: Constructing meaningful page titles</span>
+</p>
+</div><!--navigation-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36045340-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+<!-- Mirrored from diveintoaccessibility.info/day_8_constructing_meaningful_page_titles.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:29 GMT -->
+</html>
+
