@@ -9,6 +9,18 @@
 
 [Read][] [why][] this [repository][] of the book exists.
 
+### Translations
+
+* [Norwegian translation of Dive Into Accessibility][a11y-no-repo] ([Web][a11y-no-web]), by @asbjornu,
+* [Polish Translation of Dive Into Accessibility][a11y-pl-repo], by @danie1k,
+
+### Other links
+
+* [Dive Into HTML5][html5-jon], @jonathantneal,
+* [Dive Into HTML5][html5-mis], @mislav,
+* [Dive Into HTML5][html5-dive], @diveintomark,
+* [Dive Into Python][python-dive], @diveintomark,
+
 ### Acknowledgements
 
 The repository was created using:
@@ -38,3 +50,14 @@ The repository was created using:
 of Design)"
 [httrack]: https://www.httrack.com/
 [was]: http://diveintoaccessibility.info
+
+
+[a11y-no-repo]: https://github.com/asbjornu/kastdegutitilgjengelighet.no
+  "Norwegian translation of Dive Into Accessibility, by @asbjornu"
+[a11y-no-web]: https://kastdegutitilgjengelighet.no/
+[a11y-pl-repo]: https://github.com/danie1k/book-Dive-Into-Accessibility-Mark-Pilgrim
+  "Polish translation of Dive Into Accessibility, by @danie1k"
+[html5-jon]: https://github.com/jonathantneal/diveintohtml5
+[html5-mis]: https://github.com/mislav/diveintohtml5
+[html5-dive]: https://github.com/diveintomark/diveintohtml5
+[python-dive]: https://github.com/diveintomark/diveintopython3
