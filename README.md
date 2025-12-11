@@ -18,6 +18,11 @@
 * [Simplified Chinese translation][a11y-zh-hans],
 * [Traditional Chinese translation][a11y-zh-hant],
 
+## Archived Translations
+
+* [Italian translation of Dive Into Accessibility][a11y-it], by Roberto Scano & Webaccessibile.org team,
+* [Japanese translation][a11y-jp], by Mayu Shimizu _(incomplete)_,
+
 ### Other links
 
 * [Dive Into HTML5][html5-jon], [@jonathantneal][],
@@ -72,6 +77,10 @@ of Design)"
 [a11y-zh-hant]: http://dia.z6i.org/
 [a11y-fr]: https://www.la-grange.net/accessibilite/
   "French Translation of Dive Into Accessibility, by Karl Dubost"
+[a11y-it]: https://web.archive.org/web/20170512085330/http://www.francocarcillo.it/dive/
+  "Archive, 2017: Italian translation, by Roberto Scano (and Webaccessibile.org team)"
+[a11y-jp]: https://web.archive.org/web/20130909031118/http://www.fliedlice.com/dive/
+  "Archive, 2013: Japanese translation, by Mayu Shimizu (incomplete)"
 
 [html5-jon]: https://github.com/jonathantneal/diveintohtml5
 [html5-mis]: https://github.com/mislav/diveintohtml5
