@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "devDependencies": {
+    "servor": "^4.0.2"
+  },
+  "scripts": {
+    "start": "servor"
+  }
+}

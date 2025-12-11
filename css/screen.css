@@ -21,6 +21,7 @@ body {
   background-color: white;
   color: black;
   font-family: Verdana, Arial, Helvetica, sans-serif;
+  line-height: 1.5;
 }
 
 #crosssitenavigation, #navigation {
@@ -127,7 +128,7 @@ h3 {
 #main {
   margin: 1em 250px 1em 0;
   font-size: 90%;
-  line-height: 140%;
+  line-height: 1.75; /* Was: 140%; */
 }
 
 #main h2 {
