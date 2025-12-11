@@ -12,7 +12,11 @@
 ### Translations
 
 * [Norwegian translation of Dive Into Accessibility][a11y-no-repo] ([Website][a11y-no-web]), by [@asbjornu][],
-* [Polish Translation of Dive Into Accessibility][a11y-pl-repo], by [@danie1k][],
+* [Polish translation of Dive Into Accessibility][a11y-pl-repo], by [@danie1k][],
+* [Polish translation - website][a11y-pl-web], by Michał Świątkiewicz,
+* [French translation][a11y-fr], by Karl Dubost,
+* [Simplified Chinese translation][a11y-zh-hans],
+* [Traditional Chinese translation][a11y-zh-hant],
 
 ### Other links
 
@@ -62,6 +66,13 @@ of Design)"
 [a11y-no-web]: https://kastdegutitilgjengelighet.no/
 [a11y-pl-repo]: https://github.com/danie1k/book-Dive-Into-Accessibility-Mark-Pilgrim
   "Polish translation of Dive Into Accessibility, by @danie1k"
+[a11y-pl-web]: http://mimas.ceti.pl/dia/
+  "Michał Świątkiewicz published a Polish translation"
+[a11y-zh-hans]: http://dia.z6i.org/cn/
+[a11y-zh-hant]: http://dia.z6i.org/
+[a11y-fr]: https://www.la-grange.net/accessibilite/
+  "French Translation of Dive Into Accessibility, by Karl Dubost"
+
 [html5-jon]: https://github.com/jonathantneal/diveintohtml5
 [html5-mis]: https://github.com/mislav/diveintohtml5
 [html5-dive]: https://github.com/diveintomark/diveintohtml5
