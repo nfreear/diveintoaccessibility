@@ -1,0 +1,53 @@
+# https://github.com/actions/starter-workflows/blob/main/ci/node.js.yml
+
+name: Deploy
+
+on: [push, pull_request]
+# See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+env:
+  NODE_VERSION: 24
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build & Deploy
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Node.js ${{ env.NODE_VERSION }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        check-latest: true
+        # cache: 'npm'
+    #- run: npm ci
+    - run: npm run build --if-present
+    - run: npm test --if-present
+    #- name: Delete 'node_modules'
+    #  run: rm -rf node_modules
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v4
+      with:
+        # Upload one directory.
+        path: .
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+# End.
