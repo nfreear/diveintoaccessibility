@@ -11,15 +11,15 @@
 
 ### Translations
 
-* [Norwegian translation of Dive Into Accessibility][a11y-no-repo] ([Web][a11y-no-web]), by @asbjornu,
-* [Polish Translation of Dive Into Accessibility][a11y-pl-repo], by @danie1k,
+* [Norwegian translation of Dive Into Accessibility][a11y-no-repo] ([Website][a11y-no-web]), by [@asbjornu][],
+* [Polish Translation of Dive Into Accessibility][a11y-pl-repo], by [@danie1k][],
 
 ### Other links
 
-* [Dive Into HTML5][html5-jon], @jonathantneal,
-* [Dive Into HTML5][html5-mis], @mislav,
-* [Dive Into HTML5][html5-dive], @diveintomark,
-* [Dive Into Python][python-dive], @diveintomark,
+* [Dive Into HTML5][html5-jon], [@jonathantneal][],
+* [Dive Into HTML5][html5-mis], [@mislav][],
+* [Dive Into HTML5][html5-dive], [@diveintomark][],
+* [Dive Into Python][python-dive], [@diveintomark][],
 
 ### Acknowledgements
 
@@ -51,6 +51,11 @@ of Design)"
 [httrack]: https://www.httrack.com/
 [was]: http://diveintoaccessibility.info
 
+[@asbjornu]: https://github.com/asbjornu
+[@danie1k]: https://github.com/danie1k
+[@diveintomark]: https://github.com/diveintomark
+[@jonathantneal]: https://github.com/jonathantneal
+[@mislav]: https://github.com/mislav
 
 [a11y-no-repo]: https://github.com/asbjornu/kastdegutitilgjengelighet.no
   "Norwegian translation of Dive Into Accessibility, by @asbjornu"
