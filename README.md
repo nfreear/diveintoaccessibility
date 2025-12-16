@@ -4,6 +4,7 @@
 ## By Mark Pilgrim
 
  * [WM archive of 'Dive into Accessibility'][archive]
+ * [Errors and Caveats](docs/ERRATA.md)
 
 ### Why?
 
