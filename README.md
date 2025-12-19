@@ -3,7 +3,7 @@
 ## 30 days to a more accessible web site
 ## By Mark Pilgrim
 
- * [WM archive of 'Dive into Accessibility'][archive]
+ * [Archive of "Dive into Accessibility"][archive] (2011, on Wayback Machine)
  * [Errors and Caveats](docs/ERRATA.md)
 
 ### Why?
