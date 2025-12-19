@@ -1,0 +1,26 @@
+
+/* Accessibility: initially the skip link is visually-hidden offscreen.
+*/
+#logo .skip[ href ] {
+  display: block; /* FIX: override `display:none`! */
+  position: absolute;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 250ms;
+}
+
+/* When it receives focus, the skip link is made visible.
+*/
+#logo .skip[ href ]:focus {
+  background: #f8f8f8;
+  border: 1px solid gray;
+  border-radius: .2rem;
+  height: auto;
+  width: auto;
+  opacity: 1;
+  outline-offset: .3rem;
+  padding: .4rem;
+  text-underline-offset: .2rem;
+}
