@@ -1,4 +1,4 @@
-⬅ [Readme][]
+← [Readme][]
 
 # Errata #
 
@@ -20,16 +20,16 @@ The concept is correct, but perhaps unsurprisingly after 20+ years, the specific
 
 ## [Day 10: Presenting your main content first][day 10]
 
-The concept of "presenting your main content first" is flawed. What is important?
+The concept of "presenting your main content first" is somewhat flawed. What is important?
 
 1. A logical [reading order][] and [focus order][].
 2. [Consistent navigation][]
 3. The ability to [bypass or skip repeated blocks, such as site navigation][skip links]
-4. [Don't surprise your users][surprise]
+4. [Don't surprise your users][surprise] (make your site behave like other websites, unless you have an extremely good reason!)
 
 Fortunately, on the modern [mobile-oriented][mobile] Web, layout-tables are rare. There main relevance is when designing [email templates][].
 
-A modern implementation should use [`role="presentation"`][presentation]:
+A modern implementation of layout tables should use [`role="presentation"`][presentation]:
 
 ```html
 <table role="presentation"> My layout table … </table>
@@ -39,24 +39,29 @@ A modern implementation should use [`role="presentation"`][presentation]:
 
 [Skip links][] are as relevant now as they were in 2002.
 
-Unfortunately, the original implementation was never correct or keyboard accessible. Styling a link with the CSS `display:none` removes it from the keyboard focus order.
+Unfortunately, the original implementation appears to have never been correct or keyboard accessible. Styling a link with the CSS `display:none` removes it from the keyboard focus order.
 
 Given the following HTML:
 ```html
 <a class="skiplink" href="#startcontent">Skip to main content</a>
 ```
 
-An appropriate CSS implementation may be (_needs testing!_):
+An appropriate CSS implementation would be (_needs testing!_):
 ```css
 .skiplink {
-  left: 50%;
   position: absolute;
-  transform: translateY(-100%);
+  height: 0;
+  width: 0;
+  overflow: hidden;
   /* … */
 }
 
 .skiplink:focus {
-  transform: translateY(0%);
+  height: auto;
+  width: auto;
+  background-color: white;
+  color: blue;
+  /* … */
 }
 ```
 
@@ -78,19 +83,23 @@ Useful links:
 
 ## [Day 17: Defining acronyms][day 17]
 
-The `<acronym>` element is now [deprecated](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/acronym).
+The `<acronym>` element is [deprecated](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/acronym) in HTML5.
 
 Abbreviations of all kinds, including initialisms and acronyms should be explained in text, and can benefit from the use of the [`<abbr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/abbr) element.
 
 ## [Day 20: Providing a summary for tables][day 20]
 
-The `summary` attribute on the `<table>` element is now [deprecated](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table#attributes).
+The `summary` attribute on the `<table>` element is [deprecated](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table#attributes) in HTML5.
 
-Instead, use the [`<caption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/caption) element, which is covered in [day 18][]. This ensures that the description of a data table is visible to visual and non-visual users.
+Instead, use the [`<caption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/caption) element, which is covered on [day 18][]. This ensures that the description of a data table is available to visual and non-visual users.
+
+## [Day 21: Ignoring spacer images][day 21]
+
+Transparent [spacer images][] are (almost) never used on the modern Web. However, the discussion on this page is very relevant to [decorative images][].
 
 ---
 
-⬅ [Readme][]
+← [Readme][]
 
 [readme]: https://github.com/nfreear/diveintoaccessibility#readme
 [spreadsheet]: https://docs.google.com/spreadsheets/d/1HsVv_wrJu-U94OjIu4LGLMMYWNJMBS9LkFlkFILXSvk/edit?gid=536522970#gid=536522970
@@ -103,6 +112,7 @@ Instead, use the [`<caption>`](https://developer.mozilla.org/en-US/docs/Web/HTML
 [day 17]: https://nfreear.github.io/diveintoaccessibility/day_17_defining_acronyms.html
 [day 18]: https://nfreear.github.io/diveintoaccessibility/day_18_giving_your_calendar_a_real_caption.html
 [day 20]: https://nfreear.github.io/diveintoaccessibility/day_20_providing_a_summary_for_tables.html
+[day 21]: https://nfreear.github.io/diveintoaccessibility/day_21_ignoring_spacer_images.html
 
 [reading order]: https://www.w3.org/WAI/WCAG22/quickref/#meaningful-sequence
 [focus order]: https://www.w3.org/WAI/WCAG22/quickref/#focus-order
@@ -124,3 +134,5 @@ Instead, use the [`<caption>`](https://developer.mozilla.org/en-US/docs/Web/HTML
 [doctype]: https://mislav.github.io/diveintohtml5/semantics.html#the-doctype
 [doctype]: http://diveintohtml5.it/semantics.html#the-doctype
 [anti-pattern]: https://en.wikipedia.org/wiki/Anti-pattern
+[spacer images]: https://en.wikipedia.org/wiki/Spacer_GIF
+[decorative images]: https://www.w3.org/WAI/tutorials/images/decision-tree/
