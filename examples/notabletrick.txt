@@ -1,0 +1,96 @@
+
+                        My Weblog, without table trick
+
+Site links
+
+     * Home
+     * Accessibility statement
+     * Terms of use
+     * Feedback
+
+Blogroll
+
+     * Daily Zen
+     * Slashdot
+     * The Register
+     * MacSurfer
+     * Daily Python-URL
+     * FOS News
+     * Doonesbury
+     * The Morning News
+     * Gagpipe
+     * Sam Ruby
+     * Joe Gregorio
+     * Shirley Kaiser
+     * Cory Doctorow
+     * Zimran Ahmed
+     * Dorothea Salo
+     * Daniel Berlinger
+     * Jenny Levine
+     * Kuro5hin
+     * MetaFilter
+     * Michael Barrish
+     * Dean Allen
+     * Leslie Harpold
+     * Jonathon Delacour
+     * Robert Cringely
+     * Jim Byrne
+     * Forwarding Address: OS X
+     * A List Apart
+     * Bruce Schneier
+     * Netcraft
+     * Google Zeitgeist
+     * Eric Costello
+     * Joel Spolsky
+     * Shane McChesney
+     * Clay Shirky
+     * Bruce Eckel
+     * Eric Raymond
+     * Richard Stallman
+     * Brian Andreas
+     * Project Gutenberg
+     * Bartleby.com
+     * The Online Books Page
+     * Internet Public Library
+     * ibiblio
+     * Andamooka
+
+Today's posts
+
+   Even though it's obvious using a visual browser that this is the main
+   content, text-only browsers like Lynx will display the navigation bar
+   first, because this page uses tables for layout, and the navigation
+   bar comes first in the HTML source, so Lynx displays it first. Search
+   engines will also penalize you for this, since it looks like your main
+   content is less important than your navigation bar (since the main
+   content is further down the page, at least according to the HTML
+   source).
+
+   You can solve this problem by using the table trick.
+
+   Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+   nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+   volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+   ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+   Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+   molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+   vero eros et accumsan et iusto odio dignissim qui blandit praesent
+   luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+   Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+   suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
+   vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+   consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
+   accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
+   delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor
+   sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+   tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+   Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+   molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+   vero eros et accumsan et iusto odio dignissim qui blandit praesent
+   luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+   Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+   nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+   volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+   ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.

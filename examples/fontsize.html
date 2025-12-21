@@ -1,9 +1,205 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>404 Not Found</title>
-</head><body>
-<h1>Not Found</h1>
-<p>The requested URL /examples/fontsize.html was not found on this server.</p>
-<p>Additionally, a 404 Not Found
-error was encountered while trying to use an ErrorDocument to handle the request.</p>
-</body></html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<!-- https://web.archive.org/web/20110927131223/http://diveintoaccessibility.org/examples/fontsize.html -->
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Relative Font Sizing</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+/* styles that apply to all browsers */
+body, div, p, th, td, li, dd, code, tt {
+  font-family: Verdana, sans-serif;
+  font-size: 12px;
+}
+h1 {
+  font-size: 24px;
+}
+h2 {
+  font-size: 18px;
+}
+h3 {
+  font-size: 14px;
+}
+
+/* styles that apply to everything but Netscape 4 */
+/*/*/a{}
+body, body div, body p, body th, body td, body li, body dd, body code, body tt, body h3 {
+  font-size: x-small;
+  voice-family: "\"}\"";
+  voice-family: inherit;
+  font-size: small;
+}
+html>body, html>body div, html>body p, html>body th, html>body td, html>body li, html>body dd, html>body code, html>body tt, html>body h3 {
+  font-size: small;
+}
+body h1 {
+  font-size: large;
+  voice-family: "\"}\"";
+  voice-family: inherit;
+  font-size: x-large;
+}
+html>body h1 {
+  font-size: x-large;
+}
+body h2 {
+  font-size: medium;
+  voice-family: "\"}\"";
+  voice-family: inherit;
+  font-size: large;
+}
+html>body h2 {
+  font-size: large;
+}
+/* end NS4 hack */
+
+/* other styles after this would apply to all browsers */
+</style>
+</head>
+<body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+<h1>My Weblog, with relative font sizing</h1>
+<table border="0" cellspacing="0" cellpadding="0" summary="Page layout">
+<tr>
+  <td><img src="http://diveintoaccessibility.org/images/1.gif" width="1" height="1" alt=""></td>
+  <td valign="top" align="left" rowspan="2">
+<h2>Today's posts</h2>
+<h3>Relative font sizing HOWTO</h3>
+    <p>In the fall of 2000, Jeffrey Zeldman famously said that <a href="http://www.alistapart.com/stories/fear4/">relative font sizing was impossible</a> ("pixels, baby... or nothing") because of an overwhelming variety of browser bugs, starting with Netscape 4 and ending in the most modern browsers.  Since then, Netscape 4 still hasn't gotten any better, and it still hasn't gone away, but at least the design community has learned a thing or two about taming the browsers and making relative font sizing a reality.</p>
+
+    <p>This page uses absolute font sizes in Netscape 4, but relative font sizes in newer browsers that can handle it.  There is no Javascript, no multiple stylesheets to maintain.  In fact, this page in entirely self-contained; all CSS is defined in a single &lt;style&gt; element at the top of the page.  Here's the general idea:</p>
+
+    <blockquote>
+<pre><code>p {
+  font-size: 12px;
+}
+
+/*/*/a{}
+body p {
+  font-size: x-small;
+  voice-family: "\"}\"";
+  voice-family: inherit;
+  font-size: small;
+}
+html&gt;body p {
+    font-size: small;
+}
+/* */</code></pre>
+    </blockquote>
+
+    <p>There's lots going on here, and it's all important, so pay attention.</p>
+
+    <ol>
+    <li>First, we're defining an absolute size (12px) for every &lt;p&gt;.  All browsers apply this style, including Netscape 4.</li>
+    <li>Then we include the odd-looking comment "/*/*/".  Due to bugs in Netscape 4, everything between this comment and the following one will be ignored.  That's right, all the following styles will only be applied in non-Netscape-4 browsers.</li>
+    <li>Immediately after the odd-looking comment, we include an empty rule "a {}".  Opera 5 for Mac is buggy and ignores this rule (and only this rule).  It applies everything else.</li>
+    <li>We have now carved out a realm where we can define rules that are applied in all browsers except Netscape 4.  The first thing we do is use a "body p" selector to redefine the behavior of the p tag.  Due to the way CSS works, this will override our previous p selector.  (In technical terms, "body p" is a <em>more specific selector</em> than "p".)</li>
+    <li>We redefine the font size of all &lt;p&gt; tags to be "x-small".  This is a font keyword which, at default settings, Internet Explorer 5 for Windows will translate into 12px.  However, if the user changes their "Text Size" (under the View menu), this text will scale larger or smaller, depending on the user's setting.  This is what we want.  (Note: we've now defined font-size <em>twice</em> for IE5/Win, but that's okay, because the more specific selector always wins.)</li>
+    <li>Unfortunately, IE5/Win an off-by-1 bug with its font size keywords; every other browser in the world (IE5/Mac, Netscape 6, Mozilla, IE6/Win) will translate "x-small" to 10px, not 12px.  Luckily for us, IE5/Win has its own parsing bug that we can exploit: it looks at that odd-looking voice-family and mistakenly thinks that this entire "body p" selector is over, so it ignores all the lines until the "}".</li>
+    <li><em>Now</em> we have carved out a smaller realm where we can define rules that are applied in all browsers except Netscape 4 and IE5/Win.  So we redefine font-size to small, which non-IE5/Win browsers (the only ones still listening) correctly interpret as 12px (at default settings).  Again, if the user sets their "text size" to larger, this text will scale larger, which is what we want.</li>
+    <li>But wait!  Opera 5 has the same parsing bug that IE5/Win has, so it was also confused by the voice-family hack, but it correctly interprets font keywords, so now our text will look too small in Opera 5.  Luckily, Opera 5 supports a <em>third</em> type of selector, "html&gt;body p".  (Again, this is "more specific" than "body p", so it takes precedence over the previous selector.)  IE5/Win does not support this type of selector, so it will just ignore it, which is what we want (since we've already compensated for it's off-by-1 bug and don't want to go mucking that up now).  IE6/Win also does not support it, but that's OK, because we caught it with the "font-size: small" after the "voice-family: inherit" in the "body p" selector.  All other browsers support "html&gt;body" selectors, so for them we end up defining font-size <em>four</em> times.  Again, that's not a problem, because the most specific selector always wins.</li>
+    </ol>
+
+    <p>To recap:</p>
+
+    <ol>
+    <li>Netscape 4 displays p tags at 12px, regardless of user setting.</li>
+    <li>Internet Explorer 5 for Windows displays p tags at "x-small", which works out to be 12px at the default setting, but would scale larger if the user set their "Text Size" setting larger in the View menu.</li>
+    <li>Internet Explorer 6 for Windows displays p tags at "small", because of the "font-size: small" rule in the "body p" selector.  This works out to 12px at the default setting, but would scale larger if the user set their "Text Size" setting larger.</li>
+    <li>Internet Explorer 5 for Mac, Opera, Netscape 6, Mozilla, and (hopefully) all future browsers will display p tags at "small", because of the "font-size: small" rule in the "html&gt;body p" selector.  This works out to 12px at the default setting, but would scale larger if the user used the "Text Zoom" feature.</li>
+    </ol>
+
+<h3>Older stuff</h3>
+
+    <p><i>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</i></p>
+
+    <p><i>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</i></p>
+
+    <p><i>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</i></p>
+  </td>
+</tr>
+<tr>
+  <td valign="top" width="25%">
+    <h2>Site links</h2>
+    <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/accessibility_statement.html">Accessibility statement</a></li>
+    <li><a href="/terms_of_use.html">Terms of use</a></li>
+    <li><a href="mailto:f8dy@diveintomark.org">Feedback</a></li>
+    </ul>
+    <h2>Blogroll</h2>
+    <ul>
+<li><a title="new inspirational Zen quotes every day" href="http://www.dailyzen.com/">Daily Zen</a></li>
+<li><a title="News for Nerds, Stuff That Matters" href="http://slashdot.org/">Slashdot</a></li>
+<li><a title="Biting the Hand That Feeds IT" href="http://www.theregus.com/">The Register</a></li>
+<li><a title="MacSurfer's Headline News" href="http://www.macsurfer.com/">MacSurfer</a></li>
+<li><a title="Daily news from the Python universe" href="http://www.pythonware.com/daily/">Daily Python-URL</a></li>
+<li><a title="News from the Free Online Scholarship movement" href="http://www.earlham.edu/~peters/fos/fosblog.html">FOS News</a></li>
+<li><a title="Garry Trudeau" href="http://www.doonesbury.com/strip/dailydose/">Doonesbury</a></li>
+<li><a title="Black and white and read all over" href="http://www.themorningnews.org/">The Morning News</a></li>
+<li><a title="Headline satire from around the world" href="http://www.gagpipe.com/">Gagpipe</a></li>
+<li><a title="It's just data" href="http://radio.weblogs.com/0101679/">Sam Ruby</a></li>
+<li><a title="BitWorking" href="http://bitworking.org/">Joe Gregorio</a></li>
+<li><a title="Brainstorms and Raves" href="http://brainstormsandraves.com/">Shirley Kaiser</a></li>
+<li><a title="Boing Boing" href="http://boingboing.net/">Cory Doctorow</a></li>
+<li><a title="Winterspeak" href="http://www.winterspeak.com/">Zimran Ahmed</a></li>
+<li><a title="Caveat Lector: Reader Beware!" href="http://www.textartisan.com/caveatlector/">Dorothea Salo</a></li>
+<li><a title="Any sea or broad sheet of water interspersed with many islands, cool software, or sneux" href="http://archipelago.phrasewise.com/">Daniel Berlinger</a></li>
+<li><a title="My name is Jenny, and I'll be your information maven today" href="http://www.theshiftedlibrarian.com/">Jenny Levine</a></li>
+<li><a title="technology and culture, from the trenches" href="http://www.kuro5hin.org/">Kuro5hin</a></li>
+<li><a title="new tagline daily" href="http://www.metafilter.com/">MetaFilter</a></li>
+<li><a title="Oblivio" href="http://www.oblivio.com/">Michael Barrish</a></li>
+<li><a title="Textism" href="http://www.textism.com/">Dean Allen</a></li>
+<li><a title="The Historical Present" href="http://leslie.harpold.com/">Leslie Harpold</a></li>
+<li><a title="the heart of things" href="http://weblog.delacour.net/">Jonathon Delacour</a></li>
+<li><a title="I, Cringely (The Pulpit)" href="http://cgi.pbs.org/cgi-registry/cringely/thisweek.pl?pulpit">Robert Cringely</a></li>
+<li><a title="The Making Connections Unit" href="http://www.mcu.org.uk/">Jim Byrne</a></li>
+<li><a title="What the hell is a dogcow?" href="http://saladwithsteve.com/osx/">Forwarding Address: OS X</a></li>
+<li><a title="A List Apart: for people who make websites" href="http://www.alistapart.com/">A List Apart</a></li>
+<li><a title="Crypto-Gram: a free monthly newsletter on computer security and cryptography" href="http://www.counterpane.com/crypto-gram.html">Bruce Schneier</a></li>
+<li><a title="Web Server Survey" href="http://www.netcraft.com/survey/">Netcraft</a></li>
+<li><a title="Search patterns, trends, and surprises according to Google" href="http://www.google.com/press/zeitgeist.html">Google Zeitgeist</a></li>
+<li><a title="CSS Layout Techniques" href="http://www.glish.com/">Eric Costello</a></li>
+<li><a title="UI Design for Programmers and other great stuff" href="http://www.joelonsoftware.com/">Joel Spolsky</a></li>
+<li><a title="Building Next-Generation Web Applications Without Paying The Microsoft Tax" href="http://www.skippingdot.net/">Shane McChesney</a></li>
+<li><a title="Economics &amp; Culture, Media &amp; Community, Open Source" href="http://www.shirky.com/">Clay Shirky</a></li>
+<li><a title="Thinking In Java, Thinking In Patterns, Thinking in Python..." href="http://www.mindview.net/Books/">Bruce Eckel</a></li>
+<li><a title="The Cathedral and the Bazaar, Homesteading The Noosphere..." href="http://www.tuxedo.org/~esr/writings/">Eric Raymond</a></li>
+<li><a title="Philosophy of the GNU Project" href="http://www.gnu.org/philosophy/">Richard Stallman</a></li>
+<li><a title="Art for real people" href="http://www.storypeople.com/">Brian Andreas</a></li>
+<li><a title="Fine literature digitally republished" href="http://www.gutenberg.org/">Project Gutenberg</a></li>
+<li><a title="Great books online" href="http://www.bartleby.com/">Bartleby.com</a></li>
+<li><a title="over 16,000 English works" href="http://onlinebooks.library.upenn.edu/lists.html">The Online Books Page</a></li>
+<li><a title="Online texts collection" href="http://www.ipl.org/reading/books/index.html">Internet Public Library</a></li>
+<li><a title="the public's library" href="http://www.ibiblio.org/collection/">ibiblio</a></li>
+<li><a title="Open support for open content" href="http://www.andamooka.org/">Andamooka</a></li>
+    </ul>
+  </td>
+</tr>
+</table>
+</body>
+</html>
+
+<!--
+     FILE ARCHIVED ON 13:20:45 Sep 27, 2011 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 14:36:06 Dec 21, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.563
+  exclusion.robots: 0.05
+  exclusion.robots.policy: 0.041
+  esindex: 0.01
+  cdx.remote: 8.742
+  LoadShardBlock: 516.727 (3)
+  PetaboxLoader3.resolve: 26.789 (2)
+  PetaboxLoader3.datanode: 516.103 (4)
+  load_resource: 61.86
+  nav: 0.163 (6)
+-->

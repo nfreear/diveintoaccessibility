@@ -1,0 +1,125 @@
+
+                          My Weblog, with table trick
+
+Today's posts
+
+   This text will be displayed first in Lynx and read first in JAWS, even
+   though it is visually positioned to the right of the navigation bar.
+   This benefits blind users, and it also benefits you, since search
+   engines give higher precedence to keywords that come earlier in your
+   page.
+    1. The non-tricky version of this page. Same layout.
+    2. The non-tricky version in Lynx. Yuck.
+    3. The table trick in Lynx. Much better.
+
+   Here's the basic concept. Instead of the obvious table layout:
+
+<table>
+<tr>
+  <td valign="top" align="left" width="25%">
+    ... navigation bar ...
+  </td>
+  <td valign="top" align="left">
+    ... main content ...
+  </td>
+</tr>
+</table>
+
+   Do this instead:
+
+<table>
+<tr>
+  <!-- spacer GIF in upper-left cell -->
+  <td><img src="/images/1.gif" width="1" height="1" alt=""></td>
+  <!-- main content cell first, with rowspan=2 -->
+  <td valign="top" align="left" rowspan="2">
+    ... main content ...
+  </td>
+</tr>
+<tr>
+  <td valign="top" align="left" width="25%">
+    ... navigation bar ...
+  </td>
+</tr>
+</table>
+
+   Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+   nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+   volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+   ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+   Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+   molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+   vero eros et accumsan et iusto odio dignissim qui blandit praesent
+   luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+   Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+   suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
+   vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+   consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
+   accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
+   delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor
+   sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+   tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+   Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+   molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+   vero eros et accumsan et iusto odio dignissim qui blandit praesent
+   luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+   Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+   nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+   volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+   ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+
+Site links
+
+     * Home
+     * Accessibility statement
+     * Terms of use
+     * Feedback
+
+Blogroll
+
+     * Daily Zen
+     * Slashdot
+     * The Register
+     * MacSurfer
+     * Daily Python-URL
+     * FOS News
+     * Doonesbury
+     * The Morning News
+     * Gagpipe
+     * Sam Ruby
+     * Joe Gregorio
+     * Shirley Kaiser
+     * Cory Doctorow
+     * Zimran Ahmed
+     * Dorothea Salo
+     * Daniel Berlinger
+     * Jenny Levine
+     * Kuro5hin
+     * MetaFilter
+     * Michael Barrish
+     * Dean Allen
+     * Leslie Harpold
+     * Jonathon Delacour
+     * Robert Cringely
+     * Jim Byrne
+     * Forwarding Address: OS X
+     * A List Apart
+     * Bruce Schneier
+     * Netcraft
+     * Google Zeitgeist
+     * Eric Costello
+     * Joel Spolsky
+     * Shane McChesney
+     * Clay Shirky
+     * Bruce Eckel
+     * Eric Raymond
+     * Richard Stallman
+     * Brian Andreas
+     * Project Gutenberg
+     * Bartleby.com
+     * The Online Books Page
+     * Internet Public Library
+     * ibiblio
+     * Andamooka
