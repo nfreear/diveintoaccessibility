@@ -5,6 +5,7 @@
 
  * [Archive of "Dive into Accessibility"][archive] (2011, on Wayback Machine)
  * [Errors and Caveats](docs/ERRATA.md)
+ * [Proposal](docs/PROPOSAL.md)
 
 ### Why?
 

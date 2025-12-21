@@ -2,9 +2,11 @@
 
 # Errata #
 
+Also see the [proposal][].
+
 Below is a list of some significant errors and caveats.
 
-Note, this is not meant as a criticism of the original author — that would be particularly unfair at the distance of more than 20 years! Instead, the '_Errata_' are listed below to help prevent readers making mistakes and potentially learning bad accessibility techniques.
+Note, this is not meant as a criticism of the original author, Mark Pilgrim — that would be particularly unfair at the distance of more than 20 years! Instead, the '_Errata_' are listed below to help prevent readers making mistakes and potentially learning bad accessibility techniques.
 
 The status of each page is also documented in a [spreadsheet on Google Docs][spreadsheet].
 
@@ -102,6 +104,7 @@ Transparent [spacer images][] are (almost) never used on the modern Web. However
 ← [Readme][]
 
 [readme]: https://github.com/nfreear/diveintoaccessibility#readme
+[proposal]: ./PROPOSAL.md
 [spreadsheet]: https://docs.google.com/spreadsheets/d/1HsVv_wrJu-U94OjIu4LGLMMYWNJMBS9LkFlkFILXSvk/edit?gid=536522970#gid=536522970
 
 [day 6]: https://nfreear.github.io/diveintoaccessibility/day_6_choosing_a_doctype.html
