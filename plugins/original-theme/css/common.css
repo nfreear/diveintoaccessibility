@@ -1,0 +1,25 @@
+/*
+Dive Into Accessibility common stylesheet (shared by all media types)
+copyright (c) 2002, Mark Pilgrim (f8dy@diveintomark.org)
+GPL-licensed
+*/
+
+.divider, .invisibletitle, a.skip {
+  display: none;
+}
+
+cite {
+  font-style: normal;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+address {
+  font-style: normal;
+}
+
+code {
+  font-family: monospace;
+}

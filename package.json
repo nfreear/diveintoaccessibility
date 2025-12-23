@@ -1,9 +1,17 @@
 {
   "private": true,
+  "type": "module",
   "devDependencies": {
-    "servor": "^4.0.2"
+    "@11ty/eleventy": "^3.1.2",
+    "dia-plugins": "file:plugins",
+    "eslint": "^9.39.2",
+    "neostandard": "^0.12.2"
   },
   "scripts": {
-    "start": "servor"
+    "clean": "rm -rf _site",
+    "build": "npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve",
+    "lint:fix": "npx eslint --fix .",
+    "lint": "npx eslint ."
   }
 }

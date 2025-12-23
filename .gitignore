@@ -1,5 +1,7 @@
 
 _11ty
+_video-splitter
 
+_site
 node_modules
-package-lock.json
+# package-lock.json

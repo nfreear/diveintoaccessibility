@@ -1,0 +1,17 @@
+/*
+Dive Into Accessibility aural stylesheet
+copyright (c) 2002, Mark Pilgrim (f8dy@diveintomark.org)
+GPL-licensed
+*/
+
+body {
+  voice-family: male;
+}
+
+acronym, abbr {
+  speak: spell-out;
+}
+
+code {
+  speak-punctuation: code;
+}

@@ -1,0 +1,25 @@
+---
+title: Original theme layout
+---
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} - Dive Into Accessibility</title>
+{% include '../en/dc-metadata.njk' %}
+{% include '../head/stylesheets.njk' %}
+
+{% include '../head/translation-links.njk' %}
+{% include '../head/ga-analytics-head.njk' %}
+</head>
+<body>
+{% include '../en/header.njk' %}
+  <main id="main">
+  {{ content | safe }}
+  {% include '../en/pagination.njk' %}
+  </main>
+
+{% include '../en/main-navigation.njk' %}
+{% include '../en/crosssite-navigation.njk' %}
+{% include '../ga-analytics-js.njk' %}
+</body>

@@ -34,9 +34,10 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
         check-latest: true
         # cache: 'npm'
-    #- run: npm ci
+    - run: npm ci
     - run: npm run build --if-present
     - run: npm test --if-present
+    - run: npm run lint
     #- name: Delete 'node_modules'
     #  run: rm -rf node_modules
     - name: Setup Pages
@@ -46,8 +47,8 @@ jobs:
       with:
         # Upload one directory.
         path: .
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+    #- name: Deploy to GitHub Pages
+    #  id: deployment
+    #  uses: actions/deploy-pages@v4
 
 # End.
