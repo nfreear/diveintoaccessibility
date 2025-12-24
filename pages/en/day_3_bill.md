@@ -18,5 +18,4 @@ Bill can type a surprising 10 words a minute (next year it will be 15) by steady
 Although he doesn't know it yet, next year the newsletter will turn into a weblog, and the year after that, the weblog will turn into a political action committee and become a major political force. Politics, after all, is all about who you know, and Bill knows everyone.
 
 [red hat linux]: http://www.redhat.com/
-[mozilla]: http://www.mozilla.org/
 [evolution]: http://ximian.com/products/ximian_evolution/

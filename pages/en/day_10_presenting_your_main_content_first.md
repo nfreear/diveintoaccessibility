@@ -68,17 +68,9 @@ We do this instead:
 * [Lynx Viewer][].
 * A Promotion Guide: [The Table Trick][trick].
 
-[jaws]: http://www.freedomscientific.com/fs_products/software_jaws.asp
 [lynx viewer]: http://www.delorie.com/web/lynxview.html
-[google]: http://www.google.com/
 [trick]: http://www.apromotionguide.com/tabletrick.html
 [trick archive]: https://web.archive.org/web/20140523092901/http://www.apromotionguide.com/tabletrick.html
-
-[jackie]: day_1_jackie.html
-[michael]: day_2_michael.html
-[bill]: day_3_bill.html
-[lillian]: day_4_lillian.html
-[marcus]: day_5_marcus.html
 
 [notabletrick]: ./examples/notabletrick.html
 [tabletrick]: ./examples/tabletrick.html

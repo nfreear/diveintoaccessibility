@@ -24,4 +24,3 @@ Marcus also uses an ALVA at home, where he runs the text-only browser [Lynx][] i
 He also talks on the phone while he listens to the radio and surfs the web. He talks to 100 people a week. He has no idea that this is unusual. If you played the "six degrees of separation" game, finding links between you and anyone else in the world, Marcus would be one of your six degrees. He is one of those people that generates buzz, that marketers think they can tap into but never can. He is the reason your phone company no longer offers unlimited local calling plans. He loves telling his friends about cool sites that he's seen. He intentionally uses the word "seen" because he knows it makes them feel uncomfortable.
 
 [alva]: http://www.alvabraille.com/BrailleDisplays/default.asp
-[lynx]: http://www.fdisk.com/doslynx/lynxport.htm

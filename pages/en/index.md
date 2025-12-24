@@ -5,7 +5,7 @@ title: Home
 
 This book answers two questions.  The first question is "Why should I make my web site more accessible?"  If you do not have a web site, this book is not for you.  The second question is "How can I make my web site more accessible?"  If you are not convinced by the first answer, you will not be interested in the second.
 
-[Let's dive in][].
+[Let's dive in][introduction].
 
 ## Download <cite>Dive Into Accessibility</cite>
 
@@ -13,6 +13,11 @@ This book answers two questions.  The first question is "Why should I make my we
 * [Download as <abbr title="portable document format">PDF</abbr>][download-pdf]
 
 ## Read <cite>Dive Into Accessibility</cite>
+
+[Table of contents][]
+: All the tips, ...
+
+---
 
 <dl>
 <dt><a href="table_of_contents.html">Table of contents</a></dt>
@@ -31,10 +36,4 @@ This book answers two questions.  The first question is "Why should I make my we
 
 ## Translations
 
-This book is being [translated into multiple languages][].
-
-[Table of contents]: table_of_contents.html
-[Let's dive in]: introduction.html
-[translated into multiple languages]: translations.html
-[download-zip]: download/diveintoaccessibility-html.html
-[download-pdf]: download/diveintoaccessibility.pdf
+This book is being [translated into multiple languages][translations].

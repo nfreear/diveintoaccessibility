@@ -77,13 +77,3 @@ Be sure to include each `accesskey` on each page of your web site; make these ch
 [korpela]: http://www.cs.tut.fi/~jkorpela/forms/accesskey.html
 [bohman]: http://www.webaim.org/discussion/mail_message.php?id=800
 [list]: http://www.webaim.org/discussion/
-
-[jaws]: http://www.freedomscientific.com/fs_products/software_jaws.asp
-[mozilla]: http://www.mozilla.org/
-
-[day 11]: day_11_skipping_over_navigation_links.html
-[jackie]: day_1_jackie.html
-[michael]: day_2_michael.html
-[bill]: day_3_bill.html
-[lillian]: day_4_lillian.html
-[marcus]: day_5_marcus.html

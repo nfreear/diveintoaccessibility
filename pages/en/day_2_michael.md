@@ -14,6 +14,3 @@ While the customer service representative is pleasantly telling Michael that he 
 As you might expect, Michael's hobby requires quite a bit of online interaction with past and future customers, suppliers, arcade owners, and anyone else who might have a lead on an obscure arcade machine part. He curses his 56-but-really-28-today-K dialup access, and fires up his web browser. Some days he uses the text-only web browser [Links][], which renders complex multi-column layouts as well as a graphical browser, but only in text -- no images or fonts. Other days he uses [Opera][], because it allows him to load pages in the background, and to easily turn images on and off. Mostly he leaves them off, to conserve bandwidth. Today is a Links day.
 
 Traffic lights are red-yellow-green, from the top down. Traffic lights that are positioned sideways are tricky, and therefore dangerous. Michael, like the 8% of American men who are colorblind, has learned to quickly scan the surrounding area and follow the pole from the ground up to the lights. The light furthest along the pole from the ground is red, nearest the ground is green. Yellow is always in the middle.
-
-[links]: http://links.sourceforge.net/
-[opera]: http://www.opera.com/

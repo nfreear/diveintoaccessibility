@@ -60,17 +60,7 @@ Keep in mind these are only suggestions. You can include the word "Archives" in 
 [Jonathon Delacour]: http://weblog.delacour.net/
 [accessibility matters]: http://weblog.delacour.net/archives/000535.html
 
-[jaws]: http://www.freedomscientific.com/fs_products/software_jaws.asp
-[hpr]: http://www-3.ibm.com/able/hpr.html
-[lynx]: http://www.fdisk.com/doslynx/lynxport.htm
-[google]: http://www.google.com/
 [rank]: http://www.searchengineworld.com/design/title.htm
 [radio]: http://radio.weblogs.com/0001000/2002/06/19.html#a630
-
-[jackie]: day_1_jackie.html
-[michael]: day_2_michael.html
-[bill]: day_3_bill.html
-[lillian]: day_4_lillian.html
-[marcus]: day_5_marcus.html
 
 [email]: mailto:f8dy@diveintoaccessibility.org

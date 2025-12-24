@@ -92,8 +92,6 @@ Unfortunately, I do not know how to satisfactorily implement previous and next l
 
 * Sjoerd Visscher: [Navigation links in your Radio Userland weblog][macros-about].
 
-[lynx]: http://www.fdisk.com/doslynx/lynxport.htm
-[links]: http://links.sourceforge.net/
 [icab]: http://www.icab.de/
 [firebird]: http://www.mozilla.org/products/firebird/
 [install a link toolbar]: http://cdn.mozdev.org/linkToolbar/
@@ -101,9 +99,3 @@ Unfortunately, I do not know how to satisfactorily implement previous and next l
 [Sjoerd Visscher]: http://w3future.com/weblog/
 [macros]: http://w3future.com/weblog/gems/navigationLinks.zip
 [macros-about]: http://w3future.com/weblog/2002/06/20.html#a110
-
-[jackie]: day_1_jackie.html
-[michael]: day_2_michael.html
-[bill]: day_3_bill.html
-[lillian]: day_4_lillian.html
-[marcus]: day_5_marcus.html

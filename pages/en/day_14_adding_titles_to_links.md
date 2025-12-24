@@ -50,23 +50,11 @@ On each link where the link text itself might not be sufficient for the reader t
 [useit]: http://www.useit.com/alertbox/980111.html
 [useit redirect]: https://www.nngroup.com/articles/title-attribute/
 
-[jaws]: http://www.freedomscientific.com/fs_products/software_jaws.asp
-[opera]: http://www.opera.com/
-[lynx]: http://www.fdisk.com/doslynx/lynxport.htm
-
 [statistics]: http://diveintomark.org/stats/
   "referrers and other visitor statistics"
 [dive into python]: http://diveintopython.org/
   "Free Python book for experienced programmers"
-[day 13]: day_13_using_real_links.html
-  "Day 13: Using real links"
 [js-stats]: http://www.thecounter.com/stats/2002/April/javas.php
   "TheCounter.com statistics on Javascript usage in browsers, April 2002"
 [britney]: http://diveintomark.org/archives/2002/02/20.html#britney_britney_britney
   "dive into mark February 20, 2002: Britney, Britney, Britney"
-
-[jackie]: day_1_jackie.html
-[michael]: day_2_michael.html
-[bill]: day_3_bill.html
-[lillian]: day_4_lillian.html
-[marcus]: day_5_marcus.html

@@ -44,17 +44,6 @@ If you're using `javascript:` pseudo-links for any other reason, stop. Just stop
 
 Don't even get me started on those [dynamic Javascript-based menu systems][dynamic]. They make you look cool like smoking makes you look cool. Use real links.
 
-[lynx]: http://www.fdisk.com/doslynx/lynxport.htm
-[links]: http://links.sourceforge.net/
-[google]: http://www.google.com/
-
 [javascript]: http://www.thecounter.com/stats/2002/April/javas.php
 [evolt]: http://www.evolt.org/article/Links_and_JavaScript_Living_Together_in_Harmony/17/20938/
 [dynamic]: http://www.dynamicdrive.com/dynamicindex1/index.html
-
-[day 11]: day_11_skipping_over_navigation_links.html
-[jackie]: day_1_jackie.html
-[michael]: day_2_michael.html
-[bill]: day_3_bill.html
-[lillian]: day_4_lillian.html
-[marcus]: day_5_marcus.html

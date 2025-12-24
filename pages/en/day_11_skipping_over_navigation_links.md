@@ -65,15 +65,4 @@ Now, the format of your anchor tag depends on what kind of <abbr title="hypetext
 
 You should include this kind of skip link on every page of your web site, so add it to all your templates.
 
-[lynx]: http://www.fdisk.com/doslynx/lynxport.htm
-[jaws]: http://www.freedomscientific.com/fs_products/software_jaws.asp
 [lynx viewer]: http://www.delorie.com/web/lynxview.html
-
-[day 10]: day_10_presenting_your_main_content_first.html
-[day 6]: day_6_choosing_a_doctype.html
-
-[jackie]: day_1_jackie.html
-[michael]: day_2_michael.html
-[bill]: day_3_bill.html
-[lillian]: day_4_lillian.html
-[marcus]: day_5_marcus.html

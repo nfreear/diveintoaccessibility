@@ -46,20 +46,4 @@ One additional note: if you have more than one language on a page, you can ident
 
 * [List of language codes][iso]
 * [The `lang` attribute in the HTML specification][lang]
-* [Jim Thatcher on `lang` attribute support in screen readers][thatcher]. He describes their language auto-detection algorithms as "flaky", and he would know, since he designed the algorithm for [Home Page Reader][ibm]. Other screen readers have added support for the lang attribute since his comments were written, but their auto-detection algorithms are still flaky, making it even more important and useful to identify your language.
-
-[jaws]: http://www.freedomscientific.com/fs_products/software_jaws.asp
-[google]: http://www.google.com/
-[google zeitgeist]: http://www.google.com/press/zeitgeist.html
-[google preferences]: http://www.google.com/preferences
-[lang]: http://www.w3.org/TR/REC-html40/struct/dirlang.html#h-8.1
-[iso]: http://www.loc.gov/standards/iso639-2/englangn.html
-[thatcher]: http://lists.w3.org/Archives/Public/w3c-wai-ig/2001AprJun/0713.html
-[ibm]: http://www-3.ibm.com/able/hpr.html
-
-[day 6]: day_6_choosing_a_doctype.html
-[jackie]: day_1_jackie.html
-[michael]: day_2_michael.html
-[bill]: day_3_bill.html
-[lillian]: day_4_lillian.html
-[marcus]: day_5_marcus.html
+* [Jim Thatcher on `lang` attribute support in screen readers][thatcher]. He describes their language auto-detection algorithms as "flaky", and he would know, since he designed the algorithm for [Home Page Reader][]. Other screen readers have added support for the lang attribute since his comments were written, but their auto-detection algorithms are still flaky, making it even more important and useful to identify your language.

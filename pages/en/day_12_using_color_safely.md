@@ -54,15 +54,9 @@ a {
 * Cal Henderson: [Color Vision][]. Shows the color spectrum as seen by people with various types of colorblindness.
 * [Ishihara Test for Color Blindness][ishihara] contains a series of images that people with red-green colorblindness see differently, or don't see at all.
 
-[vischeck]: VisCheck
+[vischeck]: http://www.vischeck.com/vischeck/
 [color vision]: http://www.iamcal.com/toys/colors/
 [ishihara]: http://www.toledo-bend.com/colorblind/Ishihara.html
 
 [linkcolor]: images/linkcolor.gif
 [linkcolorblind]: images/linkcolorblind.gif
-
-[jackie]: day_1_jackie.html
-[michael]: day_2_michael.html
-[bill]: day_3_bill.html
-[lillian]: day_4_lillian.html
-[marcus]: day_5_marcus.html
