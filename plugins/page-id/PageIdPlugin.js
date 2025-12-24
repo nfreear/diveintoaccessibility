@@ -1,5 +1,5 @@
 /**
- * Plugin to generate `pageID` from the `fileSlug`, and sort a custom collection.
+ * Plugin to generate a `pageID` from the `fileSlug`, and sort a custom collection.
  */
 
 const PAGE_IDS_EN = [
@@ -12,12 +12,12 @@ const PAGE_IDS_EN = [
   { id: 44, slug: 'translations' },
 ];
 
-export default class PageIdPlugin {
+export class PageIdPlugin {
   get #pageIds () { return PAGE_IDS_EN; }
 
   // https://www.11ty.dev/docs/data-eleventy-supplied/#page-variable
   compute (page) {
-    console.assert(page, 'is page missing?')
+    console.assert(page, 'is page missing?');
     const M = page.fileSlug.match(/day_(\d+)_/);
     const pageID = M ? parseInt(M[1]) : this.#fallbackID(page);
     // console.debug('pageID:', pageID, page.fileSlug);
@@ -44,4 +44,21 @@ export default class PageIdPlugin {
     const found = this.#pageIds.find(({ slug }) => slug === page.fileSlug);
     return found ? found.id : null;
   }
+}
+
+export default function pageIdPlugin (eleventyConfig, options) {
+  console.assert(options.collection, 'Missing collection');
+  console.assert(options.shortcode, 'Missing shortcode');
+
+  const { collection, shortcode } = options;
+  const pageId = new PageIdPlugin();
+
+  eleventyConfig.addShortcode(shortcode, function () {
+    // this.page
+    // this.eleventy
+    return pageId.compute(this.page) ?? '';
+  });
+
+  // https://www.11ty.dev/docs/collections-api/
+  eleventyConfig.addCollection(collection, (collectionsApi) => pageId.addCollection(collectionsApi));
 }

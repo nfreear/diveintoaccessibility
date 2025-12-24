@@ -1,6 +1,7 @@
+import { resolve } from 'node:path';
 import debug from 'debug';
 // import diaThemePlugin from './plugins/dia-orig-theme/index.js';
-import { originalThemePlugin, PageIdPlugin } from 'dia-plugins';
+import { originalThemePlugin, addLinksPlugin, pageIdPlugin } from 'dia-plugins';
 
 /**
  * Configure Eleventy
@@ -9,7 +10,7 @@ import { originalThemePlugin, PageIdPlugin } from 'dia-plugins';
  */
 export default async function (eleventyConfig) {
   const debugLog = debug('DIA:config');
-  const pageId = new PageIdPlugin();
+  const linksFile = resolve('pages', 'internal_links.md');
 
   debugLog('Loading config…');
 
@@ -17,6 +18,11 @@ export default async function (eleventyConfig) {
   eleventyConfig.setInputDirectory('pages');
 
   eleventyConfig.addPlugin(originalThemePlugin);
+  eleventyConfig.addPlugin(addLinksPlugin, { linksFile });
+  eleventyConfig.addPlugin(pageIdPlugin, {
+    collection: 'myCustomSort',
+    shortcode: 'myPageID'
+  });
 
   eleventyConfig.setIncludesDirectory('../_includes');
   // eleventyConfig.setLayoutsDirectory('../_includes/layouts');
@@ -34,15 +40,6 @@ export default async function (eleventyConfig) {
   /* eleventyConfig.addGlobalData('pageID', () => {
     return (data) => pageId.compute(data.page);
   }); */
-
-  eleventyConfig.addShortcode('myPageID', function () {
-    // this.page
-    // this.eleventy
-    return pageId.compute(this.page) ?? '';
-  });
-
-  // https://www.11ty.dev/docs/collections-api/
-  eleventyConfig.addCollection('myCustomSort', (colsApi) => pageId.addCollection(colsApi));
 
   eleventyConfig.addPassthroughCopy('examples/*');
   eleventyConfig.addPassthroughCopy('images/*');
