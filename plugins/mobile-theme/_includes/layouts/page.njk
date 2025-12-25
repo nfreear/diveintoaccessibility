@@ -1,0 +1,24 @@
+---
+title: Mobile theme layout
+---
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/css/typography.css">
+  <link rel="stylesheet" href="/css/layout.css">
+
+  <title>{{ title }} - Dive Into Accessibility </title>
+
+{% include '../en/header.njk' %}
+
+<main id="main">
+{{ content | safe }}
+</main>
+
+<footer>
+  <p>Copyright © 2002 Mark Pilgrim</p>
+</footer>
+
+</html>

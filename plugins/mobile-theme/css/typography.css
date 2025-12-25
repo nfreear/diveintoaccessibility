@@ -1,0 +1,67 @@
+
+:root {
+  --theme-color: maroon;
+}
+
+body {
+  background-color: #fafafa;
+  color: #222;
+  font-family: Verdana, Arial, Helvetica, sans-serif
+}
+
+h1, h2, h3, h4, h5, h6,
+#menu, #logo p,
+footer,
+header > div > p,
+header nav {
+  font-family: Tahoma, sans-serif;
+  margin: 0;
+  background-color: transparent;
+  color: var(--theme-color);
+}
+
+h1 {
+  margin-bottom: .5rem;
+
+  a {
+    text-decoration: none;
+    background-color: transparent;
+    color: var(--theme-color);
+  }
+}
+
+header {
+  border-bottom: 1px solid var(--theme-color);
+  padding-bottom: .5rem;
+}
+
+footer {
+  border-top: 1px solid var(--theme-color);
+  color: var(--theme-color);
+}
+
+main {
+  font-size: .95rem;
+  line-height: 1.75;
+  margin: 1rem 0 2rem;
+}
+
+abbr[ title ],
+acronym[ title ] {
+  text-decoration: 3px underline dotted gray;
+  text-underline-offset: .2rem;
+}
+
+a[ href *= "github.com" ] {
+  display: inline-block;
+  font-size: small;
+  margin-top: .75rem;
+}
+
+:link {
+  text-underline-offset: .13rem;
+}
+
+* {
+  outline-offset: .25rem;
+}

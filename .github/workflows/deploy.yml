@@ -35,11 +35,19 @@ jobs:
         check-latest: true
         # cache: 'npm'
     - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test --if-present
+    - run: npm run build:original
+    - run: npm run build:mobile
     - run: npm run lint
+    - run: npm test --if-present
     #- name: Delete 'node_modules'
     #  run: rm -rf node_modules
+    # https://stackoverflow.com/questions/60589373/how-to-force-job-to-exit-in-github-actions-step
+    - name: Early exit
+      run: |
+        gh run cancel ${{ github.run_id }}
+        gh run watch ${{ github.run_id }}
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Setup Pages
       uses: actions/configure-pages@v5
     - name: Upload artifact
@@ -47,8 +55,8 @@ jobs:
       with:
         # Upload one directory.
         path: .
-    #- name: Deploy to GitHub Pages
-    #  id: deployment
-    #  uses: actions/deploy-pages@v4
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
 
 # End.

@@ -1,0 +1,25 @@
+<header>
+  <div>
+    <h1><a href="./">Dive Into Accessibility</a></h1>
+    <p>30 days to a more accessible web site</p>
+  </div>
+
+  <nav>
+    <button popovertarget="nav-dropdown" aria-label="Toggle navigation">
+      <hr role="presentation">
+      <hr role="presentation">
+      <hr role="presentation">
+    </button>
+
+    <div popover id="nav-dropdown">
+      <search>
+        <form>
+          <p><label for="q">Search this site:</label></p>
+          <p><input id="q" name="q"></p>
+          <p><button>Search</button></p>
+        </form>
+      </search>
+      {% include '../en/main-navigation.njk' %}
+    </div>
+  </nav>
+</header>

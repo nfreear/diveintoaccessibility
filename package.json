@@ -9,8 +9,10 @@
   },
   "scripts": {
     "clean": "rm -rf _site",
-    "build": "npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve",
+    "build:original": "_THEME=orig npx @11ty/eleventy",
+    "build:mobile": "_THEME=mobile npx @11ty/eleventy",
+    "start": "_THEME=orig npx @11ty/eleventy --serve",
+    "start:mobile": "_THEME=mobile npx @11ty/eleventy --serve",
     "lint:fix": "npx eslint --fix .",
     "lint": "npx eslint ."
   }
