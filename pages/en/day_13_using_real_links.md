@@ -11,10 +11,10 @@ Although it's easy to describe and simple to fix, I can't stress enough how impo
 
 ### Who benefits?
 
-* [Marcus][] benefits. [Lynx][] does not support Javascript.
-* [Michael][] benefits. [Links][] does not support Javascript.
-* [Lillian][] benefits. Although she uses Internet Explorer, her IT department has implemented a corporate-wide policy to disable Javascript on all but a small list of approved sites. Your web site is not on the list.
-* [Google][] benefits. Google wants to follow links to find and index more content, but it can't follow "`javascript:`" links, because it doesn't execute Javascript code as it indexes the web.
+1. [Marcus][] benefits. [Lynx][] does not support Javascript.
+2. [Michael][] benefits. [Links][] does not support Javascript.
+3. [Lillian][] benefits. Although she uses Internet Explorer, her IT department has implemented a corporate-wide policy to disable Javascript on all but a small list of approved sites. Your web site is not on the list.
+4. [Google][] benefits. Google wants to follow links to find and index more content, but it can't follow "`javascript:`" links, because it doesn't execute Javascript code as it indexes the web.
 
 ### How to do it
 

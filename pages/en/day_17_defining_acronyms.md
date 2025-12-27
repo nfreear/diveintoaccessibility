@@ -64,10 +64,10 @@ You should define an acronym whenever you use it, or at least once per post.
 
 ### Who benefits?
 
-* [Michael][] benefits. When Michael hovers his cursor over an acronym, [Opera][] displays the acronym title as a tooltip.
-* [Bill][] benefits. [Mozilla][] goes even further, automatically rendering acronyms with a dotted underline. When Bill hovers his cursor over the acronym, Mozilla changes the cursor to a cursor + question mark, and then displays the acronym title as a tooltip. (You can override this default behavior with cascading style sheets, or use <acronym title="cascading style sheets">CSS</acronym> to get a similar effect in other browsers.)
-* [Google][] benefits. Google indexes the acronym title as well as the acronym itself, so people can find your site whether they search for the acronym or the spelled-out description.
-* I wish I could say that [Jackie][] benefits, but she doesn't. Neither [JAWS][] nor any of the other screen readers on the market currently support reading the titles of acronyms. I hope some day they will, and then you'll be ahead of the game.
+1. [Michael][] benefits. When Michael hovers his cursor over an acronym, [Opera][] displays the acronym title as a tooltip.
+2. [Bill][] benefits. [Mozilla][] goes even further, automatically rendering acronyms with a dotted underline. When Bill hovers his cursor over the acronym, Mozilla changes the cursor to a cursor + question mark, and then displays the acronym title as a tooltip. (You can override this default behavior with cascading style sheets, or use <acronym title="cascading style sheets">CSS</acronym> to get a similar effect in other browsers.)
+3. [Google][] benefits. Google indexes the acronym title as well as the acronym itself, so people can find your site whether they search for the acronym or the spelled-out description.
+4. I wish I could say that [Jackie][] benefits, but she doesn't. Neither [JAWS][] nor any of the other screen readers on the market currently support reading the titles of acronyms. I hope some day they will, and then you'll be ahead of the game.
 
 ### How to do it
 

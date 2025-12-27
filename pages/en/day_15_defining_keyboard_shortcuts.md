@@ -20,8 +20,8 @@ While there are no standards for which keys should be assigned to which features
 
 ### Who benefits?
 
-* [Jackie][] benefits. When [JAWS][] reads a link that defines an accesskey, it announces the access key as well. For example, the link `<a href="/" accesskey="1">Home page</a>` would be read by JAWS as "link: Home page, ALT + 1". Jackie can focus on the link by pressing <kbd>ALT+1</kbd>, then follow it by pressing <kbd>ENTER</kbd>.
-* [Bill][] benefits. Since Bill can not use a mouse effectively since his stroke, he relies on keyboard navigation and keyboard shortcuts to move around the page. Access keys are an excellent way for him to jump to common or frequently-used links. Bill can type <kbd>ALT+1</kbd>, and [Mozilla][] immediately follows the link that defines accesskey="1". (Note: Mozilla does not announce access keys, which raises the question of how Bill would discover what they are. We will discuss this in a future tip.)
+1. [Jackie][] benefits. When [JAWS][] reads a link that defines an accesskey, it announces the access key as well. For example, the link `<a href="/" accesskey="1">Home page</a>` would be read by JAWS as "link: Home page, ALT + 1". Jackie can focus on the link by pressing <kbd>ALT+1</kbd>, then follow it by pressing <kbd>ENTER</kbd>.
+2. [Bill][] benefits. Since Bill can not use a mouse effectively since his stroke, he relies on keyboard navigation and keyboard shortcuts to move around the page. Access keys are an excellent way for him to jump to common or frequently-used links. Bill can type <kbd>ALT+1</kbd>, and [Mozilla][] immediately follows the link that defines accesskey="1". (Note: Mozilla does not announce access keys, which raises the question of how Bill would discover what they are. We will discuss this in a future tip.)
 
 ### How to do it: home page link
 
