@@ -3,14 +3,21 @@
 
 [home]: index.html
 [table of contents]: table_of_contents.html
-[toc]: table_of_contents.html
 [introduction]: introduction.html
+[search]: mt/mt-search.cgi
+[feedback]: mailto:feedback@diveintoaccessibility.org
 
 [jackie]: day_1_jackie.html
 [michael]: day_2_michael.html
 [bill]: day_3_bill.html
 [lillian]: day_4_lillian.html
 [marcus]: day_5_marcus.html
+
+[day 1]: day_1_jackie.html
+[day 2]: day_2_michael.html
+[day 3]: day_3_bill.html
+[day 4]: day_4_lillian.html
+[day 5]: day_5_marcus.html
 
 [day 6]: day_6_choosing_a_doctype.html
 [day 7]: day_7_identifying_your_language.html
@@ -46,25 +53,14 @@
 [accessibility statement]: accessibility_statement.html
 [terms of use]: terms_of_use.html
 [translations]: translations.html
-[download-zip]: download/diveintoaccessibility-html.html
-[download-pdf]: download/diveintoaccessibility.pdf
 
-[jaws]: http://www.freedomscientific.com/fs_products/software_jaws.asp
-[home page reader]: http://www-3.ibm.com/able/hpr.html
-[hpr]: http://www-3.ibm.com/able/hpr.html
-[window eyes]: http://www.gwmicro.com/windoweyes/windoweyes.htm
-[lynx]: http://www.fdisk.com/doslynx/lynxport.htm
-[lynx viewer]: http://www.delorie.com/web/lynxview.html
-[links]: http://links.sourceforge.net/
-[mozilla]: http://www.mozilla.org/
-[firebird]: http://www.mozilla.org/products/firebird/
-[opera]: http://www.opera.com/
-[google]: http://www.google.com/#xx
+[by person]: by_person.html
+[by disability]: by_disability.html
+[by design principle]: by_design_principle.html
+[by assistive technology]: by_web_browser.html
+[by publishing tool]: by_publishing_tool.html
 
-[google zeitgeist]: http://www.google.com/press/zeitgeist.html
-[google preferences]: http://www.google.com/preferences
-[lang]: http://www.w3.org/TR/REC-html40/struct/dirlang.html#h-8.1
-[iso]: http://www.loc.gov/standards/iso639-2/englangn.html
-[thatcher]: http://lists.w3.org/Archives/Public/w3c-wai-ig/2001AprJun/0713.html
+[download-zip]: /download/diveintoaccessibility-html.html
+[download-pdf]: /download/diveintoaccessibility.pdf
 
 [End]: //.
