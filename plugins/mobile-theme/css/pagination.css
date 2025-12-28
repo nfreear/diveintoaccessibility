@@ -1,0 +1,79 @@
+
+.pagination,
+.pageturn {
+  border: 1px solid #bbb;
+  border-radius: .25rem;
+  box-shadow: 0 0 2px 1px silver;
+  background-color: #eee;
+  color: gray;
+  font-size: .9rem;
+  display: flex;
+  X_justify-content: space-evenly;
+  margin: 1.5rem 0;
+  padding: .75rem .5rem;
+
+  & > * {
+    X_max-width: 40%;
+  }
+
+  .toc { margin: 0 .5rem; }
+  .prev {
+    display: flex;
+    margin-right: .4rem;
+
+    x-arrow::before {
+      content: '←';
+      margin-right: .4rem;
+    }
+  }
+
+  .next {
+    display: flex;
+    margin-left: .4rem;
+    text-align: right;
+
+    x-arrow::before {
+      content: '→';
+      margin-left: .4rem;
+    }
+  }
+
+  x-arrow::before {
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: sub;
+  }
+}
+
+@media (min-width: 576px) {
+  .pagination {
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    & > * {
+      max-width: 40%;
+    }
+  }
+}
+
+/* https://getbootstrap.com/docs/5.3/layout/breakpoints/ */
+@media screen and (max-width: 767.98px) {
+  .pagination {
+    flex-direction: column;
+    font-size: .85rem;
+
+    & > * {
+      max-width: unset;
+    }
+
+    .toc {
+      display: inline-block;
+      margin: .75rem;
+      text-align: center;
+    }
+
+    sep {
+      display: none;
+    }
+  }
+}

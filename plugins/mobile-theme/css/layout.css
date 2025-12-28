@@ -24,7 +24,6 @@ header {
       &:focus *,
       &:hover * {
         border-color: var(--theme-color);
-        transition: all 250ms;
       }
     }
 
@@ -34,12 +33,6 @@ header {
       min-width: 11rem;
       margin: 0;
       X_padding: .75rem;
-    }
-
-    search {
-      p {
-        margin: .75rem 0;
-      }
     }
 
     [ popover ] {
@@ -74,6 +67,6 @@ header {
 
 body {
   margin: auto;
-  max-width: 36rem;
+  max-width: 37rem;
   padding: 1rem;
 }

@@ -1,24 +1,32 @@
 ---
 title: Mobile theme layout
 ---
-<!doctype html>
-<html lang="en">
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/css/typography.css">
   <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/pagination.css">
 
   <title>{{ title }} - Dive Into Accessibility </title>
 
+</head>
+<body>
 {% include '../en/header.njk' %}
+
+<page-note></page-note>
 
 <main id="main">
 {{ content | safe }}
 </main>
 
+{% include '../en/pagination.njk' %}
+
 <footer>
   <p>Copyright © 2002 Mark Pilgrim</p>
 </footer>
 
-</html>
+{% include '../javascript.njk' %}
+
+</body>

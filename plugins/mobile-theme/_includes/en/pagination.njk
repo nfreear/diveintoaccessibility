@@ -1,0 +1,16 @@
+{% set previousPost = collections.myCustomSort | getPreviousCollectionItem %}
+{% set nextPost = collections.myCustomSort | getNextCollectionItem %}
+
+{% if previousPost or nextPost %}
+<nav class="pageturn pagination" aria-label="Pagination">
+  {% if previousPost %}
+    <a href="{{ previousPost.url }}" class="prev"><x-arrow></x-arrow><span>{{ previousPost.data.title }}</span></a>
+  {% endif %}
+  <sep>|</sep>
+  <a href="table_of_contents.html" class="toc">Contents</a>
+  <sep>|</sep>
+  {% if nextPost %}
+    <a href="{{ nextPost.url }}" class="next"><span>{{ nextPost.data.title }}</span><x-arrow></x-arrow></a>
+  {% endif %}
+</nav> <!--pageturn-->
+{% endif %}
