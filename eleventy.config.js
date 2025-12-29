@@ -1,6 +1,6 @@
 import { resolve } from 'node:path';
 import debug from 'debug';
-import { themeSwitchPlugin, addLinksPlugin, pageIdPlugin, debugFiltersPlugin } from 'dia-plugins';
+import diaPluginLoader from 'dia-plugins';
 
 /**
  * Configure Eleventy
@@ -16,14 +16,6 @@ export default async function (eleventyConfig) {
 
   // Order matters, put this at the top of your configuration file.
   eleventyConfig.setInputDirectory('pages');
-
-  eleventyConfig.addPlugin(themeSwitchPlugin);
-  eleventyConfig.addPlugin(addLinksPlugin, { inLinksFile, outLinksFile });
-  eleventyConfig.addPlugin(pageIdPlugin, {
-    collection: 'myCustomSort',
-    shortcode: 'myPageID'
-  });
-  eleventyConfig.addPlugin(debugFiltersPlugin);
 
   eleventyConfig.setIncludesDirectory('../_includes');
   // eleventyConfig.setLayoutsDirectory('../_includes/layouts');
@@ -41,6 +33,10 @@ export default async function (eleventyConfig) {
   /* eleventyConfig.addGlobalData('pageID', () => {
     return (data) => pageId.compute(data.page);
   }); */
+
+  eleventyConfig.addPlugin(diaPluginLoader, {
+    inLinksFile, outLinksFile
+  });
 
   eleventyConfig.addPassthroughCopy('download/*');
   eleventyConfig.addPassthroughCopy('examples/*');

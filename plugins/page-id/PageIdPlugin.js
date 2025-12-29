@@ -1,9 +1,10 @@
 /**
- * Plugin to generate a `pageID` from the `fileSlug`, and sort a custom collection.
+ * Plugin to sort pages in a collection by day number (page ID).
  */
 
+// Fallback for non-"day" pages.
 const PAGE_IDS_EN = [
-  { id: null, slug: 'index' }, // Intentional null id!
+  { id: null, slug: 'index' }, // Intentional null id - not included in collection.
   { id: -1, slug: 'introduction' }, // Don't use an id of 0!
   // { id: 1, slug: 'day_1_jackie' },
   { id: 41, slug: 'conclusion' },
@@ -18,6 +19,11 @@ export class PageIdPlugin {
   // https://www.11ty.dev/docs/data-eleventy-supplied/#page-variable
   compute (page) {
     console.assert(page, 'is page missing?');
+    const isNotesPage = /\/notes\//.test(page.url);
+    // Ensure that "notes" pages are not included in the collection.
+    if (isNotesPage) {
+      return null;
+    }
     const M = page.fileSlug.match(/day_(\d+)_/);
     const pageID = M ? parseInt(M[1]) : this.#fallbackID(page);
     // console.debug('pageID:', pageID, page.fileSlug);

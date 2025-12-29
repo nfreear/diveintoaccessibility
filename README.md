@@ -3,6 +3,8 @@
 ## 30 days to a more accessible web site
 ## By Mark Pilgrim
 
+[![Build][ci-badge]][ci]
+
  * [Archive of "Dive into Accessibility"][archive] (2011, on Wayback Machine)
  * [Errors and Caveats](docs/ERRATA.md)
  * [Proposal](docs/PROPOSAL.md)
@@ -88,3 +90,9 @@ of Design)"
 [html5-mis]: https://github.com/mislav/diveintohtml5
 [html5-dive]: https://github.com/diveintomark/diveintohtml5
 [python-dive]: https://github.com/diveintomark/diveintopython3
+
+[d_ci]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/deploy.yml
+[d_ci-badge]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/deploy.yml/badge.svg
+
+[ci]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/build.yml
+[ci-badge]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/build.yml/badge.svg

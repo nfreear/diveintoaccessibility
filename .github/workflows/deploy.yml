@@ -2,7 +2,9 @@
 
 name: Deploy
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
 # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 env:
   NODE_VERSION: 24
@@ -36,18 +38,11 @@ jobs:
         # cache: 'npm'
     - run: npm ci
     - run: npm run build:original
+    - run: npm run clean
     - run: npm run build:mobile
     - run: npm run lint
     - run: npm test --if-present
-    #- name: Delete 'node_modules'
-    #  run: rm -rf node_modules
-    # https://stackoverflow.com/questions/60589373/how-to-force-job-to-exit-in-github-actions-step
-    - name: Early exit
-      run: |
-        gh run cancel ${{ github.run_id }}
-        gh run watch ${{ github.run_id }}
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Setup Pages
       uses: actions/configure-pages@v5
     - name: Upload artifact

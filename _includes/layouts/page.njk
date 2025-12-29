@@ -3,6 +3,8 @@ title: Dive Into Accessibility
 layout: dia_theme_page
 ---
 <!doctype html>
-<html lang="en" class="page status-{{ eleventyComputed.status }}" data-page-id="{% myPageID %}">
+<html lang="en" class="page" data-page-status="{{ eleventyComputed.status }}" data-page-id="{% myPageID %}" data-page-slug="{{ page.fileSlug }}">
 {{ content | safe }}
+
+{{ page | console_log | safe }}
 </html>
