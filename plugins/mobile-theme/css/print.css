@@ -1,0 +1,68 @@
+/*
+Dive Into Accessibility print stylesheet
+copyright (c) 2002, Mark Pilgrim (f8dy@diveintomark.org)
+GPL-licensed
+*/
+
+body {
+  background-color: white;
+  color: black;
+  font: 100% Arial, Helvetica, sans-serif;
+}
+
+/* put url after link text instead of underlining */
+a:link, a:visited {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+}
+
+a[href]:after {
+  content: " (" attr(href) ")";
+}
+
+h1 a:after {
+  content: "";
+}
+
+blockquote a:after {
+  content: "";
+}
+
+/* spread entry headers across page */
+h2 {
+  margin: 0;
+  padding-bottom: 2px;
+  border: 0;
+  text-align: left;
+}
+
+/* spread main content across page */
+#main {
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: auto;
+  background-color: white;
+  color: black;
+}
+
+.entry {
+  margin-top: 2em;
+}
+
+/* hide all the screen-specific stuff: nav bar, style switcher, search box, even the site logo */
+#menu, #crosssitenavigation, #navigation, .pageturn, .divider, #search {
+  display: none;
+}
+
+/* instead of a dotted border, put title of acronym after text */
+acronym {
+  border: 0;
+}
+
+acronym:after {
+  content: " (" attr(title) ")";
+}
