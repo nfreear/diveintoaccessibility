@@ -75,13 +75,11 @@ All pages on this site define the following access keys:
 ### Related resources
 
 1. [WebAIM][], a non-profit organization dedicated to improving accessibility to online learning materials.
-2. [Designing More Usable Web Sites][design], a large list of additional resources.
+2. [Designing More Usable Web Sites][trace-design], a large list of additional resources.
 
 ### Accessibility books I recommend
 
-1. Joe Clark: [Building Accessible Websites][]. I tech-edited this book; it's excellent. Comprehensive but not overwhelming.
-2. Jim Thatcher and others: [Constructing Accessible Web Sites][]. Less comprehensive than Joe's book, but goes into greater depth in the topics it covers. Gives screenshots of how various screen readers and alternative browsers interpret various tags and markup. Also has an amazing chapter on the current state of legal accessibility requirements.
+1. Joe Clark: [Building Accessible Websites][clark-book]. I tech-edited this book; it's excellent. Comprehensive but not overwhelming.
+2. Jim Thatcher and others: [Constructing Accessible Web Sites][thatcher-et-al-book]. Less comprehensive than Joe's book, but goes into greater depth in the topics it covers. Gives screenshots of how various screen readers and alternative browsers interpret various tags and markup. Also has an amazing chapter on the current state of legal accessibility requirements.
 
-[design]: http://trace.wisc.edu/world/web/
-[Building Accessible Websites]: http://www.amazon.com/exec/obidos/ASIN/073571150X/diveintomark-20
-[Constructing Accessible Web Sites]: http://www.amazon.com/exec/obidos/ASIN/1904151000/diveintomark-20
+[trace-design]: http://trace.wisc.edu/world/web/

@@ -1,5 +1,12 @@
+---
+title: Internal reference-style links.
+permalink: false
+---
 
 [DL]: https://www.markdownlang.com/extended/definition-lists.html
+
+[email]: mailto:f8dy@diveintoaccessibility.org
+[translate-email]: mailto:translate@diveintoaccessibility.org
 
 [home]: index.html
 [table of contents]: table_of_contents.html
@@ -60,7 +67,13 @@
 [by assistive technology]: by_web_browser.html
 [by publishing tool]: by_publishing_tool.html
 
-[download-zip]: /download/diveintoaccessibility-html.html
+[notabletrick]: ./examples/notabletrick.html
+[tabletrick]: ./examples/tabletrick.html
+[notabletrick-2]: ./examples/notabletrick-2.html
+[tabletrick-2]: ./examples/tabletrick-2.html
+[spacer GIF]: ./images/1.html#_404_TODO
+
+[download-zip]: /download/diveintoaccessibility-html.html#_404_TODO
 [download-pdf]: /download/diveintoaccessibility.pdf
 
 [End]: //.

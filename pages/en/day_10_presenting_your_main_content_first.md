@@ -68,12 +68,5 @@ We do this instead:
 * [Lynx Viewer][].
 * A Promotion Guide: [The Table Trick][trick].
 
-[lynx viewer]: http://www.delorie.com/web/lynxview.html
 [trick]: http://www.apromotionguide.com/tabletrick.html
 [trick archive]: https://web.archive.org/web/20140523092901/http://www.apromotionguide.com/tabletrick.html
-
-[notabletrick]: ./examples/notabletrick.html
-[tabletrick]: ./examples/tabletrick.html
-[notabletrick-2]: ./examples/notabletrick-2.html
-[tabletrick-2]: ./examples/tabletrick-2.html
-[spacer GIF]: ./images/1.html

@@ -1,3 +1,7 @@
+---
+title: External reference-style links.
+permalink: false
+---
 
 [jaws]: http://www.freedomscientific.com/fs_products/software_jaws.asp
 [home page reader]: http://www-3.ibm.com/able/hpr.html
@@ -9,6 +13,7 @@
 [mozilla]: http://www.mozilla.org/
 [firebird]: http://www.mozilla.org/products/firebird/
 [opera]: http://www.opera.com/
+[icab]: http://www.icab.de/
 [google]: http://www.google.com/#xx
 
 [google zeitgeist]: http://www.google.com/press/zeitgeist.html
@@ -31,5 +36,12 @@
 
 [webaim]: http://www.webaim.org/
 [design]: http://trace.wisc.edu/world/web/
+
+[clark-book]: http://www.amazon.com/exec/obidos/ASIN/073571150X/diveintomark-20
+[thatcher-et-al-book]: http://www.amazon.com/exec/obidos/ASIN/1904151000/diveintomark-20
+[krug-book]: http://www.amazon.com/exec/obidos/ASIN/0789723107/diveintomark-20
+[briggs-et-al-book]: http://www.amazon.com/exec/obidos/ASIN/1904151043/diveintomark-20
+[meyer-css-book]: http://www.amazon.com/exec/obidos/ASIN/073571245X/diveintomark-20
+[meyer-css-site]: http://www.ericmeyeroncss.com/
 
 [End]: //.

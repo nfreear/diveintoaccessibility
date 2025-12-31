@@ -12,7 +12,7 @@ Every table should have a summary. If you have a calendar, the summary can be as
 ### Who benefits?
 
 1. [Jackie][] benefits. When [JAWS][] encounters your calendar, Jackie hears "Summary: Monthly calendar with links to each day's posts." Then she hears the caption, then she hears the table headers, then she can navigate through the calendar.
-2. [iCab][] users benefit. iCab can use the built-in text-to-speech capabilities of the Mac OS to read web pages, and it will read the summary of any table that defines one.
+2. [iCab][] users benefit. iCab can use the built-in text-to-speech capabilities of the <abbr title="Macintosh operating system">Mac OS</abbr> to read web pages, and it will read the summary of any table that defines one.
 
 ### How to do it: calendar
 
