@@ -9,8 +9,6 @@ import diaPluginLoader from 'dia-plugins';
  */
 export default async function (eleventyConfig) {
   const debugLog = debug('DIA:config');
-  const inLinksFile = resolve('pages', 'internal_links.md');
-  const outLinksFile = resolve('pages', 'external_links.md');
 
   debugLog('Loading config…');
 
@@ -35,12 +33,20 @@ export default async function (eleventyConfig) {
   }); */
 
   eleventyConfig.addPlugin(diaPluginLoader, {
-    inLinksFile, outLinksFile
+    linkFiles: getLinkFilePaths()
   });
 
   eleventyConfig.addPassthroughCopy('download/*');
   eleventyConfig.addPassthroughCopy('examples/*');
   eleventyConfig.addPassthroughCopy('images/*');
+}
+
+function getLinkFilePaths () {
+  return [
+    resolve('pages', 'internal_links.md'),
+    resolve('pages', 'external_links.md'),
+    resolve('pages', 'links', 'translation_links.md'),
+  ];
 }
 
 /* export const config = {

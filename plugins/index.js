@@ -1,6 +1,6 @@
 import originalThemePlugin from './original-theme/originalThemePlugin.js';
 import mobileThemePlugin from './mobile-theme/mobileThemePlugin.js';
-import addLinksPlugin from './pre-process/AddLinksPlugin.js';
+import addLinkRefsPlugin from './pre-process/AddLinksPlugin.js';
 import sortByDayNumberPlugin from './page-id/PageIdPlugin.js';
 import debugFiltersPlugin from './debug-filter/debugFiltersPlugin.js';
 import clientJsPlugin from './client-js/clientJsPlugin.js';
@@ -24,12 +24,11 @@ function themeSwitchPlugin (eleventyConfig, options) {
  * Load the collection of plugins.
  */
 function diaPluginLoader (eleventyConfig, options) {
-  console.assert(options.inLinksFile, 'inLinksFile is missing');
-  console.assert(options.outLinksFile, 'outLinksFile is missing');
-  const { inLinksFile, outLinksFile } = options;
+  console.assert(options.linkFiles, 'linkFiles array is missing');
+  const { linkFiles } = options;
 
   eleventyConfig.addPlugin(themeSwitchPlugin);
-  eleventyConfig.addPlugin(addLinksPlugin, { inLinksFile, outLinksFile });
+  eleventyConfig.addPlugin(addLinkRefsPlugin, { linkFiles });
   eleventyConfig.addPlugin(sortByDayNumberPlugin, {
     collection: 'myCustomSort',
     shortcode: 'myPageID'
@@ -40,7 +39,7 @@ function diaPluginLoader (eleventyConfig, options) {
 
 export {
   originalThemePlugin, mobileThemePlugin, themeSwitchPlugin,
-  addLinksPlugin, sortByDayNumberPlugin, debugFiltersPlugin, clientJsPlugin
+  addLinkRefsPlugin, sortByDayNumberPlugin, debugFiltersPlugin, clientJsPlugin
 };
 
 export default diaPluginLoader;

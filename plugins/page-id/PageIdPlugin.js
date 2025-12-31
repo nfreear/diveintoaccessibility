@@ -1,5 +1,7 @@
 /**
  * Plugin to sort pages in a collection by day number (page ID).
+ *
+ * @sort https://www.11ty.dev/docs/collections-api/
  */
 
 // Fallback for non-"day" pages.
@@ -13,18 +15,21 @@ const PAGE_IDS_EN = [
   { id: 44, slug: 'translations' },
 ];
 
-export class PageIdPlugin {
+export class SortByDayNumberPlugin {
+// Was: export class PageIdPlugin {
   get #pageIds () { return PAGE_IDS_EN; }
 
+  get #dayRegex () { return /day_(\d+)_/; }
+
   // https://www.11ty.dev/docs/data-eleventy-supplied/#page-variable
-  compute (page) {
+  computePageId (page) {
     console.assert(page, 'is page missing?');
     const isNotesPage = /\/notes\//.test(page.url);
     // Ensure that "notes" pages are not included in the collection.
     if (isNotesPage) {
       return null;
     }
-    const M = page.fileSlug.match(/day_(\d+)_/);
+    const M = page.fileSlug.match(this.#dayRegex);
     const pageID = M ? parseInt(M[1]) : this.#fallbackID(page);
     // console.debug('pageID:', pageID, page.fileSlug);
     return pageID;
@@ -34,8 +39,8 @@ export class PageIdPlugin {
   addCollection (collectionsApi) {
     console.assert(collectionsApi, 'is collectionsApi missing?');
     return collectionsApi.getAll().filter((it) => this.#filter(it)).sort((a, b) => {
-      const aPageID = this.compute(a);
-      const bPageID = this.compute(b);
+      const aPageID = this.computePageId(a);
+      const bPageID = this.computePageId(b);
       return aPageID - bPageID; // sort by `pageID` - ascending.
       // return a.date - b.date; // sort by date - ascending
       // return b.date - a.date; // sort by date - descending
@@ -44,7 +49,7 @@ export class PageIdPlugin {
     });
   }
 
-  #filter (page) { return this.compute(page); }
+  #filter (page) { return this.computePageId(page); }
 
   #fallbackID (page) {
     const found = this.#pageIds.find(({ slug }) => slug === page.fileSlug);
@@ -52,19 +57,20 @@ export class PageIdPlugin {
   }
 }
 
-export default function pageIdPlugin (eleventyConfig, options) {
+// Was: pageIdPlugin()
+export default function sortByDayNumberPlugin (eleventyConfig, options) {
   console.assert(options.collection, 'Missing collection');
   console.assert(options.shortcode, 'Missing shortcode');
 
   const { collection, shortcode } = options;
-  const pageId = new PageIdPlugin();
+  const sortBy = new SortByDayNumberPlugin();
 
   eleventyConfig.addShortcode(shortcode, function () {
     // this.page
     // this.eleventy
-    return pageId.compute(this.page) ?? '';
+    return sortBy.computePageId(this.page) ?? '';
   });
 
   // https://www.11ty.dev/docs/collections-api/
-  eleventyConfig.addCollection(collection, (collectionsApi) => pageId.addCollection(collectionsApi));
+  eleventyConfig.addCollection(collection, (collectionsApi) => sortBy.addCollection(collectionsApi));
 }
