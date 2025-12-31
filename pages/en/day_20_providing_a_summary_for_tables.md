@@ -1,6 +1,8 @@
 ---
 layout: page
 title: "Day 20: Providing a summary for tables"
+eleventyComputed:
+  status: amber
 ---
 
 ## Day 20: Providing a summary for tables

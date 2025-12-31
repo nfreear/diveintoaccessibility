@@ -81,10 +81,12 @@ a[ href *= "github.com" ] {
   margin-top: .75rem;
 }
 
-:link {
+:link,
+::part(a) {
   text-underline-offset: .13rem;
 }
 
-* {
+*,
+::part(a) {
   outline-offset: .25rem;
 }

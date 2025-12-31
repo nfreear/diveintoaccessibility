@@ -1,0 +1,94 @@
+/*
+  The <page-note> custom element.
+*/
+
+[ data-page-status = red ] {
+  --note-background: #fee;
+  --note-border: darkred;
+  --note-color: #500;
+  --note-shadow: #faa;
+}
+
+[ data-page-status = amber ] {
+  --note-background: #ffeecc; /* #ffcc99; /* peach orange */
+  --note-border: darkorange;
+  --note-color: #772200; /* #cc5500; /* burnt orange */
+  --note-shadow: orange;
+}
+
+page-note:not([ hidden ]) {
+  background-color: var(--note-background, #eee);
+  border: 1px solid var(--note-border, gray);
+  border-radius: .25rem;
+  box-shadow: 0 0 2px 1px var(--note-shadow, silver);
+  color: var(--note-color);
+  display: block;
+  margin: 2rem 0;
+  padding: .75rem;
+
+  &[ page-status = red ] {
+    &::part(summary)::after {
+      content: '❌'; /* cross-mark emoji */
+    }
+  }
+
+  &[ page-status = amber ] {
+    &::part(summary)::after {
+      content: '⚠️'; /* warning emoji */
+    }
+  }
+
+  &::part(summary) {
+    font-size: larger;
+    height: 1.75rem;
+  }
+
+  &::part(summary)::after {
+    display: inline-block;
+    float: right;
+    font-size: xx-large;
+    position: relative;
+    top: -.5rem;
+  }
+
+  &::part(moreLink) {
+    display: block;
+    margin: .5rem 0;
+  }
+
+  &::part(moreLink)::after {
+    content: '→';
+    display: inline-block;
+    margin-left: .25rem;
+    text-decoration: none;
+  }
+}
+
+[ data-is-notes-page ] {
+  main {
+    background-color: var(--note-background, #f4f4f4);
+    border: 1px solid var(--note-border, silver);
+    border-radius: .25rem;
+    box-shadow: 0 0 1px 2px var(--note-shadow, silver);
+    color: var(--note-color);
+    padding: 1rem;
+  }
+
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  &[ data-page-status = red ] {
+    h2::before {
+      content: '❌';
+      margin-right: .5rem;
+    }
+  }
+
+  &[ data-page-status = amber ] {
+    h2::before {
+      content: '⚠️';
+      margin-right: .5rem;
+    }
+  }
+}

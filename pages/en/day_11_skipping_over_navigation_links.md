@@ -1,6 +1,8 @@
 ---
 layout: page
 title: "Day 11: Skipping over navigation links"
+eleventyComputed:
+  status: amber
 ---
 
 ## Day 11: Skipping over navigation links

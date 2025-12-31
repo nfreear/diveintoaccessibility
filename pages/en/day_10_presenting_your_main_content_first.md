@@ -1,6 +1,8 @@
 ---
 layout: page
 title: "Day 10: Presenting your main content first"
+eleventyComputed:
+  status: amber
 ---
 
 ## Day 10: Presenting your main content first

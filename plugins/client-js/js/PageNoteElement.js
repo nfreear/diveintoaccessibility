@@ -11,12 +11,24 @@ export default class PageNoteElement extends HTMLElement {
   #firstParaEl;
   #pageStatus;
   #summary;
+  #dayTitle;
+  #pageId;
+
+  get urlTemplate () {
+    return this.getAttribute('url-template') ?? '/en/notes/%s.html';
+  }
+
+  get mainSelector () { return this.getAttribute('main-selector') ?? 'main'; }
+
+  get paraSelector () { return this.getAttribute('para-selector') ?? 'p:first-of-type'; }
+
+  get moreText () { return this.getAttribute('more-text') ?? 'Find out more'; }
 
   get #isNotesPage () { return /\/notes\//.test(location.pathname); }
 
   get #fileSlug () { return location.pathname.replace('.html', '').replace(/\/\w+\//, ''); }
 
-  get #notesUrl () { return `/en/notes/${this.#fileSlug}.html`; }
+  get #notesUrl () { return this.urlTemplate.replace('%s', this.#fileSlug); }
 
   async connectedCallback () {
     console.debug('page-note', this.#isNotesPage, [this]);
@@ -32,6 +44,7 @@ export default class PageNoteElement extends HTMLElement {
       this.#queryDomElements();
       const rootElem = this.#createNoteElements();
       this.attachShadow({ mode: 'open' }).appendChild(rootElem);
+      this.removeAttribute('hidden');
       this.dataset.ready = true;
     }
   }
@@ -47,17 +60,22 @@ export default class PageNoteElement extends HTMLElement {
       const htmlSource = await resp.text();
       const parser = new DOMParser();
       this.#dom = parser.parseFromString(htmlSource, 'text/html');
+    } else {
+      this.setAttribute('hidden', '');
     }
   }
 
   #queryDomElements () {
-    const mainEl = this.#dom.querySelector('main');
+    const mainEl = this.#dom.querySelector(this.mainSelector);
     const h2Elem = mainEl.querySelector('h2');
-    this.#firstParaEl = mainEl.querySelector('p:first-of-type');
+    const h3Elem = mainEl.querySelector('h3');
+    this.#firstParaEl = mainEl.querySelector(this.paraSelector);
     this.#summary = h2Elem.textContent;
+    this.#dayTitle = h3Elem.textContent;
     this.#pageStatus = this.#dom.documentElement.dataset.pageStatus;
+    this.#pageId = document.documentElement.dataset.pageId;
     this.setAttribute('page-status', this.#pageStatus);
-    console.debug('queryElements:', mainEl, this.#firstParaEl, h2Elem);
+    console.debug('queryElements:', mainEl, this.#summary, this.#firstParaEl);
   }
 
   #createNoteElements () {
@@ -72,10 +90,10 @@ export default class PageNoteElement extends HTMLElement {
     innerEl.appendChild(linkEl);
 
     summaryEl.setAttribute('part', 'summary');
-    linkEl.setAttribute('part', 'more');
+    linkEl.setAttribute('part', 'a moreLink');
 
     summaryEl.textContent = this.#summary;
-    linkEl.textContent = 'Find out more';
+    linkEl.textContent = this.moreText;
     linkEl.href = this.#notesUrl;
     return detailsEl;
   }

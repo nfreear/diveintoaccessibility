@@ -1,6 +1,8 @@
 ---
 layout: page
 title: "Day 17: Defining acronyms"
+eleventyComputed:
+  status: amber
 ---
 
 ## Day 17: Defining acronyms
