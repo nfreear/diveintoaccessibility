@@ -5,9 +5,11 @@
 * [x] – Review book and compile [errata][] ([#4][]),
 * [x] – Fix "Skip to navigation" link ([#5][]),
 * [ ] – Extract original page content to Markdown files ([#7][]),
-* [ ] – Develop a mobile-friendly version of the existing theme/styles,
+* [x] – Develop a mobile-friendly version of the existing theme/styles ([#9][]),
 * [ ] – Re-publish the site using a static site generator, such as [Eleventy][] ([#8][]),
 * [ ] – Place an information box on the relevant pages, documenting errors or caveats relating to that page,
+* [x] - Delete legacy HTML and CSS ([#10][]),
+* [x] - Create reusable plugin collection ([#11][]),
 * [ ] – Work with the book translators to link to the [errata][] and/or make corrections (_important_!)
 
 ---
@@ -21,4 +23,7 @@
 [#5]: https://github.com/nfreear/diveintoaccessibility/issues/5
 [#7]: https://github.com/nfreear/diveintoaccessibility/issues/7
 [#8]: https://github.com/nfreear/diveintoaccessibility/issues/8
+[#9]: https://github.com/nfreear/diveintoaccessibility/issues/9
+[#10]: https://github.com/nfreear/diveintoaccessibility/issues/10
+[#11]: https://github.com/nfreear/diveintoaccessibility/issues/11
 [eleventy]: https://www.11ty.dev/

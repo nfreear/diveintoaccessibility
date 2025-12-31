@@ -42,7 +42,7 @@ export class AddLinkRefsPlugin {
   }
 
   #stripFrontMatter (markdown) {
-    return markdown.replace(/-{3}\n(\w+: [\w\. -]+\n)+-{3}/m, '');
+    return markdown.replace(/-{3}\n(\w+: [\w. -]+\n)+-{3}/m, '');
   }
 }
 

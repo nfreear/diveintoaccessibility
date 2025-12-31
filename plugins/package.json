@@ -1,6 +1,23 @@
 {
   "name": "dia-plugins",
   "version": "0.9.0",
+  "description": "Collection of Eleventy themes and plugins for the book, \"Dive Into Accessibility\"",
+  "license": "(MIT OR GFDL-1.1-only)",
   "main": "index.js",
-  "type": "module"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nfreear/diveintoaccessibility.git"
+  },
+  "bugs": "https://github.com/nfreear/diveintoaccessibility/issues",
+  "homepage": "https://github.com/nfreear/diveintoaccessibility/tree/revive/plugins#readme",
+  "keywords": [
+    "eleventy",
+    "eleventy-plugin",
+    "accessibility",
+    "book"
+  ],
+  "author": {
+    "name": "Nick Freear"
+  }
 }
