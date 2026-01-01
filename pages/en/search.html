@@ -1,0 +1,25 @@
+---
+layout: page
+title: Search
+eleventyComputed:
+  archive: https://web.archive.org/web/20061007152925/http://diveintoaccessibility.org/mt/mt-search.cgi
+  archiveDate: 2006-10-07
+  originalUrl: /mt/mt-search.cgi
+---
+
+<h2>Search</h2>
+
+<form id="searchform" method="get" action="mt-search.cgi">
+<p>
+  <label for="search">Search for:</label>
+  <input type="text" size="30" name="search" id="search" accesskey="4" value=""/>
+  <input type="submit" value="Search"/>
+</p>
+<p>
+  <input type="checkbox" name="PartialSearch" id="PartialSearch"/><label for="PartialSearch">Match partial words</label>
+  &nbsp;
+  <input type="checkbox" name="CaseSearch" id="CaseSearch"/><label for="CaseSearch">Match case</label>
+  &nbsp;
+  <input type="checkbox" name="RegexSearch" id="RegexSearch"/><label for="RegexSearch">Use regular expressions</label>
+</p>
+</form>

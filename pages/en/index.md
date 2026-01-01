@@ -1,6 +1,9 @@
 ---
 layout: page
 title: Home
+eleventyComputed:
+  archive: https://web.archive.org/web/20110927131211/http://diveintoaccessibility.org/
+  archiveDate: 2011-09-27
 ---
 
 This book answers two questions.  The first question is "Why should I make my web site more accessible?"  If you do not have a web site, this book is not for you.  The second question is "How can I make my web site more accessible?"  If you are not convinced by the first answer, you will not be interested in the second.

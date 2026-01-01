@@ -73,6 +73,12 @@ permalink: false
 [tabletrick-2]: /en/examples/tabletrick-2.html
 [spacer GIF]: /en/images/1.html#_404_TODO
 
+[img:abs_sizing]: /images/abs_sizing_thumb.gif
+[img:rel_sizing]: /images/rel_sizing_thumb.gif
+[ex:abs_sizing]: /images/abs_sizing.gif
+[ex:rel_sizing]: /images/rel_sizing.gif
+[ex:fontsize]: /examples/fontsize.html
+
 [download-zip]: /en/download/diveintoaccessibility-html.html#_404_TODO
 [download-pdf]: /en/download/diveintoaccessibility.pdf
 

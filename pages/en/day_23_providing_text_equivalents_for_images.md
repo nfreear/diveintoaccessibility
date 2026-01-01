@@ -76,7 +76,7 @@ Of course, regardless of your publishing tool, if you've added your own images t
 * Watchfire.com: [Provide alternative text for all images][watchfire-alt].
 * All My FAQs Wiki: [ALT attribute][allmyfaqs-alt].
 * WebAIM: [How to Create Accessible Graphics][webaim-alt3].
-* Martin Schrode: [On accessible advertising][shrode-alt].
+* Martin Schrode: [On accessible advertising][schrode-alt].
 * Section 508 Federal Accessibility Guidelines: [What is meant by a text equivalent?][s508-alt]
 
 [Jonathon Delacour]: http://weblog.delacour.net/

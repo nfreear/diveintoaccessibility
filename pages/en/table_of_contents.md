@@ -2,6 +2,8 @@
 layout: page
 title: Table of contents
 # permalink: en/table_of_contents.html
+eleventyComputed:
+  archive: https://web.archive.org/web/20110927132016/http://diveintoaccessibility.org/table_of_contents.html
 ---
 
 ## Table of Contents
