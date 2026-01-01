@@ -2,6 +2,8 @@
 layout: page
 title: Home
 eleventyComputed:
+  status: amber
+  notesUrl: /en/notes/index.html
   archive: https://web.archive.org/web/20110927131211/http://diveintoaccessibility.org/
   archiveDate: 2011-09-27
 ---
@@ -16,11 +18,6 @@ This book answers two questions.  The first question is "Why should I make my we
 * [Download as <abbr title="portable document format">PDF</abbr>][download-pdf]
 
 ## Read <cite>Dive Into Accessibility</cite>
-
-[Table of contents][]
-: All the tips, ...
-
----
 
 <dl>
 <dt><a href="table_of_contents.html">Table of contents</a></dt>

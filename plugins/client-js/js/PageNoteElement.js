@@ -2,6 +2,7 @@ const { DOMParser, fetch, HTMLElement, location } = window;
 
 /**
  * Custom element to create an information box containing notes about the page.
+ *
  * @customElement page-note
  */
 export default class PageNoteElement extends HTMLElement {
@@ -30,13 +31,13 @@ export default class PageNoteElement extends HTMLElement {
 
   get #notesUrl () { return this.urlTemplate.replace('%s', this.#fileSlug); }
 
+  get #root () { return document.documentElement; }
+
   async connectedCallback () {
     console.debug('page-note', this.#isNotesPage, [this]);
 
     if (this.#isNotesPage) {
-      document.documentElement.dataset.isNotesPage = true;
-      this.setAttribute('hidden', '');
-      return;
+      return this.#notesPage();
     }
 
     await this.#fetchNotesHtmlPage();
@@ -67,34 +68,56 @@ export default class PageNoteElement extends HTMLElement {
 
   #queryDomElements () {
     const mainEl = this.#dom.querySelector(this.mainSelector);
+    console.assert(mainEl, 'Missing main element')
     const h2Elem = mainEl.querySelector('h2');
     const h3Elem = mainEl.querySelector('h3');
     this.#firstParaEl = mainEl.querySelector(this.paraSelector);
+
+    console.assert(h2Elem, 'Missing <h2> heading');
+    console.assert(h3Elem, 'Missing <h3> heading');
+    console.assert(this.#firstParaEl, 'Missing <p> element');
+
     this.#summary = h2Elem.textContent;
     this.#dayTitle = h3Elem.textContent;
     this.#pageStatus = this.#dom.documentElement.dataset.pageStatus;
-    this.#pageId = document.documentElement.dataset.pageId;
+    this.#pageId = parseInt(this.#root.dataset.pageId);
     this.setAttribute('page-status', this.#pageStatus);
     console.debug('queryElements:', mainEl, this.#summary, this.#firstParaEl);
   }
 
+  #createElements () {
+    const details = document.createElement('details');
+    const summary = document.createElement('summary');
+    const div = document.createElement('div');
+    const anchor = document.createElement('a');
+    return { details, summary, div, anchor };
+  }
+
   #createNoteElements () {
-    const detailsEl = document.createElement('details');
-    const summaryEl = document.createElement('summary');
-    const innerEl = document.createElement('div');
-    const linkEl = document.createElement('a');
+    const EL = this.#createElements();
 
-    detailsEl.appendChild(summaryEl);
-    detailsEl.appendChild(innerEl);
-    innerEl.appendChild(this.#firstParaEl);
-    innerEl.appendChild(linkEl);
+    EL.details.appendChild(EL.summary);
+    EL.details.appendChild(EL.div);
+    EL.div.appendChild(this.#firstParaEl);
+    EL.div.appendChild(EL.anchor);
 
-    summaryEl.setAttribute('part', 'summary');
-    linkEl.setAttribute('part', 'a moreLink');
+    EL.summary.setAttribute('part', 'summary');
+    EL.anchor.setAttribute('part', 'a moreLink');
 
-    summaryEl.textContent = this.#summary;
-    linkEl.textContent = this.moreText;
-    linkEl.href = this.#notesUrl;
-    return detailsEl;
+    EL.summary.textContent = this.#summary;
+    EL.anchor.textContent = this.moreText;
+    EL.anchor.href = this.#notesUrl;
+    return EL.details;
+  }
+
+  get #noteId () {
+    const M = location.pathname.match(/day_(\d+)_/);
+    return M ? parseInt(M[1]) : null;
+  }
+
+  #notesPage () {
+    this.#root.dataset.isNotesPage = true;
+    this.#root.dataset.noteId = this.#noteId;
+    this.setAttribute('hidden', '');
   }
 }

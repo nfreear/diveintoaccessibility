@@ -20,6 +20,8 @@ Abbreviations of all kinds, including initialisms and acronyms should be explain
 </p>
 ```
 
+Note, the `<abbr>` element has long been supported by [evergreen][] browsers, including [Firefox][], [Chrome][], [Edge][] and [Safari][].
+
 ### Further reading
 
 * WCAG quick reference: [Abbreviations][wcag:abbreviations].
@@ -29,3 +31,9 @@ Abbreviations of all kinds, including initialisms and acronyms should be explain
 [mdn:abbr-el]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/abbr
 [wcag:abbreviations]: https://www.w3.org/WAI/WCAG22/quickref/#abbreviations
 [wcag:tech-abbr]: https://www.w3.org/WAI/WCAG22/Techniques/html/H28
+
+[evergreen]: https://www.w3.org/2001/tag/doc/evergreen-web/#updates
+[chrome]: https://www.google.com/chrome/
+[edge]: https://microsoft.com/edge
+[firefox]: https://www.firefox.com/
+[safari]: https://www.apple.com/safari/

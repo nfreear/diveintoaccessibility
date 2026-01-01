@@ -11,7 +11,7 @@ eleventyComputed:
 
 [Skip links][] are as relevant now as they were in 2002, but there are problems…
 
-Unfortunately, the original implementation appears to have never been correct or keyboard accessible. Styling a link with the CSS display:none removes it from the keyboard focus order.
+Unfortunately, the original implementation appears to have never been correct or keyboard accessible. Styling a link with the CSS `display:none` removes it from the keyboard focus order.
 
 Given the following HTML:
 ```html
