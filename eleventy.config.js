@@ -43,8 +43,8 @@ export default async function (eleventyConfig) {
 
 function getLinkFilePaths () {
   return [
-    resolve('pages', 'internal_links.md'),
-    resolve('pages', 'external_links.md'),
+    resolve('pages', 'links', 'internal.md'),
+    resolve('pages', 'links', 'external.md'),
     resolve('pages', 'links', 'translation_links.md'),
   ];
 }
