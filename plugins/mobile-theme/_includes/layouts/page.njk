@@ -1,12 +1,16 @@
 ---
 title: Mobile theme layout
+layout: dia_outer_page
 ---
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="{{ eleventy.generator }}">
+
+  <link rel="stylesheet" href="/css/index.css">
 
 {% include '../en/dc-metadata.njk' %}
-{% include '../head/stylesheets.njk' %}
+{# {% include '../head/stylesheets.njk' %} #}
 
 {% include '../head/translation-links.njk' %}
 
@@ -32,5 +36,4 @@ title: Mobile theme layout
 </footer>
 
 {% include '../javascript.njk' %}
-
 </body>

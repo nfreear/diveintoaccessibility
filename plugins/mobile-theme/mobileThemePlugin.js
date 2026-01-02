@@ -14,7 +14,8 @@ export default function mobileThemePlugin (eleventyConfig) {
 
   debugLog('Loading mobile theme', pluginPaths);
 
-  eleventyConfig.addLayoutAlias('dia_theme_page', pluginPaths.layout);
+  eleventyConfig.addLayoutAlias('page', pluginPaths.layout);
+  // @WAS: eleventyConfig.addLayoutAlias('dia_theme_page', pluginPaths.layout);
 
   eleventyConfig.addPassthroughCopy(pluginPaths.cssCopy);
 }

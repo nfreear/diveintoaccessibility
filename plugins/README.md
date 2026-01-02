@@ -39,7 +39,7 @@ import { originalThemePlugin } from 'dia-plugins';
 eleventyConfig.addPlugin(originalThemePlugin);
 ```
 
-The theme uses [Nunjucks][], and exposes a [layout][], [aliased][] as `dia_theme_page`.
+The theme uses [Nunjucks][], and exposes a [layout][], [aliased][] as `page` and uses a layout aliased as `dia_outer_page`.
 
 ## mobileThemePlugin
 
@@ -51,7 +51,7 @@ import { mobileThemePlugin } from 'dia-plugins';
 eleventyConfig.addPlugin(mobileThemePlugin);
 ```
 
-The theme uses [Nunjucks][], and exposes a [layout][], [aliased][] as `dia_theme_page`.
+The theme uses [Nunjucks][], and exposes a [layout][], [aliased][] as `page` and uses a layout aliased as `dia_outer_page`.
 
 ## themeSwitchPlugin
 

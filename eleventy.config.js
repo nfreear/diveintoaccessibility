@@ -18,8 +18,8 @@ export default async function (eleventyConfig) {
   eleventyConfig.setIncludesDirectory('../_includes');
   // eleventyConfig.setLayoutsDirectory('../_includes/layouts');
 
-  eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
-  // eleventyConfig.addLayoutAlias('notes_page', 'layouts/notes_page.njk');
+  eleventyConfig.addLayoutAlias('dia_outer_page', 'layouts/page.njk');
+  // @WAS: eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
 
   // Set global permalinks to "resource.html" style.
   eleventyConfig.addGlobalData('permalink', () => {

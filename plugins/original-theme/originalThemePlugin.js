@@ -16,7 +16,8 @@ export default function originalThemePlugin (eleventyConfig) {
 
   debugLog('Loading original theme', pluginPaths);
 
-  eleventyConfig.addLayoutAlias('dia_theme_page', pluginPaths.layout);
+  eleventyConfig.addLayoutAlias('page', pluginPaths.layout);
+  // @WAS: eleventyConfig.addLayoutAlias('dia_theme_page', pluginPaths.layout);
 
   eleventyConfig.addPassthroughCopy(pluginPaths.cssCopy);
 }
