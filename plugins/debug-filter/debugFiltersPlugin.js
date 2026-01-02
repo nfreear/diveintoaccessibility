@@ -8,9 +8,12 @@ export default function debugFiltersPlugin (eleventyConfig) {
     return JSON.stringify(data, null, '\t');
   });
 
-  eleventyConfig.addFilter('console_log', (data) => {
-    return `<script>
-    console.debug('>>', ${JSON.stringify(data)})
-  </script>`;
+  eleventyConfig.addFilter('console_log', function (data) {
+    // Only output on development server!
+    const isServe = (this.eleventy.env.runMode === 'serve');
+
+    return isServe
+      ? `<script>console.debug('>>', ${JSON.stringify(data)})</script>`
+      : '';
   });
 }

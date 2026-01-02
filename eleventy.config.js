@@ -27,6 +27,12 @@ export default async function (eleventyConfig) {
       `${data.page.filePathStem}.${data.page.outputFileExtension}`;
   });
 
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+    // Optional, default is "---"
+    excerpt_separator: '<!-- excerpt -->',
+  });
+
   // https://www.11ty.dev/docs/data-global-custom/
   /* eleventyConfig.addGlobalData('pageID', () => {
     return (data) => pageId.compute(data.page);

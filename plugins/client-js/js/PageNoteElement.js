@@ -11,6 +11,7 @@ export default class PageNoteElement extends HTMLElement {
   #dom;
   #firstParaEl;
   #pageStatus;
+  #pageType;
   #summary;
   #dayTitle;
   #pageId;
@@ -25,16 +26,21 @@ export default class PageNoteElement extends HTMLElement {
 
   get moreText () { return this.getAttribute('more-text') ?? 'Find out more'; }
 
-  get #isNotesPage () { return /\/notes\//.test(location.pathname); }
+  get #isNotesPage () { return this.#pageType === 'note'; }
+  // Was: get #isNotesPage () { return /\/notes\//.test(location.pathname); }
 
-  get #fileSlug () { return location.pathname.replace('.html', '').replace(/\/\w+\//, ''); }
+  get #fileSlug () {
+    const slug = location.pathname.replace('.html', '').replace(/\/\w+\//, '');
+    return slug === '' ? 'index' : slug;
+  }
 
   get #notesUrl () { return this.urlTemplate.replace('%s', this.#fileSlug); }
 
   get #root () { return document.documentElement; }
 
   async connectedCallback () {
-    console.debug('page-note', this.#isNotesPage, [this]);
+    this.#getPageInfo();
+    console.debug('<page-note> element:', this.#isNotesPage, [this]);
 
     if (this.#isNotesPage) {
       return this.#notesPage();
@@ -68,7 +74,7 @@ export default class PageNoteElement extends HTMLElement {
 
   #queryDomElements () {
     const mainEl = this.#dom.querySelector(this.mainSelector);
-    console.assert(mainEl, 'Missing main element')
+    console.assert(mainEl, 'Missing main element');
     const h2Elem = mainEl.querySelector('h2');
     const h3Elem = mainEl.querySelector('h3');
     this.#firstParaEl = mainEl.querySelector(this.paraSelector);
@@ -80,7 +86,7 @@ export default class PageNoteElement extends HTMLElement {
     this.#summary = h2Elem.textContent;
     this.#dayTitle = h3Elem.textContent;
     this.#pageStatus = this.#dom.documentElement.dataset.pageStatus;
-    this.#pageId = parseInt(this.#root.dataset.pageId);
+    // this.#pageId = parseInt(this.#root.dataset.pageId);
     this.setAttribute('page-status', this.#pageStatus);
     console.debug('queryElements:', mainEl, this.#summary, this.#firstParaEl);
   }
@@ -119,5 +125,10 @@ export default class PageNoteElement extends HTMLElement {
     this.#root.dataset.isNotesPage = true;
     this.#root.dataset.noteId = this.#noteId;
     this.setAttribute('hidden', '');
+  }
+
+  #getPageInfo () {
+    this.#pageId = parseInt(this.#root.dataset.pageId) ?? null;
+    this.#pageType = this.#root.dataset.pageType;
   }
 }

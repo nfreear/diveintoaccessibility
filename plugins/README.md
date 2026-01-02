@@ -9,7 +9,7 @@ Each plugin is small and focussed on one task.
 
 ## Usage
 
-```sh
+```apl
 npm install --save-dev @11ty/eleventy dia-plugins
 ```
 
@@ -58,7 +58,7 @@ The theme uses [Nunjucks][], and exposes a [layout][], [aliased][] as `dia_theme
 Plugin to choose between the original or mobile themes, based on a `_THEME` environment variable.
 
 Usage:
-```sh
+```apl
 _THEME=orig npx @11ty/eleventy --serve
 _THEME=mobile npx @11ty/eleventy --serve
 ```
@@ -83,14 +83,26 @@ eleventyConfig.addPlugin(clientJsPlugin);
 
 Plugin to sort pages in a [collection][] by day number (page ID).
 
-Used in `pagination.njk` in the mobile theme.
+Used in [`pagination.njk`][pagination] in the original and mobile themes.
 
 ```js
 import { sortByDayNumberPlugin } from 'dia-plugins';
 
 eleventyConfig.addPlugin(sortByDayNumberPlugin, {
-  collection: 'myCustomSort',
-  shortcode: 'myPageID'
+  collection: 'myCustomSort'
+});
+```
+
+## pageIdAndInfoPlugin
+
+Plugin to add `pageType` and `pageID` shortcodes.
+
+```js
+import { pageIdAndInfoPlugin } from 'dia-plugins';
+
+eleventyConfig.addPlugin(pageIdAndInfoPlugin, {
+  idShortcode: 'myPageID',
+  typeShortcode: 'myPageType'
 });
 ```
 
@@ -123,6 +135,7 @@ New Eleventy plugins and themes, © 2025 Nick Freear.
 [aliased]: https://www.11ty.dev/docs/layouts/#layout-aliasing
 [nunjucks]: https://www.11ty.dev/docs/languages/nunjucks/
 [dia]: https://github.com/nfreear/diveintoaccessibility
+[pagination]: https://github.com/nfreear/diveintoaccessibility/blob/revive/plugins/mobile-theme/_includes/en/pagination.njk
 [archive]: https://web.archive.org/web/20110927131211/http://diveintoaccessibility.org/
 [md link]: https://daringfireball.net/projects/markdown/syntax#link
 

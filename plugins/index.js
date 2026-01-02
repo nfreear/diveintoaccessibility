@@ -1,7 +1,8 @@
 import originalThemePlugin from './original-theme/originalThemePlugin.js';
 import mobileThemePlugin from './mobile-theme/mobileThemePlugin.js';
 import addLinkRefsPlugin from './pre-process/AddLinksPlugin.js';
-import sortByDayNumberPlugin from './page-id/PageIdPlugin.js';
+import pageIdAndInfoPlugin from './page-id/PageIdPlugin.js';
+import sortByDayNumberPlugin from './page-id/sortByDayNumberPlugin.js';
 import debugFiltersPlugin from './debug-filter/debugFiltersPlugin.js';
 import clientJsPlugin from './client-js/clientJsPlugin.js';
 
@@ -29,9 +30,12 @@ function diaPluginLoader (eleventyConfig, options) {
 
   eleventyConfig.addPlugin(themeSwitchPlugin);
   eleventyConfig.addPlugin(addLinkRefsPlugin, { linkFiles });
+  eleventyConfig.addPlugin(pageIdAndInfoPlugin, {
+    idShortcode: 'myPageID',
+    typeShortcode: 'myPageType'
+  });
   eleventyConfig.addPlugin(sortByDayNumberPlugin, {
-    collection: 'myCustomSort',
-    shortcode: 'myPageID'
+    collection: 'myCustomSort'
   });
   eleventyConfig.addPlugin(clientJsPlugin);
   eleventyConfig.addPlugin(debugFiltersPlugin);

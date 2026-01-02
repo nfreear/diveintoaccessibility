@@ -1,5 +1,5 @@
 /**
- * Plugin to sort pages in a collection by day number (page ID).
+ * Plugin to get the page "type", "pageID" and other information about a page.
  *
  * @sort https://www.11ty.dev/docs/collections-api/
  */
@@ -15,21 +15,40 @@ const PAGE_IDS_EN = [
   { id: 44, slug: 'translations' },
 ];
 
-export class SortByDayNumberPlugin {
+export class PageIdAndInfoPlugin {
 // Was: export class PageIdPlugin {
+  /**
+   * @TODO localize regular expressions?
+   */
+  #regex = {
+    day: /day_(\d+)_/,
+    isBy: /by_\w+/,
+    isNote: /\/notes\//,
+    isContents: /table_of_contents/,
+    isHome: /\/en\/index/,
+  };
+
+  // Keys match '#regex' above.
+  #pageTypes = {
+    day: 'day',
+    isBy: 'by',
+    isNote: 'note',
+    isContents: 'toc',
+    isHome: 'home'
+  };
+
   get #pageIds () { return PAGE_IDS_EN; }
 
-  get #dayRegex () { return /day_(\d+)_/; }
+  isNotesPage (page) { return this.#regex.isNote.test(page.url); }
 
   // https://www.11ty.dev/docs/data-eleventy-supplied/#page-variable
-  computePageId (page) {
+  #computePageId (page) {
     console.assert(page, 'is page missing?');
-    const isNotesPage = /\/notes\//.test(page.url);
     // Ensure that "notes" pages are not included in the collection.
-    if (isNotesPage) {
+    if (this.isNotesPage(page)) {
       return null;
     }
-    const M = page.fileSlug.match(this.#dayRegex);
+    const M = page.filePathStem.match(this.#regex.day);
     const pageID = M ? parseInt(M[1]) : this.#fallbackID(page);
     // console.debug('pageID:', pageID, page.fileSlug);
     return pageID;
@@ -39,8 +58,8 @@ export class SortByDayNumberPlugin {
   addCollection (collectionsApi) {
     console.assert(collectionsApi, 'is collectionsApi missing?');
     return collectionsApi.getAll().filter((it) => this.#filter(it)).sort((a, b) => {
-      const aPageID = this.computePageId(a);
-      const bPageID = this.computePageId(b);
+      const aPageID = this.#computePageId(a);
+      const bPageID = this.#computePageId(b);
       return aPageID - bPageID; // sort by `pageID` - ascending.
       // return a.date - b.date; // sort by date - ascending
       // return b.date - a.date; // sort by date - descending
@@ -49,28 +68,68 @@ export class SortByDayNumberPlugin {
     });
   }
 
-  #filter (page) { return this.computePageId(page); }
+  #filter (page) { return this.#computePageId(page); }
 
   #fallbackID (page) {
     const found = this.#pageIds.find(({ slug }) => slug === page.fileSlug);
     return found ? found.id : null;
   }
+
+  getInfo (page) {
+    console.assert(page && page.filePathStem, 'is page missing?');
+    const M = page.filePathStem.match(this.#regex.day);
+    const id = M ? parseInt(M[1]) : null;
+    const myType = this.getType(page);
+
+    return {
+      id,
+      type: myType,
+      isDay: myType === this.#pageTypes.day,
+      isBy: myType === this.#pageTypes.isBy,
+      isHome: myType === this.#pageTypes.isHome,
+      isToc: myType === this.#pageTypes.isContents,
+      isNote: myType === this.#pageTypes.isNote,
+      isOther: myType === 'other',
+      slug: page.fileSlug
+    };
+  }
+
+  #getType (page) {
+    console.assert(page && page.filePathStem, 'is page missing?');
+    const stem = page.filePathStem;
+
+    const found = Object.entries(this.#regex).find(([key, RE]) => RE.test(stem));
+
+    return found ? this.#pageTypes[found[0]] : 'other';
+  }
 }
 
 // Was: pageIdPlugin()
-export default function sortByDayNumberPlugin (eleventyConfig, options) {
-  console.assert(options.collection, 'Missing collection');
-  console.assert(options.shortcode, 'Missing shortcode');
+export default function pageIdAndInfoPlugin (eleventyConfig, options) {
+  console.assert(options.idShortcode, 'Missing idShortcode');
+  console.assert(options.typeShortcode, 'Missing typeShortcode');
 
-  const { collection, shortcode } = options;
-  const sortBy = new SortByDayNumberPlugin();
+  const { idShortcode, typeShortcode } = options;
+  const plugin = new PageIdAndInfoPlugin();
 
-  eleventyConfig.addShortcode(shortcode, function () {
+  eleventyConfig.addShortcode(idShortcode, function () {
     // this.page
     // this.eleventy
-    return sortBy.computePageId(this.page) ?? '';
+    return plugin.getInfo(this.page).id ?? '';
   });
 
-  // https://www.11ty.dev/docs/collections-api/
-  eleventyConfig.addCollection(collection, (collectionsApi) => sortBy.addCollection(collectionsApi));
+  eleventyConfig.addShortcode(typeShortcode, function () {
+    return plugin.getInfo(this.page).type;
+  });
+
+  eleventyConfig.addShortcode('console_log_page_info', function (otherData) {
+    // Only output on development server!
+    const isServe = (this.eleventy.env.runMode === 'serve');
+
+    const pageInfo = plugin.getInfo(this.page);
+    const allData = { pageInfo, page: this.page, eleventy: this.eleventy, otherData };
+    return isServe
+      ? `<script>console.debug('pageIdAndInfoPlugin:', ${JSON.stringify(allData)})</script>`
+      : '';
+  });
 }
