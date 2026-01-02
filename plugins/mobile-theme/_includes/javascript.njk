@@ -1,14 +1,6 @@
 
 <script type="importmap">
-{
-  "imports": {
-    "page-note": "/js/PageNoteElement.js"
-  }
-}
+{% myImportMap %}
 </script>
 
-<script type="module">
-  import PageNoteElement from 'page-note';
-
-  customElements.define('page-note', PageNoteElement);
-</script>
+<script type="module" src="{% myClientJs %}"></script>

@@ -79,7 +79,7 @@ export class PageIdAndInfoPlugin {
     console.assert(page && page.filePathStem, 'is page missing?');
     const M = page.filePathStem.match(this.#regex.day);
     const id = M ? parseInt(M[1]) : null;
-    const myType = this.getType(page);
+    const myType = this.#getType(page);
 
     return {
       id,

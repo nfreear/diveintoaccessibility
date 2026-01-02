@@ -5,6 +5,7 @@ import pageIdAndInfoPlugin from './page-id/PageIdPlugin.js';
 import sortByDayNumberPlugin from './page-id/sortByDayNumberPlugin.js';
 import debugFiltersPlugin from './debug-filter/debugFiltersPlugin.js';
 import clientJsPlugin from './client-js/clientJsPlugin.js';
+import importMapPlugin from './client-js/importMapPlugin.js';
 
 /**
  * Load original or mobile theme, depending on `_THEME` environment variable.
@@ -38,6 +39,7 @@ function diaPluginLoader (eleventyConfig, options) {
     collection: 'myCustomSort'
   });
   eleventyConfig.addPlugin(clientJsPlugin);
+  eleventyConfig.addPlugin(importMapPlugin);
   eleventyConfig.addPlugin(debugFiltersPlugin);
 }
 

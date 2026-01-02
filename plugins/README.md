@@ -79,6 +79,12 @@ import { clientJsPlugin } from 'dia-plugins';
 eleventyConfig.addPlugin(clientJsPlugin);
 ```
 
+## importMapPlugin
+
+Plugin to output an [importmap][], via a `myImportMap` shortcode.
+
+Used in the mobile theme.
+
 ## sortByDayNumberPlugin
 
 Plugin to sort pages in a [collection][] by day number (page ID).
@@ -108,7 +114,7 @@ eleventyConfig.addPlugin(pageIdAndInfoPlugin, {
 
 ## addLinkRefsPlugin
 
-Plugin to append the contents of `link_references.md` to each Markdown file, via the [`addPreprocessor`][preprocessor] hook in Eleventy. Supports Markdown [reference-style links][md-link].
+Plugin to append the contents of `path/to/link/refs.md` to each Markdown file, via the [`addPreprocessor`][preprocessor] hook in Eleventy. Supports Markdown [reference-style links][md-link].
 
 ```js
 import { addLinkRefsPlugin } from 'dia-plugins';
@@ -138,6 +144,7 @@ New Eleventy plugins and themes, © 2025 Nick Freear.
 [pagination]: https://github.com/nfreear/diveintoaccessibility/blob/revive/plugins/mobile-theme/_includes/en/pagination.njk
 [archive]: https://web.archive.org/web/20110927131211/http://diveintoaccessibility.org/
 [md link]: https://daringfireball.net/projects/markdown/syntax#link
+[importmap]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap
 
 [GFDL-1.1]: https://github.com/nfreear/diveintoaccessibility/blob/main/LICENSE
 [mit]: https://nfreear.mit-license.org/#2025-2026
