@@ -9,7 +9,9 @@ eleventyComputed:
 
 ### Day 10: Presenting your main content first
 
-The concept of "_presenting your main content first_" is somewhat flawed. What is important?
+The concept of <q>presenting your main content first</q> is somewhat flawed, particularly as it is not a widely followed practice. What is important?
+
+<!-- excerpt -->
 
 1. A logical [reading order][] and [focus order][].
 2. [Consistent navigation][].
