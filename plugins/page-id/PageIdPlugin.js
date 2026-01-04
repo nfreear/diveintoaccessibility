@@ -1,5 +1,5 @@
 /**
- * Plugin to get the page "type", "pageID" and other information about a page.
+ * Plugin with "pageType", "pageID" and other page-info shortcodes.
  *
  * @sort https://www.11ty.dev/docs/collections-api/
  */
@@ -21,9 +21,9 @@ export class PageIdAndInfoPlugin {
    * @TODO localize regular expressions?
    */
   #regex = {
+    isNote: /\/notes\//, // Order matters - "isNote" bedfore "day"!
     day: /day_(\d+)_/,
     isBy: /by_\w+/,
-    isNote: /\/notes\//,
     isContents: /table_of_contents/,
     isHome: /\/en\/index/,
   };
