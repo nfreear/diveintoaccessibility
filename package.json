@@ -8,11 +8,13 @@
     "neostandard": "^0.12.2"
   },
   "scripts": {
+    "dry-run": "cd plugins; npm publish --dry-run",
     "clean": "rm -rf _site",
     "build:original": "_THEME=orig npx @11ty/eleventy",
     "build:mobile": "_THEME=mobile npx @11ty/eleventy",
-    "start": "_THEME=orig npx @11ty/eleventy --serve",
+    "start:original": "_THEME=orig npx @11ty/eleventy --serve",
     "start:mobile": "_THEME=mobile npx @11ty/eleventy --serve",
+    "start": "npm run start:mobile",
     "lint:fix": "npx eslint --fix .",
     "lint": "npx eslint ."
   }

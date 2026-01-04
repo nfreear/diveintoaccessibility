@@ -24,6 +24,7 @@ jobs:
     - run: npm run clean
     - run: npm run build:mobile
     - run: npm run lint
+    - run: npm run dry-run
     - run: npm test --if-present
 
 # End.
