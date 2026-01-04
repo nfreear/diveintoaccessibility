@@ -6,8 +6,9 @@ layout: dia_outer_page
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="{{ eleventy.generator }}">
+  <base href="{% myBaseUrl %}">
 
-  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="./css/index.css">
 
 {% include '../en/dc-metadata.njk' %}
 {# {% include '../head/stylesheets.njk' %} #}

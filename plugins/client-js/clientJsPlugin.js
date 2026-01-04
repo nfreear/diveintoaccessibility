@@ -1,6 +1,6 @@
 import debug from 'debug';
 
-const clientJs = '/js/app.js';
+const clientJs = './js/app.js';
 const PATH = 'node_modules/dia-plugins/client-js';
 
 // const WC = 'web-components/src/components/MySharingWidgetElement.js';

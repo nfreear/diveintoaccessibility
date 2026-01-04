@@ -2,6 +2,9 @@ import { resolve } from 'node:path';
 import debug from 'debug';
 import diaPluginLoader from 'dia-plugins';
 
+// GitHub Pages sub-directory deployment.
+const buildBaseUrl = '/diveintoaccessibility/';
+
 /**
  * Configure Eleventy
  *
@@ -39,7 +42,8 @@ export default async function (eleventyConfig) {
   }); */
 
   eleventyConfig.addPlugin(diaPluginLoader, {
-    linkFiles: getLinkFilePaths()
+    linkFiles: getLinkFilePaths(),
+    buildBaseUrl
   });
 
   eleventyConfig.addPassthroughCopy('download/*');

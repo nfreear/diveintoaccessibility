@@ -6,6 +6,7 @@ import sortByDayNumberPlugin from './page-id/sortByDayNumberPlugin.js';
 import debugFiltersPlugin from './debug-filter/debugFiltersPlugin.js';
 import clientJsPlugin from './client-js/clientJsPlugin.js';
 import importMapPlugin from './client-js/importMapPlugin.js';
+import baseUrlShortcodePlugin from './shortcode/baseUrlShortcodePlugin.js';
 
 /**
  * Load original or mobile theme, depending on `_THEME` environment variable.
@@ -23,11 +24,11 @@ function themeSwitchPlugin (eleventyConfig, options) {
 }
 
 /**
- * Load the collection of plugins.
+ * Load all plugins in the collection.
  */
 function diaPluginLoader (eleventyConfig, options) {
   console.assert(options.linkFiles, 'linkFiles array is missing');
-  const { linkFiles } = options;
+  const { linkFiles, buildBaseUrl } = options;
 
   eleventyConfig.addPlugin(themeSwitchPlugin);
   eleventyConfig.addPlugin(addLinkRefsPlugin, { linkFiles });
@@ -40,12 +41,14 @@ function diaPluginLoader (eleventyConfig, options) {
   });
   eleventyConfig.addPlugin(clientJsPlugin);
   eleventyConfig.addPlugin(importMapPlugin);
+  eleventyConfig.addPlugin(baseUrlShortcodePlugin, { buildBaseUrl });
   eleventyConfig.addPlugin(debugFiltersPlugin);
 }
 
 export {
   originalThemePlugin, mobileThemePlugin, themeSwitchPlugin,
-  addLinkRefsPlugin, sortByDayNumberPlugin, debugFiltersPlugin, clientJsPlugin
+  addLinkRefsPlugin, pageIdAndInfoPlugin, sortByDayNumberPlugin,
+  clientJsPlugin, importMapPlugin, baseUrlShortcodePlugin, debugFiltersPlugin
 };
 
 export default diaPluginLoader;
