@@ -64,6 +64,10 @@ page-note:not([ hidden ]) {
   }
 }
 
+/*
+  Notes pages.
+*/
+[ data-page-type = note],
 [ data-is-notes-page ] {
   main {
     background-color: var(--note-background, #f4f4f4);

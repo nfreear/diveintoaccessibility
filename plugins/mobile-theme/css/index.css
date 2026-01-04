@@ -3,6 +3,8 @@
 @import "layout.css" screen;
 @import "pagination.css" screen;
 @import "page-note.css" screen;
+@import "custom-elements.css" screen;
+
 /* Print and aural */
 @import "print.css" print;
 @import "aural.css" aural;

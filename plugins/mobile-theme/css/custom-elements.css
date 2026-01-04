@@ -1,0 +1,28 @@
+/*
+  Style custom elements (also: page-note.css)
+*/
+share-button {
+  display: block;
+  position: relative;
+  margin: .7rem 0;
+  min-height: 1.7rem;
+
+  &::part(button) {
+    color: var(--theme-color);
+    font-size: inherit;
+    padding: .25rem .6rem;
+    position: absolute;
+    right: 0;
+  }
+
+  &::part(button)::after {
+    content: '💬';
+    X_content: '📢';
+    display: inline-block;
+    margin-left: .3rem;
+  }
+
+  &::part(output) {
+    font-size: small;
+  }
+}

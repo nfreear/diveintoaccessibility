@@ -102,6 +102,10 @@ acronym[ title ] {
   text-underline-offset: .2rem;
 }
 
+q {
+  font-style: italic;
+}
+
 nav {
   a[ href *= "github.com" ] {
     display: inline-block;
@@ -116,6 +120,8 @@ nav {
 }
 
 *,
-::part(a) {
+::part(a),
+::part(button),
+::part(summary) {
   outline-offset: .25rem;
 }
