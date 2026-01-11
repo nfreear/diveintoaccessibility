@@ -71,7 +71,9 @@ eleventyConfig.addPlugin(themeSwitchPlugin);
 
 ## clientJsPlugin
 
-Plugin to copy client-side (browser) JavaScript. Currently makes available a `<page-note>` custom element.
+Plugin to copy client-side (browser) JavaScript. Currently makes available a `<page-note>` custom element, and the following third-party code:
+
+* [fix-title-attr][]
 
 ```js
 import { clientJsPlugin } from 'dia-plugins';
@@ -127,9 +129,9 @@ eleventyConfig.addPlugin(addLinkRefsPlugin, {
 ## License
 
 Original CSS styles and template, Copyright © 2002 Mark Pilgrim.
-* License: [GNU Free Documentation License][GFDL-1.1].
+* License: [GNU Free Documentation License 1.1][GFDL-1.1].
 
-New Eleventy plugins and themes, © 2025 Nick Freear.
+New Eleventy plugins and themes, © 2025-2026 Nick Freear.
 * License: [MIT][].
 
 [eleventy]: https://www.11ty.dev/
@@ -145,6 +147,8 @@ New Eleventy plugins and themes, © 2025 Nick Freear.
 [archive]: https://web.archive.org/web/20110927131211/http://diveintoaccessibility.org/
 [md link]: https://daringfireball.net/projects/markdown/syntax#link
 [importmap]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap
+
+[fix-title-attr]: https://github.com/nfreear/fix-title-attr
 
 [GFDL-1.1]: https://github.com/nfreear/diveintoaccessibility/blob/main/LICENSE
 [mit]: https://nfreear.mit-license.org/#2025-2026

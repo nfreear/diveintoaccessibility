@@ -5,6 +5,9 @@
   "license": "(MIT OR GFDL-1.1-only)",
   "main": "index.js",
   "type": "module",
+  "dependencies": {
+    "fix-title-attr": "^0.9.5"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nfreear/diveintoaccessibility.git"
@@ -16,6 +19,16 @@
     "eleventy-plugin",
     "accessibility",
     "book"
+  ],
+  "X_files": [
+    "client-js",
+    "client-js/js",
+    "debug-filter",
+    "mobile-theme",
+    "original-theme",
+    "page-id",
+    "pre-process",
+    "shortcode"
   ],
   "author": {
     "name": "Nick Freear"

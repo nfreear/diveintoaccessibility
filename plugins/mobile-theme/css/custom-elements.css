@@ -7,12 +7,18 @@ share-button {
   margin: .7rem 0;
   min-height: 1.7rem;
 
+  &::part(form) {
+    display: flex;
+    flex-direction: column;
+    min-width: 9rem;
+    position: absolute;
+    right: 0;
+  }
+
   &::part(button) {
     color: var(--theme-color);
     font-size: inherit;
     padding: .25rem .6rem;
-    position: absolute;
-    right: 0;
   }
 
   &::part(button)::after {
@@ -24,5 +30,41 @@ share-button {
 
   &::part(output) {
     font-size: small;
+  }
+
+  &[ data-error ]::part(output) {
+    background: white;
+    padding: .25rem;
+  }
+}
+
+/* NPM: fix-title-attr.
+*/
+title-tip {
+  --fix-title-width-multiplier: 0.48rem;
+
+  --tt-button-background: transparent;
+  --tt-button-size: 1.5rem;
+  --tt-border-width: 1px;
+  --tt-border-color: silver;
+
+  &::part(button):focus,
+  &::part(button):hover {
+    --tt-button-background: #f2f2f2;
+    --tt-border-color: gray;
+  }
+
+  &::part(tip) {
+    font-family: var(--dia-head-font);
+    min-width: 5rem;
+  }
+}
+
+/* First <p> of Day 17 - many acronyms! */
+[ data-page-id = "17" ] {
+  main {
+    p:first-of-type {
+      line-height: 2rem;
+    }
   }
 }

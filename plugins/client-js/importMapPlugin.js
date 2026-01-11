@@ -8,6 +8,7 @@ const elementServer = 'https://nfreear.github.io/elements/src/components';
 
 const importMap = {
   'page-note': './js/PageNoteElement.js',
+  'fix-title-attr': 'https://esm.sh/fix-title-attr@0.9.5',
   'share-button': `${elementServer}/MySharingWidgetElement.js`,
   'site-search': `${elementServer}/MySearchElement.js`,
   'site-counter': `${elementServer}/MySiteCounterElement.js`

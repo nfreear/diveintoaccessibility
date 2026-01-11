@@ -1,12 +1,15 @@
 
 :root {
-  --theme-color: maroon;
+  --dia-body-font: Verdana, Arial, Helvetica, sans-serif;
+  --dia-head-font: Tahoma, sans-serif;
+  --dia-theme-color: maroon;
+  --theme-color: var(--dia-theme-color);
 }
 
 body {
   background-color: #fafafa;
   color: #222;
-  font-family: Verdana, Arial, Helvetica, sans-serif
+  font-family: var(--dia-body-font, sans-serif);
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -14,7 +17,7 @@ h1, h2, h3, h4, h5, h6,
 footer,
 header > div > p,
 header nav {
-  font-family: Tahoma, sans-serif;
+  font-family: var(--dia-head-font);
   margin: 0;
   background-color: transparent;
   color: var(--theme-color);

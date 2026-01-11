@@ -5,6 +5,7 @@
     "@11ty/eleventy": "^3.1.2",
     "dia-plugins": "file:plugins",
     "eslint": "^9.39.2",
+    "fix-title-attr": "^0.9.5",
     "neostandard": "^0.12.2"
   },
   "scripts": {
