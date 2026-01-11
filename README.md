@@ -42,7 +42,7 @@ The repository was created using:
 
 * [WinHTTrack Website Copier 3.47-27][httrack]
 
-### Copyright © 2002 Mark Pilgrim.
+### Copyright © 2002 [Mark Pilgrim][].
 
  * License: [GNU Free Documentation License][fdl].
  * [Terms of use][terms].
@@ -60,6 +60,7 @@ The repository was created using:
 [fdl]: http://gnu.org/licenses/fdl-1.1.html "GNU Free Documentation License, Version 1.1"
 [terms]: https://web.archive.org/web/20110927131332/diveintoaccessibility.org/terms_of_use.html
   "Terms of use (archive), on 2011-09-27."
+[mark pilgrim]: https://web.archive.org/web/20110927015711/http://diveintomark.org/about
 [goodreads]: https://goodreads.com/book/show/12803358-dive-into-accessibility
 [pdf]: https://kisd.de/~tom/ia/downloads/andere_accessibility.pdf
   "PDF of 'Dive Into Accessibility', on <kisd.de> (86 pages) (Cologne Int. School

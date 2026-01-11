@@ -41,14 +41,16 @@ Also see the [errata][] and [proposal][].
 [errata]: ./ERRATA.md
 [proposal]: ./PROPOSAL.md
 
+[ci:deploy]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/deploy.yml
 [original]: https://github.com/nfreear/diveintoaccessibility/releases/tag/original
 [v1.1]: https://github.com/nfreear/diveintoaccessibility/releases/tag/v1.1
 
 [#1]: https://github.com/nfreear/diveintoaccessibility/issues/1
-[#2]: https://github.com/nfreear/diveintoaccessibility/issues/1
-[#3]: https://github.com/nfreear/diveintoaccessibility/issues/1
+[#2]: https://github.com/nfreear/diveintoaccessibility/issues/2
+[#3]: https://github.com/nfreear/diveintoaccessibility/issues/3
 [#4]: https://github.com/nfreear/diveintoaccessibility/issues/4
 [#5]: https://github.com/nfreear/diveintoaccessibility/issues/5
+[#5]: https://github.com/nfreear/diveintoaccessibility/issues/6
 [#7]: https://github.com/nfreear/diveintoaccessibility/issues/7
 [#8]: https://github.com/nfreear/diveintoaccessibility/issues/8
 [#9]: https://github.com/nfreear/diveintoaccessibility/issues/9
@@ -59,6 +61,9 @@ Also see the [errata][] and [proposal][].
 [#14]: https://github.com/nfreear/diveintoaccessibility/issues/14
 [#15]: https://github.com/nfreear/diveintoaccessibility/issues/15
 [#16]: https://github.com/nfreear/diveintoaccessibility/issues/16
+
+[arch:2011-09-27]: https://web.archive.org/web/20110927131211/http://diveintoaccessibility.org/
+[arch:2026-01-03]: https://web.archive.org/web/20260103161735/http://nfreear.github.io/diveintoaccessibility/
 
 [eleventy]: https://www.11ty.dev/
 [so:tag]: https://stackoverflow.com/questions/4404172/how-to-tag-an-older-commit-in-git/21759466#21759466

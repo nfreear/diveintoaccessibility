@@ -4,7 +4,8 @@ name: Deploy
 
 on:
   push:
-    branches: [main]
+    branches: [revive]
+    # Was: branches: [main]
 # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 env:
   NODE_VERSION: 24
@@ -37,9 +38,10 @@ jobs:
         check-latest: true
         # cache: 'npm'
     - run: npm ci
-    - run: npm run build:original
-    - run: npm run clean
-    - run: npm run build:mobile
+    - run: npm run build
+    #- run: npm run build:original
+    #- run: npm run clean
+    #- run: npm run build:mobile
     - run: npm run lint
     - run: npm run dry-run
     - run: npm test --if-present

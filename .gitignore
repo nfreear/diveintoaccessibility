@@ -1,7 +1,12 @@
 
 _11ty
+_fix-title-attr
 _video-splitter
+web-components
+*test*
 
+.DS_Store
+*TODO*
+*BAK*
 _site
 node_modules
-# package-lock.json
