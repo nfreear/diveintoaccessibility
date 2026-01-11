@@ -22,7 +22,7 @@ The concept is correct, but perhaps unsurprisingly after 20+ years, the specific
 
 ## [Day 10: Presenting your main content first][day 10]
 
-The concept of "presenting your main content first" is somewhat flawed. What is important?
+The concept of "_presenting your main content first_" is somewhat flawed, particularly as it is not a widely followed practice. What is important?
 
 1. A logical [reading order][] and [focus order][].
 2. [Consistent navigation][]
@@ -74,9 +74,9 @@ However you implement your skip links, you should [test with a keyboard](https:/
 
 ## [Day 14: Adding titles to links][day 14]
 
-Adding a `title` attribute to links is a technique that should be discouraged. It can be termed an [anti-pattern][], as it actively excludes multiple groups of users, including keyboard users, mobile/ touch users, screen reader users (mostly) and so on.
+Adding a `title` attribute to HTML links is a technique that should be discouraged. It can be thought of as an [anti-pattern][], as it actively excludes multiple groups of users, including keyboard users, mobile/ touch users, screen reader users (mostly) and so on.
 
-Useful links:
+### Useful links
 
 * [Accessibility concerns - title - Mozilla Developer Network][title-mdn]
 * [Using the HTML title attribute – updated March 2020, by Steve Faulkner, TPGi][title-tpgi]

@@ -2,9 +2,11 @@
 
 # Proposal #
 
+Also see the [release notes][].
+
 * [x] – Review book and compile [errata][] ([#4][]),
 * [x] – Fix "Skip to navigation" link ([#5][]),
-* [ ] – Extract original page content to Markdown files ([#7][]),
+* [x] – Extract original page content to Markdown files ([#7][]),
 * [x] – Develop a mobile-friendly version of the existing theme/styles ([#9][]),
 * [ ] – Re-publish the site using a static site generator, such as [Eleventy][] ([#8][]),
 * [ ] – Place an information box on the relevant pages, documenting errors or caveats relating to that page ([#12][]),
@@ -19,6 +21,7 @@
 
 [readme]: https://github.com/nfreear/diveintoaccessibility#readme
 [errata]: ./ERRATA.md
+[release notes]: ./CHANGELOG.md
 [#1]: https://github.com/nfreear/diveintoaccessibility/issues/1
 [#4]: https://github.com/nfreear/diveintoaccessibility/issues/4
 [#5]: https://github.com/nfreear/diveintoaccessibility/issues/5
