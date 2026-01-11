@@ -52,7 +52,8 @@ jobs:
       uses: actions/upload-pages-artifact@v4
       with:
         # Upload one directory.
-        path: .
+        path: _site/
+        retention-days: 30
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
