@@ -5,13 +5,13 @@
 <nav class="pageturn" aria-label="Pagination">
   <div class="inner">
   {% if previousPost %}
-    <a href="{{ previousPost.url }}">&larr; {{ previousPost.data.title }}</a>
+    <a href=".{{ previousPost.url }}">&larr; {{ previousPost.data.title }}</a>
   {% endif %}
   <!-- <a href="introduction.html">&lt;&lt; Introduction</a> -->
-  | <a href="table_of_contents.html">Contents</a>
+  | <a href="./en/table_of_contents.html">Contents</a>
   | <!-- <a href="day_2_michael.html">Day 2: Michael &gt;&gt;</a> -->
   {% if nextPost %}
-    <a href="{{ nextPost.url }}">{{ nextPost.data.title }} &rarr;</a>
+    <a href=".{{ nextPost.url }}">{{ nextPost.data.title }} &rarr;</a>
   {% endif %}
   </div>
 </nav> <!--pageturn-->

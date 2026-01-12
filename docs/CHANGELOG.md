@@ -14,13 +14,14 @@ Also see the [errata][] and [proposal][].
 * Fix Eleventy layout chaining [#14][],
 * Prep for GitHub Pages sub-directory deployment [#15][],
 * Fix title attributes [#16][],
+* Re-publish using Eleventy ([archive][arch:2026-01-11]) [#8][].
 
 ## [Version 1.1][v1.1]
 
 * Commit: _21-Dec-2025_,
 * 18 commits,
 * Add license file [#2][],
-* Initial re-deployment, 11-Dec-2025 [#3][]
+* Initial re-deployment, 11-Dec-2025 ([archive][arch:2026-01-03]) [#3][]
 * Add [errata][] document [#4][]
 * Fix "Skip to navigaton" link (CSS) [#5][],
 * Add / fix missing `examples/notabletrick.html` files [#6][],
@@ -64,6 +65,7 @@ Also see the [errata][] and [proposal][].
 
 [arch:2011-09-27]: https://web.archive.org/web/20110927131211/http://diveintoaccessibility.org/
 [arch:2026-01-03]: https://web.archive.org/web/20260103161735/http://nfreear.github.io/diveintoaccessibility/
+[arch:2026-01-11]: https://web.archive.org/web/20260111204300/https://nfreear.github.io/diveintoaccessibility/en/
 
 [eleventy]: https://www.11ty.dev/
 [so:tag]: https://stackoverflow.com/questions/4404172/how-to-tag-an-older-commit-in-git/21759466#21759466

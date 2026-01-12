@@ -128,7 +128,7 @@ eleventyConfig.addPlugin(addLinkRefsPlugin, {
 
 ## License
 
-Original CSS styles and template, Copyright © 2002 Mark Pilgrim.
+Original CSS styles and template, Copyright © 2002 [Mark Pilgrim][].
 * License: [GNU Free Documentation License 1.1][GFDL-1.1].
 
 New Eleventy plugins and themes, © 2025-2026 Nick Freear.
@@ -152,6 +152,7 @@ New Eleventy plugins and themes, © 2025-2026 Nick Freear.
 
 [GFDL-1.1]: https://github.com/nfreear/diveintoaccessibility/blob/main/LICENSE
 [mit]: https://nfreear.mit-license.org/#2025-2026
+[mark pilgrim]: https://web.archive.org/web/20110927015711/http://diveintomark.org/about
 
 [d_ci]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/deploy.yml
 [d_ci-badge]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/deploy.yml/badge.svg
