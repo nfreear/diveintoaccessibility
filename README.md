@@ -3,7 +3,11 @@
 ## 30 days to a more accessible web site
 ## By Mark Pilgrim
 
-[![Build][ci-badge]][ci]
+[![Deploy][ci-deploy-badge]][ci-deploy]
+
+* [nfreear.github.io/diveintoaccessibility/en][ghp]
+
+---
 
  * [Archive of "Dive into Accessibility"][archive] (2011, on Wayback Machine)
  * [Errors and Caveats](docs/ERRATA.md)
@@ -49,6 +53,7 @@ The repository was created using:
 
 !['Dive Into' screenshot 01](images/dive-screenshot-01.png)
 
+[ghp]: https://nfreear.github.io/diveintoaccessibility/en/
 [Dive into - .info]: https://web.archive.org/web/*/http://diveintoaccessibility.info/
 [archive]: https://web.archive.org/web/20110927131211/http://diveintoaccessibility.org/
   "Wayback Machine archive, from 2011-09-27."
@@ -95,8 +100,8 @@ of Design)"
 [html5-dive]: https://github.com/diveintomark/diveintohtml5
 [python-dive]: https://github.com/diveintomark/diveintopython3
 
-[d_ci]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/deploy.yml
-[d_ci-badge]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/deploy.yml/badge.svg
+[ci-deploy]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/deploy.yml
+[ci-deploy-badge]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/deploy.yml/badge.svg
 
 [ci]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/build.yml
 [ci-badge]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/build.yml/badge.svg

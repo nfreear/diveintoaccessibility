@@ -4,21 +4,28 @@
 
 Also see the [errata][] and [proposal][].
 
-## Version 2
+## Version 2.0 Beta
 
+* Release: _circa January-2025_,
+* New mobile-friendly theme for Eleventy ([#9][]),
+* Add `<page-note>` custom element ([#12][]),
+* Fix title attributes  - integrate `fix-title-attr` Javascript ([#16][])
+
+## [Version 2.0 Alpha][v2.0-alpha]
+
+* Release: _13-January-2026_ ([archive][arch:2026-01-11])
 * Extract original page content to Markdown files [#7][],
 * New mobile-friendly theme for [Eleventy][] [#9][],
 * Delete legacy HTML pages [#10][],
 * Create reusable plugin collection [#11][],
-* Add `<page-note>` custom element [#12][],
 * Fix Eleventy layout chaining [#14][],
 * Prep for GitHub Pages sub-directory deployment [#15][],
-* Fix title attributes [#16][],
+* `404.html` "Not Found" error page,
 * Re-publish using Eleventy ([archive][arch:2026-01-11]) [#8][].
 
 ## [Version 1.1][v1.1]
 
-* Commit: _21-Dec-2025_,
+* Commit: _21-December-2025_,
 * 18 commits,
 * Add license file [#2][],
 * Initial re-deployment, 11-Dec-2025 ([archive][arch:2026-01-03]) [#3][]
@@ -29,7 +36,7 @@ Also see the [errata][] and [proposal][].
 
 ## [Original][]
 
-* Original commit: _10-Feb-2015_,
+* Original commit: _10-February-2015_,
 * "Mirrored from diveintoaccessibility.info/ by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 10 Feb 2015 16:47:07 GMT"
 * Archive: https://web.archive.org/web/20110927131211/http://diveintoaccessibility.org/
 * Copyright © 2002 Mark Pilgrim.
@@ -45,6 +52,7 @@ Also see the [errata][] and [proposal][].
 [ci:deploy]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/deploy.yml
 [original]: https://github.com/nfreear/diveintoaccessibility/releases/tag/original
 [v1.1]: https://github.com/nfreear/diveintoaccessibility/releases/tag/v1.1
+[v2.0-alpha]: https://github.com/nfreear/diveintoaccessibility/releases/tag/v2.0-alpha
 
 [#1]: https://github.com/nfreear/diveintoaccessibility/issues/1
 [#2]: https://github.com/nfreear/diveintoaccessibility/issues/2
