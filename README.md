@@ -5,7 +5,7 @@
 
 [![Deploy][ci-deploy-badge]][ci-deploy]
 
-* [nfreear.github.io/diveintoaccessibility/en][ghp]
+* SITE: [nfreear.github.io/diveintoaccessibility/en][ghp]
 
 ---
 
