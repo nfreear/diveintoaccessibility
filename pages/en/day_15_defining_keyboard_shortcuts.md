@@ -1,6 +1,8 @@
 ---
 layout: page
 title: "Day 15: Defining keyboard shortcuts"
+eleventyComputed:
+  status: amber
 ---
 
 ## Day 15: Defining keyboard shortcuts
@@ -13,7 +15,7 @@ While there are no standards for which keys should be assigned to which features
 <dt>Access key 1</dt>
 <dd>Home page</dd>
 <dt>Access key 2</dt>
-<dd>Skip to main content (the [navigation bar skip link][day 11])</dd>
+<dd>Skip to main content (the <a href="./en/day_11_skipping_over_navigation_links.html">navigation bar skip link</a>)</dd>
 <dt>Access key 9</dt>
 <dd>Feedback</dd>
 </dl>

@@ -82,4 +82,6 @@ permalink: false
 [download-zip]: ./download/diveintoaccessibility-html.html#_404_TODO
 [download-pdf]: ./download/diveintoaccessibility.pdf
 
+[mark]: https://web.archive.org/web/20110927015711/http://diveintomark.org/about
+
 [End]: //.

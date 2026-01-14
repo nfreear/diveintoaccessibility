@@ -1,15 +1,15 @@
-# Dive Into Accessibility
-
-## 30 days to a more accessible web site
-## By Mark Pilgrim
-
 [![Deploy][ci-deploy-badge]][ci-deploy]
 
+# Dive Into Accessibility
+
+>30 days to a more accessible weblog. This book answers two questions. The first question is "Why should I make my web site more accessible?" ...
+
+* Author: [Mark Pilgrim][]
 * SITE: [nfreear.github.io/diveintoaccessibility/en][ghp]
 
 ---
 
- * [Archive of "Dive into Accessibility"][archive] (2011, on Wayback Machine)
+ * [Archive of "Dive into Accessibility"][archive] (2011, on the Wayback Machine)
  * [Errors and Caveats](docs/ERRATA.md)
  * [Proposal](docs/PROPOSAL.md)
  * [Release Notes](docs/CHANGELOG.md)
@@ -46,9 +46,10 @@ The repository was created using:
 
 * [WinHTTrack Website Copier 3.47-27][httrack]
 
-### Copyright © 2002 [Mark Pilgrim][].
+### License
 
- * License: [GNU Free Documentation License][fdl].
+ * Copyright © 2002 [Mark Pilgrim][].
+ * License: [GNU Free Documentation License 1.1][fdl].
  * [Terms of use][terms].
 
 !['Dive Into' screenshot 01](images/dive-screenshot-01.png)

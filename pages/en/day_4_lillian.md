@@ -15,4 +15,4 @@ She does, however, have a 19-inch monitor, against the strenuous objections of M
 
 Lillian wishes she could read more web sites, but if Matt can't fix it, no one can.
 
-[cnn]: http://www.cnn.com/
+[cnn.com]: http://www.cnn.com/
