@@ -11,7 +11,7 @@ eleventyComputed:
 
 ### Day 14: Adding titles to links
 
-Adding a `title` attribute to links is a technique that should be discouraged. It could be termed an [anti-pattern][], as it excludes multiple groups.
+Adding a `title` attribute to HTML links is a technique that should be discouraged. It can be thought of as an [anti-pattern][], as it excludes multiple groups.
 
 The excluded user groups include:
 

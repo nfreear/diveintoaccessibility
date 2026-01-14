@@ -11,6 +11,9 @@ eleventyComputed:
 
 The `<acronym>` element is [deprecated][mdn:acronym-el] in HTML5.
 
+To quote section [3.5 Obsolete Elements][arch:obsolete-el] of "Differences from HTML4", published by the [WHATWG][],,
+> `acronym` is not included because it has created a lot of confusion…
+
 Abbreviations of all kinds, including initialisms and acronyms should be explained in text, and can benefit from the use of the [`<abbr>`][mdn:abbr-el] element.
 
 ```html
@@ -24,9 +27,12 @@ Note, the `<abbr>` element has long been supported by [evergreen][] browsers, in
 
 ### Further reading
 
-* WCAG quick reference: [Abbreviations][wcag:abbreviations].
-* WCAG techniques: [Technique H28: … using the abbr element][wcag:tech-abbr].
+* WCAG 2 quick reference: [Abbreviations][wcag:abbreviations].
+* WCAG 2 techniques: [Technique H28: … using the abbr element][wcag:tech-abbr].
 
+[arch:obsolete-el]: https://web.archive.org/web/20180624205318/https://html-differences.whatwg.org/#obsolete-elements
+[so:acronym]: https://stackoverflow.com/questions/74719324/why-centre-and-acronym-tags-are-removed-in-html5-since-both-tags-are-working-fin
+[whatwg]: https://whatwg.org/
 [mdn:acronym-el]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/acronym
 [mdn:abbr-el]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/abbr
 [wcag:abbreviations]: https://www.w3.org/WAI/WCAG22/quickref/#abbreviations
