@@ -20,15 +20,19 @@ export default function originalThemePlugin (eleventyConfig) {
   // @WAS: eleventyConfig.addLayoutAlias('dia_theme_page', pluginPaths.layout);
 
   eleventyConfig.addPassthroughCopy(pluginPaths.cssCopy);
+  eleventyConfig.addPassthroughCopy(pluginPaths.jsCopy);
 }
 
 function getPluginPaths () {
   const cssCopy = {};
+  const jsCopy = {};
   cssCopy[`${PATH}/css/*`] = 'css';
+  jsCopy[`${PATH}/js/*`] = 'js';
 
   return {
     layout: `../${PATH}/_includes/layouts/page.njk`,
     cssCopy,
+    jsCopy,
     absLayout: join(import.meta.url.replace('index.js', ''), '.', '_includes', 'layouts', 'page.njk'), // Not used!
     root: PATH
   };
