@@ -71,9 +71,10 @@ eleventyConfig.addPlugin(themeSwitchPlugin);
 
 ## clientJsPlugin
 
-Plugin to copy client-side (browser) JavaScript. Currently makes available a `<page-note>` custom element, and the following third-party code:
+Plugin to copy client-side (browser) JavaScript. Currently makes available:
 
-* [fix-title-attr][]
+* [`<page-note>`][page-note] custom element,
+* [fix-title-attr][] (third-party)
 
 ```js
 import { clientJsPlugin } from 'dia-plugins';
@@ -144,6 +145,7 @@ New Eleventy plugins and themes, © 2025-2026 Nick Freear.
 [nunjucks]: https://www.11ty.dev/docs/languages/nunjucks/
 [dia]: https://github.com/nfreear/diveintoaccessibility
 [pagination]: https://github.com/nfreear/diveintoaccessibility/blob/revive/plugins/mobile-theme/_includes/en/pagination.njk
+[page-note]: https://github.com/nfreear/diveintoaccessibility/blob/revive/plugins/client-js/js/PageNoteElement.js
 [archive]: https://web.archive.org/web/20110927131211/http://diveintoaccessibility.org/
 [md link]: https://daringfireball.net/projects/markdown/syntax#link
 [importmap]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap
