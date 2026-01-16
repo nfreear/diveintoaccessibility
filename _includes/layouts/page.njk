@@ -3,10 +3,12 @@ title: Dive Into Accessibility
 # @WAS: layout: dia_theme_page
 ---
 <!doctype html>
-<html lang="en" class="page" data-page-status="{{ eleventyComputed.status }}" data-page-id="{% myPageID %}" data-page-type="{% myPageType %}" data-page-slug="{{ page.fileSlug }}">
+<html lang="en" class="page" data-page-status="{{ eleventyComputed.status }}" data-page-id="{% myPageID %}" data-page-type="{% myPageType %}" data-run-mode="{{ eleventy.env.runMode }}" data-page-slug="{{ page.fileSlug }}">
 {{ content | safe }}
 
 {# {{ page | console_log | safe }} #}
 {# {{ eleventyComputed | console_log | safe }} #}
 {% console_log_page_info eleventyComputed %}
+
+<validator-button></validator-button>
 </html>

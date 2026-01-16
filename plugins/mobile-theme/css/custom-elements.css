@@ -68,3 +68,17 @@ title-tip {
     }
   }
 }
+
+validator-button {
+  background: #f6f6f6;
+  border: 1px outset silver;
+  border-radius: .3rem;
+  display: block;
+  font-size: small;
+  margin: 1rem 0;
+  padding: 0 1rem;
+
+  &::part(details) {
+    margin-top: .5rem;
+  }
+}
