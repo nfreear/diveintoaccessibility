@@ -27,7 +27,7 @@ This book answers two questions.  The first question is "Why should I make my we
 <dt><a href="./en/by_disability.html">Tips by disability</a></dt>
 <dd>Here the tips are grouped by the disabilities that benefit from them.  This includes both physical and technological disabilities.</dd>
 <dt><a href="./en/by_design_principle.html">Tips by design principle</a></dt>
-<dd>Here the tips are grouped by design principles proposed by the <acronym title="World Wide Web Consortium">W3C</acronym>.  All web pages should be perceivable, operable, navigable, understandable, and robust.</dd>
+<dd>Here the tips are grouped by design principles proposed by the <abbr title="World Wide Web Consortium">W3C</abbr>.  All web pages should be perceivable, operable, navigable, understandable, and robust.</dd>
 <dt><a href="./en/by_web_browser.html">Tips by web browser</a></dt>
 <dd>Here the tips are grouped by the web browsers or assistive technologies that benefit from them.</dd>
 <dt><a href="./en/by_publishing_tool.html">Tips by publishing tool</a></dt>

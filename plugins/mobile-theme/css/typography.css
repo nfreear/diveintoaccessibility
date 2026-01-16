@@ -28,7 +28,7 @@ header nav {
   font-size: .88rem;
   letter-spacing: -.02rem;
 
-  sep::after {
+  x-sep::after {
     content: '>';
     display: inline-block;
     margin: 0 .25rem;
@@ -109,6 +109,13 @@ q {
   font-style: italic;
 }
 
+blockquote {
+  border-left: .4rem silver solid;
+  font-style: italic;
+  margin-left: 1rem;
+  padding-left: 1rem;
+}
+
 nav {
   a[ href *= "github.com" ] {
     display: inline-block;
@@ -127,4 +134,17 @@ nav {
 ::part(button),
 ::part(summary) {
   outline-offset: .25rem;
+}
+
+/* Accessibility */
+.visually-hidden,
+sr-only {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

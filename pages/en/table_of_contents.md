@@ -19,7 +19,7 @@ eleventyComputed:
 * [Day 4: Lillian][lillian]
 * [Day 5: Marcus][marcus]
 
-<a class="skip" name="endweek1" id="endweek1"></a>
+<a class="skip" id="endweek1"></a>
 
 ### Week 2
 
@@ -31,7 +31,7 @@ eleventyComputed:
 * [Day 9: Providing additional navigation aids][day 9]
 * [Day 10: Presenting your main content first][day 10]
 
-<a class="skip" name="endweek2" id="endweek2"></a>
+<a class="skip" id="endweek2"></a>
 
 ### Week 3
 
@@ -43,7 +43,7 @@ eleventyComputed:
 * [Day 14: Adding titles to links][day 14]
 * [Day 15: Defining keyboard shortcuts][day 15]
 
-<a class="skip" name="endweek3" id="endweek3"></a>
+<a class="skip" id="endweek3"></a>
 
 ### Week 4
 
@@ -55,7 +55,7 @@ eleventyComputed:
 * [Day 19: Using real table headers][day 19]
 * [Day 20: Providing a summary for tables][day 20]
 
-<a class="skip" name="endweek4" id="endweek4"></a>
+<a class="skip" id="endweek4"></a>
 
 ### Week 5
 
@@ -67,7 +67,7 @@ eleventyComputed:
 * [Day 24: Providing text equivalents for image maps][day 24]
 * [Day 25: Using real horizontal rules (or faking them properly)][day 25]
 
-<a class="skip" name="endweek5" id="endweek5"></a>
+<a class="skip" id="endweek5"></a>
 
 ### Week 6
 
@@ -80,7 +80,7 @@ eleventyComputed:
 * [Day 30: Creating an accessibility statement][day 30]
 * [Conclusion][]
 
-<a class="skip" name="endweek6" id="endweek6"></a>
+<a class="skip" id="endweek6"></a>
 
 ### Appendices
 

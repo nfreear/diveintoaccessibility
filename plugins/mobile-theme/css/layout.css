@@ -18,6 +18,7 @@ header {
       * {
         border-top: 2px solid #222;
         X_border-radius: 2px;
+        display: block;
         margin: .5rem 0;
       }
 
