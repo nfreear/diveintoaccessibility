@@ -11,6 +11,7 @@ const importMap = {
   'fix-title-attr': 'https://esm.sh/fix-title-attr@0.9.5',
   'share-button': `${elementServer}/MySharingWidgetElement.js`,
   'site-search': `${elementServer}/MySearchElement.js`,
+  'search-api': `${elementServer}/MySearchApiElement.js`,
   'site-counter': `${elementServer}/MySiteCounterElement.js`,
   'validator-button': `${elementServer}/MyTestElement.js`
 };

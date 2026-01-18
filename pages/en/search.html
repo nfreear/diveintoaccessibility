@@ -9,7 +9,17 @@ eleventyComputed:
 
 <h2>Search</h2>
 
-<form id="searchform" method="get" action="mt-search.cgi">
+<search-api
+  key="{% mySearchApiKey %}"
+  search-id="{% mySearchId %}"
+  >
+  Search the site
+</search-api>
+
+
+<!-- <site-search cx="{% mySearchId %}"></site-search> -->
+
+<form id="searchform" method="get" action="mt-search.cgi" hidden>
 <p>
   <label for="search">Search for:</label>
   <input type="text" size="30" name="search" id="search" accesskey="4" value=""/>

@@ -69,6 +69,34 @@ title-tip {
   }
 }
 
+search-api {
+  display: block;
+  margin: 1rem 0;
+
+  &::part(button),
+  &::part(input) {
+    font-size: inherit;
+    padding: .5rem 1rem;
+    margin-right: .25rem;
+  }
+
+  &::part(input) {
+    min-width: 17rem;
+  }
+}
+
+site-search {
+  input,
+  .gsc-input {
+    font-size: 1rem;
+  }
+
+  .gsc-search-button-v2 {
+    border-radius: .25rem;
+    height: 2.2rem;
+  }
+}
+
 validator-button {
   background: #f6f6f6;
   border: 1px outset silver;

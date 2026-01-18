@@ -5,6 +5,8 @@ _video-splitter
 web-components
 *test*
 
+*env.js
+.env
 .DS_Store
 *TODO*
 *BAK*

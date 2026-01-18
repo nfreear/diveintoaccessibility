@@ -1,13 +1,15 @@
 import PageNoteElement from 'page-note';
 import ShareButtonElement from 'share-button';
-import SiteSearchElement from 'site-search';
+import SearchApiElement from 'search-api';
+// import SiteSearchElement from 'site-search';
 import fixTitleAttributes from 'fix-title-attr';
 
 const { customElements } = window;
 
 customElements.define('page-note', PageNoteElement);
 customElements.define('share-button', ShareButtonElement);
-customElements.define('site-search', SiteSearchElement);
+customElements.define('search-api', SearchApiElement);
+// customElements.define('site-search', SiteSearchElement);
 
 // Only add the HTML validator button when serving locally.
 if (pageInfo().isServeMode) {
