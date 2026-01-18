@@ -1,3 +1,6 @@
+/**
+ * Environment variables for local development only.
+ */
 
 process.env._THEME = 'mobile';
 // process.env._THEME = 'original';
