@@ -11,6 +11,9 @@ env:
   NODE_VERSION: 24
   SEARCH_API_KEY: ${{ secrets.SEARCH_API_KEY }}
   SEARCH_ID: ${{ secrets.SEARCH_ID }}
+  ABSOLUTE_URL: https://nfreear.github.io/diveintoaccessibility
+  # _THEME: mobile
+  _THEME: original
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -42,9 +45,6 @@ jobs:
         # cache: 'npm'
     - run: npm ci
     - run: npm run build
-    #- run: npm run build:original
-    #- run: npm run clean
-    #- run: npm run build:mobile
     - run: npm run lint
     - run: npm run dry-run
     - run: npm test --if-present

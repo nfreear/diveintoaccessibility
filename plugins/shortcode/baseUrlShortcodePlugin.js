@@ -12,4 +12,9 @@ export default function baseUrlShortcodePlugin (eleventyConfig, options) {
 
     return baseUrl;
   });
+
+  eleventyConfig.addFilter('myAbsoluteUrl', function (path) {
+    console.assert(process.env.ABSOLUTE_URL, 'Missing ABSOLUTE_URL environment variable.');
+    return `${process.env.ABSOLUTE_URL}${path}`;
+  });
 }
