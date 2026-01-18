@@ -1,7 +1,7 @@
 
 # dia-plugins #
 
-[![Build][ci-badge]][ci]
+[![Deploy][ci-deploy-badge]][ci-deploy]
 
 A collection of [Eleventy][] themes and [plugins][] for the book, [Dive Into Accessibility][dia].
 
@@ -156,8 +156,8 @@ New Eleventy plugins and themes, © 2025-2026 Nick Freear.
 [mit]: https://nfreear.mit-license.org/#2025-2026
 [mark pilgrim]: https://web.archive.org/web/20110927015711/http://diveintomark.org/about
 
-[d_ci]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/deploy.yml
-[d_ci-badge]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/deploy.yml/badge.svg
+[ci-deploy]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/deploy.yml
+[ci-deploy-badge]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/deploy.yml/badge.svg
 
 [ci]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/build.yml
 [ci-badge]: https://github.com/nfreear/diveintoaccessibility/actions/workflows/build.yml/badge.svg
