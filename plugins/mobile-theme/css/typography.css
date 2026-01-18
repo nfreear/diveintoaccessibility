@@ -3,11 +3,12 @@
   --dia-body-font: Verdana, Arial, Helvetica, sans-serif;
   --dia-head-font: Tahoma, sans-serif;
   --dia-theme-color: maroon;
+  --dia-bg-color: #fafafa;
   --theme-color: var(--dia-theme-color);
 }
 
 body {
-  background-color: #fafafa;
+  background-color: var(--dia-bg-color);
   color: #222;
   font-family: var(--dia-body-font, sans-serif);
 }
@@ -114,14 +115,6 @@ blockquote {
   font-style: italic;
   margin-left: 1rem;
   padding-left: 1rem;
-}
-
-nav {
-  a[ href *= "github.com" ] {
-    display: inline-block;
-    font-size: small;
-    margin-top: .75rem;
-  }
 }
 
 :link,

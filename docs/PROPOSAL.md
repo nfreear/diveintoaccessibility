@@ -8,7 +8,7 @@ Also see the [release notes][].
 * [x] – Fix "Skip to navigation" link ([#5][]),
 * [x] – Extract original page content to Markdown files ([#7][]),
 * [x] – Develop a mobile-friendly version of the existing theme/styles ([#9][]),
-* [ ] – Re-publish the site using a static site generator, such as [Eleventy][] ([#8][]),
+* [x] – Re-publish the site using a static site generator, such as [Eleventy][] ([#8][]),
 * [ ] – Place an information box on the relevant pages, documenting errors or caveats relating to that page ([#12][]),
 * [x] - Delete legacy HTML and CSS ([#10][]),
 * [x] - Create reusable plugin collection ([#11][]),

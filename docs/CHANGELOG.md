@@ -2,20 +2,27 @@
 
 # Release Notes #
 
+[![Lighthouse accessibility: 96%][lh-badge]][lh:2026-01-18]
+
 Also see the [errata][] and [proposal][].
 
-## Version 2.0 Beta
+## Version 2.1 Beta
 
 * Release: _circa January-2025_,
 * New mobile-friendly theme for Eleventy ([#9][]),
 * Add `<page-note>` custom element ([#12][]),
-* Fix title attributes  - integrate `fix-title-attr` Javascript ([#16][])
+* Fix title attributes - integrate `fix-title-attr` Javascript ([#16][])
+* Fix site search ([#19][])
+
+## [Version 2.0 Alpha 2][[v2.0-alpha.2]]
+
+* Release: _18-January-2026_ ([archive][arch:2026-01-18])
+* Fix [HTML validation][valid] errors ([#18][])
 
 ## [Version 2.0 Alpha][v2.0-alpha]
 
 * Release: _13-January-2026_ ([archive][arch:2026-01-11])
 * Extract original page content to Markdown files [#7][],
-* New mobile-friendly theme for [Eleventy][] [#9][],
 * Delete legacy HTML pages [#10][],
 * Create reusable plugin collection [#11][],
 * Fix Eleventy layout chaining [#14][],
@@ -53,6 +60,7 @@ Also see the [errata][] and [proposal][].
 [original]: https://github.com/nfreear/diveintoaccessibility/releases/tag/original
 [v1.1]: https://github.com/nfreear/diveintoaccessibility/releases/tag/v1.1
 [v2.0-alpha]: https://github.com/nfreear/diveintoaccessibility/releases/tag/v2.0-alpha
+[v2.0-alpha.2]: https://github.com/nfreear/diveintoaccessibility/releases/tag/v2.0-alpha.2
 
 [#1]: https://github.com/nfreear/diveintoaccessibility/issues/1
 [#2]: https://github.com/nfreear/diveintoaccessibility/issues/2
@@ -70,10 +78,18 @@ Also see the [errata][] and [proposal][].
 [#14]: https://github.com/nfreear/diveintoaccessibility/issues/14
 [#15]: https://github.com/nfreear/diveintoaccessibility/issues/15
 [#16]: https://github.com/nfreear/diveintoaccessibility/issues/16
+[#18]: https://github.com/nfreear/diveintoaccessibility/issues/18
+[#19]: https://github.com/nfreear/diveintoaccessibility/issues/19
 
 [arch:2011-09-27]: https://web.archive.org/web/20110927131211/http://diveintoaccessibility.org/
 [arch:2026-01-03]: https://web.archive.org/web/20260103161735/http://nfreear.github.io/diveintoaccessibility/
 [arch:2026-01-11]: https://web.archive.org/web/20260111204300/https://nfreear.github.io/diveintoaccessibility/en/
+[arch:2026-01-18]: https://web.archive.org/web/20260118144638/https://nfreear.github.io/diveintoaccessibility/en/
 
 [eleventy]: https://www.11ty.dev/
 [so:tag]: https://stackoverflow.com/questions/4404172/how-to-tag-an-older-commit-in-git/21759466#21759466
+[valid]: https://validator.w3.org/nu/?doc=https%3A%2F%2Fnfreear.github.io%2Fdiveintoaccessibility%2Fen%2F&showoutline=yes&showsource=yes
+
+[lh-badge]: https://img.shields.io/badge/Lighthouse_96%25-brightgreen?style=for-the-badge
+[lh:2026-01-18]: https://pagespeed.web.dev/analysis/https-nfreear-github-io-diveintoaccessibility-en/9k92cl6foi?form_factor=desktop
+  "Lighthouse accessibility: 96% (18 Jan 2026)"

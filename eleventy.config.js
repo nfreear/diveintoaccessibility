@@ -14,7 +14,7 @@ export default async function (eleventyConfig) {
   const debugLog = debug('DIA:config');
 
   debugLog('Loading config…');
-  loadEnvJs();
+  await loadEnvJs();
 
   // Order matters, put this at the top of your configuration file.
   eleventyConfig.setInputDirectory('pages');
@@ -60,10 +60,13 @@ function getLinkFilePaths () {
   ];
 }
 
-function loadEnvJs () {
-  import('./.env.js')
-    .then(() => console.log('.env.js loaded:', process.env))
-    .catch((err) => console.warn('Warning: .env.js not loaded.', err.code, err.message));
+async function loadEnvJs () {
+  try {
+    await import('./.env.js');
+    console.log('.env.js loaded:', process.env);
+  } catch (err) {
+    console.warn('Warning: .env.js not loaded.', err.code, err.message);
+  }
 }
 
 /* export const config = {
