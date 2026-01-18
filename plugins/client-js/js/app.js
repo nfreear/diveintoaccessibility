@@ -22,6 +22,9 @@ fixTitleAttributes({
   titleSelector: 'main [ title ]'
 });
 
+document.documentElement.classList.remove('no-js');
+document.documentElement.classList.add('js');
+
 console.debug('app.js completed:', pageInfo());
 
 function pageInfo () {

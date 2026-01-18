@@ -136,6 +136,16 @@ nav {
   outline-offset: .25rem;
 }
 
+.js .no-js-message,
+.js #searchform {
+  display: none;
+}
+
+.no-js .no-js-message {
+  border: 1px solid darkred;
+  padding: 1rem;
+}
+
 /* Accessibility */
 .visually-hidden,
 sr-only {

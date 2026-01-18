@@ -7,6 +7,8 @@ title: Index of notes
 
 Why revive "Dive Into Accessibility", which in 2026 is 24 years old?!
 
+> These notes are a work-in-progress.
+
 Not surprisingly after that amount of time, there are errors, some out-of-date practices and other issues.
 
 Here are two reasons:

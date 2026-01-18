@@ -9,6 +9,9 @@ on:
 # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 env:
   NODE_VERSION: 24
+  SEARCH_API_KEY: ${{ secrets.SEARCH_API_KEY }}
+  SEARCH_ID: ${{ secrets.SEARCH_ID }}
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read

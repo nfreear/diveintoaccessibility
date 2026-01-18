@@ -57,7 +57,7 @@ export class PageIdAndInfoPlugin {
   // https://www.11ty.dev/docs/collections-api/
   addCollection (collectionsApi) {
     console.assert(collectionsApi, 'is collectionsApi missing?');
-    return collectionsApi.getAll().filter((it) => this.#filter(it)).sort((a, b) => {
+    const result = collectionsApi.getAll().filter((it) => this.#filter(it)).sort((a, b) => {
       const aPageID = this.#computePageId(a);
       const bPageID = this.#computePageId(b);
       return aPageID - bPageID; // sort by `pageID` - ascending.
@@ -66,6 +66,8 @@ export class PageIdAndInfoPlugin {
       // return a.inputPath.localeCompare(b.inputPath); // sort by path - ascending
       // return b.inputPath.localeCompare(a.inputPath); // sort by path - descending
     });
+    console.log('Count, sort by day:', result.length);
+    return result;
   }
 
   #filter (page) { return this.#computePageId(page); }

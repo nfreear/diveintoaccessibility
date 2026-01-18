@@ -6,8 +6,11 @@ eleventyComputed:
   archiveDate: 2006-10-07
   originalUrl: /mt/mt-search.cgi
 ---
+<meta name="robots" content="noindex">
 
 <h2>Search</h2>
+
+<p class="no-js-message">Sorry, search requires JavaScript.</p>
 
 <search-api
   key="{% mySearchApiKey %}"
@@ -19,7 +22,7 @@ eleventyComputed:
 
 <!-- <site-search cx="{% mySearchId %}"></site-search> -->
 
-<form id="searchform" method="get" action="mt-search.cgi" hidden>
+<form id="searchform" method="get" action="mt-search.cgi">
 <p>
   <label for="search">Search for:</label>
   <input type="text" size="30" name="search" id="search" accesskey="4" value=""/>

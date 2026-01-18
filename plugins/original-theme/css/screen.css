@@ -162,3 +162,17 @@ acronym {
 }
 
 /* */
+
+.no-js {
+  .no-js-message {
+    background: #fee;
+    border: 1px solid darkred;
+    color: darkred;
+    margin: 2rem 1rem;
+    padding: 1rem;
+  }
+
+  search-api {
+    display: none;
+  }
+}
