@@ -1,20 +1,20 @@
-  <link rel="start" title="Home page" href="./en/index.html" />
-  <link rel="contents" title="Table of contents" href="./en/table_of_contents.html" />
-  <link rel="search" title="Search this site" href="./en/mt/mt-search.html" />
-  <link rel="help" title="Access features of this site" href="./en/accessibility_statement.html" />
+  <link rel="start" title="Home page" href="./en/index.html">
+  <link rel="contents" title="Table of contents" href="./en/table_of_contents.html">
+  <link rel="search" title="Search this site" href="./en/search.html">
+  <link rel="help" title="Access features of this site" href="./en/accessibility_statement.html">
   <link rel="author" title="Send feedback to the author" href="mailto:feedback@diveintoaccessibility.org" />
-  <link rel="copyright" title="Terms of use" href="./en/terms_of_use.html" />
-  <link rel="up" title="Table of contents" href="./en/table_of_contents.html" />
-  <link rel="first" title="Day 1: Jackie" href="./en/day_1_jackie.html" />
-  <link rel="last" title="Accessibility statement" href="./en/accessibility_statement.html" />
+  <link rel="copyright" title="Terms of use" href="./en/terms_of_use.html">
+  <link rel="up" title="Table of contents" href="./en/table_of_contents.html">
+  <link rel="first" title="Day 1: Jackie" href="./en/day_1_jackie.html">
+  <link rel="last" title="Accessibility statement" href="./en/accessibility_statement.html">
 
 {% set previousPost = collections.myCustomSort | getPreviousCollectionItem %}
 {% set nextPost = collections.myCustomSort | getNextCollectionItem %}
 {% if previousPost or nextPost %}
   {% if previousPost %}
-    <link rel="prev" href=".{{ previousPost.url }}" title="{{ previousPost.data.title }}" />
+    <link rel="prev" href=".{{ previousPost.url }}" title="{{ previousPost.data.title }}">
   {% endif %}
   {% if nextPost %}
-    <link rel="next" href=".{{ nextPost.url }}" title="{{ nextPost.data.title }}" />
+    <link rel="next" href=".{{ nextPost.url }}" title="{{ nextPost.data.title }}">
   {% endif %}
 {% endif %}

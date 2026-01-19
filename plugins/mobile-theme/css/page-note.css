@@ -28,13 +28,13 @@ page-note:not([ hidden ]) {
 
   &[ page-status = red ] {
     &::part(summary)::after {
-      content: '❌'; /* cross-mark emoji */
+      content: '❌' / 'danger'; /* cross-mark emoji */ /* @translate */
     }
   }
 
   &[ page-status = amber ] {
     &::part(summary)::after {
-      content: '⚠️'; /* warning emoji */
+      content: '⚠️' / 'warning'; /* warning emoji */ /* @translate */
     }
   }
 
@@ -84,14 +84,14 @@ page-note:not([ hidden ]) {
 
   &[ data-page-status = red ] {
     h2::before {
-      content: '❌';
+      content: '❌' / 'danger'; /* @translate */
       margin-right: .5rem;
     }
   }
 
   &[ data-page-status = amber ] {
     h2::before {
-      content: '⚠️';
+      content: '⚠️' / 'warning'; /* @translate */
       margin-right: .5rem;
     }
   }

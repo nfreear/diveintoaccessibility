@@ -22,8 +22,8 @@ share-button {
   }
 
   &::part(button)::after {
-    content: '💬';
-    X_content: '📢';
+    content: '💬' / '';
+    /* content: '📢' / ''; */
     display: inline-block;
     margin-left: .3rem;
   }

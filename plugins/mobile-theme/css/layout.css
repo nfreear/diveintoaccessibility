@@ -4,16 +4,16 @@ header {
   flex-direction: row;
   justify-content: space-between;
 
-  & > * {
-    X_display: block;
-  }
+  /* & > * {
+    display: block;
+  } */
 
   nav {
     button[ popovertarget ] {
       padding: .2rem .5rem;
       margin: .25rem 0;
-      height: 3.6rem;
-      width: 3.6rem;
+      height: 3.4rem;
+      width: 3.4rem;
 
       * {
         border-top: 2px solid #222;
@@ -25,7 +25,7 @@ header {
       &:focus *,
       &:hover * {
         border-color: var(--theme-color);
-        box-shadow: 0 0 3px 2px silver;
+        box-shadow: 0 0 2px 1px silver;
       }
     }
 

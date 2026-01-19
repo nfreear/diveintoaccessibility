@@ -90,6 +90,6 @@ Also see the [errata][] and [proposal][].
 [so:tag]: https://stackoverflow.com/questions/4404172/how-to-tag-an-older-commit-in-git/21759466#21759466
 [valid]: https://validator.w3.org/nu/?doc=https%3A%2F%2Fnfreear.github.io%2Fdiveintoaccessibility%2Fen%2F&showoutline=yes&showsource=yes
 
-[lh-badge]: https://img.shields.io/badge/Lighthouse_96%25-brightgreen?style=for-the-badge
+[lh-badge]: https://img.shields.io/badge/Lighthouse-96%25-brightgreen?style=for-the-badge
 [lh:2026-01-18]: https://pagespeed.web.dev/analysis/https-nfreear-github-io-diveintoaccessibility-en/9k92cl6foi?form_factor=desktop
   "Lighthouse accessibility: 96% (18 Jan 2026)"

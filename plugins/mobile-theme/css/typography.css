@@ -30,7 +30,7 @@ header nav {
   letter-spacing: -.02rem;
 
   x-sep::after {
-    content: '>';
+    content: '>' / '-';
     display: inline-block;
     margin: 0 .25rem;
   }

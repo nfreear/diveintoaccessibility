@@ -84,8 +84,8 @@ Radio users can automate this markup by using shortcuts. From your Radio home pa
 >Name: CSS
 >
 >Value: `<acronym title="cascading style sheets">CSS</acronym>`
->
->(Be sure to change the input type from "<acronym title="what you see is what you get">WYSIWYG</acronym>" to "Source" so you can type the <acronym title="hypertext markup language">HTML</acronym> directly.)
+
+(Be sure to change the input type from "<acronym title="what you see is what you get">WYSIWYG</acronym>" to "Source" so you can type the <acronym title="hypertext markup language">HTML</acronym> directly.)
 
 Then, in your post, simply type "CSS" (with the quotes), and Radio will render it with the acronym tag and the title, just as you defined it.
 
