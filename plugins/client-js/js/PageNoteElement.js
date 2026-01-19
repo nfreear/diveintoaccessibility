@@ -24,13 +24,15 @@ export default class PageNoteElement extends HTMLElement {
 
   get paraSelector () { return this.getAttribute('para-selector') ?? 'p:first-of-type'; }
 
-  get moreText () { return this.getAttribute('more-text') ?? 'Find out more'; }
+  get moreText () { return this.getAttribute('more-text') ?? 'Find out more'; } /* @translate */
+
+  get ariaRoleDescription () { return this.getAttribute('description') ?? 'page note'; } /* @translate */
 
   get #isNotesPage () { return this.#pageType === 'note'; }
   // Was: get #isNotesPage () { return /\/notes\//.test(location.pathname); }
 
   get #fileSlug () {
-    const slug = location.pathname.replace('.html', '').replace(/\/\w+\//, '');
+    const slug = location.pathname.split('/').pop().replace('.html', '');
     return slug === '' ? 'index' : slug;
   }
 
@@ -109,6 +111,10 @@ export default class PageNoteElement extends HTMLElement {
 
     EL.summary.setAttribute('part', 'summary');
     EL.anchor.setAttribute('part', 'a moreLink');
+    EL.summary.id = 'summary';
+    EL.details.setAttribute('aria-labelledby', 'summary');
+    EL.details.setAttribute('role', 'complementary');
+    EL.details.setAttribute('aria-roledescription', this.ariaRoleDescription);
 
     EL.summary.textContent = this.#summary;
     EL.anchor.textContent = this.moreText;
