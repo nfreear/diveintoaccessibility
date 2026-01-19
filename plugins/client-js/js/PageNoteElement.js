@@ -17,7 +17,7 @@ export default class PageNoteElement extends HTMLElement {
   #pageId;
 
   get urlTemplate () {
-    return this.getAttribute('url-template') ?? '/en/notes/%s.html';
+    return this.getAttribute('url-template') ?? './en/notes/%s.html';
   }
 
   get mainSelector () { return this.getAttribute('main-selector') ?? 'main'; }
