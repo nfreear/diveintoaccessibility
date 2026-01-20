@@ -1,5 +1,6 @@
 import originalThemePlugin from './original-theme/originalThemePlugin.js';
 import mobileThemePlugin from './mobile-theme/mobileThemePlugin.js';
+import themeSwitchPlugin from './theme-switch/themeSwitchPlugin.js';
 import addLinkRefsPlugin from './pre-process/AddLinksPlugin.js';
 import pageIdAndInfoPlugin from './page-id/PageIdPlugin.js';
 import sortByDayNumberPlugin from './page-id/sortByDayNumberPlugin.js';
@@ -9,21 +10,7 @@ import importMapPlugin from './client-js/importMapPlugin.js';
 import baseUrlShortcodePlugin from './shortcode/baseUrlShortcodePlugin.js';
 import searchIdShortcodePlugin from './shortcode/searchIdShortcodePlugin.js';
 import customCollectionsPlugin from './page-id/customCollectionsPlugin.js';
-
-/**
- * Load original or mobile theme, depending on `_THEME` environment variable.
- */
-function themeSwitchPlugin (eleventyConfig, options) {
-  const isMobile = (process.env._THEME === 'mobile');
-
-  console.log('themeSwitchPlugin:', process.env._THEME);
-
-  if (isMobile) {
-    return mobileThemePlugin(eleventyConfig, options);
-  } else {
-    return originalThemePlugin(eleventyConfig, options);
-  }
-}
+import loadEnvJs from './utilities/loadEnvJs.js';
 
 /**
  * Load all plugins in the collection.
@@ -53,7 +40,8 @@ export {
   originalThemePlugin, mobileThemePlugin, themeSwitchPlugin,
   addLinkRefsPlugin, pageIdAndInfoPlugin, sortByDayNumberPlugin,
   clientJsPlugin, importMapPlugin, baseUrlShortcodePlugin, debugFiltersPlugin,
-  customCollectionsPlugin
+  customCollectionsPlugin, searchIdShortcodePlugin,
+  loadEnvJs
 };
 
 export default diaPluginLoader;

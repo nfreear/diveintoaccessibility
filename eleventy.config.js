@@ -1,6 +1,6 @@
 import { resolve } from 'node:path';
 import debug from 'debug';
-import diaPluginLoader from 'dia-plugins';
+import diaPluginLoader, { loadEnvJs } from 'dia-plugins';
 
 // GitHub Pages sub-directory deployment.
 const buildBaseUrl = '/diveintoaccessibility/';
@@ -14,7 +14,8 @@ export default async function (eleventyConfig) {
   const debugLog = debug('DIA:config');
 
   debugLog('Loading config…');
-  await loadEnvJs();
+
+  await loadEnvJs([import.meta.dirname, '.env.js']);
 
   // Order matters, put this at the top of your configuration file.
   eleventyConfig.setInputDirectory('pages');
@@ -58,15 +59,6 @@ function getLinkFilePaths () {
     resolve('pages', 'links', 'external.md'),
     resolve('pages', 'links', 'translation_links.md'),
   ];
-}
-
-async function loadEnvJs () {
-  try {
-    await import('./.env.js');
-    console.log('.env.js loaded:', process.env);
-  } catch (err) {
-    console.warn('Warning: .env.js not loaded.', err.code, err.message);
-  }
 }
 
 /* export const config = {
