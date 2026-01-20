@@ -1,7 +1,7 @@
 /*
   Style custom elements (also: page-note.css)
 */
-share-button {
+share-button:defined {
   display: block;
   position: relative;
   margin: .7rem 0;
@@ -97,7 +97,7 @@ site-search {
   }
 }
 
-validator-button {
+validator-button:defined {
   background: #f6f6f6;
   border: 1px outset silver;
   border-radius: .3rem;

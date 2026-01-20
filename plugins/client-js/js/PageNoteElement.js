@@ -60,7 +60,7 @@ export default class PageNoteElement extends HTMLElement {
 
   async #fetchNotesHtmlPage () {
     const resp = await fetch(this.#notesUrl);
-    console.debug('fetchNotesPage:', resp.status, resp);
+    console.debug('<page-note>.fetch:', resp.status, resp);
     this.#httpStatus = resp.status;
     this.#isLoaded = resp.ok;
     this.setAttribute('http-status', resp.status);
@@ -90,20 +90,22 @@ export default class PageNoteElement extends HTMLElement {
     this.#pageStatus = this.#dom.documentElement.dataset.pageStatus;
     // this.#pageId = parseInt(this.#root.dataset.pageId);
     this.setAttribute('page-status', this.#pageStatus);
-    console.debug('queryElements:', mainEl, this.#summary, this.#firstParaEl);
+    console.debug('<page-note>.queryDomElements:', mainEl, this.#summary, this.#firstParaEl);
   }
 
   #createElements () {
+    const aside = document.createElement('aside');
     const details = document.createElement('details');
     const summary = document.createElement('summary');
     const div = document.createElement('div');
     const anchor = document.createElement('a');
-    return { details, summary, div, anchor };
+    return { aside, details, summary, div, anchor };
   }
 
   #createNoteElements () {
     const EL = this.#createElements();
 
+    EL.aside.appendChild(EL.details);
     EL.details.appendChild(EL.summary);
     EL.details.appendChild(EL.div);
     EL.div.appendChild(this.#firstParaEl);
@@ -111,15 +113,16 @@ export default class PageNoteElement extends HTMLElement {
 
     EL.summary.setAttribute('part', 'summary');
     EL.anchor.setAttribute('part', 'a moreLink');
-    EL.summary.id = 'summary';
-    EL.details.setAttribute('aria-labelledby', 'summary');
-    EL.details.setAttribute('role', 'complementary');
-    EL.details.setAttribute('aria-roledescription', this.ariaRoleDescription);
+    EL.summary.id = 'summaryID';
+
+    EL.aside.setAttribute('aria-labelledby', 'summaryID');
+    // Was: EL.details.setAttribute('role', 'complementary');
+    EL.aside.setAttribute('aria-roledescription', this.ariaRoleDescription);
 
     EL.summary.textContent = this.#summary;
     EL.anchor.textContent = this.moreText;
     EL.anchor.href = this.#notesUrl;
-    return EL.details;
+    return EL.aside; // Was: EL.details;
   }
 
   get #noteId () {
@@ -134,7 +137,8 @@ export default class PageNoteElement extends HTMLElement {
   }
 
   #getPageInfo () {
-    this.#pageId = parseInt(this.#root.dataset.pageId) ?? null;
+    const pageId = this.#root.dataset.pageId;
+    this.#pageId = pageId !== '' ? parseInt(pageId) : null;
     this.#pageType = this.#root.dataset.pageType;
   }
 }

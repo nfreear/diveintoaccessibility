@@ -2,13 +2,14 @@
 
 # Release Notes #
 
-[![Lighthouse accessibility: 96%][lh-badge]][lh:2026-01-18]
+[![Lighthouse accessibility: 100%][lh-badge]][lh:2026-01-20]
+[![Valid HTML5][valid-badge]][valid]
 
 Also see the [errata][] and [proposal][].
 
-## Version 2.1 Beta
+## [Version 2.1 Beta][v2.1-beta]
 
-* Release: _circa January-2025_,
+* Release: _20-January-2025_ ([archive][arch:2026-01-20]),
 * New mobile-friendly theme for Eleventy ([#9][]),
 * Add `<page-note>` custom element ([#12][]),
 * Fix title attributes - integrate `fix-title-attr` Javascript ([#16][])
@@ -61,6 +62,7 @@ Also see the [errata][] and [proposal][].
 [v1.1]: https://github.com/nfreear/diveintoaccessibility/releases/tag/v1.1
 [v2.0-alpha]: https://github.com/nfreear/diveintoaccessibility/releases/tag/v2.0-alpha
 [v2.0-alpha.2]: https://github.com/nfreear/diveintoaccessibility/releases/tag/v2.0-alpha.2
+[v2.1-beta]: https://github.com/nfreear/diveintoaccessibility/releases/tag/v2.1-beta
 
 [#1]: https://github.com/nfreear/diveintoaccessibility/issues/1
 [#2]: https://github.com/nfreear/diveintoaccessibility/issues/2
@@ -85,11 +87,15 @@ Also see the [errata][] and [proposal][].
 [arch:2026-01-03]: https://web.archive.org/web/20260103161735/http://nfreear.github.io/diveintoaccessibility/
 [arch:2026-01-11]: https://web.archive.org/web/20260111204300/https://nfreear.github.io/diveintoaccessibility/en/
 [arch:2026-01-18]: https://web.archive.org/web/20260118144638/https://nfreear.github.io/diveintoaccessibility/en/
+[arch:1016-01-20]: https://web.archive.org/web/20260120084622/https://nfreear.github.io/diveintoaccessibility/en/
 
 [eleventy]: https://www.11ty.dev/
 [so:tag]: https://stackoverflow.com/questions/4404172/how-to-tag-an-older-commit-in-git/21759466#21759466
+[valid-badge]: https://img.shields.io/badge/Valid-HTML5-orange?style=for-the-badge
 [valid]: https://validator.w3.org/nu/?doc=https%3A%2F%2Fnfreear.github.io%2Fdiveintoaccessibility%2Fen%2F&showoutline=yes&showsource=yes
 
-[lh-badge]: https://img.shields.io/badge/Lighthouse-96%25-brightgreen?style=for-the-badge
+[lh-badge]: https://img.shields.io/badge/Lighthouse-100%25-brightgreen?style=for-the-badge
 [lh:2026-01-18]: https://pagespeed.web.dev/analysis/https-nfreear-github-io-diveintoaccessibility-en/9k92cl6foi?form_factor=desktop
   "Lighthouse accessibility: 96% (18 Jan 2026)"
+[lh:2026-01-20]: https://pagespeed.web.dev/analysis/https-nfreear-github-io-diveintoaccessibility-en/ih8zsw8k1b?form_factor=mobile
+  "Lighthouse accessibility: 100% (20 January 2026)"
