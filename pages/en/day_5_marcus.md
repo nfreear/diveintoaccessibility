@@ -9,7 +9,7 @@ Marcus, son of a drug addict, has been blind since birth. He was born three mont
 
 Marcus works at an AT+T Relay Center, where he relays calls between deaf and hearing people. Here's how it works:
 
-1. A deaf or hearing impaired person, call her Melissa, calls into the center using her <abbr="telecommunications device for the deaf">TDD</abbr> or computer.
+1. A deaf or hearing impaired person, call her Melissa, calls into the center using her <abbr title="telecommunications device for the deaf">TDD</abbr> or computer.
 2. Melissa types in the name and number of the person she wants to call, call him Todd.
 3. Marcus calls Todd and announces that Todd has a call from Melissa via the Relay Center.
 4. Whatever Melissa types, Marcus reads on his [ALVA refreshable Braille display][alva], which takes Melissa's words and converts them into Braille in real time.
