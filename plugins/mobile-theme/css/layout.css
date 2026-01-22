@@ -70,7 +70,8 @@ header {
 
       #nav-dropdown {
         margin-top: .1rem;
-        position-anchor: --nav-toggle;
+        /* position-anchor: --nav-toggle; */ /* Bug in Firefox 147?! */
+        anchor-scope: --nav-toggle;
         position: fixed;
         position-area: bottom center;
 

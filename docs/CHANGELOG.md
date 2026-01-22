@@ -87,7 +87,7 @@ Also see the [errata][] and [proposal][].
 [arch:2026-01-03]: https://web.archive.org/web/20260103161735/http://nfreear.github.io/diveintoaccessibility/
 [arch:2026-01-11]: https://web.archive.org/web/20260111204300/https://nfreear.github.io/diveintoaccessibility/en/
 [arch:2026-01-18]: https://web.archive.org/web/20260118144638/https://nfreear.github.io/diveintoaccessibility/en/
-[arch:1016-01-20]: https://web.archive.org/web/20260120084622/https://nfreear.github.io/diveintoaccessibility/en/
+[arch:1016-01-20]: https://web.archive.org/web/20260120184546/https://nfreear.github.io/diveintoaccessibility/en/
 
 [eleventy]: https://www.11ty.dev/
 [so:tag]: https://stackoverflow.com/questions/4404172/how-to-tag-an-older-commit-in-git/21759466#21759466

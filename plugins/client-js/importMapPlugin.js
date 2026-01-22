@@ -4,11 +4,13 @@
  * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap
  * @see https://github.com/nfreear/elements
  */
-const elementServer = 'https://nfreear.github.io/elements/src/components';
+const githubPages = 'https://nfreear.github.io';
+const elementServer = `${githubPages}/elements/src/components`;
 
 const importMap = {
   'page-note': './js/PageNoteElement.js',
-  'fix-title-attr': 'https://esm.sh/fix-title-attr@0.9.5',
+  'npm:fix-title-attr': 'https://esm.sh/fix-title-attr@0.9.5',
+  'fix-title-attr': `${githubPages}/fix-title-attr/index.js`,
   'share-button': `${elementServer}/MySharingWidgetElement.js`,
   'site-search': `${elementServer}/MySearchElement.js`,
   'search-api': `${elementServer}/MySearchApiElement.js`,

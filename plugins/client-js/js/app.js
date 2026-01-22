@@ -2,7 +2,7 @@ import PageNoteElement from 'page-note';
 import ShareButtonElement from 'share-button';
 import SearchApiElement from 'search-api';
 // import SiteSearchElement from 'site-search';
-import fixTitleAttributes from 'fix-title-attr';
+import fixTitleAttributes, { fixArchiveLinks } from 'fix-title-attr';
 
 const { customElements } = window;
 
@@ -21,6 +21,7 @@ if (pageInfo().isServeMode) {
 fixTitleAttributes({
   titleSelector: 'main [ title ]'
 });
+fixArchiveLinks();
 
 document.documentElement.classList.remove('no-js');
 document.documentElement.classList.add('js');

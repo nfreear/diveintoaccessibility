@@ -58,13 +58,20 @@ title-tip {
     font-family: var(--dia-head-font);
     min-width: 5rem;
   }
+
+  &[ data-archive-id ] {
+    &::part(button)::after {
+      content: 'A';
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+  }
 }
 
 /* First <p> of Day 17 - many acronyms! */
 [ data-page-id = "17" ] {
   main {
     p:first-of-type {
-      line-height: 2rem;
+      line-height: 2.1rem;
     }
   }
 }
@@ -82,6 +89,10 @@ search-api {
 
   &::part(input) {
     min-width: 17rem;
+  }
+
+  &[ data-loading = true ] {
+    cursor: wait;
   }
 }
 
