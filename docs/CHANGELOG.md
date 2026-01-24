@@ -9,11 +9,12 @@ Also see the [errata][] and [proposal][].
 
 ## [Version 2.1 Beta][v2.1-beta]
 
-* Release: _20-January-2025_ ([archive][arch:2026-01-20]),
+* Release: _24-January-2025_ ([archive][arch:2026-01-20]),
 * New mobile-friendly theme for Eleventy ([#9][]),
 * Add `<page-note>` custom element ([#12][]),
 * Fix title attributes - integrate `fix-title-attr` Javascript ([#16][])
-* Fix site search ([#19][])
+* Fix site search, `<search-api>` ([#19][])
+* Also, integrate `<site-counter>`, `<share-button>` ([#11][])
 
 ## [Version 2.0 Alpha 2][[v2.0-alpha.2]]
 
