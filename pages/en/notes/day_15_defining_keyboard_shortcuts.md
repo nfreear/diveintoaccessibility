@@ -11,7 +11,7 @@ eleventyComputed:
 
 Defining `accesskey` attributes for links and other controls on your webpages can be problematic. Why?
 
-The `accesskey` attribute was introduced in [HTML 4][html4:accesskey] in 1998, with the best of intentions. It provided a means for a site publisher to “...define keyboard shortcuts for frequently-used links or form fields.”
+The `accesskey` attribute was introduced in [HTML 4][html4:accesskey] in 1998, with the best of intentions. It provides a means for a site publisher to “...define keyboard shortcuts for frequently-used links or form fields.”
 
 However, a number of problems soon became apparent:
 
@@ -19,9 +19,9 @@ However, a number of problems soon became apparent:
 2. There was no standard for how to alert users to what access keys were defined.
 3. And most significantly, the danger of an `accesskey` conflicting with a pre-defined shortcut in the browser or in assistive technologies such as screen readers. Desktop screen readers such as [JAWS][] rely on many keyboard shortcuts.
 
-The last point is why in 2018 [WCAG 2.1][] introduced a [Character Key Shortcuts][wcag2:shortcut] success criteria — a site can't define `accesskey` attributes, unless they can be [modified or switched off by the user][tech:g217].
+The last point is why in 2018 [WCAG 2.1][] introduced a [Character Key Shortcuts][wcag2:shortcut] success criteria — a site can't define keyboard shortcuts, unless they can be [modified or switched off by the user][tech:g217].
 
-On point 1, its worth noting that the [UK Government][govuk:accesskey] and [SAK2014][] attempted to standardise which access keys would do what.
+On point 1, its worth noting that the [UK Government][govuk:accesskey] and [SAK2014][] attempted to standardise which access keys would do what, with the UK Government standard settling on numeric shortcuts.
 
 As [WebAIM][] memorably says, [“A Good Idea Implemented Poorly”][webaim:accesskey].
 

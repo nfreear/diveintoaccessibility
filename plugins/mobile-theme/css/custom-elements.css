@@ -42,6 +42,7 @@ share-button:defined {
 */
 title-tip {
   --fix-title-width-multiplier: 0.48rem;
+  --tt-tip-width-multiplier: 0.48rem;
 
   --tt-button-background: transparent;
   --tt-button-size: 1.5rem;

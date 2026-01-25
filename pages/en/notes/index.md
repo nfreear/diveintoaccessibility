@@ -5,17 +5,19 @@ title: Index of notes
 
 ## Documenting issues …
 
-Why revive "Dive Into Accessibility", which in 2026 is 24 years old?!
+Why revive "Dive Into Accessibility" after so many years?
 
 > These notes are a work-in-progress.
+
+The online book was originally written and published by [Mark Pilgrim][mark] way back [in 2002][dia2002] — 24 years ago (in 2026)!
 
 Not surprisingly after that amount of time, there are errors, some out-of-date practices and other issues.
 
 Here are two reasons:
 
-1. [Translations][] are still live out on the Web, and I realised that if these persisted, without the issues being documented, then readers would likely pick up wrong ideas. And while I have written a dry [Errata][] document, it is better to add commentary page-by-page.
+1. [Translations][] are still live out on the Web, and I realised that if these persisted, without the problems being documented, then readers would be likely to pick up wrong ideas. And while I have written a dry [Errata][] document, it is better to add commentary page-by-page.
 
-2. [Mark Pilgrim’s][mark] original user-centred narrative, with realistic personas, which was revolutionary in 2002, still has tremendous value now.
+2. Mark Pilgrim’s original [user-centered][ucd] narrative, with realistic personas, which was revolutionary in 2002, still has tremendous value now.
 
 So, I am documenting the errors, out-of-date practices, and other notes for individual pages in the book.
 
@@ -42,3 +44,6 @@ So, I am documenting the errors, out-of-date practices, and other notes for indi
 [note 17]: ./en/notes/day_17_defining_acronyms.html
 [note 20]: ./en/notes/day_20_providing_a_summary_for_tables.html
 [errata]: https://github.com/nfreear/diveintoaccessibility/blob/revive/docs/ERRATA.md
+
+[dia2002]: https://web.archive.org/web/20020724125508/http://diveintoaccessibility.org/
+[ucd]: https://en.wikipedia.org/wiki/User-centered_design
