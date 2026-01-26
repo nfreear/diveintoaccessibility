@@ -7,7 +7,7 @@ eleventyComputed:
 
 ## Incorrect implementation
 
-### Day 11: Skipping over navigation links
+### [Day 11: Skipping over navigation links][day 11]
 
 [Skip links][] are as relevant now as they were in 2002, but there are problems…
 

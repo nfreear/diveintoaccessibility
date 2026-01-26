@@ -9,7 +9,7 @@ eleventyComputed:
 
 ## Don't do this!
 
-### Day 14: Adding titles to links
+### [Day 14: Adding titles to links][day 14]
 
 Adding a `title` attribute to HTML links is a technique that should be discouraged. It can be thought of as an [anti-pattern][], as it excludes multiple groups.
 

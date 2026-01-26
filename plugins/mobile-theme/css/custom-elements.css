@@ -4,8 +4,8 @@
 share-button:defined {
   display: block;
   position: relative;
-  margin: .7rem 0;
-  min-height: 1.7rem;
+  margin: 1rem 0;
+  min-height: 1.9rem;
 
   &::part(form) {
     display: flex;
@@ -41,13 +41,14 @@ share-button:defined {
 /* NPM: fix-title-attr.
 */
 title-tip {
-  --fix-title-width-multiplier: 0.48rem;
+  /* --fix-title-width-multiplier: 0.48rem; */
   --tt-tip-width-multiplier: 0.48rem;
 
-  --tt-button-background: transparent;
+  --tt-button-background: var(--dia-bg-color, white);
   --tt-button-size: 1.5rem;
   --tt-border-width: 1px;
   --tt-border-color: silver;
+  --tt-tip-font: var(--dia-head-font);
 
   &::part(button):focus,
   &::part(button):hover {
@@ -56,15 +57,12 @@ title-tip {
   }
 
   &::part(tip) {
-    font-family: var(--dia-head-font);
-    min-width: 5rem;
+    max-width: 22rem;
   }
 
   &[ data-archive-id ] {
-    &::part(button)::after {
-      content: 'A';
-      font-family: Georgia, 'Times New Roman', serif;
-    }
+    --tt-tip font: Georgia, 'Times New Roman', serif;
+    --tt-button-content: 'A';
   }
 }
 

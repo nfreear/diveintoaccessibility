@@ -7,7 +7,7 @@ eleventyComputed:
 
 ## Caution!
 
-### Day 15: Defining keyboard shortcuts
+### [Day 15: Defining keyboard shortcuts][day 15]
 
 Defining `accesskey` attributes for links and other controls on your webpages can be problematic. Why?
 

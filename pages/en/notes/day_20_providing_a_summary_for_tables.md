@@ -7,7 +7,7 @@ eleventyComputed:
 
 ## Deprecated!
 
-### Day 20: Providing a summary for tables
+### [Day 20: Providing a summary for tables][day 20]
 
 The summary attribute on the `<table>` element is [deprecated][mdn:table-at] in HTML5.
 

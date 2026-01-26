@@ -7,7 +7,7 @@ eleventyComputed:
 
 ## Somewhat flawed
 
-### Day 10: Presenting your main content first
+### [Day 10: Presenting your main content first][day 10]
 
 The concept of <q>presenting your main content first</q> is somewhat flawed, particularly as it is not a widely followed practice. What is important?
 

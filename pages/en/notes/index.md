@@ -15,9 +15,9 @@ Not surprisingly after that amount of time, there are errors, some out-of-date p
 
 Here are two reasons:
 
-1. [Translations][] are still live out on the Web, and I realised that if these persisted, without the problems being documented, then readers would be likely to pick up wrong ideas. And while I have written a dry [Errata][] document, it is better to add commentary page-by-page.
+1. [Translations][] are still live out on the Web, and I realised that if these persisted, without the problems being documented, then readers would be likely to pick up wrong ideas. And while I have written a dry [Errata][] document, more detail can be added to this page-by-page commentary.
 
-2. Mark Pilgrim’s original [user-centered][ucd] narrative, with realistic personas, which was revolutionary in 2002, still has tremendous value now.
+2. Mark Pilgrim’s original [user-centered][ucd] narrative, with realistic personas, which was revolutionary in 2002, still has value now.
 
 So, I am documenting the errors, out-of-date practices, and other notes for individual pages in the book.
 

@@ -7,7 +7,7 @@ eleventyComputed:
 
 ## Deprecated!
 
-### Day 17: Defining acronyms
+### [Day 17: Defining acronyms][day 17]
 
 The `<acronym>` element is [deprecated][mdn:acronym-el] in HTML5.
 

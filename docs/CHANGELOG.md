@@ -9,7 +9,7 @@ Also see the [errata][] and [proposal][].
 
 ## [Version 2.1 Beta][v2.1-beta]
 
-* Release: _24-January-2025_ ([archive][arch:2026-01-20]),
+* Release: _26-January-2025_ ([archive][arch:2026-01-20]),
 * New mobile-friendly theme for Eleventy ([#9][]),
 * Add `<page-note>` custom element ([#12][]),
 * Fix title attributes - integrate `fix-title-attr` Javascript ([#16][])

@@ -12,6 +12,7 @@ header {
     button[ popovertarget ] {
       padding: .2rem .5rem;
       margin: .25rem 0;
+      margin-left: .8rem;
       height: 3.4rem;
       width: 3.4rem;
 
@@ -79,6 +80,10 @@ header {
       }
     }
   }
+}
+
+.breadcrumb-nav p {
+  margin-top: 0;
 }
 
 main {
