@@ -6,7 +6,8 @@
   "main": "index.js",
   "type": "module",
   "dependencies": {
-    "fix-title-attr": "^0.9.5"
+    "fix-title-attr": "^0.9.5",
+    "eleventy-plugin-popover": "^0.9.0"
   },
   "repository": {
     "type": "git",

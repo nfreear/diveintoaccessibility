@@ -1,6 +1,7 @@
 import { resolve } from 'node:path';
 import debug from 'debug';
 import diaPluginLoader, { loadEnvJs } from 'dia-plugins';
+import togglePopoverShortcode from 'eleventy-plugin-popover';
 
 // GitHub Pages sub-directory deployment.
 const buildBaseUrl = '/diveintoaccessibility/';
@@ -47,6 +48,8 @@ export default async function (eleventyConfig) {
     linkFiles: getLinkFilePaths(),
     buildBaseUrl
   });
+
+  eleventyConfig.addPlugin(togglePopoverShortcode);
 
   eleventyConfig.addPassthroughCopy('download/*');
   eleventyConfig.addPassthroughCopy('examples/*');
