@@ -8,6 +8,7 @@ layout: dia_outer_page
   <meta name="generator" content="{{ eleventy.generator }}">
   <base href="{% myBaseUrl %}">
 
+  <link rel="manifest" href="./manifest.json">
   <link rel="stylesheet" href="./css/index.css">
 
 {% include '../en/dc-metadata.njk' %}
@@ -20,7 +21,6 @@ layout: dia_outer_page
 
 </head>
 <body>
-{% include '../en/breadcrumb.njk' %}
 {% include '../en/header.njk' %}
 
 <share-button></share-button>

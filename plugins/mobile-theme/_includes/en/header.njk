@@ -1,24 +1,17 @@
 <header>
-  <div>
-    <h1><a href="./en/">Dive Into Accessibility</a></h1>
-    <p>30 days to a more accessible web site</p>
-  </div>
+  <flex-row>
+    {% include './breadcrumb.njk' %}
+    {% include './translation-nav.njk' %}
+  </flex-row>
 
-  <nav>
-    <button popovertarget="nav-dropdown">
-      <sr-only>Toggle navigation</sr-only>
-      <i></i><i></i><i></i>
-    </button>
-
-    <div popover id="nav-dropdown">
-      <search>
-        <form action="./en/search.html">
-          <p><label for="q">Search this site:</label></p>
-          <p><input id="q" name="q" type="search" required></p>
-          <p><button>Search</button></p>
-        </form>
-      </search>
-      {% include '../en/main-navigation.njk' %}
+  <flex-row>
+    <div>
+      <h1><a href="./en/">Dive Into Accessibility</a></h1>
+      <p>30 days to a more accessible web site</p>
     </div>
-  </nav>
+
+    {% hamburgerPopover 'Toggle navigation', 'main-nav' %}
+      {% include './search.njk' %}
+      {% include './main-navigation.njk' %}
+    {% endhamburgerPopover %}
 </header>

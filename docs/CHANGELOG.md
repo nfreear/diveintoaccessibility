@@ -7,6 +7,9 @@
 
 Also see the [errata][] and [proposal][].
 
+* Add [eleventy-popover-plugin][] — use `hamburgerPopover` shortcode ([#20][])
+* Add "Translations menu" ([#20][])
+
 ## [Version 2.1 Beta][v2.1-beta]
 
 * Release: _26-January-2025_ ([archive][arch:2026-01-20]),
@@ -83,6 +86,7 @@ Also see the [errata][] and [proposal][].
 [#16]: https://github.com/nfreear/diveintoaccessibility/issues/16
 [#18]: https://github.com/nfreear/diveintoaccessibility/issues/18
 [#19]: https://github.com/nfreear/diveintoaccessibility/issues/19
+[#20]: https://github.com/nfreear/diveintoaccessibility/issues/20
 
 [arch:2011-09-27]: https://web.archive.org/web/20110927131211/http://diveintoaccessibility.org/
 [arch:2026-01-03]: https://web.archive.org/web/20260103161735/http://nfreear.github.io/diveintoaccessibility/
@@ -91,6 +95,7 @@ Also see the [errata][] and [proposal][].
 [arch:1016-01-20]: https://web.archive.org/web/20260120184546/https://nfreear.github.io/diveintoaccessibility/en/
 
 [eleventy]: https://www.11ty.dev/
+[eleventy-popover-plugin]: https://github.com/nfreear/eleventy-plugin-popover
 [so:tag]: https://stackoverflow.com/questions/4404172/how-to-tag-an-older-commit-in-git/21759466#21759466
 [valid-badge]: https://img.shields.io/badge/Valid-HTML5-orange?style=for-the-badge
 [valid]: https://validator.w3.org/nu/?doc=https%3A%2F%2Fnfreear.github.io%2Fdiveintoaccessibility%2Fen%2F&showoutline=yes&showsource=yes

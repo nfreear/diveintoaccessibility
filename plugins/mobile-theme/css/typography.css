@@ -25,7 +25,7 @@ header nav {
 }
 
 .breadcrumb-nav {
-  font-family: Tahoma, sans-serif;
+  font-family: var(--dia-head-font);
   font-size: .88rem;
   letter-spacing: -.02rem;
 
@@ -38,6 +38,37 @@ header nav {
   b {
     color: #444;
   }
+}
+
+.translation-nav {
+  font-family: var(--dia-head-font);
+
+  summary {
+    font-size: .9rem;
+  }
+
+  ul {
+    font-size: 1rem;
+
+    i {
+      font-size: small;
+      font-style: normal;
+    }
+  }
+
+  a[ hreflang ]:before {
+    display: inline-block;
+    font-size: 1.6rem;
+    margin-right: .3rem;
+    text-decoration: none;
+    vertical-align: middle;
+  }
+
+  a[ hreflang = fr ]:before { content: '🇫🇷' / ''; }
+  a[ hreflang = no ]:before { content: '🇳🇴' / ''; }
+  a[ hreflang = pl ]:before { content: '🇵🇱' / ''; }
+  a[ hreflang = zh-Hans ]:before { content: '🇨🇳' / ''; }
+  a[ hreflang = zh-Hant ]:before { content: '🏳️' / ''; }
 }
 
 [ data-page-slug = table_of_contents ] {

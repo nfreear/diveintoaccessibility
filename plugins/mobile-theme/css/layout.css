@@ -1,89 +1,89 @@
 
 header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  /* & > * {
-    display: block;
-  } */
+  flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
   nav {
-    button[ popovertarget ] {
-      padding: .2rem .5rem;
-      margin: .25rem 0;
-      margin-left: .8rem;
-      height: 3.4rem;
-      width: 3.4rem;
-
-      * {
-        border-top: 2px solid #222;
-        border-radius: 2px;
-        display: block;
-        margin: .6rem 0;
-      }
-
-      &:focus *,
-      &:hover * {
-        border-color: var(--theme-color);
-        box-shadow: 0 0 2px 1px silver;
-      }
-    }
-
     ul {
-      line-height: 1.5;
+      line-height: 1.4;
       list-style: none;
       min-width: 11rem;
       margin: 0;
       padding: 0;
     }
+  }
 
-    [ popover ] {
+  /* & > * {
+    display: block;
+  } */
+
+  toggle-popover.main-nav {
+    --tp-focus-icon-color: var(--theme-color);
+    --tp-focus-shadow: 0 0 2px 1px silver;
+
+    &::part(popover) {
       background-color: var(--dia-bg-color);
       border-color: var(--theme-color);
       border-radius: .3rem;
       box-shadow: 0 0 3px 1px silver;
       min-width: 14rem;
-      padding: 1rem;
-      padding-top: 0;
+      padding: .5rem 1rem 1rem .5rem;
       text-align: right;
+
+      transform: translateX(-95px);
     }
 
-    a[ href ] {
-      display: block;
-      margin: .15rem 0;
-      padding: .15rem 0;
+    &::part(closeButton) {
+      float: left;
+      margin-bottom: .5rem;
+    }
 
-      &[ href *= "github.com" ] {
-        font-size: small;
-        margin-top: .75rem;
+    /* search {
+      clear: both;
+    } */
+
+    ul {
+      a[ href ] {
+        display: block;
+        margin: .15rem 0;
+        padding: .15rem 0;
+
+        &[ href *= "github.com" ] {
+          font-size: small;
+          margin-top: .75rem;
+        }
       }
     }
   }
-}
 
-@supports (position-anchor: --my-name) {
-  header {
+  .breadcrumb-nav p {
+    margin-top: 0;
+  }
+
+  .translation-nav {
+    position: relative;
+
+    summary {
+      padding: .1rem 0 .25rem;
+    }
+
     nav {
-      button {
-        anchor-name: --nav-toggle;
-      }
+      background-color: var(--dia-bg-color);
+      border: 1px solid var(--theme-color);
+      border-radius: .25rem;
+      position: absolute;
+      transform: translateX(-125px);
+      z-index: 999;
 
-      #nav-dropdown {
-        margin-top: .1rem;
-        /* position-anchor: --nav-toggle; */ /* Bug in Firefox 147?! */
-        anchor-scope: --nav-toggle;
-        position: fixed;
-        position-area: bottom center;
-
-        transform: translateX(-95px);
+      ul {
+        min-width: 14rem;
+        margin: .75rem;
       }
     }
   }
-}
-
-.breadcrumb-nav p {
-  margin-top: 0;
 }
 
 main {
