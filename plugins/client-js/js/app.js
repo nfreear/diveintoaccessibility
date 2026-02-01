@@ -1,6 +1,7 @@
 import PageNoteElement from 'page-note';
 import { MySearchApiElement, MySharingWidgetElement, MySiteCounterElement } from 'ndf-elements/dia';
 import { fixTitleAttributes, fixArchiveLinks, TitleTipElement } from 'fix-title-attr';
+import defineTogglePopoverElement from 'eleventy-plugin-popover/browser';
 
 const { customElements } = window;
 
@@ -10,6 +11,8 @@ customElements.define('search-api', MySearchApiElement);
 customElements.define('site-counter', MySiteCounterElement);
 // customElements.define('site-search', SiteSearchElement);
 customElements.define('title-tip', TitleTipElement);
+
+defineTogglePopoverElement();
 
 // Only add the HTML validator button when serving locally.
 if (pageInfo().isServeMode) {
