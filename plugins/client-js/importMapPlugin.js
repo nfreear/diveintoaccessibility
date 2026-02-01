@@ -16,7 +16,7 @@ const importMap = {
   'site-search': `${elementServer}/MySearchElement.js`,
   'search-api': `${elementServer}/MySearchApiElement.js`,
   'site-counter': `${elementServer}/MySiteCounterElement.js`, */
-  'eleventy-plugin-popover/browser': 'https://esm.sh/gh/nfreear/eleventy-plugin-popover/browser'
+  'eleventy-plugin-popover/browser': 'https://esm.sh/gh/nfreear/eleventy-plugin-popover/browser',
   'validator-button': `${elementServer}/MyTestElement.js`
 };
 
