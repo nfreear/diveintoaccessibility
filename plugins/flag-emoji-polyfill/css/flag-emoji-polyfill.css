@@ -1,0 +1,27 @@
+/*
+ Polyfill for flag emojis on Windows.
+
+ https://geyer.dev/blog/windows-flag-emojis/
+ https://github.com/talkjs/country-flag-emoji-polyfill
+*/
+
+@font-face {
+  font-family: Twemoji;
+  unicode-range: U+1F1E6-1F1FF, U+1F3F4, U+E0062-E0063, U+E0065, U+E0067, U+E006C, U+E006E, U+E0073-E0074, U+E0077, U+E007F;
+  src: url('https://esm.sh/country-flag-emoji-polyfill@0.1.8/dist/TwemojiCountryFlags.woff2') format('woff2');
+}
+
+:root {
+  /* Only download "Twemoji" font as required.
+  */
+  --flag-emoji-font: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'EmojiOne Color', 'Android Emoji', Twemoji, sans-serif;
+
+  /* OR, prefer "Twemoji" to other fonts for flags.
+  */
+  --flag-emoji-font-alt: Twemoji, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'EmojiOne Color', 'Android Emoji', sans-serif;
+}
+
+x-flag {
+  font-family: var(--flag-emoji-font);
+  font-size: 1.5rem;
+}

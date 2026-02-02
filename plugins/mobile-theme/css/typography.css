@@ -58,7 +58,8 @@ header nav {
 
   a[ hreflang ]:before {
     display: inline-block;
-    font-size: 1.6rem;
+    font-family: var(--flag-emoji-font);
+    font-size: 1.5rem;
     margin-right: .3rem;
     text-decoration: none;
     vertical-align: middle;

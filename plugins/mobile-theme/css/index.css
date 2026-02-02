@@ -1,4 +1,5 @@
 /* @import "common.css"; */
+@import "flag-emoji-polyfill.css";
 @import "typography.css" screen;
 @import "layout.css" screen;
 @import "pagination.css" screen;

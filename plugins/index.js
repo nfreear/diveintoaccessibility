@@ -10,6 +10,7 @@ import importMapPlugin from './client-js/importMapPlugin.js';
 import baseUrlShortcodePlugin from './shortcode/baseUrlShortcodePlugin.js';
 import searchIdShortcodePlugin from './shortcode/searchIdShortcodePlugin.js';
 import customCollectionsPlugin from './page-id/customCollectionsPlugin.js';
+import flagEmojiPlugin from './flag-emoji-polyfill/flagEmojiPlugin.js';
 import loadEnvJs from './utilities/loadEnvJs.js';
 
 /**
@@ -34,13 +35,14 @@ function diaPluginLoader (eleventyConfig, options) {
   eleventyConfig.addPlugin(baseUrlShortcodePlugin, { buildBaseUrl });
   eleventyConfig.addPlugin(searchIdShortcodePlugin, { searchId });
   eleventyConfig.addPlugin(debugFiltersPlugin);
+  eleventyConfig.addPlugin(flagEmojiPlugin);
 }
 
 export {
   originalThemePlugin, mobileThemePlugin, themeSwitchPlugin,
   addLinkRefsPlugin, pageIdAndInfoPlugin, sortByDayNumberPlugin,
   clientJsPlugin, importMapPlugin, baseUrlShortcodePlugin, debugFiltersPlugin,
-  customCollectionsPlugin, searchIdShortcodePlugin,
+  customCollectionsPlugin, searchIdShortcodePlugin, flagEmojiPlugin,
   loadEnvJs
 };
 
