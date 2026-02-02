@@ -8,14 +8,16 @@
 Also see the [errata][] and [proposal][].
 
 * Add [eleventy-popover-plugin][] — use `hamburgerPopover` shortcode ([#20][])
-* Add "Translations menu" ([#20][])
+* Add "Translations menu" to header ([#20][])
+* Re-add "Dive Into…" navigation menu to header ([#20][])
+* Polyfill missing flag emojis on Windows — CSS only fix ([#21][])
 
 ## [Version 2.1 Beta][v2.1-beta]
 
 * Release: _26-January-2025_ ([archive][arch:2026-01-20]),
 * New mobile-friendly theme for Eleventy ([#9][]),
 * Add `<page-note>` custom element ([#12][]),
-* Fix title attributes - integrate `fix-title-attr` Javascript ([#16][])
+* Fix title attributes — integrate `fix-title-attr` Javascript ([#16][])
 * Fix site search, `<search-api>` ([#19][])
 * Also, integrate `<site-counter>`, `<share-button>` ([#11][])
 
@@ -87,6 +89,7 @@ Also see the [errata][] and [proposal][].
 [#18]: https://github.com/nfreear/diveintoaccessibility/issues/18
 [#19]: https://github.com/nfreear/diveintoaccessibility/issues/19
 [#20]: https://github.com/nfreear/diveintoaccessibility/issues/20
+[#21]: https://github.com/nfreear/diveintoaccessibility/issues/21
 
 [arch:2011-09-27]: https://web.archive.org/web/20110927131211/http://diveintoaccessibility.org/
 [arch:2026-01-03]: https://web.archive.org/web/20260103161735/http://nfreear.github.io/diveintoaccessibility/

@@ -53,6 +53,7 @@ details {
 
   ul {
     font-size: 1rem;
+    line-height: 1.9;
 
     i {
       font-size: small;
@@ -64,6 +65,7 @@ details {
     display: inline-block;
     font-family: var(--flag-emoji-font);
     font-size: 1.5rem;
+    line-height: 1.4;
     margin-right: .3rem;
     text-decoration: none;
     vertical-align: middle;

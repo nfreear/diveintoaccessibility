@@ -14,11 +14,13 @@
 :root {
   /* Only download "Twemoji" font as required.
   */
-  --flag-emoji-font: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'EmojiOne Color', 'Android Emoji', Twemoji, sans-serif;
+  --flag-emoji-font: 'Apple Color Emoji', 'Android Emoji', Twemoji, sans-serif;
+
+  --flag-emoji-font-alt: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'EmojiOne Color', 'Android Emoji', Twemoji, sans-serif;
 
   /* OR, prefer "Twemoji" to other fonts for flags.
   */
-  --flag-emoji-font-alt: Twemoji, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'EmojiOne Color', 'Android Emoji', sans-serif;
+  --flag-emoji-font-rev: Twemoji, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'EmojiOne Color', 'Android Emoji', sans-serif;
 }
 
 x-flag {

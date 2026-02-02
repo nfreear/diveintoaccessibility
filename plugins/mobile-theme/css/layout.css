@@ -83,7 +83,6 @@ header {
       z-index: 999;
 
       ul {
-        line-height: 1.75;
         min-width: 7rem;
         margin: .75rem;
       }
