@@ -1,7 +1,6 @@
 import debug from 'debug';
 import { join } from 'node:path';
-
-const PATH = 'node_modules/dia-plugins/mobile-theme';
+import pluginPath from '../utilities/pluginPath.js';
 
 /**
  * A new mobile-first "Dive Into Accessibility" theme, in a plugin.
@@ -21,6 +20,7 @@ export default function mobileThemePlugin (eleventyConfig) {
 }
 
 function getPluginPaths () {
+  const PATH = pluginPath(import.meta.url);
   const cssCopy = {};
   cssCopy[`${PATH}/css/*`] = 'css';
 
@@ -28,6 +28,6 @@ function getPluginPaths () {
     layout: `../${PATH}/_includes/layouts/page.njk`,
     cssCopy,
     absLayout: join(import.meta.url.replace('index.js', ''), '.', '_includes', 'layouts', 'page.njk'), // Not used!
-    root: PATH
+    pluginRoot: PATH
   };
 }

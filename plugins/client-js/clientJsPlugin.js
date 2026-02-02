@@ -1,7 +1,7 @@
 import debug from 'debug';
+import pluginPath from '../utilities/pluginPath.js';
 
 const clientJs = './js/app.js';
-const PATH = 'node_modules/dia-plugins/client-js';
 
 // const WC = 'web-components/src/components/MySharingWidgetElement.js';
 
@@ -24,6 +24,7 @@ export default function clientJsPlugin (eleventyConfig) {
 }
 
 function getPluginPaths () {
+  const PATH = pluginPath(import.meta.url);
   const jsCopy = {};
   jsCopy[`${PATH}/js/*`] = 'js';
 

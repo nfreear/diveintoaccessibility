@@ -1,8 +1,6 @@
 import debug from 'debug';
 import { join } from 'node:path';
-
-const PATH = 'node_modules/dia-plugins/original-theme';
-// const PATH = 'plugins/original-theme';
+import pluginPath from '../utilities/pluginPath.js';
 
 /**
  * The original "Dive Into Accessibility" theme/styles, in a plugin.
@@ -24,6 +22,7 @@ export default function originalThemePlugin (eleventyConfig) {
 }
 
 function getPluginPaths () {
+  const PATH = pluginPath(import.meta.url);
   const cssCopy = {};
   const jsCopy = {};
   cssCopy[`${PATH}/css/*`] = 'css';
