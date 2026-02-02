@@ -4,12 +4,15 @@
   --dia-head-font: Tahoma, sans-serif;
   --dia-theme-color: maroon;
   --dia-bg-color: #fafafa;
+  --dia-text-color: #222;
+  --dia-popover-shadow: 0 0 3px 1px silver;
+  --dia-border-radius: .25rem;
   --theme-color: var(--dia-theme-color);
 }
 
 body {
   background-color: var(--dia-bg-color);
-  color: #222;
+  color: var(--dia-text-color);
   font-family: var(--dia-body-font, sans-serif);
 }
 
@@ -40,7 +43,8 @@ header nav {
   }
 }
 
-.translation-nav {
+.translation-nav,
+details {
   font-family: var(--dia-head-font);
 
   summary {

@@ -27,8 +27,8 @@ header {
     &::part(popover) {
       background-color: var(--dia-bg-color);
       border-color: var(--theme-color);
-      border-radius: .3rem;
-      box-shadow: 0 0 3px 1px silver;
+      border-radius: var(--dia-border-radius);
+      box-shadow: var(--dia-popover-shadow);
       min-width: 14rem;
       padding: .5rem 1rem 1rem .5rem;
       text-align: right;
@@ -61,9 +61,13 @@ header {
 
   .breadcrumb-nav p {
     margin-top: 0;
+
+    i {
+      font-style: normal;
+    }
   }
 
-  .translation-nav {
+  details {
     position: relative;
 
     summary {
@@ -73,15 +77,45 @@ header {
     nav {
       background-color: var(--dia-bg-color);
       border: 1px solid var(--theme-color);
-      border-radius: .25rem;
+      border-radius: var(--dia-border-radius);
+      box-shadow: var(--dia-popover-shadow);
       position: absolute;
-      transform: translateX(-125px);
       z-index: 999;
 
       ul {
-        min-width: 14rem;
+        line-height: 1.75;
+        min-width: 7rem;
         margin: .75rem;
       }
+    }
+
+    &.translation-nav {
+      nav {
+        transform: translateX(-135px);
+      }
+
+      ul {
+        min-width: 14rem;
+      }
+    }
+  }
+
+  .tagline {
+    margin: .5rem 0 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .breadcrumb-nav {
+    #breadLabel,
+    a > i {
+      display: none;
+    }
+  }
+
+  .translation-nav {
+    ::marker {
+      display: none;
     }
   }
 }

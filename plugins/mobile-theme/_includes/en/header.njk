@@ -1,13 +1,14 @@
 <header>
   <flex-row>
     {% include './breadcrumb.njk' %}
+    {% include './dive-into-nav.njk' %}
     {% include './translation-nav.njk' %}
   </flex-row>
 
   <flex-row>
     <div>
       <h1><a href="./en/">Dive Into Accessibility</a></h1>
-      <p>30 days to a more accessible web site</p>
+      <p class="tagline">30 days to a more accessible web site</p>
     </div>
 
     {% hamburgerPopover 'Toggle navigation', 'main-nav' %}

@@ -48,6 +48,7 @@ title-tip {
   --tt-button-size: 1.5rem;
   --tt-border-width: 1px;
   --tt-border-color: silver;
+  --tt-text-color: var(--dia-text-color);
   --tt-tip-font: var(--dia-head-font);
 
   &::part(button):focus,
@@ -57,6 +58,9 @@ title-tip {
   }
 
   &::part(tip) {
+    border-color: gray;
+    border-width: 1px;
+    font-size: .95rem;
     max-width: 22rem;
   }
 
