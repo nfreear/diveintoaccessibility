@@ -6,10 +6,10 @@ layout: dia_outer_page
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="{{ eleventy.generator }}">
-  <base href="{% myBaseUrl %}">
+  <!-- <base href="{% myBaseUrl %}"> -->
 
   <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="/css/index.css">
 
 {% include '../en/dc-metadata.njk' %}
 {# {% include '../head/stylesheets.njk' %} #}
@@ -21,13 +21,16 @@ layout: dia_outer_page
 
 </head>
 <body>
+<skip-link>
+  <a href="#main-content">Skip to main content</a>
+</skip-link>
 {% include '../en/header.njk' %}
 
 <share-button></share-button>
 
 <page-note hidden></page-note>
 
-<main id="main">
+<main id="main-content">
 {{ content | safe }}
 </main>
 

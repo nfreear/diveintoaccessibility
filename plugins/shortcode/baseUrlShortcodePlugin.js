@@ -5,6 +5,9 @@
  * @see https://codepen.io/nfreear/pen/RNRWmpP
  */
 export default function baseUrlShortcodePlugin (eleventyConfig, options) {
+  /**
+   * Used on the 404 error page, "404.html"!
+   */
   eleventyConfig.addShortcode('myBaseUrl', function () {
     // Only use the configurable `buildBaseUrl` option in "build" mode (not "serve" mode)!
     const isBuild = (this.eleventy.env.runMode === 'build');
@@ -13,6 +16,8 @@ export default function baseUrlShortcodePlugin (eleventyConfig, options) {
     return baseUrl;
   });
 
+  /** Used in "sitemap-xml.html"
+   */
   eleventyConfig.addFilter('myAbsoluteUrl', function (path) {
     console.assert(process.env.ABSOLUTE_URL, 'Missing ABSOLUTE_URL environment variable.');
     return `${process.env.ABSOLUTE_URL}${path}`;

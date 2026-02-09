@@ -1,0 +1,36 @@
+:root {
+  --dia-transition: 250ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dia-transition: 0;
+  }
+}
+
+skip-link {
+  position: relative;
+
+  a {
+    background-color: var(--dia-bg-color, white);
+    display: inline-block;
+    position: absolute;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+
+    &:focus {
+      border: 2px solid var(--dia-theme-color, gray);
+      height: auto;
+      min-width: 11rem;
+      padding: .6rem;
+      transition: all var(--dia-transition);
+    }
+  }
+}
+
+main {
+  a.skip {
+    display: none;
+  }
+}

@@ -7,6 +7,7 @@
 @import "https://esm.sh/gh/nfreear/fix-title-attr/style.css";
 /* @import "https://esm.sh/fix-title-attr@0.9.5/style.css" */
 @import "custom-elements.css" screen;
+@import "skip-link.css";
 
 /* Print and aural */
 @import "print.css" print;
