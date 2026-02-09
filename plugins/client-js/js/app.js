@@ -1,4 +1,4 @@
-import PageNoteElement from 'page-note';
+import PageNoteElement from './PageNoteElement.js';
 import { MySearchApiElement, MySharingWidgetElement, MySiteCounterElement } from 'ndf-elements/dia';
 import { fixTitleAttributes, fixArchiveLinks, TitleTipElement } from 'fix-title-attr';
 import defineTogglePopoverElement from 'eleventy-plugin-popover/browser';

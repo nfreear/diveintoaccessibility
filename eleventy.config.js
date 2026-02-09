@@ -1,10 +1,11 @@
+import { HtmlBasePlugin } from '@11ty/eleventy';
 import { resolve } from 'node:path';
 import debug from 'debug';
 import diaPluginLoader, { loadEnvJs } from 'dia-plugins';
 import togglePopoverShortcode from 'eleventy-plugin-popover';
 
 // GitHub Pages sub-directory deployment.
-const buildBaseUrl = '/diveintoaccessibility/';
+const baseHref = '/diveintoaccessibility/';
 
 /**
  * Configure Eleventy
@@ -44,9 +45,11 @@ export default async function (eleventyConfig) {
     return (data) => pageId.compute(data.page);
   }); */
 
+  eleventyConfig.addPlugin(HtmlBasePlugin, { baseHref }); // eleventyConfig.pathPrefix,
+
   eleventyConfig.addPlugin(diaPluginLoader, {
     linkFiles: getLinkFilePaths(),
-    buildBaseUrl
+    buildBaseUrl: baseHref
   });
 
   eleventyConfig.addPlugin(togglePopoverShortcode);
@@ -63,6 +66,10 @@ function getLinkFilePaths () {
     resolve('pages', 'links', 'translation_links.md'),
   ];
 }
+
+export const config = {
+  pathPrefix: baseHref,
+};
 
 /* export const config = {
   dir: {

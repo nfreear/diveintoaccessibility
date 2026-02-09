@@ -8,7 +8,7 @@ const githubPages = 'https://nfreear.github.io';
 const elementServer = `${githubPages}/elements/src/components`;
 
 const importMap = {
-  'page-note': './js/PageNoteElement.js',
+  /** @WAS 'page-note': './js/PageNoteElement.js', */
   'npm:fix-title-attr': 'https://esm.sh/fix-title-attr@0.9.5',
   'fix-title-attr': `${githubPages}/fix-title-attr/index.js`,
   'ndf-elements/dia': `${githubPages}/elements/src/dia.js`,
